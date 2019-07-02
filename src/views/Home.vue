@@ -578,7 +578,7 @@ export default {
     });
   },
   destroyed(){
-      mySwiper;
+      mySwiper,
       bswiper
   }
 };

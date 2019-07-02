@@ -4,14 +4,14 @@
             <div class="clearfix">
                 <div class="footer-top">
                     <div class="footer-nav">
-                        <router-link :to="{name:'AllTest'}"><a href="javascript:void(0)">服务项目</a></router-link>
+                        <router-link :to="{name:'Project'}"><a href="javascript:void(0)">服务项目</a></router-link>
                         <router-link :to="{name:'Help'}"><a href="javascript:void(0)">帮助中心</a></router-link>
                         <router-link :to="{name:'Partnership'}"><a href="javascript:void(0)">合作加盟</a></router-link>
                         <router-link :to="{name:'About'}"><a href="javascript:void(0)">关于我们</a></router-link>
                         <router-link :to="{name:'Notice'}"><a href="javascript:void(0)">公告</a></router-link>
                     </div>
                     <div class="footer-btn">
-                        <router-link :to="{name:'AllTest'}"><a href="javascript:void(0)">我要测试</a></router-link>
+                        <router-link :to="{name:'Project'}"><a href="javascript:void(0)">我要测试</a></router-link>
                         <a href="tencent://message/?Menu=yes&uin=800182992&Service=58&SigT=FCBB8E7F75BE84D78AE927F8023B7E0E534F8B6B52CD3E340F64D548EA00D1C725A6DE7B770D2AE0D91A482D4098F960C49E5A96BA50104C1CF5C2F587E540ABB821FE108C7F3A0D78FB8EF6E743F82BC333541EB658222024F4A8BB4AB8C8FBFA8EBFF4A49D5E38A7D87D26ED6B282DF22625E515D8B69D&SigU=A2737FDCF29D62FAA7878A2129DA4A4E4F75C2B3D8C5A203AE9BB0467E60170DBC1D2E663575FE33E89F36D7E58CD9C926B2CB65439A168B40C551C32F03C84F131AC3C3DE8139F9" target="blank">马上沟通</a>
                     </div>
                     <div style="text-align:center;margin-bottom: 18px;">

@@ -12,14 +12,14 @@ export default new Router({
       component: resolve => require(["./views/Home.vue"], resolve)
     },
     {
-      path: '/allTest',
-      name: 'AllTest',
-      component: resolve => require(["./views/AllTest.vue"], resolve)
+      path: '/project',
+      name: 'Project',
+      component: resolve => require(["./views/Project.vue"], resolve)
     },
     {
-      path: '/AllTestDetails',
-      name: 'AllTestDetails',
-      component: resolve => require(["./views/AllTest_details.vue"], resolve)
+      path: '/projectDetails',
+      name: 'ProjectDetails',
+      component: resolve => require(["./views/Project_details.vue"], resolve)
     },
     {
       path: '/login',
@@ -137,8 +137,8 @@ export default new Router({
       component: resolve => require(["./views/Scisupport.vue"], resolve)
     },
     {
-      path: '/userId',
-      name: 'UserId',
+      path: '/userIndex',
+      name: 'UserIndex',
       component: resolve => require(["./views/UserId.vue"], resolve)
     },
     {

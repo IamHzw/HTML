@@ -13,12 +13,14 @@
                     </div>-->
                 </div>
                 <div id="allmap" style="display: none;"></div>
-                <div class="fl">
+                <div class="fl " v-if="currentMember.id==null">
                     <router-link :to="{name:'Login'}"><a href="" id="index-login">请登录</a>   </router-link>
-                    <!-- <a href="" id="index-login">请登录</a>     -->
                 </div>
-                <div class="fl"><router-link :to="{name:'Login'}"><a href="" id="index-login">免费注册</a>   </router-link>
-                    <!-- <a href="" id="index-login">免费注册</a>     -->
+                <div class="fl" v-if="currentMember.id==null">
+                	<router-link :to="{name:'Register'}"><a href="" id="index-login">免费注册</a>   </router-link>
+                </div>
+                <div class="fl" v-if="currentMember.id!=null">
+                	<router-link :to="{name:'UserIndex'}"><a href="" id="index-login">个人中心</a>   </router-link>
                 </div>
                 <div class="fl">
                     <a href="" id="index-login">联系客服</a>    
@@ -35,7 +37,7 @@
                 <div class="login-nav fl">
                     <div>
                         <!-- <a>测试分析</a> -->
-                        <router-link :to="{name:'AllTest'}"><a>测试分析</a></router-link>
+                        <router-link :to="{name:'Project'}"><a>测试分析</a></router-link>
                         <!-- <div id="login-nav-list">
                         </div> -->
                     </div>
@@ -82,10 +84,12 @@
 
 <script>
 import $ from 'jquery';
+import { webRpc } from '../rpc/index';
+
 export default {
     data () {
         return {
-            
+            currentMember:{}
         }
     },
     // mounted () {
@@ -99,7 +103,13 @@ export default {
             this.maps();
         });
 
+		if(sessionStorage.currentMember!=null){
+			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
+            console.log(this.currentMember);
+        }
+            
     },
+    
     methods: {
         pullDown(){
              $.post('http://www.ceshigo.com/index.php?m=Home&c=Index&a=index_top', {}, function (data) {
