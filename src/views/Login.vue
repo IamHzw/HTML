@@ -124,7 +124,7 @@ export default {
 		},
 		//发送短信
 		sendMsg(){
-			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","登陆",this.data.mobile,this.data.code).then(result=>{
+			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","LOGIN",this.data.mobile,this.data.code).then(result=>{
             	console.log(result);
 		   	}).catch(error =>{});
 		},

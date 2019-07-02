@@ -11,50 +11,50 @@
             <div>
                 <form class="login-phone licitform" id="reg-form">
                     <div class="login-input">
-                        <input id="phone" type="text" name="info[phone]" placeholder="请输入手机号" class="licit"
-                              data-rules="['手机号','1','11','phone']" data-show="tips">
+                        <input  type="text" v-model="data.mobile" placeholder="请输入手机号"  data-show="tips">
                     </div>
                     <div class="login-input clearfix">
-                        <input id="verify" type="text" name="info[verify]" placeholder="验证码" class="login-code fl licit"
-                              data-rules="['验证码',1]" data-show="tips">
+                        <input type="text" v-model="data.code"   placeholder="验证码" class="login-code fl licit" data-show="tips">
                         <div class="login-code-pic fr">
-                            <img id="verify_btn" src="index.php-m=&amp;c=Public&amp;a=verify&amp;ajax=t.png"
-                                style="float:left;cursor: pointer;"
-                                onclick="this.src='/index.php?m=&c=Public&a=verify&ajax=_verify&t='+Math.random();">
+                            <img id="verify_btn" :src="codeSrc" style="float:left;cursor: pointer;" @click="showCode()"  >
                         </div>
                     </div>
 
                     <div class="login-input clearfix">
-                        <input id="code" type="text" name="info[sms_code]" placeholder="短信动态码" class="login-code fl licit"
-                              data-rules="['短信验证码','1']" data-show="tips">
-                        <div class="login-code-pic fr co" id="send_scode" data-beid="355778">发送短信</div>
+                        <input  type="text" v-model="data.smsCode"  placeholder="短信动态码" class="login-code fl licit" data-show="tips">
+                        <div class="login-code-pic fr co" @click="sendMsg()" >发送短信</div>
                     </div>
 
                     <div class="login-input">
-                        <input id="pwd" type="password" name="info[pwd]" placeholder="设置密码" class="licit"
-                              data-rules="['密码','1','32','password']" data-show="tips">
-                        <span style=" font-family: '微软雅黑'; color: #F3844F;
-        font-family: '宋体'; font-size: 10px">&nbsp;&nbsp;密码格式为8-16位数字+字母组合</span>
+                        <input  type="password"  v-model="data.passWord"  placeholder="设置密码" class="licit" data-show="tips">
+                        <span style=" font-family: '微软雅黑'; color: #F3844F;font-family: '宋体'; font-size: 10px">
+                        	&nbsp;&nbsp;密码格式为8-16位数字+字母组合
+                        </span>
                     </div>
                     <div class="login-input">
-                        <input id="repwd" type="password" name="info[repwd]" placeholder="确定密码" class="licit"
-                              data-rules="['确认密码','1','32','password']" data-show="tips">
+                        <input type="password"  v-model="data.passWord2" placeholder="确定密码" class="licit"  data-show="tips">
                     </div>
 
                     <div class="login-input">
-                        <input type="text" id="yqcode" name="info[invite_code]" value="" placeholder="请输入邀请码/可不填">
+                        <input type="text" v-model="data.inviteCode" value="" placeholder="请输入邀请码/可不填">
                     </div>
 
 
                     <p class="tips" id="tips"><img src="static/images/cha.png"><span></span></p>
-                    <button type="button" class="login-btn" id="reg-sub">立即注册</button>
-                    <p><span><label class="my_protocol">
-          <input class="input_agreement_protocol" name="checks" type="checkbox" checked/>
-          <span></span>
-    </label></span>注册即代表您同意我们的<a onclick="retest()">服务协议</a>和<a onclick="conceal()">隐私政策</a></p>
-                    <!-- <div class="clearfix">
+                    <button type="button" class="login-btn" @click="register()">立即注册</button>
+                    <p>
+                    	<span>
+                    		<label class="my_protocol">
+          						<input class="input_agreement_protocol" name="checks" type="checkbox" checked/>
+          						<span></span>
+    						</label>
+    					</span>
+    					注册即代表您同意我们的
+    					<a onclick="retest()">服务协议</a>和<a onclick="conceal()">隐私政策</a>
+    				</p>
+                    <div class="clearfix">
                         <a href="/index.php?m=&c=User&a=login" class="back-login fr"> < 已有账号，请登录</a>
-                    </div>-->
+                    </div>
                 </form>
             </div>
         </div>
@@ -318,14 +318,24 @@
 
 <script>
 import $ from "jquery";
-// import "./style/swiper.css";
-// import "../components/swiper.js";
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
+import { webRpc,token } from '../rpc/index';
+import { HOST } from '../config';
+
+
 export default {
   data () {
     return {
+    	HOST:HOST,
+    	codeSrc:'',
+      	data:{
+      		mobile:'15119276805',
+      		passWord:'123456',
+      		code:'',
+      		smsCode:'',
+      	},
       
     }
   },
@@ -334,7 +344,49 @@ export default {
       vSider,
       vFootersimper
   },
+  	created() {
+  		this.showCode();
+ 	},
+ 	methods: {
+  		//显示图片验证码
+		showCode() {
+			this.codeSrc = this.HOST+'common/code?t='+Math.random()      
+			console.log(this.codeSrc);
+		},
+		//发送短信
+		sendMsg(){
+			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","REGISTER",this.data.mobile,this.data.code).then(result=>{
+            	
+            	if(result.retCode==0){
+                	
+				}else{
+					alert(result.message);
+				}
+		   	}).catch(error =>{});
+		},
+		//普通登陆
+		register(){
+			webRpc.invoke("memberWebRpc.register",this.data,this.data.smsCode).then(result=>{
+				if(result.retCode==0){
+                	token.setAuthToken(result.data);
+                	this.getCurrentMemeber();
+				}else{
+					alert(result.message);
+				}
+		    }).catch(error =>{});
+		},
+		//获取当前用户，以及跳转
+		getCurrentMemeber(){
+			webRpc.invoke("memberWebRpc.currentMember").then(result=>{
+                sessionStorage.setItem('currentMember',JSON.stringify(result.data));
+                console.log(result.data);
+                this.$router.push('/');
+		   	}).catch(error =>{});
+		}
+	}
 };
+
+
 </script>
 
 <style scoped>
