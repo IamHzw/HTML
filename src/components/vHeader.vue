@@ -95,7 +95,7 @@ export default {
     // },
     created () {
         this.$nextTick(function(){  //不使用this.$nextTick()方法会报错
-            this.pullDown();  //写入到DOM元素
+           // this.pullDown();  //写入到DOM元素
             this.maps();
         });
 

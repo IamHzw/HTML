@@ -10,6 +10,15 @@ import "./style/style.css";
 // import layer from 'vue-layer'
 
 // Vue.prototype.$layer = layer(Vue);
+
+//引入配置文件
+import { RPCURL } from './config';
+//引入 rpc 服务
+import { rpc } from './rpc/index';
+//设置 rpc 地址
+rpc.setUrl(RPCURL);
+
+
 Vue.config.productionTip = false;
 new Vue({
   router,
