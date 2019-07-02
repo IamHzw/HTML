@@ -1,77 +1,8 @@
 <template>
   <div class="home">
-    <header class="login-header">
-        <a href="" id="logo" class="fl">
-            <img src="../assets/images/logo.png">
-        </a>
-        <div id="place" class="fl">
-            <span id="place-add"></span>
-            <!-- <a id="place-change">切换</a>
-            <div id="place-list">
+    <v-Header></v-Header>
+    <v-Sider></v-Sider>
 
-            </div>-->
-        </div>
-        <div id="header-search" class="fl">
-            <form action="" method="post">
-                <input type="text" name="keywords" value="" placeholder="扫描电子显微镜">
-                <button type="submit"></button>
-            </form>
-        </div>
-        <div class="login-nav fl">
-            <div>
-                <a>所有测试</a>
-                <div id="login-nav-list">
-                </div>
-            </div>
-            <div>
-                <a id="yjyy">一键预约</a>
-                <div id="login-nav-list2" class="clearfix">
-
-                </div>
-                <form id="tempedit" action="">
-                    <input type="hidden" id="tempid" name="tempid"/>
-                    <input type="hidden" id="pid" name="pid"/>
-                </form>
-            </div>
-            <div class="clearfix">
-                <a href="">私人订制</a>
-            </div>
-
-        </div>
-        <div class="l-phone fr" style="font-size: 18px;line-height: 30px">
-          <div>400-152-6858</div>
-        <div style="margin: 0 0 ">028-67872234</div></div>
-
-        <div id="user-info" class="fr">
-            <a href="" id="index-login">登录/注册</a>    
-        </div>
-        <div id="allmap" style="display: none;"></div>
-    </header>
-    <!-- <div id="mslide">
-        <ul>
-            <li>
-                <a id="QQtent">
-                  <i><img src="../assets/images/slideqq.png"></i>
-                  <p>在线客服</p>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:;">
-                    <i><img src="../assets/images/slidep.png"></i>
-                    <p>联系我们</p>
-                    <div class="mslide"><h4>400-152-6858</h4></div>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:;">
-                    <i><img src="../assets/images/slidewx.png"></i>
-                    <p>关注微信</p>
-                    <div class="mslide"><img src="../assets/images/ewm.png"></div>
-                </a>
-            </li>
-        </ul>
-        <div id="goTop"></div>
-    </div> -->
     <div class="detail-login">
         为方便您预约，请提前登录<a class="detail-login-btn" href="#">立即登录</a><a class="detail-login-close">x</a>
     </div>
@@ -90,32 +21,17 @@
                 <div class="detail-next"></div>
             </div>
             <div class="detail-wrap">
-                <h2 style="    overflow: hidden;  width: 350px; text-overflow: ellipsis; white-space: nowrap;">X射线衍射仪（XRD）</h2>
-                <!-- <h3>掠入射、小角XRD</h3>-->
+                <h2 style="overflow: hidden;  width: 350px; text-overflow: ellipsis; white-space: nowrap;">{{data.title}}</h2>
                 <div class="detail-tip" style="margin-top: -10px">
                     <span>已预约<span>1652</span>次</span>
                     <span>平均<span>2.5天</span>完成</span>
                     <span><span>100%</span>满意率</span>
                 </div>
                 <div class="detail-choose clearfix">
-                    <!--  <span data-id="497">广角衍射（5-85°）<br/>￥50.00/样 </span>-->
-                        <span data-id="497">广角衍射（5-85°）<br/> </span><!--  <span data-id="498">掠入射GIXRD<br/>￥200.00/样 </span>-->
-                        <span data-id="498">掠入射GIXRD<br/> </span><!--  <span data-id="499">二维衍射（德拜环）<br/>面议 </span>-->
-                        <span data-id="499">二维衍射（德拜环）<br/> </span><!--  <span data-id="500">摇摆曲线<br/>面议 </span>-->
-                        <span data-id="500">摇摆曲线<br/> </span><!--  <span data-id="501">极图（织构）<br/>￥200.00/晶面 </span>-->
-                        <span data-id="501">极图（织构）<br/> </span><!--  <span data-id="502">变温测试<br/>￥400.00/小时 </span>-->
-                        <span data-id="502">变温测试<br/> </span><!--  <span data-id="504">旋转测试<br/>面议 </span>-->
-                        <span data-id="504">旋转测试<br/> </span><!--  <span data-id="505">残余应力<br/>面议 </span>-->
-                        <span data-id="505">残余应力<br/> </span><!--  <span data-id="506">透射测试<br/>面议 </span>-->
-                        <span data-id="506">透射测试<br/> </span><!--  <span data-id="507">微区(最小0.5X0.5mm)<br/>面议 </span>-->
-                        <span data-id="507">微区(最小0.5X0.5mm)<br/> </span><!--  <span data-id="561">小角衍射（0.2-5°）<br/>￥200.00/样 </span>-->
-                        <span data-id="561">小角衍射（0.2-5°）<br/> </span><!--  <span data-id="604">精修<br/>面议 </span>-->
-                        <span data-id="604">精修<br/> </span><!--  <span data-id="646">位错密度<br/>￥1200.00/样 </span>-->
-                        <span data-id="646">位错密度<br/> </span><!--  <span data-id="814">全反射（XRR）<br/>面议 </span>-->
-                        <span data-id="814">全反射（XRR）<br/> </span><!--  <span data-id="1020">倒易空间 RSM<br/>￥400.00/小时 </span>-->
-                        <span data-id="1020">倒易空间 RSM<br/> </span>            </div>
-                <!--            <div style="display: inline-block;margin:10px 0 15px 0px;white-space:normal; width:500px;word-wrap: break-word ">广角衍射、掠入射GIXRD、全反射、变温测试、微区（最小0.5X0.5 mm）、小角衍射、二维衍射、精修、摇摆曲线</div>-->
-                <div class="detail_des">掠入射、小角XRD</div>
+                   
+                        <span data-id="498">掠入射GIXRD<br/>￥200.00/样 </span>
+                </div>
+                <div class="detail_des">{{data.subTitle}}</div>
                 <div class="detail-btns clearfix">
                     <a id="checkids" href="#">立即预约</a>
                     <a id="collection" class="iconfont  detail_xin_font" data-id="137"></a>
@@ -236,15 +152,46 @@
 
 <script>
 import $ from "jquery";
-// import "./style/swiper.css";
-// import "../components/swiper.js";
+import  vHeader  from "../components/vHeader.vue";
+import  vSider from "../components/vSider.vue";
+import  vFootersimper from "../components/vFooterSimper.vue";
+import { webRpc } from '../rpc/index';
+import { HOST } from '../config';
+
 export default {
-  data () {
-    return {
+	data () {
+    	return {
+      		HOST:HOST,
+      		data: {},
+      		dataList:{},
+    	}
+  	},
+	components: {
+    	vHeader,
+      	vSider,
+      	vFootersimper
+  	},  
+  	created() {
+  		this.data.id = this.$route.query.id;
+		this.getData();
+	},
+  	methods: {
+        	getData() {
+		    	webRpc.invoke("productWebRpc.findById",this.data.id).then(result=>{
+					this.data = result.data;
+					console.log(this.data);
+		    	}).catch(error =>{});
+		    	
+		    	webRpc.invoke("productWebRpc.findSkuArr",this.data.id).then(result=>{
+					this.dataList = result.data;
+					console.log(this.dataList);
+		    	}).catch(error =>{});
+            },
+    
       
-    }
-  },
-  
+    		
+      		
+        }
 };
 </script>
 

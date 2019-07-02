@@ -262,12 +262,7 @@
                     </li>
                         </ul>
         </div>
-        <div style="margin:20px 0px;border:2px solid #32d693;height:80px;background-color:#fff;width:100%">
-            <div style="float:left;height:80px;line-height:80px;font-size:18px;color:#666;padding-left:60px;">如果找不到项目，您可以发布您的需求，由我们来帮您挑选最优的服务商</div>
-            <div style="float:right;height:80px;line-height:80px;padding:15px 60px 15px 0px;">
-                <a href="newdemand.html" style="text-decoration:none;"><div style="height:50px;line-height:50px;background: #32d693 url('https://statics.shiyanjia.com/c/images/fabutask.png') no-repeat 20px 10px;color:#fff;font-weight:bold;padding-left:60px;padding-right:25px;font-size:22px;filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;">发布需求</div></a>
-            </div>
-        </div>
+     
     </div>
     <v-footersimper></v-footersimper>
   </div>
