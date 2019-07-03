@@ -92,88 +92,56 @@ export default {
             currentMember:{}
         }
     },
-    // mounted () {
-    //   this.$nextTick(()=>{
-    //       this.pullDown
-    //   })  
-    // },
     created () {
-        this.$nextTick(function(){  //不使用this.$nextTick()方法会报错
-           // this.pullDown();  //写入到DOM元素
-            this.maps();
-        });
+       
 
 		if(sessionStorage.currentMember!=null){
 			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
             console.log(this.currentMember);
         }
-            
+        //从sessionStorage获取城市
+        var city = sessionStorage.city;
+        if(city==null || city == ""){
+        	//处理只获取一次城市，不用每次进都获取
+        	this.$nextTick(function(){  //不使用this.$nextTick()方法会报错
+            	this.maps();
+        	});
+        
+        }else{
+        	console.log("不用执行获取城市");
+        }
+        
     },
     
     methods: {
-        pullDown(){
-             $.post('http://www.ceshigo.com/index.php?m=Home&c=Index&a=index_top', {}, function (data) {
-                var dd = data.data;
-
-                if (dd != null) {
-                    var func = dd['projectFunc'];
-                    if (func != null) {
-                        var html = "";
-                        for (var i = 0; i < func.length; i++) {
-                            html += "<a href='/index.php?m=Home&c=Project&a=index&type=2&pid=" + func[i]['id'] + "'>" + func[i]['name'] + "</a>";
-                        }
-                        $("#login-nav-list").html(html);
-                    } else {
-                        layer.tips(data.message, "#login-nav-list", {
-                            tips: [1, '#9C9FA6'] //还可配置颜色
-                        });
-                    }
-                }
-            }, 'json');
-
-        },
         maps(){
             // 百度地图API功能
 
             var map = new BMap.Map("allmap");
-
             var point = new BMap.Point(108.95,34.27);
-
             map.centerAndZoom(point,12);
-
             var geolocation = new BMap.Geolocation();
 
             geolocation.getCurrentPosition(function(r){console.log(r.point)
 
                 if(this.getStatus() == BMAP_STATUS_SUCCESS){
-
                     var mk = new BMap.Marker(r.point);
-
                     map.addOverlay(mk);//标出所在地
-
                     map.panTo(r.point);//地图中心移动
-
                     // alert('您的位置：'+r.point.lng+','+r.point.lat);
-
                     var point = new BMap.Point(r.point.lng,r.point.lat);//用所定位的经纬度查找所在地省市街道等信息
-
                     var gc = new BMap.Geocoder();
-
                     gc.getLocation(point, function(rs){
                         $('#place-add').text(rs.addressComponents.city);
                         var addComp = rs.addressComponents; 
                         //console.log(rs.addressComponents.city);//地址信息
-
                         //alert(rs.address);//弹出所在地址
-
-        
-
+						sessionStorage.setItem('city',rs.addressComponents.city);
+						console.log(rs.addressComponents.city);
                     });
 
                 }else {
-
                     alert('failed'+this.getStatus());
-
                 }
 
             },{enableHighAccuracy: true})

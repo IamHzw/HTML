@@ -1087,7 +1087,7 @@ input[type="file"] {display: none;}
 /*.detail-table tbody tr:hover{background: #f2f0f0;}*/
 .detail-nav{;background: #F2F2F2;position: absolute;width: 1200px;left: 50%;margin-left: -600px;z-index: 10;}
 .detail-nav a{display: block;float: left;padding: 0 20px;color: #000000;line-height: 60px;font-size: 16px;}
-.detail-nav a:first-child{background-color:#fff;display: block;float: left;padding: 0 20px;color: #000000;line-height: 60px;font-size: 16px;}
+.detail-nav .cur{background-color:#fff;display: block;float: left;padding: 0 20px;color: #000000;line-height: 60px;font-size: 16px;}
 #login-nav-list2{position: absolute;top:40px;left: -225px;box-shadow: 2px 0 2px rgba(0,0,0,.1);z-index: 101;text-align: center;background: #fff;width: 510px;box-sizing: border-box;padding: 45px 0 30px 35px;display: none;}
 #login-nav-list2 a{display: block;float: left;margin: 0 15px 15px 0;width: 216px;height: 84px;box-sizing: border-box;padding-top: 20px;border-radius: 5px;background: #a9a9a9;transition: background .3s;padding-right: 0!important;;}
 #login-nav-list2 a:hover{background: #ed4d01;}
