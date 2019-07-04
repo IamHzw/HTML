@@ -6,10 +6,13 @@ import 'animate.css'
 import "./style/reset.css";
 import "./fonts/font_/iconfont.css"
 import "./style/style.css";
-//import $ from 'jquery';
-// import layer from 'vue-layer'
+import $ from 'jquery';
+import layer from "layui-layer";
 
-// Vue.prototype.$layer = layer(Vue);
+
+layer.config({
+  time: 2000, //设置两秒后默认关闭
+});
 
 //引入配置文件
 import { RPCURL } from './config';
@@ -26,11 +29,4 @@ new Vue({
   render: h => h(App)
 }).$mount("#app");
 
-// new Vue({
-//   el: '#app',
-//   router: router,
-//   store: store,
-//   template: '<App/>',
-//   components: { App }
-// })
 

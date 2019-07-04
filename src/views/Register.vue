@@ -11,37 +11,47 @@
             <div>
                 <form class="login-phone licitform" id="reg-form">
                     <div class="login-input">
-                        <input  type="text" v-model="data.mobile" placeholder="请输入手机号"  data-show="tips">
+                        <input  type="text" v-model.trim="data.mobile" placeholder="请输入手机号"  data-show="tips" @blur.prevent="onMobile()">
                     </div>
-                    <div class="login-input clearfix">
-                        <input type="text" v-model="data.code"   placeholder="验证码" class="login-code fl licit" data-show="tips">
+                    <div class="login-input">
+                      <div class="clearfix">
+                        <input type="text" v-model.trim="data.code" placeholder="验证码" class="login-code fl licit" data-show="tips" @blur.prevent="onCode()">
                         <div class="login-code-pic fr">
-                            <img id="verify_btn" :src="codeSrc" style="float:left;cursor: pointer;" @click="showCode()"  >
+                            <img id="verify_btn" :src="codeSrc" style="float:left;cursor: pointer;" @click="showCode()">
                         </div>
+                      </div>
+                    
                     </div>
 
                     <div class="login-input clearfix">
-                        <input  type="text" v-model="data.smsCode"  placeholder="短信动态码" class="login-code fl licit" data-show="tips">
+                        <input  type="text" v-model.trim="data.smsCode"  placeholder="短信动态码" class="login-code fl licit" data-show="tips">
                         <div class="login-code-pic fr co" @click="sendMsg()" >发送短信</div>
                     </div>
 
                     <div class="login-input">
-                        <input  type="password"  v-model="data.passWord"  placeholder="设置密码" class="licit" data-show="tips">
+                        <input  type="password"  v-model.trim="data.passWord"  placeholder="设置密码" class="licit" data-show="tips">
                         <span style=" font-family: '微软雅黑'; color: #F3844F;font-family: '宋体'; font-size: 10px">
                         	&nbsp;&nbsp;密码格式为8-16位数字+字母组合
                         </span>
                     </div>
                     <div class="login-input">
-                        <input type="password"  v-model="data.passWord2" placeholder="确定密码" class="licit"  data-show="tips">
+                        <input type="password"  v-model.trim="data.passWord2" placeholder="确定密码" class="licit"  data-show="tips">
                     </div>
 
                     <div class="login-input">
-                        <input type="text" v-model="data.inviteCode" value="" placeholder="请输入邀请码/可不填">
+                        <input type="text" v-model.trim="data.inviteCode" value="" placeholder="请输入邀请码/可不填">
                     </div>
 
-
-                    <p class="tips" id="tips"><img src="static/images/cha.png"><span></span></p>
-                    <button type="button" class="login-btn" @click="register()">立即注册</button>
+                    <div style="display:none" class="boxVisible">
+                      <span style=" font-family: '微软雅黑'; color: #F3844F;font-family: '宋体'; font-size: 10px">
+                        手机/验证码/短信验证码/密码不能为空
+                      </span>
+                    </div>
+                    <p class="tips" id="tips">
+                      <img src="static/images/cha.png">
+                      <span></span>
+                    </p>
+                    <button type="button" class="login-btn" @click="register()" style="cursor:pointer;">立即注册</button>
                     <p>
                     	<span>
                     		<label class="my_protocol">
@@ -317,7 +327,10 @@
 </template>
 
 <script>
-import $ from "jquery";
+// import $ from "jquery";
+// import "../js/layer";
+import "../js/licit";
+import "../js/login";
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
@@ -330,13 +343,16 @@ export default {
     return {
     	HOST:HOST,
     	codeSrc:'',
-      	data:{
-      		mobile:'15119276805',
-      		passWord:'123456',
-      		code:'',
-      		smsCode:'',
-      	},
-      
+      data:{
+        mobile:'15119276805',
+        passWord:'123456',
+        code:'',
+        smsCode:'',
+      },
+      isMobile:false,
+      isPassWord:false,
+      isCode:false,
+      isSmsCode:false
     }
   },
   components: {
@@ -344,8 +360,9 @@ export default {
       vSider,
       vFootersimper
   },
-  	created() {
-  		this.showCode();
+  created() {
+      this.showCode();
+      this.init()
  	},
  	methods: {
   		//显示图片验证码
@@ -355,17 +372,31 @@ export default {
 		},
 		//发送短信
 		sendMsg(){
+      let myreg = /^((1[3-9]{1})+\d{9})$/;
+      if(!myreg.test(this.data.mobile)||this.data.mobile.length !== 11){
+        $('#tips').show();
+        $('#tips span').html('手机号不能为空');
+        return false;
+      }
 			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","REGISTER",this.data.mobile,this.data.code).then(result=>{
-            	
-            	if(result.retCode==0){
-                	
-				}else{
-					alert(result.message);
-				}
-		   	}).catch(error =>{});
+            if(result.retCode==0){
+      }else{
+        alert(result.message);
+      }
+      }).catch(error =>{});
 		},
 		//普通登陆
 		register(){
+      let checks = $("input[name=checks]")[0].checked;
+
+      if (!checks) {
+          layer.msg('您未同意服务协议和隐私政策');
+          return;
+      }
+      if(!this.data.code||!this.data.mobile||!this.data.passWord||!this.data.smsCode){
+        $('.boxVisible').css("display","block")
+        return;
+      }
 			webRpc.invoke("memberWebRpc.register",this.data,this.data.smsCode).then(result=>{
 				if(result.retCode==0){
                 	token.setAuthToken(result.data);
@@ -382,7 +413,98 @@ export default {
                 console.log(result.data);
                 this.$router.push('/');
 		   	}).catch(error =>{});
-		}
+    },
+    // 检验手机号码
+    onMobile(){
+      let myreg = /^((1[3-9]{1})+\d{9})$/;
+      if(!myreg.test(this.data.mobile)||this.data.mobile.length !== 11){
+        $('#tips').show();
+        $('#tips span').html('手机号写错了，请重新写手机号码');
+        return false;
+      }
+      this.isMobile=true
+    },
+    // 检验验证码
+    onCode(){
+      if(this.data.code == '' || this.data.code == undefined){
+          $('#tips').show();
+          $('#tips span').html('请输入验证码!');
+          return false
+      }
+      this.isCode=true
+    },
+    //检验密码
+    
+    init(){
+
+        var msg = "";
+        if (msg != '') {
+            $('#tips').show();
+            $('#tips span').html(msg);
+        }
+
+        //提交
+        $('#reg-sub').click(function () {
+            checks = $("input[name=checks]").attr('checked');
+            if (!checks) {
+                layer.msg('您未同意服务协议和隐私政策');
+                return;
+            }
+            var flag = checkForm($('#reg-form'));
+            if (!flag) return;
+            flag = password();
+            if (!flag) return;
+            flag = checkPassword();
+            if (!flag) return;
+
+            var info = $("#reg-form").serialize();
+            $.ajax({
+                type: 'POST',
+                url: "/index.php?m=&c=User&a=register",
+                data: info,
+                dataType: 'Json',
+                success: function (data) {
+                    if (data.status != 200) {
+                        $('#tips').show();
+                        $('#tips span').html(data.message);
+                    } else {
+                        layer.msg('注册成功!', {
+                            time: 1200, //20s后自动关闭
+                        });
+                        window.location.href = "/index.php?m=&c=User&a=login";
+                    }
+                },
+                error: function (e) {
+                    console.log(e)
+                }
+            });
+
+        });
+
+        //验证手机号是否注册
+        $('#phone').change(function () {
+            var phone = $("#phone").val()
+            $.ajax({
+                type: 'POST',
+                url: "/index.php?m=&c=User&a=isRegistered",
+                data: {phone: phone},
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == 366) {
+                        $('#tips').show();
+                        $('#phone').css('border-color', 'red')
+                        $('#tips span').html('手机号已经注册！')
+                        $("#send_scode").addClass("nitclick");
+                    } else {
+                        $('#tips').hide();
+                        $('#phone').css('border-color', '#ccc')
+                        $('#tips span').html('')
+                        $("#send_scode").removeClass("nitclick");
+                    }
+                }
+            });
+        });
+    }
 	}
 };
 

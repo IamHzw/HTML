@@ -1,6 +1,6 @@
 <template>
   <header class="login-header">
-        <a href="" id="logo" class="fl" style="box-sizing: border-box;">
+        <a href="javascript:;" id="logo" class="fl" style="box-sizing: border-box;">
             <img src="../assets/images/logo.png">
         </a>
         <div class="header-right-box clearfix" style="box-sizing: border-box;">
@@ -14,36 +14,34 @@
                 </div>
                 <div id="allmap" style="display: none;"></div>
                 <div class="fl " v-if="currentMember.id==null">
-                    <router-link :to="{name:'Login'}"><a href="" id="index-login">请登录</a>   </router-link>
+                    <router-link :to="{name:'Login'}"><a href="javascript:;" id="index-login">请登录</a>   </router-link>
                 </div>
                 <div class="fl" v-if="currentMember.id==null">
-                	<router-link :to="{name:'Register'}"><a href="" id="index-login">免费注册</a>   </router-link>
+                	<router-link :to="{name:'Register'}"><a href="javascript:;" id="index-login">免费注册</a>   </router-link>
                 </div>
                 <div class="fl" v-if="currentMember.id!=null">
-                	<router-link :to="{name:'UserIndex'}"><a href="" id="index-login">个人中心</a>   </router-link>
+                	<router-link :to="{name:'UserIndex'}"><a href="javascript:;" id="index-login">个人中心</a>   </router-link>
                 </div>
                 <div class="fl">
-                    <a href="" id="index-login">联系客服</a>    
+                    <a href="javascript:;" id="index-login">联系客服</a>    
+                </div>
+                <div class="fl wx">
+                    <a href="javascript:;">
+                        <p id="index-login">微信公众号</p>
+                        <div class="mslide"><img src="../assets/images/ewm.png"></div>
+                    </a>  
                 </div>
                 <div class="fl">
-                    <a href="" id="index-login">微信公众号</a>    
-                </div>
-                <div class="fl">
-                    <router-link :to="{name:'About'}"><a href="" id="index-login">关于我们</a></router-link>
-                    <!-- <a href="" id="index-login">关于我们</a>     -->
+                    <router-link :to="{name:'About'}"><a href="javascript:;" id="index-login">关于我们</a></router-link>
                 </div>
             </div>
             <div class="header-bottom fr">
                 <div class="login-nav fl">
                     <div>
-                        <!-- <a>测试分析</a> -->
-                        <router-link :to="{name:'Project'}"><a>测试分析</a></router-link>
-                        <!-- <div id="login-nav-list">
-                        </div> -->
+                        <router-link :to="{name:'Project'}"><a href="javascript:;">测试分析</a></router-link>
                     </div>
                     <div>
-                        <!-- <a id="yjyy">微纳加工</a> -->
-                        <router-link :to="{name:'Biologys'}"><a>微纳加工</a></router-link>
+                        <router-link :to="{name:'Biologys'}"><a href="javascript:;">微纳加工</a></router-link>
                         <div id="login-nav-list2" class="clearfix">
 
                         </div>
@@ -53,19 +51,16 @@
                         </form>
                     </div>
                     <div class="clearfix">
-                        <!-- <a href="">模拟计算</a> -->
-                        <router-link :to="{name:'Simulate'}"><a href="">模拟计算</a></router-link>
+                        <router-link :to="{name:'Simulate'}"><a href="avascript:;">模拟计算</a></router-link>
                     </div>
                     <div class="clearfix">
-                        <!-- <a href="">科研作图</a> -->
-                        <router-link :to="{name:'Drafting'}"><a href="">科研作图</a></router-link>
+                        <router-link :to="{name:'Drafting'}"><a href="avascript:;">科研作图</a></router-link>
                     </div>
                     <div class="clearfix">
-                        <!-- <a href="">翻译润色</a> -->
-                        <router-link :to="{name:'Scipolish'}"><a href="">翻译润色</a></router-link>
+                        <router-link :to="{name:'Scipolish'}"><a href="avascript:;">翻译润色</a></router-link>
                     </div>
                     <div class="clearfix">
-                        <a href="">一键预约</a>
+                        <a href="avascript:;">一键预约</a>
                     </div>
                     <div id="header-search" class="clearfix">
                         <form action="" method="post">

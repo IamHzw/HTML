@@ -12,133 +12,133 @@ export default new Router({
       component: resolve => require(["./views/Home.vue"], resolve)
     },
     {
-      path: '/project',
-      name: 'Project',
+      path: "/project",
+      name: "Project",
       component: resolve => require(["./views/Project.vue"], resolve)
     },
     {
-      path: '/projectDetails',
-      name: 'ProjectDetails',
+      path: "/projectDetails",
+      name: "ProjectDetails",
       component: resolve => require(["./views/Project_details.vue"], resolve)
     },
     {
-      path: '/login',
-      name: 'Login',
+      path: "/login",
+      name: "Login",
       component: resolve => require(["./views/Login.vue"], resolve)
     },
     {
-      path: '/register',
-      name: 'Register',
+      path: "/register",
+      name: "Register",
       component: resolve => require(["./views/Register.vue"], resolve)
     },
     {
-      path: '/about',
-      name: 'About',
+      path: "/about",
+      name: "About",
       component: resolve => require(["./views/About.vue"], resolve)
     },
     {
-      path: '/partnership',
-      name: 'Partnership',
+      path: "/partnership",
+      name: "Partnership",
       component: resolve => require(["./views/Partnership.vue"], resolve)
     },
     {
-      path: '/notice',
-      name: 'Notice',
+      path: "/notice",
+      name: "Notice",
       component: resolve => require(["./views/Notice.vue"], resolve)
     },
     {
-      path: '/noticeFirst',
-      name: 'NoticeFirst',
+      path: "/noticeFirst",
+      name: "NoticeFirst",
       component: resolve => require(["./views/NoticeFirst.vue"], resolve)
     },
     {
-      path: '/noticeSecond',
-      name: 'NoticeSecond',
+      path: "NoticeFirst",
+      name: "NoticeSecond",
       component: resolve => require(["./views/NoticeSecond.vue"], resolve)
     },
     {
-      path: '/noticeThirdly',
-      name: 'NoticeThirdly',
+      path: "/noticeThirdly",
+      name: "NoticeThirdly",
       component: resolve => require(["./views/NoticeThirdly.vue"], resolve)
     },
     {
-      path: '/noticeFourthly',
-      name: 'NoticeFourthly',
+      path: "/noticeFourthly",
+      name: "NoticeFourthly",
       component: resolve => require(["./views/NoticeFourthly.vue"], resolve)
     },
     {
-      path: '/noticeFifth',
-      name: 'NoticeFifth',
+      path: "/noticeFifth",
+      name: "NoticeFifth",
       component: resolve => require(["./views/NoticeFifth.vue"], resolve)
     },
     {
-      path: '/noticeSixth',
-      name: 'NoticeSixth',
+      path: "/noticeSixth",
+      name: "NoticeSixth",
       component: resolve => require(["./views/NoticeSixth.vue"], resolve)
     },
     {
-      path: '/noticeSeventh',
-      name: 'NoticeSeventh',
+      path: "/noticeSeventh",
+      name: "NoticeSeventh",
       component: resolve => require(["./views/NoticeSeventh.vue"], resolve)
     },
     {
-      path: '/noticeEighth',
-      name: 'NoticeEighth',
+      path: "/noticeEighth",
+      name: "NoticeEighth",
       component: resolve => require(["./views/NoticeEighth.vue"], resolve)
     },
     {
-      path: '/product',
-      name: 'Product',
+      path: "/product",
+      name: "Product",
       component: resolve => require(["./views/Product.vue"], resolve)
     },
     {
-      path: '/biologys',
-      name: 'Biologys',
+      path: "/biologys",
+      name: "Biologys",
       component: resolve => require(["./views/Biologys.vue"], resolve)
     },
     {
-      path: '/biologysProt',
-      name: 'BiologysProt',
+      path: "/biologysProt",
+      name: "BiologysProt",
       component: resolve => require(["./views/BiologysProt.vue"], resolve)
     },
     {
-      path: '/newdemand',
-      name: 'Newdemand',
+      path: "/newdemand",
+      name: "Newdemand",
       component: resolve => require(["./views/Newdemand.vue"], resolve)
     },
     {
-      path: '/drafting',
-      name: 'Drafting',
+      path: "/drafting",
+      name: "Drafting",
       component: resolve => require(["./views/Drafting.vue"], resolve)
     },
     {
-      path: '/simulate',
-      name: 'Simulate',
+      path: "/simulate",
+      name: "Simulate",
       component: resolve => require(["./views/Simulate.vue"], resolve)
     },
     {
-      path: '/scipolish',
-      name: 'Scipolish',
+      path: "/scipolish",
+      name: "Scipolish",
       component: resolve => require(["./views/Scipolish.vue"], resolve)
     },
     {
-      path: '/scipolishen',
-      name: 'Scipolishen',
+      path: "/scipolishen",
+      name: "Scipolishen",
       component: resolve => require(["./views/Scipolishen.vue"], resolve)
     },
     {
-      path: '/translate',
-      name: 'Translate',
+      path: "/translate",
+      name: "Translate",
       component: resolve => require(["./views/Scipolishen.vue"], resolve)
     },
     {
-      path: '/scisupport',
-      name: 'Scisupport',
+      path: "/scisupport",
+      name: "Scisupport",
       component: resolve => require(["./views/Scisupport.vue"], resolve)
     },
     {
-      path: '/userIndex',
-      name: 'UserIndex',
+      path: "/userIndex",
+      name: "UserIndex",
       component: resolve => require(["./views/UserId.vue"], resolve)
     },
     {

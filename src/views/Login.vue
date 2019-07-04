@@ -14,7 +14,7 @@
 	                  	</div>
 	                  	<div class="login-input">
 	                      	<input type="password" placeholder="登录密码" v-model="data.passWord" class="licit"  data-show="acctips">
-	                      	<a href="index.php-m=&amp;c=User&amp;a=forget.html">忘记密码</a>
+	                      	<a href="JavaScript:;">忘记密码</a>
 	                  	</div>
 	                  	<div class="login-input clearfix">
 	                      	<input type="text" placeholder="验证码" class="login-code fl licit" v-model="data.code" data-show="acctips">
@@ -24,7 +24,7 @@
 	                  	</div>
 	                  	<div class="login-remember">
 	                      	<input type="checkbox" name="rememberUser"  checked="true" id="save"/><label for="save">30天内自动登录</label>
-	                      	<a class="login-change fr" @click="changeLoginType(2)"><span>手机动态密码登录</span></a>
+	                      	<a href="javascript:;" class="login-change fr" @click="changeLoginType(2)"><span>手机动态密码登录</span></a>
 	                  	</div>
 	                  	<p class="tips" id="acctips"><img src="static/images/cha.png">
 	                      	<span></span>
@@ -32,7 +32,7 @@
 	                  	<input type="hidden" name="login_way" value="account">
 	                  	<button type="button" class="login-btn" @click="login()">登  录</button>
 	                  	<div class="login-out clearfix">
-	                      	<router-link :to="{name:'Register'}"><a href="" >免费注册</a></router-link>
+	                      	<router-link :to="{name:'Register'}"><a href="javascript:;" >免费注册</a></router-link>
 	                  	</div>
 	              	</form>
 
@@ -59,7 +59,7 @@
 	                  	<button  class="login-btn" @click="loginForPhone()">登  录2</button>
 	                  	
 	                  	<div class="clearfix">
-	                     	<a class="back-login"  @click="changeLoginType(1)"> < 返回账号登录</a>
+	                     	<a class="back-login" href="javascript:;"  @click="changeLoginType(1)"> < 返回账号登录</a>
 	                  	</div>
               		</form>
           		</div>
@@ -91,15 +91,15 @@ export default {
       	},
       	loginType:1,
       	rules: {
-			mobile: [
-				{ required: true, message: '手机号码不能为空', trigger: 'blur' }
-			],
-			passWord: [
-				{ required: true, message: '密码不能为空', trigger: 'blur' }
-			],
-			code: [
-				{ required: true, message: '验证码不能为空', trigger: 'blur' }
-			],
+					mobile: [
+						{ required: true, message: '手机号码不能为空', trigger: 'blur' }
+					],
+					passWord: [
+						{ required: true, message: '密码不能为空', trigger: 'blur' }
+					],
+					code: [
+						{ required: true, message: '验证码不能为空', trigger: 'blur' }
+					],
         },
       	
     }

@@ -3,7 +3,7 @@
         <ul>
             <li>
                 <!-- <script id="qd285215377156bd551e9b4e74592610182f67d9c06b" src="https://wp.qiye.qq.com/qidian/2852153771/56bd551e9b4e74592610182f67d9c06b" charset="utf-8" async defer></script> -->
-                <a id="QQtent">
+                <a id="QQtent" href="javascript:;">
                   <i><img src="../assets/images/slideqq.png"></i>
                   <p>在线客服</p>
                 </a>
@@ -20,6 +20,13 @@
                     <i><img src="../assets/images/slidewx.png"></i>
                     <p>关注微信</p>
                     <div class="mslide"><img src="../assets/images/ewm.png"></div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i><img src="../assets/images/timg.png" style="heigth:200%;"></i>
+                    <p>购物车</p>
+                    <!-- <div class="mslide"><img src="../assets/images/ewm.png"></div> -->
                 </a>
             </li>
         </ul>

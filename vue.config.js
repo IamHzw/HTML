@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = {
   // 基本路径
   // baseUrl: process.env.NODE_ENV === 'production'
@@ -22,17 +24,31 @@ module.exports = {
   // 如果你不需要生产环境的 source map，可以将其设置为 false 以加速生产环境构建。
   productionSourceMap: false,
   // 如果这个值是一个对象，则会通过 webpack-merge 合并到最终的配置中。如果这个值是一个函数，则会接收被解析的配置作为参数。该函数及可以修改配置并不返回任何东西，也可以返回一个被克隆或合并过的配置版本。
-  configureWebpack: config => {
-    if (process.env.NODE_ENV === 'production') {
-      // 为生产环境修改配置...
-    } else {
-      // 为开发环境修改配置...
-    }
-  //   resolve={
-  //     alias: {
-  //       'vue':'vue/dist/vue.js' 
-  //     }
-  //  }
+  // configureWebpack: config => {
+  //   if (process.env.NODE_ENV === 'production') {
+  //     // 为生产环境修改配置...
+  //   } else {
+  //     // 为开发环境修改配置...
+  //   }
+  // //   resolve={
+  // //     alias: {
+  // //       'vue':'vue/dist/vue.js' 
+  // //     }
+  // //  }
+  // },
+  configureWebpack: {
+    plugins: [
+        new webpack.ProvidePlugin({
+
+          $:"jquery",
+
+          jQuery:"jquery",
+
+          "windows.jQuery":"jquery"
+
+        })
+    ]
+
   },
   // resolve: {
   //   alias: {
@@ -63,12 +79,16 @@ module.exports = {
   },
   // webpack-dev-server 相关配置
   devServer: {
-    host: '0.0.0.0',
+    // host: 'localhost',
     port: 8080,
     https: false,
     open: true,
     hotOnly: false,
     proxy: null, // 设置代理
+    // overlay: { //通过设置让浏览器 overlay 同时显示警告和错误
+    //   warnings: true,
+    //   errors: true
+    // },
     before: app => {},
   },
   // PWA 插件相关配置
