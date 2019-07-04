@@ -22,14 +22,14 @@
                 <div class="fl" v-if="currentMember.id!=null">
                 	<router-link :to="{name:'UserIndex'}"><a href="javascript:;" id="index-login">个人中心</a>   </router-link>
                 </div>
-                <div class="fl">
-                    <a href="javascript:;" id="index-login">联系客服</a>    
+                <div class="fl" v-if="currentMember.id!=null" @click="loginOut()">
+                	<a  id="index-login">退出</a>  
                 </div>
-                <div class="fl wx">
-                    <a href="javascript:;">
-                        <p id="index-login">微信公众号</p>
-                        <div class="mslide"><img src="../assets/images/ewm.png"></div>
-                    </a>  
+                <div class="fl">
+                    <a href="javascript:void(0)" id="index-login">联系客服</a>    
+                </div>
+                <div class="fl">
+                    <a href="javascript:void(0)" id="index-login">微信公众号</a>    
                 </div>
                 <div class="fl">
                     <router-link :to="{name:'About'}"><a href="javascript:;" id="index-login">关于我们</a></router-link>
@@ -79,7 +79,7 @@
 
 <script>
 import $ from 'jquery';
-import { webRpc } from '../rpc/index';
+import { webRpc,token } from '../rpc/index';
 
 export default {
     data () {
@@ -140,6 +140,19 @@ export default {
                 }
 
             },{enableHighAccuracy: true})
+        },
+        loginOut(){
+        	
+        	 webRpc.invokeCross("memberWebRpc.logout").then(result=>{
+        	  console.log(result);
+				if(result.retCode==0){
+                	token.clear();
+                	sessionStorage.removeItem('currentMember');
+                	this.$router.push('/login');
+				}else{
+					alert(result.message);
+				}
+		    }).catch(error =>{});
         }
     }
 }

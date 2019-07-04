@@ -46,46 +46,46 @@ export default new Router({
       name: "Notice",
       component: resolve => require(["./views/Notice.vue"], resolve)
     },
-    {
-      path: "/noticeFirst",
-      name: "NoticeFirst",
-      component: resolve => require(["./views/NoticeFirst.vue"], resolve)
-    },
-    {
-      path: "NoticeFirst",
-      name: "NoticeSecond",
-      component: resolve => require(["./views/NoticeSecond.vue"], resolve)
-    },
-    {
-      path: "/noticeThirdly",
-      name: "NoticeThirdly",
-      component: resolve => require(["./views/NoticeThirdly.vue"], resolve)
-    },
-    {
-      path: "/noticeFourthly",
-      name: "NoticeFourthly",
-      component: resolve => require(["./views/NoticeFourthly.vue"], resolve)
-    },
-    {
-      path: "/noticeFifth",
-      name: "NoticeFifth",
-      component: resolve => require(["./views/NoticeFifth.vue"], resolve)
-    },
-    {
-      path: "/noticeSixth",
-      name: "NoticeSixth",
-      component: resolve => require(["./views/NoticeSixth.vue"], resolve)
-    },
-    {
-      path: "/noticeSeventh",
-      name: "NoticeSeventh",
-      component: resolve => require(["./views/NoticeSeventh.vue"], resolve)
-    },
-    {
-      path: "/noticeEighth",
-      name: "NoticeEighth",
-      component: resolve => require(["./views/NoticeEighth.vue"], resolve)
-    },
+    // {
+    //   path: "/noticeFirst",
+    //   name: "NoticeFirst",
+    //   component: resolve => require(["./views/NoticeFirst.vue"], resolve)
+    // },
+    // {
+    //   path: "NoticeFirst",
+    //   name: "NoticeSecond",
+    //   component: resolve => require(["./views/NoticeSecond.vue"], resolve)
+    // },
+    // {
+    //   path: "/noticeThirdly",
+    //   name: "NoticeThirdly",
+    //   component: resolve => require(["./views/NoticeThirdly.vue"], resolve)
+    // },
+    // {
+    //   path: "/noticeFourthly",
+    //   name: "NoticeFourthly",
+    //   component: resolve => require(["./views/NoticeFourthly.vue"], resolve)
+    // },
+    // {
+    //   path: "/noticeFifth",
+    //   name: "NoticeFifth",
+    //   component: resolve => require(["./views/NoticeFifth.vue"], resolve)
+    // },
+    // {
+    //   path: "/noticeSixth",
+    //   name: "NoticeSixth",
+    //   component: resolve => require(["./views/NoticeSixth.vue"], resolve)
+    // },
+    // {
+    //   path: "/noticeSeventh",
+    //   name: "NoticeSeventh",
+    //   component: resolve => require(["./views/NoticeSeventh.vue"], resolve)
+    // },
+    // {
+    //   path: "/noticeEighth",
+    //   name: "NoticeEighth",
+    //   component: resolve => require(["./views/NoticeEighth.vue"], resolve)
+    // },
     {
       path: "/product",
       name: "Product",
