@@ -1,8 +1,10 @@
 <template>
   <header class="login-header">
-        <a href="javascript:;" id="logo" class="fl" style="box-sizing: border-box;">
-            <img src="../assets/images/logo.png">
-        </a>
+  		<router-link  :to="{path:'/home'}" >
+	        <a href="javascript:;" id="logo" class="fl" style="box-sizing: border-box;">
+	            <img src="../assets/images/logo.png">
+	        </a>
+        </router-link>
         <div class="header-right-box clearfix" style="box-sizing: border-box;">
             <div class="header-top fr">
                 <div id="place" class="fl">
