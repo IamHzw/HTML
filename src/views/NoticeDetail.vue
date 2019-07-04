@@ -62,7 +62,12 @@ export default {
 	methods: {
 		getData() {
             webRpc.invoke("articleWebRpc.findById",this.data.id).then(result=>{
-				this.data = result.data;
+            	if(result.retCode==0){
+                	this.data = result.data;
+				}else{
+					alert(result.message);
+				}
+				
 		    }).catch(error =>{});
 		},
 		findTopList(){

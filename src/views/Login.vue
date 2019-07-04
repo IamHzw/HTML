@@ -14,7 +14,7 @@
 	                  	</div>
 	                  	<div class="login-input">
 	                      	<input type="password" placeholder="登录密码" v-model="data.passWord" class="licit"  data-show="acctips">
-	                      	<a href="index.php-m=&amp;c=User&amp;a=forget.html">忘记密码</a>
+	                      	<a href="javascript:void(0)">忘记密码</a>
 	                  	</div>
 	                  	<div class="login-input clearfix">
 	                      	<input type="text" placeholder="验证码" class="login-code fl licit" v-model="data.code" data-show="acctips">
@@ -29,10 +29,9 @@
 	                  	<p class="tips" id="acctips"><img src="static/images/cha.png">
 	                      	<span></span>
 	                  	</p>
-	                  	<input type="hidden" name="login_way" value="account">
 	                  	<button type="button" class="login-btn" @click="login()">登  录</button>
 	                  	<div class="login-out clearfix">
-	                      	<router-link :to="{name:'Register'}"><a href="" >免费注册</a></router-link>
+	                      	<router-link :to="{name:'Register'}"><a href="javascript:void(0)" >免费注册</a></router-link>
 	                  	</div>
 	              	</form>
 
@@ -53,13 +52,12 @@
 	                      	<input type="text" v-model="data.smsCode" placeholder="短信动态码" class="login-code fl" >
 	                      	<div class="login-code-pic fr co" id="send_scode" @click="sendMsg()">发送短信</div>
 	                  	</div>
-	                  	<input type="hidden" name="login_way" value="mobile">
 	                  	<p class="tips" id="tips"><img src="static/images/error.png"><span></span></p>
 	                  	
-	                  	<button  class="login-btn" @click="loginForPhone()">登  录2</button>
+	                  	<button  class="login-btn" @click="loginForPhone()">登  录</button>
 	                  	
 	                  	<div class="clearfix">
-	                     	<a class="back-login"  @click="changeLoginType(1)"> < 返回账号登录</a>
+	                     	<a class="back-login" href="javascript:void(0)"  @click="changeLoginType(1)"> < 返回账号登录</a>
 	                  	</div>
               		</form>
           		</div>
@@ -124,6 +122,11 @@ export default {
 		},
 		//发送短信
 		sendMsg(){
+		
+			if(this.data.code==null || this.data.code ==""){
+				alert("请输入图片验证码")
+				return ;
+			}
 			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","LOGIN",this.data.mobile,this.data.code).then(result=>{
             	console.log(result);
 		   	}).catch(error =>{});
@@ -153,11 +156,11 @@ export default {
 		},
 		//获取当前用户
 		getCurrentMemeber(){
-			webRpc.invoke("memberWebRpc.currentMember").then(result=>{
+			webRpc.invokeCross("memberWebRpc.currentMember").then(result=>{
             	console.log(result);
                 sessionStorage.setItem('currentMember',JSON.stringify(result.data));
                 console.log(result.data);
-                this.$router.push('/');
+                this.$router.push('/home');
 		   	}).catch(error =>{});
 		}
 	}
