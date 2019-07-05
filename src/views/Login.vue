@@ -28,7 +28,7 @@
 	                  	</div>
 	                  	<div  class="login-btn" @click="login()">登  录</div>
 	                  	<div class="login-out clearfix">
-	                      	<router-link :to="{name:'Register'}"><a href="javascript:;" >免费注册</a></router-link>
+	                      	<router-link :to="{name:'register'}"><a href="javascript:;" >免费注册</a></router-link>
 	                  	</div>
 	              	</form>
 
@@ -161,7 +161,7 @@ export default {
             	console.log(result);
                 sessionStorage.setItem('currentMember',JSON.stringify(result.data));
                 console.log(result.data);
-                this.$router.push('/home');
+                this.$router.push('/index');
 		   	}).catch(error =>{});
 		}
 	}

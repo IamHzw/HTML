@@ -53,7 +53,7 @@
     					<a onclick="retest()">服务协议</a>和<a onclick="conceal()">隐私政策</a>
     				</p>
                     <div class="clearfix">
-                        <router-link :to="{name:'Login'}"><a href="javascript:;" >< 已有账号，请登录</a></router-link>
+                        <router-link :to="{name:'login'}"><a href="javascript:;" >< 已有账号，请登录</a></router-link>
                     </div>
                 </form>
             </div>
