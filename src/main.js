@@ -22,6 +22,20 @@ import { rpc } from './rpc/index';
 rpc.setUrl(RPCURL);
 
 
+//使用钩子函数对路由进行权限跳转
+router.beforeEach((to, from, next) => {
+	console.log("TO:");
+	console.log(to.meta.warn);
+	
+	//如果要进行检查权限，且用户没有登陆 ，就跳转至登陆页
+	if(to.meta.warn && sessionStorage.currentMember==null){
+		next('/login');
+		return
+	}
+	
+	next();
+})
+
 Vue.config.productionTip = false;
 new Vue({
   router,

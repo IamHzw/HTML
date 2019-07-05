@@ -1,6 +1,6 @@
 <template>
   <header class="login-header">
-  		<router-link  :to="{path:'/home'}" >
+  		<router-link  :to="{path:'/index'}" >
 	        <a href="javascript:;" id="logo" class="fl" style="box-sizing: border-box;">
 	            <img src="../assets/images/logo.png">
 	        </a>
@@ -8,21 +8,17 @@
         <div class="header-right-box clearfix" style="box-sizing: border-box;">
             <div class="header-top fr">
                 <div id="place" class="fl">
-                    <span id="place-add"></span>
-                    <!-- <a id="place-change">切换</a>
-                    <div id="place-list">
-
-                    </div>-->
+                    <span id="place-add">{{currentCity}}</span>
                 </div>
                 <div id="allmap" style="display: none;"></div>
                 <div class="fl " v-if="currentMember.id==null">
-                    <router-link :to="{name:'Login'}"><a href="javascript:;" id="index-login">请登录</a>   </router-link>
+                    <router-link :to="{name:'login'}"><a href="javascript:;" id="index-login">请登录</a>   </router-link>
                 </div>
                 <div class="fl" v-if="currentMember.id==null">
-                	<router-link :to="{name:'Register'}"><a href="javascript:;" id="index-login">免费注册</a>   </router-link>
+                	<router-link :to="{name:'register'}"><a href="javascript:;" id="index-login">免费注册</a>   </router-link>
                 </div>
                 <div class="fl" v-if="currentMember.id!=null">
-                	<router-link :to="{name:'UserIndex'}"><a href="javascript:;" id="index-login">个人中心</a>   </router-link>
+                	<router-link :to="{name:'home'}"><a href="javascript:;" id="index-login">个人中心</a>   </router-link>
                 </div>
                 <div class="fl" v-if="currentMember.id!=null" @click="loginOut()">
                 	<a  id="index-login">退出</a>  
@@ -34,16 +30,16 @@
                     <a href="javascript:void(0)" id="index-login">微信公众号</a>    
                 </div>
                 <div class="fl">
-                    <router-link :to="{name:'About'}"><a href="javascript:;" id="index-login">关于我们</a></router-link>
+                    <router-link :to="{name:'about'}"><a href="javascript:;" id="index-login">关于我们</a></router-link>
                 </div>
             </div>
             <div class="header-bottom fr">
                 <div class="login-nav fl">
                     <div>
-                        <router-link :to="{name:'Project'}"><a href="javascript:;">测试分析</a></router-link>
+                        <router-link :to="{name:'project'}"><a href="javascript:;">测试分析</a></router-link>
                     </div>
                     <div>
-                        <router-link :to="{name:'Biologys'}"><a href="javascript:;">微纳加工</a></router-link>
+                        <router-link :to="{name:'biologys'}"><a href="javascript:;">微纳加工</a></router-link>
                         <div id="login-nav-list2" class="clearfix">
 
                         </div>
@@ -53,13 +49,13 @@
                         </form>
                     </div>
                     <div class="clearfix">
-                        <router-link :to="{name:'Simulate'}"><a href="avascript:;">模拟计算</a></router-link>
+                        <router-link :to="{name:'simulate'}"><a href="avascript:;">模拟计算</a></router-link>
                     </div>
                     <div class="clearfix">
-                        <router-link :to="{name:'Drafting'}"><a href="avascript:;">科研作图</a></router-link>
+                        <router-link :to="{name:'drafting'}"><a href="avascript:;">科研作图</a></router-link>
                     </div>
                     <div class="clearfix">
-                        <router-link :to="{name:'Scipolish'}"><a href="avascript:;">翻译润色</a></router-link>
+                        <router-link :to="{name:'scipolish'}"><a href="avascript:;">翻译润色</a></router-link>
                     </div>
                     <div class="clearfix">
                         <a href="avascript:;">一键预约</a>
@@ -86,7 +82,8 @@ import { webRpc,token } from '../rpc/index';
 export default {
     data () {
         return {
-            currentMember:{}
+            currentMember:{},
+            currentCity:''
         }
     },
     created () {
@@ -105,6 +102,7 @@ export default {
         	});
         
         }else{
+        	this.currentCity = city;
         	console.log("不用执行获取城市");
         }
         
@@ -113,14 +111,14 @@ export default {
     methods: {
         maps(){
             // 百度地图API功能
-
+			var that = this;
             var map = new BMap.Map("allmap");
             var point = new BMap.Point(108.95,34.27);
             map.centerAndZoom(point,12);
             var geolocation = new BMap.Geolocation();
 
             geolocation.getCurrentPosition(function(r){console.log(r.point)
-
+		
                 if(this.getStatus() == BMAP_STATUS_SUCCESS){
                     var mk = new BMap.Marker(r.point);
                     map.addOverlay(mk);//标出所在地
@@ -129,10 +127,9 @@ export default {
                     var point = new BMap.Point(r.point.lng,r.point.lat);//用所定位的经纬度查找所在地省市街道等信息
                     var gc = new BMap.Geocoder();
                     gc.getLocation(point, function(rs){
-                        $('#place-add').text(rs.addressComponents.city);
-                        var addComp = rs.addressComponents; 
-                        //console.log(rs.addressComponents.city);//地址信息
-                        //alert(rs.address);//弹出所在地址
+                   	 	console.log("----------");
+                    	console.log(that);
+                        that.currentCity = rs.addressComponents.city;
 						sessionStorage.setItem('city',rs.addressComponents.city);
 						console.log(rs.addressComponents.city);
                     });
@@ -144,7 +141,6 @@ export default {
             },{enableHighAccuracy: true})
         },
         loginOut(){
-        	
         	 webRpc.invokeCross("memberWebRpc.logout").then(result=>{
         	  console.log(result);
 				if(result.retCode==0){
@@ -158,6 +154,5 @@ export default {
         }
     }
 }
-</script>
 
-
+</script> 
