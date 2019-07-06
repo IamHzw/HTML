@@ -91,7 +91,10 @@
                 </div>
                 <div class="bottom">
                     <p>欧美母语编辑<br />语言、语法、文风一致性修改<br />术语准确性、逻辑结构调整<br />无限重修</p>
-                    <a class="detail-btn" href="scipolishen.html">了解详情</a>
+                    <router-link  :to="{path:'/scipolishen'}" >
+	        			<a class="detail-btn" href="javascript:;">了解详情</a>
+        			</router-link>
+                    
                 </div>
             </div>
             <div class="service-item service-item_2 fl marginRight55 transition">
@@ -101,7 +104,9 @@
                 </div>
                 <div class="bottom">
                     <p>学科锲合的翻译老师<br />双语专家校译<br />英文语言润色</p>
-                    <a class="detail-btn" href="translate.html">了解详情</a>
+                    <router-link  :to="{path:'/translate'}" >
+	        			<a class="detail-btn" href="javascript:;">了解详情</a>
+        			</router-link>
                 </div>
             </div>
             <div class="service-item service-item_3 fl transition">
@@ -111,7 +116,9 @@
                 </div>
                 <div class="bottom">
                     <p>全套论文润色服务<br />推荐投稿期刊，审稿人<br />投稿协助<br />返退稿协助</p>
-                    <a class="detail-btn" href="scisupport.html">了解详情</a>
+                    <router-link  :to="{path:'/scisupport'}" >
+	        			<a class="detail-btn" href="javascript:;">了解详情</a>
+        			</router-link>
                 </div>
             </div>
         </div>

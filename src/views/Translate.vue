@@ -6,7 +6,7 @@
         <div class="banner-cont">
             <h1>中美学术翻译</h1>
             <p>针对欲投稿高影响因子期刊的科研作者设计。每份稿件均由专业领域的学科专家翻译，双语校对、英文母语编辑润色修改，翻译后的文稿达到国际接收标准。四轮反复的质量把关，帮助研究人员跨越语言障碍，准确表达您的研究成果，实现稿件在高影响因子期刊的顺利发表。</p>
-            <a href="#form">立即下单</a>
+            <a  @click="returnCom('progress')">立即下单</a>
             <img src="https://statics.shiyanjia.com/c/v3/images/paper/translate.png" alt="" />
         </div>
     </div>
@@ -87,7 +87,7 @@
     </div>
 
 
-    <div class="progress">
+    <div class="progress" id="progress">
         <div class="progress-box clearfix">
             <div class="progress-item">
                 <img class="progress-item_1" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_1.png" alt="">
@@ -260,6 +260,17 @@ export default {
       vSider,
       vFootersimper
   },
+   methods: {
+   		//锚点
+	   returnCom(id) {
+	   		const returnEle = document.querySelector("#"+id);
+	   		console.log(returnEle)
+	    	if (!!returnEle) {
+	      		returnEle.scrollIntoView(true);
+	    	}
+	  	}
+   	
+   }
 }
 </script>
 

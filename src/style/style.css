@@ -1,7 +1,7 @@
-body{font-family: '寰蒋闆呴粦';font-size: 14px;min-width: 1200px;padding-top:95px;background: url('../assets/images/bg.png') center no-repeat;}
+body{font-family: '寰蒋闆呴粦';font-size: 14px;min-width: 1200px;padding-top:95px;}
 .wrap{width: 1200px;margin: 0 auto;}
 #content{padding: 40px 0 55px;}
-footer{line-height: 48px;height: 48px;text-align: center;background: #000;color: #7f90a5;}
+footer{line-height: 48px;height: 48px;text-align: center;background: #000;color: #929aa3;font-size: 12px;}
 footer img{vertical-align: middle;}
 header{height: 100px;background: #fff;border-bottom: 1px solid #e9e9e9;box-sizing: border-box;position: fixed;top:0;left: 0;width: 100%;z-index: 100000;}
 #logo{margin: 30px 50px 0 10px;}
@@ -522,26 +522,30 @@ width: 15%;
 #prestore-search,#consign-search{height: 338px;  overflow: auto;}
 #prestore-result,#consign-result{height:260px;display: none}
 #login-content{
-    width:1200px;
+        width: 1200px;
     margin: 0 auto;
     /* height: 854px; */
-    margin:auto;
+    margin: auto;
+    padding-bottom: 200px;
     position: relative;
-    min-height: 510px;
+    min-height: 550px;
     /* padding-top: 95px; */
-    display: flex}
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 50px;
+ }
 .login_backImg{
  background: url('../assets/images/loginbg.jpg') center  no-repeat;
 }
 #login-content .login_imgBack{
  width: 550px;
  height: 600px;
- top: 32px;
  position: relative;
  background: url('../assets/images/register_pic.png') bottom right no-repeat;
 }
 .login{padding: 0 55px 30px 62px;background: #fff;border: 1px solid #dcdcdc;width: 320px;
- height: 600px;margin-left: 100px;
+ height: 630px;margin-left: 100px;
 }
 .login_back{
  /* height: 800px; */

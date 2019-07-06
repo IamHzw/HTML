@@ -177,6 +177,10 @@ export default {
 		//收藏或取消
     	collection(){
 			
+			if(this.currentMember.id ==null || this.currentMember.id ==""){
+				layer.msg("请先登陆");
+				return;
+			}
 			if(this.iscollection){
 				//已收藏
 				webRpc.invoke("collectWebRpc.delete",this.data.id,this.currentMember.id).then(result=>{
@@ -199,7 +203,7 @@ export default {
 					}
 				
 			    }).catch(error =>{});
-				}
+			}
    	 	},
    	 	//切换Tab
    	 	changeTab(val){

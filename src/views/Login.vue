@@ -8,13 +8,13 @@
           		<h2>测试狗账号登录</h2>
           		<div>
 	            	<!-- 密码登录 -->
-	              	<form class="login-name licitform" ref="data" :model="data" :rules="rules"  v-if="loginType==1">
+	              	<form class="login-name licitform" ref="data" :model="data" :rules="rules"  v-if="loginType==1" @submit.native.prevent>
 	                  	<div class="login-input" prop="categoryId">
 	                      	<input type="text" placeholder="手机号"  class="licit" v-model="data.mobile"  data-show="acctips">
 	                  	</div>
 	                  	<div class="login-input">
 	                      	<input type="password" placeholder="登录密码" v-model="data.passWord" class="licit"  data-show="acctips">
-	                      	<a href="javascript:void(0)">忘记密码</a>
+	                      	<a href="javascript:;">忘记密码</a>
 	                  	</div>
 	                  	<div class="login-input clearfix">
 	                      	<input type="text" placeholder="验证码" class="login-code fl licit" v-model="data.code" data-show="acctips">
@@ -26,17 +26,14 @@
 	                      	<input type="checkbox" name="rememberUser"  checked="true" id="save"/><label for="save">30天内自动登录</label>
 	                      	<a href="javascript:;" class="login-change fr" @click="changeLoginType(2)"><span>手机动态密码登录</span></a>
 	                  	</div>
-	                  	<p class="tips" id="acctips"><img src="static/images/cha.png">
-	                      	<span></span>
-	                  	</p>
-	                  	<button type="button" class="login-btn" @click="login()">登  录</button>
+	                  	<div  class="login-btn" @click="login()">登  录</div>
 	                  	<div class="login-out clearfix">
-	                      	<router-link :to="{name:'Register'}"><a href="javascript:void(0)" >免费注册</a></router-link>
+	                      	<router-link :to="{name:'register'}"><a href="javascript:;" >免费注册</a></router-link>
 	                  	</div>
 	              	</form>
 
               		<!-- 手机验证码登录 -->
-              		<form class="login-phone licitform" v-if="loginType==2" >
+              		<form class="login-phone licitform" v-if="loginType==2" @submit.native.prevent>
 	                  	<div class="login-input">
 	                      	<input type="text" v-model="data.mobile"  placeholder="手机号" class="licit"  data-show="tips">
 	                  	</div>
@@ -54,10 +51,10 @@
 	                  	</div>
 	                  	<p class="tips" id="tips"><img src="static/images/error.png"><span></span></p>
 	                  	
-	                  	<button  class="login-btn" @click="loginForPhone()">登  录</button>
+	                  	<div  class="login-btn" @click="loginForPhone()">登  录</div>
 	                  	
 	                  	<div class="clearfix">
-	                     	<a class="back-login" href="javascript:void(0)"  @click="changeLoginType(1)"> < 返回账号登录</a>
+	                     	<a class="back-login" href="javascript:;"  @click="changeLoginType(1)"> < 返回账号登录</a>
 	                  	</div>
               		</form>
           		</div>
@@ -124,11 +121,15 @@ export default {
 		sendMsg(){
 		
 			if(this.data.code==null || this.data.code ==""){
-				alert("请输入图片验证码")
+				layer.msg("请输入图片验证码")
 				return ;
 			}
 			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","LOGIN",this.data.mobile,this.data.code).then(result=>{
-            	console.log(result);
+            	if(result.retCode==0){
+            		layer.msg("手机验证码已发送，请注意查收");
+      			}else{
+        			layer.msg(result.message);
+      			}
 		   	}).catch(error =>{});
 		},
 		//普通登陆
@@ -138,7 +139,7 @@ export default {
                 	token.setAuthToken(result.data);
                 	this.getCurrentMemeber();
 				}else{
-					alert(result.message);
+					layer.msg(result.message);
 				}
 		    }).catch(error =>{});
 		},
@@ -150,7 +151,7 @@ export default {
                 	token.setAuthToken(result.data);
                 	this.getCurrentMemeber();
 				}else{
-					alert(result.message);
+					layer.msg(result.message);
 				}
 		    }).catch(error =>{});
 		},
@@ -160,7 +161,7 @@ export default {
             	console.log(result);
                 sessionStorage.setItem('currentMember',JSON.stringify(result.data));
                 console.log(result.data);
-                this.$router.push('/home');
+                this.$router.push('/index');
 		   	}).catch(error =>{});
 		}
 	}

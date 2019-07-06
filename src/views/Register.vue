@@ -11,16 +11,15 @@
             <div>
                 <form class="login-phone licitform" id="reg-form">
                     <div class="login-input">
-                        <input  type="text" v-model.trim="data.mobile" placeholder="请输入手机号"  data-show="tips" @blur.prevent="onMobile()">
+                        <input  type="text" v-model.trim="data.mobile" placeholder="请输入手机号"  data-show="tips" >
                     </div>
                     <div class="login-input">
                       <div class="clearfix">
-                        <input type="text" v-model.trim="data.code" placeholder="验证码" class="login-code fl licit" data-show="tips" @blur.prevent="onCode()">
+                        <input type="text" v-model.trim="data.code" placeholder="验证码" class="login-code fl licit" data-show="tips" >
                         <div class="login-code-pic fr">
                             <img id="verify_btn" :src="codeSrc" style="float:left;cursor: pointer;" @click="showCode()">
                         </div>
                       </div>
-                    
                     </div>
 
                     <div class="login-input clearfix">
@@ -42,15 +41,6 @@
                         <input type="text" v-model.trim="data.inviteCode" value="" placeholder="请输入邀请码/可不填">
                     </div>
 
-                    <div style="display:none" class="boxVisible">
-                      <span style=" font-family: '微软雅黑'; color: #F3844F;font-family: '宋体'; font-size: 10px">
-                        手机/验证码/短信验证码/密码不能为空
-                      </span>
-                    </div>
-                    <p class="tips" id="tips">
-                      <img src="static/images/cha.png">
-                      <span></span>
-                    </p>
                     <button type="button" class="login-btn" @click="register()" style="cursor:pointer;">立即注册</button>
                     <p>
                     	<span>
@@ -63,7 +53,7 @@
     					<a onclick="retest()">服务协议</a>和<a onclick="conceal()">隐私政策</a>
     				</p>
                     <div class="clearfix">
-                        <a href="/index.php?m=&c=User&a=login" class="back-login fr"> < 已有账号，请登录</a>
+                        <router-link :to="{name:'login'}"><a href="javascript:;" >< 已有账号，请登录</a></router-link>
                     </div>
                 </form>
             </div>
@@ -362,7 +352,6 @@ export default {
   },
   created() {
       this.showCode();
-      this.init()
  	},
  	methods: {
   		//显示图片验证码
@@ -372,37 +361,24 @@ export default {
 		},
 		//发送短信
 		sendMsg(){
-      let myreg = /^((1[3-9]{1})+\d{9})$/;
-      if(!myreg.test(this.data.mobile)||this.data.mobile.length !== 11){
-        $('#tips').show();
-        $('#tips span').html('手机号不能为空');
-        return false;
-      }
+      	
 			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","REGISTER",this.data.mobile,this.data.code).then(result=>{
-            if(result.retCode==0){
-      }else{
-        alert(result.message);
-      }
-      }).catch(error =>{});
+            	if(result.retCode==0){
+            		layer.msg("手机验证码已发送，请注意查收");
+      			}else{
+        			layer.msg(result.message);
+      			}
+      		}).catch(error =>{});
 		},
 		//普通登陆
 		register(){
-      let checks = $("input[name=checks]")[0].checked;
 
-      if (!checks) {
-          layer.msg('您未同意服务协议和隐私政策');
-          return;
-      }
-      if(!this.data.code||!this.data.mobile||!this.data.passWord||!this.data.smsCode){
-        $('.boxVisible').css("display","block")
-        return;
-      }
 			webRpc.invoke("memberWebRpc.register",this.data,this.data.smsCode).then(result=>{
 				if(result.retCode==0){
                 	token.setAuthToken(result.data);
                 	this.getCurrentMemeber();
 				}else{
-					alert(result.message);
+					layer.msg(result.message);
 				}
 		    }).catch(error =>{});
 		},
@@ -413,98 +389,7 @@ export default {
                 console.log(result.data);
                 this.$router.push('/');
 		   	}).catch(error =>{});
-    },
-    // 检验手机号码
-    onMobile(){
-      let myreg = /^((1[3-9]{1})+\d{9})$/;
-      if(!myreg.test(this.data.mobile)||this.data.mobile.length !== 11){
-        $('#tips').show();
-        $('#tips span').html('手机号写错了，请重新写手机号码');
-        return false;
-      }
-      this.isMobile=true
-    },
-    // 检验验证码
-    onCode(){
-      if(this.data.code == '' || this.data.code == undefined){
-          $('#tips').show();
-          $('#tips span').html('请输入验证码!');
-          return false
-      }
-      this.isCode=true
-    },
-    //检验密码
-    
-    init(){
-
-        var msg = "";
-        if (msg != '') {
-            $('#tips').show();
-            $('#tips span').html(msg);
-        }
-
-        //提交
-        $('#reg-sub').click(function () {
-            checks = $("input[name=checks]").attr('checked');
-            if (!checks) {
-                layer.msg('您未同意服务协议和隐私政策');
-                return;
-            }
-            var flag = checkForm($('#reg-form'));
-            if (!flag) return;
-            flag = password();
-            if (!flag) return;
-            flag = checkPassword();
-            if (!flag) return;
-
-            var info = $("#reg-form").serialize();
-            $.ajax({
-                type: 'POST',
-                url: "/index.php?m=&c=User&a=register",
-                data: info,
-                dataType: 'Json',
-                success: function (data) {
-                    if (data.status != 200) {
-                        $('#tips').show();
-                        $('#tips span').html(data.message);
-                    } else {
-                        layer.msg('注册成功!', {
-                            time: 1200, //20s后自动关闭
-                        });
-                        window.location.href = "/index.php?m=&c=User&a=login";
-                    }
-                },
-                error: function (e) {
-                    console.log(e)
-                }
-            });
-
-        });
-
-        //验证手机号是否注册
-        $('#phone').change(function () {
-            var phone = $("#phone").val()
-            $.ajax({
-                type: 'POST',
-                url: "/index.php?m=&c=User&a=isRegistered",
-                data: {phone: phone},
-                dataType: 'json',
-                success: function (data) {
-                    if (data.status == 366) {
-                        $('#tips').show();
-                        $('#phone').css('border-color', 'red')
-                        $('#tips span').html('手机号已经注册！')
-                        $("#send_scode").addClass("nitclick");
-                    } else {
-                        $('#tips').hide();
-                        $('#phone').css('border-color', '#ccc')
-                        $('#tips span').html('')
-                        $("#send_scode").removeClass("nitclick");
-                    }
-                }
-            });
-        });
-    }
+    	},
 	}
 };
 

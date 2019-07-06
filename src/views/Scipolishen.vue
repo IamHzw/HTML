@@ -7,7 +7,7 @@
             <div class="l-banner fl">
                 <h1>英文润文润色</h1>
                 <p>科学指南针拥有全球最大领先的专业润色团队之一<br />致力于为非英语母语的作者<br />提供高质量的SCI英文论文润色服务</p>
-                <a class="btn" href="#progress">立即下单</a>
+                <a class="btn"  @click="returnCom('progress')">立即下单</a>
             </div>
             <div class="r-banner fr"></div>
         </div>
@@ -193,7 +193,7 @@
             </div>
         </div>
     </div>
-    <div class="form">
+    <div class="form" id="progress">
         <p class="tips">下单过程中，有任何需求可咨询客服经理：刘健铭（15321381380），收到文稿后我们会在1个工作日与您联系</p>
         <form id="form1" class="layui-form">
             <input type="hidden" id="buffetid" name="buffetid" value="189" />
@@ -336,6 +336,17 @@ export default {
       vSider,
       vFootersimper
   },
+	methods: {
+   		//锚点
+	   returnCom(id) {
+	   		const returnEle = document.querySelector("#"+id);
+	   		console.log(returnEle)
+	    	if (!!returnEle) {
+	      		returnEle.scrollIntoView(true);
+	    	}
+	  	}
+   	
+   	}
 }
 </script>
 
