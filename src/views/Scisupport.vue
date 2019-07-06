@@ -6,7 +6,7 @@
         <div class="banner-cont">
             <h1 class="banner-title">SCI论文投稿支持</h1>
             <p>全称无忧的服务，SCI论文投稿一站式解决方<br />案，从润色到投稿全程支持，帮助科研人员满<br />足期刊发表要求。</p>
-            <a class="banner-btn" href="#order">立即下单</a>
+            <a class="banner-btn" @click="returnCom('progress')">立即下单</a>
         </div>
     </div>
     <div class="service">
@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-    <div class="progress class-wrap">
+    <div class="progress class-wrap" id="progress">
         <div class="progress-box clearfix">
             <div class="progress-item">
                 <img class="progress-item_1" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_1.png" alt="">
@@ -92,7 +92,7 @@
             </div>
         </div>
     </div>
-    <div id="order" class="form class-wrap">
+    <div  class="form class-wrap">
         <p class="tips">下单过程中，有任何需求可咨询客服经理：刘健铭（15321381380），收到文稿后我们会在1个工作日与您联系</p>
         <form id="form1" class="layui-form">
             <input type="hidden" id="buffetid" name="buffetid" value="191" />
@@ -226,6 +226,17 @@ export default {
       vSider,
       vFootersimper
   },
+     methods: {
+   		//锚点
+	   returnCom(id) {
+	   		const returnEle = document.querySelector("#"+id);
+	   		console.log(returnEle)
+	    	if (!!returnEle) {
+	      		returnEle.scrollIntoView(true);
+	    	}
+	  	}
+   	
+   	}
 }
 </script>
 

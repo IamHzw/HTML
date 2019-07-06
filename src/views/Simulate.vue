@@ -12,7 +12,7 @@
             在得到实验结果后，通过理论计算模拟对实验结果进行支撑，可以增加实验结论的可靠性，提升文章的档次和IF。这也成为了目前科研界众所周知的“捷径”。
           </div>
           <img class="sim-bg" src="https://statics.shiyanjia.com/c/2018/images/simulate/bg.png">
-          <a class="sim-btn sim-btn-active" href="#makeOrder" id="makeAppointment">立即预约</a>
+          <a class="sim-btn sim-btn-active" @click="returnCom('makeAppointment')" >立即预约</a>
         </div>
       </div>
       
@@ -80,7 +80,7 @@
         </div>
       </div>
 
-      <div id="makeOrder" class="commend-box class-wrap">
+      <div id="makeAppointment" class="commend-box class-wrap">
           <div class="info-box clearfix">
               <div class="row row1 fl">
                   <div class="col1 fl font16 color666">
@@ -137,6 +137,18 @@ export default {
       vSider,
       vFootersimper
   },
+	methods: {
+   		//锚点
+	   returnCom(id) {
+	   		const returnEle = document.querySelector("#"+id);
+	   		console.log(returnEle)
+	    	if (!!returnEle) {
+	      		returnEle.scrollIntoView(true);
+	    	}
+	  	}
+   	
+   	}
+   
 }
 </script>
 

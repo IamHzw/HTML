@@ -455,7 +455,7 @@
                     <p>70%项目可隔天测试</p>
                 </div>
                 <div class="choose-bot">
-                    <h6>9100+</h6>
+                    <h6>9700+</h6>
                     <p>服务客户</p>
                 </div>
             </div>
@@ -467,7 +467,7 @@
                     <p>精心整合优质的测试资源</p>
                 </div>
                 <div class="choose-bot">
-                    <h6>97500+</h6>
+                    <h6>61500+</h6>
                     <p>测试样品</p>
                 </div>
             </div>
@@ -479,7 +479,7 @@
                     <p>降低50%以上</p>
                 </div>
                 <div class="choose-bot">
-                    <h6>430+</h6>
+                    <h6>230+</h6>
                     <p>合作单位</p>
                 </div>
             </div>
@@ -491,7 +491,7 @@
                     <p>异地邮寄包邮</p>
                 </div>
                 <div class="choose-bot">
-                    <h6>4.2天</h6>
+                    <h6>5天</h6>
                     <p>平均测试周期</p>
                 </div>
             </div>
