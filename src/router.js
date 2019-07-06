@@ -115,6 +115,13 @@ export default new Router({
       component: resolve => require(["./views/Scisupport.vue"], resolve),
       meta: { title: 'SCI论文', warn:false}
     },
+    // 订单页
+    {
+      path: "/order",
+      name: "Order",
+      component: resolve => require(["./views/Order.vue"], resolve),
+      meta: { title: '订单页', warn:false}
+    },
     // 用户中心
     {
       path: "/userIndex",

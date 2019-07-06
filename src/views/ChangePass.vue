@@ -4,14 +4,14 @@
         <div class="order change-phone">
             <h2>个人设置<span>修改密码</span></h2>
             <div class="phone-wrap">
-                <form id="ch-form" action="/index.php?m=&amp;c=UserInfo&amp;a=changePwd" class="licitform" method="post">
+                <form id="ch-form" class="licitform">
                     <dl>
                         <dt>当前密码：</dt>
                         <dd>
                             <div class="phone-change-box fl">
                                 <input type="password" name="info[opwd]" class="phone-input licit" data-rules="['原密码','1','32','password']" data-show="tips">
                             </div>
-                            <a class="forget-word" href="/index.php?m=&amp;c=User&amp;a=forget">忘记密码？</a>
+                            <a class="forget-word" href="javascript:;">忘记密码？</a>
                         </dd>
                     </dl>
                     <dl>
@@ -31,7 +31,7 @@
                         </dd>
                     </dl>
                     <dl>
-                        <dt> <p class="tips" id="tips"><img src="/static/images/error.png"><span></span></p></dt>
+                        <dt> <p class="tips" id="tips"><img src="../assets/images/error.png"><span></span></p></dt>
                         <dd><button type="submit" class="btn ticket-btn" id="ch-sub">提  交</button> </dd>
                     </dl>
                 </form>

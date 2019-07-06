@@ -5,9 +5,9 @@
             <h2>消息中心</h2>
             <div class="notice-top">
                 <div class="notice-filter fl">
-                    <a class="ac" href="/index.php?m=&amp;c=UserIndex&amp;a=notice">全部</a>
-                    <a class="" href="/index.php?m=&amp;c=UserIndex&amp;a=notice&amp;read=1">已读</a>
-                    <a class="" href="/index.php?m=&amp;c=UserIndex&amp;a=notice&amp;read=0">未读</a>
+                    <a class="ac" href="javascript:;">全部</a>
+                    <a class="" href="javascript:;">已读</a>
+                    <a class="" href="javascript:;">未读</a>
                 </div>
                 <div class="fr notice-static">状态</div>
                 <div class=" notice-static1 fr">发送时间</div>

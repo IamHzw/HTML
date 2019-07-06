@@ -4,7 +4,7 @@
         <div class="order change-phone">
             <h2>个人设置<span>更换认证手机</span></h2>
             <div class="phone-wrap">
-                <form action="/index.php?m=&amp;c=UserInfo&amp;a=changePhone" class="licitform" method="post">
+                <form class="licitform">
                     <dl>
                         <dt>当前认证手机：</dt>
                         <dd>13265929386</dd>
@@ -22,7 +22,7 @@
                         <dd>
                             <div class="phone-change-box">
                                 <input type="text" id="verify" name="verify" class="code-input licit" data-rules="['验证码','1','6']" data-show="tips">
-                                <img id="verify_btn" src="/index.php?m=&amp;c=Public&amp;a=verify&amp;ajax=t" style="float:left;cursor: pointer;" onclick="this.src='/index.php?m=&amp;c=Public&amp;a=verify&amp;ajax=_verify&amp;t='+Math.random();">
+                                <img id="verify_btn" src="" style="float:left;cursor: pointer;" onclick="">
                             </div>
                         </dd>
                     </dl>
@@ -37,7 +37,7 @@
                         </dd>
                     </dl>
                     <dl>
-                        <dt><p class="tips" id="tips"><img src="/static/images/error.png"><span></span></p></dt>
+                        <dt><p class="tips" id="tips"><img src="../assets/images/error.png"><span></span></p></dt>
                         <dd><button type="submit" class="btn ticket-btn">提  交</button> </dd>
                     </dl>
                 </form>
