@@ -136,10 +136,61 @@ export default new Router({
       name: "Scisupport",
       component: resolve => require(["./views/Scisupport.vue"], resolve)
     },
+    // 用户中心
     {
       path: "/userIndex",
-      name: "UserIndex",
-      component: resolve => require(["./views/UserId.vue"], resolve)
+      component: resolve => require(["./views/UserId.vue"], resolve),
+      redirect:{ name: "Personal"},
+      children: [
+        // 个人中心
+        {
+          name: "Personal",
+          path: "/personal",
+          component: resolve => require(["./views/Personal.vue"], resolve),
+        },
+        //订单管理
+        {
+          name: "OrderManagement",
+          path: "/orderManagement",
+          component: resolve => require(["./views/OrderManagement.vue"], resolve),
+        },
+        //消息中心
+        {
+          name: "MessageCenter",
+          path: "/messageCenter",
+          component: resolve => require(["./views/MessageCenter.vue"], resolve),
+        },
+        //我的收藏
+        {
+          name: "Collect",
+          path: "/collect",
+          component: resolve => require(["./views/Collect.vue"], resolve),
+        },
+        //一键预约
+        {
+          name: "Appointment",
+          path: "/appointment",
+          component: resolve => require(["./views/Appointment.vue"], resolve),
+        },
+        //个人设置
+        {
+          name: "PersonalSetting",
+          path: "/personalSetting",
+          component: resolve => require(["./views/PersonalSetting.vue"], resolve),
+        },
+        //设置密码
+        {
+          name: "ChangePass",
+          path: "/changePass",
+          component: resolve => require(["./views/ChangePass.vue"], resolve),
+        },
+        //更换手机
+        {
+          name: "ReplacePhone",
+          path: "/replacePhone",
+          component: resolve => require(["./views/ReplacePhone.vue"], resolve),
+        },
+      ]
     },
     {
       path: "*",
