@@ -578,8 +578,8 @@ export default {
     });
   },
   destroyed(){
-      mySwiper,
-      bswiper
+      //mySwiper,
+      //bswiper
   }
 };
 </script>

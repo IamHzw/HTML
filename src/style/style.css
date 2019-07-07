@@ -339,10 +339,7 @@ width: 15%;
 #apply p span{color: #ff0000;}
 .apply-check{font-size: 12px;color: #878787;}
 .apply-check a{color: #ff0000;}
-.pages{font-size: 0;text-align: center;}
-.pages li{display: inline-block;margin: 0 5px;}
-.pages li a{display: block;padding: 0 17px;font-size: 14px;line-height: 37px;border: 1px solid #e6e6e6;color: #666666;transition: all .3s;background: #fff;}
-.pages li a.ac,.pages li a:hover{color: #fff;background: #01707b;border-color: #01707b;}
+
 /*.login_nav_app >.ac{color: #fff;background: #01707b!important;}*/
 .teacher-asset-wrap{background: #fafafa;}
 .teacher-asset-wrap .user-asset-item{width: 33.33%;}

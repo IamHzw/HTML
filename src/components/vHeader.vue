@@ -18,7 +18,7 @@
                 	<router-link :to="{name:'register'}"><a href="javascript:;" id="index-login">免费注册</a>   </router-link>
                 </div>
                 <div class="fl" v-if="currentMember.id!=null">
-                	<router-link :to="{name:'home'}"><a href="javascript:;" id="index-login">个人中心</a>   </router-link>
+                	<router-link to="home"><a href="javascript:;" id="index-login">个人中心</a>   </router-link>
                 </div>
                 <div class="fl" v-if="currentMember.id!=null" @click="loginOut()">
                 	<a  id="index-login">退出</a>  

@@ -31,7 +31,7 @@
                         </dd>
                     </dl>
                     <dl>
-                        <dt> <p class="tips" id="tips"><img src="../assets/images/error.png"><span></span></p></dt>
+                        <dt> <p class="tips" id="tips"><img src="../../assets/images/error.png"><span></span></p></dt>
                         <dd><button type="submit" class="btn ticket-btn" id="ch-sub">提  交</button> </dd>
                     </dl>
                 </form>

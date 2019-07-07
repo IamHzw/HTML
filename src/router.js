@@ -124,65 +124,67 @@ export default new Router({
     },
     // 用户中心
     {
-      path: "/userIndex",
-      component: resolve => require(["./views/UserId.vue"], resolve),
-      redirect:{ name: "Personal"},
+      path: "/home",
+      component: resolve => require(["./views/home/Home.vue"], resolve),
+      meta: { title: '用户中心', warn:true},
+      name: "home",
+      redirect: 'home/personal',
       children: [
         // 个人中心
         {
           name: "Personal",
-          path: "/personal",
-          component: resolve => require(["./views/Personal.vue"], resolve),
-          meta: { title: '用户中心', warn:false}
+          path: "personal",
+          component: resolve => require(["./views/home/Personal.vue"], resolve),
+          meta: { title: '个人中心', warn:true}
         },
         //订单管理
         {
           name: "OrderManagement",
-          path: "/orderManagement",
-          component: resolve => require(["./views/OrderManagement.vue"], resolve),
-          meta: { title: '用户中心', warn:false}
+          path: "orderManagement",
+          component: resolve => require(["./views/home/OrderManagement.vue"], resolve),
+          meta: { title: '用户中心', warn:true}
         },
         //消息中心
         {
           name: "MessageCenter",
-          path: "/messageCenter",
-          component: resolve => require(["./views/MessageCenter.vue"], resolve),
-          meta: { title: '用户中心', warn:false}
+          path: "messageCenter",
+          component: resolve => require(["./views/home/MessageCenter.vue"], resolve),
+          meta: { title: '用户中心', warn:true}
         },
         //我的收藏
         {
           name: "Collect",
-          path: "/collect",
-          component: resolve => require(["./views/Collect.vue"], resolve),
-          meta: { title: '用户中心', warn:false}
+          path: "collect",
+          component: resolve => require(["./views/home/Collect.vue"], resolve),
+          meta: { title: '用户中心', warn:true}
         },
         //一键预约
         {
           name: "Appointment",
-          path: "/appointment",
-          component: resolve => require(["./views/Appointment.vue"], resolve),
-          meta: { title: '用户中心', warn:false}
+          path: "appointment",
+          component: resolve => require(["./views/home/Appointment.vue"], resolve),
+          meta: { title: '用户中心', warn:true}
         },
         //个人设置
         {
           name: "PersonalSetting",
-          path: "/personalSetting",
-          component: resolve => require(["./views/PersonalSetting.vue"], resolve),
-          meta: { title: '用户中心', warn:false}
+          path: "personalSetting",
+          component: resolve => require(["./views/home/PersonalSetting.vue"], resolve),
+          meta: { title: '用户中心', warn:true}
         },
         //设置密码
         {
           name: "ChangePass",
-          path: "/changePass",
-          component: resolve => require(["./views/ChangePass.vue"], resolve),
-          meta: { title: '用户中心', warn:false}
+          path: "changePass",
+          component: resolve => require(["./views/home/ChangePass.vue"], resolve),
+          meta: { title: '用户中心', warn:true}
         },
         //更换手机
         {
           name: "ReplacePhone",
-          path: "/replacePhone",
-          component: resolve => require(["./views/ReplacePhone.vue"], resolve),
-          meta: { title: '用户中心', warn:false}
+          path: "replacePhone",
+          component: resolve => require(["./views/home/ReplacePhone.vue"], resolve),
+          meta: { title: '用户中心', warn:true}
         },
       ]
     },

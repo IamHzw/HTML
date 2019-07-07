@@ -29,17 +29,7 @@
                 <h3 style="font-size: 12px !important;padding-top: 6px">{{data.subTitle}}</h3>
             </div>
         </div>
-        <ul class="pages index-pages">  
-          <li>
-            <a class="ac">1</a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">2</a>
-          </li> 
-          <li>
-            <a class="next" href="javascript:void(0)">下一页</a>
-          </li> 
-        </ul>
+        <v-Page :total.sync="totalElements" :current-page.sync='page.page+1' :display.sync = 'page.size' @pagechange="pagechange"></v-Page>
     </div>
     <v-Footersimper></v-Footersimper>
   </div>
@@ -50,6 +40,7 @@
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
+import  vPage from "../components/vPage.vue";
 import { webRpc } from '../rpc/index';
 import { HOST } from '../config';
 
@@ -58,21 +49,22 @@ export default {
     return {
       	HOST:HOST,
         datalist: [],
-        totalElements:1,
+        totalElements:0,
         query:{
         	categoryId:''
         },
         categoryList:{},
         page:{
            	page:0,
-			size:7
+			size:1
 		},
     }
   },
   components: {
       vHeader,
       vSider,
-      vFootersimper
+      vFootersimper,
+      vPage
   }, 
 	created () {
 		this.findByParentCode();
@@ -96,7 +88,7 @@ export default {
 		getData() {
             webRpc.invoke("productWebRpc.findPage",this.query,this.page).then(result=>{
 				this.datalist = result.data.content;
-				
+				this.totalElements = result.data.totalElements;
 		    }).catch(error =>{});
 		},
 		//切换类型
@@ -109,6 +101,11 @@ export default {
 		//去详情页
 		toDetail(id){
 			this.$router.push('/product?id='+id);
+		},
+		pagechange(val){
+			console.log(val);
+			this.page.page = val-1;
+			this.getData();
 		},
 	}
 };
