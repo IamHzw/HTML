@@ -394,11 +394,11 @@ width: 15%;
 .setting .user-pic{width:142px;height: 142px;padding: 5px;margin-top: 10px;}
 .setting .user-text h5{line-height: 60px;}
 .setting .user-text a{display: block;width: 122px;text-align: center;line-height: 37px;border-radius: 13px;background: #ff6728;color: #fff;}
-.setting-form dl{color: #000;line-height: 49px;margin-bottom: 33px;}
+.setting-form dl{color: #000;line-height: 39px;margin-bottom: 13px;}
 .setting-form dt{width: 110px;text-align: right;float: left;}
 .setting-form dd{margin-left: 135px;}
 .setting-form dd a{margin-left: 180px;color: #df0000;}
-.setting-form input[type="text"],.setting-form select{width: 274px;height: 49px;box-sizing: border-box;border: 1px solid #d2d2d2;line-height: 47px;padding: 0 30px;border-radius: 5px;font-size: 14px;}
+.setting-form input[type="text"],.setting-form select{width: 274px;height: 35px;box-sizing: border-box;border: 1px solid #d2d2d2;line-height: 47px;padding: 0 10px;border-radius: 5px;font-size: 14px;}
 .setting-form input[type="text"].add-input{width: 640px;}
 .setting-form dd input[type='radio']{margin-right: 8px;}
 .setting-form dd label{margin-right: 30px;}
@@ -444,9 +444,9 @@ width: 15%;
 .notice-static{width: 137px;border-left: 2px solid #fff;text-align: center;}
 .notice-static1{width: 250px;border-left: 2px solid #fff;text-align: center;}
 .notice-list{line-height: 71px;border-bottom: 1px solid #f1f3f6;margin-bottom: 30px;}
-.notice-list li{border-bottom: 1px solid #f1f3f6; width: 1100px;overflow: hidden}
+.notice-list li{border-bottom: 1px solid #f1f3f6; overflow: hidden}
 .notice-list a{color: #bcbcbc;}
-.notice-list p{float: left;width: 530px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.notice-list p{float: left;width: 530px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;margin-left: 5px;}
 .notice-list .notice-list-static{color: #01707b;margin-left: 785px;text-align: center;}
 
  .notice-list-static1{color: #01707b;margin-left: 380px;text-align: center; width: 400px}
@@ -454,12 +454,12 @@ width: 15%;
 .notice-list .import .notice-list-static{color: #ff0000;}
 .change-phone h2 span{color: #01707b;font-size: 16px;}
 .phone-wrap{padding-top: 45px;}
-.phone-wrap dl{font-size: 14px;line-height: 49px;margin-bottom: 35px;height: 49px;}
-.phone-change-box{position: relative;width: 273px;height: 49px;padding: 0 20px;border: 1px solid #d2d2d2;border-radius: 5px;line-height: 47px;}
+.phone-wrap dl{font-size: 14px;line-height: 49px;margin-bottom: 10px;height: 49px;}
+.phone-change-box{position: relative;width: 273px;height: 35px;padding: 0 10px;border: 1px solid #d2d2d2;border-radius: 5px;line-height: 35px;}
 .phone-change-box img{position: absolute;right: 0;top:4px;}
-.phone-change-box .phone-input{width: 100%;line-height: 47px;font-size: 14px;}
-.phone-change-box .code-input{width: 150px;line-height: 47px;font-size: 14px;}
-.phone-change-box .send-code{line-height: 47px;font-size: 14px;color: #ff6728;float: right;}
+.phone-change-box .phone-input{width: 100%;line-height: 35px;font-size: 14px;}
+.phone-change-box .code-input{width: 150px;line-height: 35px;font-size: 14px;}
+.phone-change-box .send-code{line-height: 35px;font-size: 14px;color: #ff6728;float: right;}
 .phone-change-box .send-code:focus{outline: none;}
 .phone-wrap .forget-word{margin-left: 35px;color: #ff6728;}
 .collection-wrap{padding-top: 45px; height: 20px;line-height: 20px}
@@ -1286,3 +1286,4 @@ em{font-style: normal;}
 
 .fuce_ico{position: relative;width: 25px!important;height: 25px!important;left: 150px;top: -24px;}
 .appoint-filter dd a:after{content: '';width: 1px;height: 13px;position: absolute;background: #b8b8b8;right: -13px;top:11px;}
+.must{color:red;    margin-left: 10px;}

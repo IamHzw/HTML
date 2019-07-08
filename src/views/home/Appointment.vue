@@ -17,7 +17,9 @@
             </div>-->
             <div class="appoint-wrap clearfix" style="padding-top: 50px;">
                 <!--<div class="order-item" align="center"></div>-->
-                <div class="order-item" align="center">暂无数据!</div>                       <form id="temp-form">
+                <div class="order-item" align="center" style="height: 60px;line-height: 60px">暂无数据!</div>                
+                      
+                 <form id="temp-form">
                     <input type="hidden" id="tempid" name="id">
                 </form>
             </div>

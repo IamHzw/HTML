@@ -7,7 +7,7 @@
                 <form class="licitform">
                     <dl>
                         <dt>当前认证手机：</dt>
-                        <dd>13265929386</dd>
+                        <dd>{{currentMember.mobile}}</dd>
                     </dl>
                     <dl>
                         <dt>更换认证手机：</dt>
@@ -22,7 +22,7 @@
                         <dd>
                             <div class="phone-change-box">
                                 <input type="text" id="verify" name="verify" class="code-input licit" data-rules="['验证码','1','6']" data-show="tips">
-                                <img id="verify_btn" src="" style="float:left;cursor: pointer;" onclick="">
+                                <img id="verify_btn" :src="codeSrc" style="float:left;cursor: pointer;" @click="showCode()" class="codeimg">
                             </div>
                         </dd>
                     </dl>
@@ -46,3 +46,37 @@
     </div>
   </div>
 </template>
+
+
+
+<script>
+import $ from 'jquery';
+import { webRpc } from '../../rpc/index';
+import { HOST } from '../../config';
+
+export default {
+    data () {
+        return {
+        	HOST:HOST,
+            currentMember:{},
+            codeSrc:'',
+        }
+    },
+    created () {
+		if(sessionStorage.currentMember!=null){
+			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
+            console.log(this.currentMember);
+        }
+        this.showCode();
+    },
+    methods: {
+		//显示图片验证码
+		showCode() {
+			this.codeSrc = this.HOST+'common/code?t='+Math.random()      
+			console.log(this.codeSrc);
+		},
+  
+    }
+}
+
+</script> 

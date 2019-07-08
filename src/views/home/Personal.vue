@@ -9,10 +9,13 @@
                 <div class="fl user-msg">
                     <div class="user-pic fl"><a href="javascript:;"><img src=""></a></div>
                     <div class="user-text">
-                        <h3>13265929386</h3>
+                        <h3>{{currentMember.mobile}}</h3>
                         <h4></h4>
                         <h5>资料完整度<span class="user-percent"><i style="width: 22%;"></i></span>22%</h5>
-                        <a href="javascript:;">立即完善&gt;&gt;</a>
+                        
+                        <router-link :to="{name:'PersonalSetting'}" >
+                        	<a href="javascript:;">立即完善&gt;&gt;</a> 
+                        </router-link>
                     </div>
                 </div>
                 <div class="fl user-order">
@@ -46,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div class="user-asset">
+           <!-- <div class="user-asset">
                 <div class="user-asset-item" style="width: 33%">
                     <h3>未结算金额</h3>
                     <h4><strong>0.00</strong>元</h4>
@@ -62,7 +65,7 @@
                     <h4><strong>200</strong></h4>
                     <a id="detail" href="javascript:;">查看明细</a>
                 </div>
-            </div>
+            </div> -->
           <div id="withdraw">
               <h2>提现申请</h2>
               <input type="text" name="feeback['content']" id="withdraw-money" placeholder="请输入提现金额">
@@ -77,6 +80,8 @@
             </div>
             <div id="modal"></div>
         </div>
+        
+         
         <div class="order">
             <h2>最近订单</h2>
             <div class="order-wrap">
@@ -86,3 +91,27 @@
     </div>
   </div>
 </template>
+
+<script>
+import $ from 'jquery';
+import { webRpc,token } from '../../rpc/index';
+
+export default {
+    data () {
+        return {
+            currentMember:{},
+        }
+    },
+    created () {
+		if(sessionStorage.currentMember!=null){
+			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
+            console.log(this.currentMember);
+        }
+    },
+    methods: {
+
+  
+    }
+}
+
+</script> 

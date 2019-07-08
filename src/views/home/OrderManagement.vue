@@ -32,7 +32,7 @@
                       </select>-->
             </div>
             <div class="order-wrap">
-                <div class="order-item" align="center">暂无数据!</div>        
+                <div class="order-item" align="center" style="height: 60px;line-height: 60px">暂无数据!</div>        
             </div>
         </div>
 		</div>
