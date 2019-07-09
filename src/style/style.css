@@ -67,8 +67,8 @@ header{height: 100px;background: #fff;border-bottom: 1px solid #e9e9e9;box-sizin
 #slide{width: 230px;background: #FFFFFF;box-sizing: border-box;float: left;}
 #slide a{transition: background .3s;}
 #slide a:hover{background: #F2F2F2}
-.slide-item{border: 1px solid #E7E7E7;border-bottom: none}
-.slide-item h2 a{display: block;line-height: 61px;font-size: 16px;color: #404040;text-align: center}
+.slide-item{border: 1px solid #c2c2c2;border-bottom: none}
+.slide-item h2 a{display: block;line-height: 51px;font-size: 16px;color: #404040;text-align: center}
 .slide-item h2 a img{margin-right: 18px;vertical-align: middle;}
 .slide-set a{line-height: 30px;color: #7F7F7F;display: block;}
 .slide-set{text-align: center;}

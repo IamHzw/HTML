@@ -7,7 +7,7 @@
         <div class="user-wrap">
             <div class="user-top">
                 <div class="fl user-msg">
-                    <div class="user-pic fl"><a href="javascript:;"><img src=""></a></div>
+                    <div class="user-pic fl"><a href="javascript:;"><img src="../../assets/images/head.jpg"></a></div>
                     <div class="user-text">
                         <h3>{{currentMember.mobile}}</h3>
                         <h4></h4>

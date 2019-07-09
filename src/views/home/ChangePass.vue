@@ -4,21 +4,32 @@
         <div class="order change-phone">
             <h2>个人设置<span>修改密码</span></h2>
             <div class="phone-wrap">
-                <form id="ch-form" class="licitform">
+                <form  class="licitform" @submit.native.prevent>
+                    
                     <dl>
-                        <dt>当前密码：</dt>
+                        <dt>图文验证码：</dt>
                         <dd>
-                            <div class="phone-change-box fl">
-                                <input type="password" name="info[opwd]" class="phone-input licit" data-rules="['原密码','1','32','password']" data-show="tips">
+                            <div class="phone-change-box">
+                                <input type="text" class="code-input licit" v-model="code" />
+                                <img id="verify_btn" :src="codeSrc" style="float:left;cursor: pointer;" @click="showCode()" class="codeimg">
                             </div>
-                            <a class="forget-word" href="javascript:;">忘记密码？</a>
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <dt>短信验证码：</dt>
+                        <dd>
+                            <div class="phone-change-box">
+                                <input type="text" v-model="smsCode"  class="code-input licit" />
+                                <button type="button" @click="sendMsg()" class="send-code" >获取验证码</button>
+                            </div>
                         </dd>
                     </dl>
                     <dl>
                         <dt>新密码：</dt>
                         <dd>
                             <div class="phone-change-box">
-                                <input type="password" id="pwd" name="info[pwd]" class="phone-input licit" data-rules="['新密码','1','32','password']" data-show="tips">
+                                <input type="password" v-model="passWord" class="phone-input licit" >
                             </div>
                         </dd>
                     </dl>
@@ -26,13 +37,13 @@
                         <dt>确认密码：</dt>
                         <dd>
                             <div class="phone-change-box">
-                                <input type="password" id="repwd" name="info[repwd]" class="phone-input licit" data-rules="['确认密码','1','32','password']" data-show="tips">
+                                <input type="password" v-model="passWord2" class="phone-input licit" >
                             </div>
                         </dd>
                     </dl>
                     <dl>
                         <dt> <p class="tips" id="tips"><img src="../../assets/images/error.png"><span></span></p></dt>
-                        <dd><button type="submit" class="btn ticket-btn" id="ch-sub">提  交</button> </dd>
+                        <dd><input type="buttom" @click="changePassWord()" class="btn ticket-btn" value="提  交" > </dd>
                     </dl>
                 </form>
             </div>
@@ -40,3 +51,75 @@
     </div>
   </div>
 </template>
+
+
+<script>
+import $ from 'jquery';
+import { webRpc } from '../../rpc/index';
+import { HOST } from '../../config';
+
+export default {
+    data () {
+        return {
+        	HOST:HOST,
+            currentMember:{},
+            codeSrc:'',
+            passWord:'',
+            code:'',
+            smsCode:''
+        }
+    },
+    created () {
+		if(sessionStorage.currentMember!=null){
+			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
+            console.log(this.currentMember);
+        }
+        this.showCode();
+    },
+    methods: {
+		//显示图片验证码
+		showCode() {
+			this.codeSrc = this.HOST+'common/code?t='+Math.random()      
+			console.log(this.codeSrc);
+		},
+		//发送短信
+		sendMsg(){
+		
+			if(this.code==null || this.code ==""){
+				layer.msg("请输入图片验证码");
+				this.showCode();
+				return ;
+			}
+			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","PASSWORD",this.currentMember.mobile,this.code).then(result=>{
+            	if(result.retCode==0){
+            		layer.msg("手机验证码已发送，请注意查收");
+      			}else{
+        			layer.msg(result.message);
+      			}
+		   	}).catch(error =>{});
+		},
+		
+		//发送短信
+		changePassWord(){
+		
+			
+			if(this.smsCode==null || this.smsCode ==""){
+				layer.msg("请输入短信验证码")
+				return ;
+			}
+			webRpc.invokeCross("memberWebRpc.changePassWord",this.currentMember.id,this.passWord,this.currentMember.mobile,this.smsCode).then(result=>{
+            	if(result.retCode==0){
+            		layer.msg("密码修改成功");
+            		this.$router.push('/home/personal');
+      			}else{
+        			layer.msg(result.message);
+      			}
+		   	}).catch(error =>{});
+		},
+		
+  
+    }
+}
+
+</script> 
+

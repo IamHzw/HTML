@@ -3,7 +3,7 @@
 	    <div id="slide-main" class="setting">
 	        <h2>个人设置</h2>
 	        <div class="user-msg">
-	            <div class="user-pic fl"><a><img src=""></a></div>
+	            <div class="user-pic fl"><a><img src="../../assets/images/head.jpg"></a></div>
 	            <div class="user-text">
 	                <h3>{{currentMember.mobile}}</h3>
 	                <h4></h4>
@@ -30,10 +30,10 @@
 	                    <dd>
 	                    	{{currentMember.mobile}}
 	                    	
-	                    	<router-link :to="{name:'ReplacePhone'}" >
+	                    	<!--<router-link :to="{name:'ReplacePhone'}" >
                         		<a hhref="javascript:;">更换认证手机&gt;&gt;</a>
                         	</router-link>
-	                    	
+	                    	-->
 	                    </dd>
 	                </dl>
 	                <dl>

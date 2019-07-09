@@ -23,7 +23,7 @@
 	                      	</div>
 	                  	</div>
 	                  	<div class="login-remember">
-	                      	<input type="checkbox" name="rememberUser"  checked="true" id="save"/><label for="save">30天内自动登录</label>
+	                      	<label for="save">&nbsp;</label>
 	                      	<a href="javascript:;" class="login-change fr" @click="changeLoginType(2)"><span>手机动态密码登录</span></a>
 	                  	</div>
 	                  	<div  class="login-btn" @click="login()">登  录</div>
