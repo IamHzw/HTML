@@ -1275,12 +1275,18 @@ em{font-style: normal;}
 #mslide li i{display: block;padding-top:17px;height: 28px;}
 #mslide li i img{display: block;height: 100%;width: auto;margin: 0 auto;}
 #mslide li p{line-height: 34px;color: #fff;font-size: 12px;text-align: center;}
-#mslide .mslide{position: absolute;right: 83px;padding: 12px;border: 1px solid #e1e1e1;top:50%;transform: translateY(-50%);background: #fff;display: none;}
+#mslide .mslide{position: absolute;right: 83px;padding: 12px;border: 1px solid #e1e1e1;top:50%;transform: translateY(-50%);background: #fff;}
+#mslide li .mslide{
+    display: none
+}
+/* #mslide li:last-child .mslide{
+    display: block
+} */
 #mslide .mslide h4{line-height: 26px;font-size: 18px;color: #ed4d01;white-space: nowrap;}
 #mslide .mslide:after{content: '';width: 7px;height: 14px;position: absolute;background: url("../assets/images/slideborder.png");right: -6px;top:50%;margin-top: -7px;}
 #mslide li a:hover .mslide{display: block;}
+#mslide li:last-child a:hover .mslide{display: none}
 .wx .mslide{position: absolute;right: 83px;padding: 12px;border: 1px solid #e1e1e1;top:50%;transform: translateY(-50%);background: #fff;display: none; z-index: 100; top: 130px;}
-.wx a:hover .mslide{display: block;}
 #goTop{margin: 7px auto 0;cursor: pointer;border: 1px solid #e1e1e1;width: 40px;height: 40px;border-radius: 4px;background: url("../assets/images/gotop.png") no-repeat center;transition: all .3s;}
 #goTop:hover{background-color: #01707b}
 
