@@ -48,7 +48,7 @@
 				<router-link :to="{name:'PersonalSetting'}">
 					<div class="slide-item" :class="{chickColor:5==current}" @click="addClass(5)">
 						<h2>
-							<a href="javascript:void(0)" class="myseting" style="border-bottom: 1px solid #e7e7e7;">
+							<a href="javascript:void(0)" class="myseting" style="border-bottom: 1px solid #c2c2c2;">
 								个人设置
 							</a>
 						</h2>
@@ -107,6 +107,6 @@ export default {
 
 <style scoped>
 .chickColor{
-	background: rgb(242, 242, 242);
+	background: #c8c8c8;
 }
 </style>
