@@ -12,7 +12,7 @@
                         	
                             <div class="hotitle" :title="data.title">{{data.title}}</div>
                             	<div class="hotprice">
-                                    <a href="biology-137.html" class="btnbook" style=""> 立即预约 </a>
+                                    <a  class="btnbook" style=""> 立即预约 </a>
                                 </div>
                                 <div style="text-align:center;padding:10px;font-size:12px;color:#999;line-height:16px">
                                    	 已测试<span style="color:#fc916d;">{{data.buyNum}}</span>次&nbsp;

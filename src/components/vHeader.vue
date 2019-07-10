@@ -18,17 +18,19 @@
                 	<router-link :to="{name:'register'}"><a href="javascript:;" id="index-login">免费注册</a></router-link>
                 </div>
                 <div class="fl" v-if="currentMember.id!=null">
-                	<router-link to="home"><a href="javascript:;" id="index-login">个人中心</a></router-link>
+                	<router-link to="home"><a href="javascript:;" id="index-login" style="margin-right: 0px;">个人中心</a>   </router-link>
                 </div>
                 <div class="fl" v-if="currentMember.id!=null" @click="loginOut()">
-                	<a  id="index-login">退出</a>  
+                	<a  id="index-login" style=" margin-right: 0;text-align: left;font-size: 14px; margin-top: 5px; color: blue;width: 50px;">
+                		退出
+                	</a>  
                 </div>
                 <div class="fl">
                     <a href="javascript:void(0)" id="index-login">联系客服</a>    
                 </div>
-                <div class="fl">
+                <!--<div class="fl">
                     <a href="javascript:void(0)" id="index-login">微信公众号</a>    
-                </div>
+                </div>-->
                 <div class="fl">
                     <router-link :to="{name:'about'}"><a href="javascript:;" id="index-login">关于我们</a></router-link>
                 </div>
