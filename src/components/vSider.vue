@@ -12,16 +12,16 @@
                 <a href="javascript:;">
                     <i><img src="../assets/images/slidep.png"></i>
                     <p>联系我们</p>
-                    <div class="mslide"><h4>400-152-6858</h4></div>
+                    <div class="mslide"><h4>020-61086425 转 8022</h4></div>
                 </a>
             </li>
-            <li>
+            <!--<li>
                 <a href="javascript:;">
                     <i><img src="../assets/images/slidewx.png"></i>
                     <p>关注微信</p>
                     <div class="mslide"><img src="../assets/images/ewm.png"></div>
                 </a>
-            </li>
+            </li>-->
             <li >
                 <a href="javascript:;">
                     <div @click="onCart()">

@@ -37,14 +37,10 @@
     </div>
     <div class="detail-data">
         <div class="wrap">
-            <div class="detail-require">
-                <p style="word-wrap:break-word; width:1100px;"> <span style="color: red ;font-size: 14px;font-weight: bold">
-                	送样须知</span>:
-                	<span v-html="data.attention"></span>
-                </p>
-            </div>
+            
             <div class="detail-nav-wrap">
                 <div class="detail-nav clearfix">
+                	<a :class="{ 'cur': tabValue == 'attention'}"  @click="changeTab('attention')">送样须知</a>
                     <a :class="{ 'cur': tabValue == 'function'}"  @click="changeTab('function')">功能介绍</a>
                     <a :class="{ 'cur': tabValue == 'case'}"  @click="changeTab('case')">测试案例</a>
                     <a :class="{ 'cur': tabValue == 'latest'}" @click="changeTab('latest')">最近预约</a>
@@ -52,6 +48,11 @@
                 </div>
             </div>
             <div class="detail-tabList">
+            	<div v-if="tabValue=='attention'">
+                    <div id="attention" class="href"></div>
+                    <div class="detail-text11 detail-function" v-html="data.attention">
+                    </div>
+                </div>
                 <div v-if="tabValue=='function'">
                     <div id="function" class="href"></div>
                     <div class="detail-text11 detail-function" v-html="data.introduction">
@@ -127,7 +128,7 @@ export default {
       		HOST:HOST,
       		data: {},
       		dataList:{},
-      		tabValue:'function',
+      		tabValue:'attention',
       		iscollection:false,
       		currentMember:{},
     	}

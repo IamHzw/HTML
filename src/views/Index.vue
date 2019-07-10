@@ -32,14 +32,15 @@
                 <div class="service-wrap">
                     <div class="service-main">
                         <i><img src="../assets/images/ser1.png"></i>
-                        <h5>微观形貌</h5>
+                        <h5>测试分析</h5>
                         <h6>Micromorphology</h6>
                         <div class="service-cont">
                             <p><a href="javascript:void(0)">聚焦离子束（FIB）</a></p>
 
                             <p><a href="javascript:void(0)">粉末/液体 透射电镜（TEM）</a></p>
 
-                            <p><a href="javascript:void(0)">场发射扫描电镜（SEM）</a></p>              <a href="javascript:void(0)">更多</a>
+                            <p><a href="javascript:void(0)">场发射扫描电镜（SEM）</a></p>              
+                            <a href="#/project">更多</a>
                             <div class="line1"></div>
                             <div class="line2"></div>
                             <div class="line3"></div>
@@ -55,12 +56,13 @@
                 <div class="service-wrap">
                     <div class="service-main">
                         <i><img src="../assets/images/ser2.png"></i>
-                        <h5>材料性能</h5>
+                        <h5>微纳加工</h5>
                         <h6>Material properties</h6>
                         <div class="service-cont">
                                 <p><a href="javascript:void(0)">智能重量分析仪（IGA）</a></p>
                                 <p><a href="javascript:void(0)">全自动物理吸附仪（BET）</a></p>
-                                <p><a href="javascript:void(0)">全自动压汞仪（MIP）</a></p>               <a href="javascript:void(0)">更多</a>
+                                <p><a href="javascript:void(0)">全自动压汞仪（MIP）</a></p>               
+                                <a href="#/biologys">更多</a>
                             <div class="line1"></div>
                             <div class="line2"></div>
                             <div class="line3"></div>
@@ -76,14 +78,27 @@
                 <div class="service-wrap">
                     <div class="service-main">
                         <i><img src="../assets/images/ser3.png"></i>
-                        <h5>成分结构</h5>
+                        <h5>模拟计算</h5>
                         <h6>Composition&structure</h6>
                         <div class="service-cont">
-                            <p><a href="javascript:void(0)">等离子体光谱仪（ICP-OES）</a></p>
-
-                            <p><a href="javascript:void(0)">元素分析仪（EA）</a></p>
-
-                            <p><a href="javascript:void(0)">动态二次离子质谱仪（D-SIMS）</a></p>      <a href="javascript:void(0)">更多</a>
+                        	<p>
+                            	<router-link  :to="{path:'/simulate'}" >
+                            		<a href="javascript:void(0)">几何构型</a>
+                            	</router-link>
+                            </p> 
+                            <p>
+                            	<router-link  :to="{path:'/simulate'}" >
+                            		<a href="javascript:void(0)">电子相关性质</a>
+                            	</router-link>
+                            </p> 
+                            <p>
+                            	<router-link  :to="{path:'/simulate'}" >
+                            		<a href="javascript:void(0)">动力/热力学相关性质</a>
+                            	</router-link>
+                            </p> 
+                           
+                            <a href="#/simulate">更多</a>
+                            
                             <div class="line1"></div>
                             <div class="line2"></div>
                             <div class="line3"></div>
@@ -99,12 +114,25 @@
                 <div class="service-wrap">
                     <div class="service-main">
                         <i><img src="../assets/images/ser4.png"></i>
-                        <h5>模拟仿真</h5>
+                        <h5>科研作图</h5>
                         <h6>Simulation&calculation</h6>
                         <div class="service-cont">
-                            <p><a href="javascript:void(0)">介观尺度模拟-格子玻尔兹曼LBM</a></p>
-                            <p><a href="javascript:void(0)">三维重构</a></p>
-                            <p><a href="javascript:void(0)">GROMACS 分子动力学模拟</a></p>            <a href="javascript:void(0)">更多</a>
+                        	<p>
+                            	<router-link  :to="{path:'/drafting'}" >
+                            		<a href="javascript:void(0)">SCI期刊封面</a>
+                            	</router-link>
+                            </p> 
+                          	<p>
+                            	<router-link  :to="{path:'/drafting'}" >
+                            		<a href="javascript:void(0)">论文摘要图</a>
+                            	</router-link>
+                            </p> 
+                            <p>
+                            	<router-link  :to="{path:'/drafting'}" >
+                            		<a href="javascript:void(0)">论文插图</a>
+                            	</router-link>
+                            </p> 
+                            <a href="#/drafting">更多</a>
                             <div class="line1"></div>
                             <div class="line2"></div>
                             <div class="line3"></div>
@@ -120,12 +148,25 @@
                 <div class="service-wrap">
                     <div class="service-main">
                         <i><img src="../assets/images/ser5.png"></i>
-                        <h5>原位测试</h5>
+                        <h5>翻译润色</h5>
                         <h6>Overseas testing</h6>
                         <div class="service-cont">
-                            <p><a href="javascript:void(0)">变温/气氛XPS（In-Situ XPS）</a></p>
-                            <p><a href="javascript:void(0)">同步辐射测试</a></p>
-                            <p><a href="javascript:void(0)">原位拉伸/变温 SEM</a></p>                 <a href="javascript:void(0)">更多</a>
+                            <p>
+                            	<router-link  :to="{path:'/scipolishen'}" >
+                            		<a href="javascript:void(0)">英文论文润色</a>
+                            	</router-link>
+                            </p> 
+                            <p>
+                            	<router-link  :to="{path:'/translate'}" >
+                            		<a href="javascript:void(0)">中英学术翻译</a>
+                            	</router-link>
+                            </p> 
+                            <p>
+                            	<router-link  :to="{path:'/scisupport'}" >
+                            		<a href="javascript:void(0)">SCI论文投稿支持</a>
+                            	</router-link>
+                            </p>                 
+                            <a href="#/scipolish">更多</a>
                             <div class="line1"></div>
                             <div class="line2"></div>
                             <div class="line3"></div>
@@ -141,12 +182,13 @@
                 <div class="service-wrap">
                     <div class="service-main">
                         <i><img src="../assets/images/ser6.png"></i>
-                        <h5>地质医学</h5>
+                        <h5>失效分析</h5>
                         <h6>Biogeology&Geological</h6>
                         <div class="service-cont">
                             <p><a href="javascript:void(0)">磁悬浮高压等温吸附仪（重量法）</a></p>
                             <p><a href="javascript:void(0)">X射线全岩定量分析</a></p>
-                            <p><a href="javascript:void(0)">地质薄片</a></p>                        <a href="javascript:void(0)">更多</a>
+                            <p><a href="javascript:void(0)">地质薄片</a></p>                        
+                            <a href="javascript:void(0)">更多</a>
                             <div class="line1"></div>
                             <div class="line2"></div>
                             <div class="line3"></div>
@@ -450,49 +492,50 @@
             <div class="choose-item">
                 <div class="choose-top">
                     <i><img src="../assets/images/choose1.png"></i>
-                    <h5>速度快</h5>
+                    <h5>高效</h5>
                     <p>50%项目可当天测试</p>
                     <p>70%项目可隔天测试</p>
                 </div>
                 <div class="choose-bot">
-                    <h6>9700+</h6>
-                    <p>服务客户</p>
+                    <h6>4.2天</h6>
+                    <p>平均测试周期</p>
                 </div>
             </div>
             <div class="choose-item">
                 <div class="choose-top">
                     <i><img src="../assets/images/choose2.png"></i>
-                    <h5>质量高</h5>
+                    <h5>专业</h5>
                     <p>以严苛的标准和工匠的精神</p>
                     <p>精心整合优质的测试资源</p>
                 </div>
-                <div class="choose-bot">
-                    <h6>61500+</h6>
-                    <p>测试样品</p>
-                </div>
-            </div>
-            <div class="choose-item">
-                <div class="choose-top">
-                    <i><img src="../assets/images/choose3.png"></i>
-                    <h5>费用低</h5>
-                    <p>结合互联网+，使得测试费用</p>
-                    <p>降低50%以上</p>
-                </div>
-                <div class="choose-bot">
-                    <h6>230+</h6>
+                 <div class="choose-bot">
+                    <h6>430+</h6>
                     <p>合作单位</p>
                 </div>
             </div>
             <div class="choose-item">
                 <div class="choose-top">
-                    <i><img src="../assets/images/choose4.png"></i>
-                    <h5>服务好</h5>
+                	<i><img src="../assets/images/choose4.png"></i>
+                    
+                    <h5>物美</h5>
+                    <p>结合互联网+，使得测试费用</p>
+                    <p>降低50%以上</p>
+                </div>
+                <div class="choose-bot">
+                    <h6>98.8%<sup style="font-size: 14px;">以上</sup></h6>
+                    <p>客户满意度</p>
+                </div>
+            </div>
+            <div class="choose-item">
+                <div class="choose-top">
+                   	<i><img src="../assets/images/choose3.png"></i> 
+                    <h5>价廉</h5>
                     <p>同城上门取样</p>
                     <p>异地邮寄包邮</p>
                 </div>
                 <div class="choose-bot">
-                    <h6>5天</h6>
-                    <p>平均测试周期</p>
+                    <h6>97500+</h6>
+                    <p>测试样品</p>
                 </div>
             </div>
             <div class="c-dot">
