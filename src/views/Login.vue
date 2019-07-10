@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import $ from "jquery";
+// import $ from "jquery";
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
@@ -124,9 +124,8 @@ export default {
 		sendMsg(){
 			if(this.data.code==null || this.data.code ==""){
 				layer.msg("请输入图片验证码")
-				// return ;
+				return ;
 			}
-
 			this.Verification = false;      //点击button改变v-show的状态
 			let auth_timer = setInterval(()=>{  //定时器设置每秒递减
 				this.timer--;        //递减时间
@@ -136,9 +135,8 @@ export default {
 					this.timer=60
 				}
 			},1000)
-
 			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","LOGIN",this.data.mobile,this.data.code).then(result=>{
-            	if(result.retCode==0){
+            if(result.retCode==0){
             		layer.msg("手机验证码已发送，请注意查收");
       			}else{
         			layer.msg(result.message);
@@ -161,8 +159,8 @@ export default {
 			webRpc.invokeCross("memberWebRpc.loginForPhoneCode",this.data.mobile,this.data.smsCode).then(result=>{
 				console.log(result);
 				if(result.retCode==0){
-                	token.setAuthToken(result.data);
-                	this.getCurrentMemeber();
+                token.setAuthToken(result.data);
+                this.getCurrentMemeber();
 				}else{
 					layer.msg(result.message);
 				}
@@ -180,11 +178,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped>
-/* .home{
-  width: 100%;
-  height: 100%; 
-  overflow: hidden;
-} */
-</style>

@@ -320,8 +320,8 @@
 <script>
 // import $ from "jquery";
 // import "../js/layer";
-import "../js/licit";
-import "../js/login";
+// import "../js/licit";
+// import "../js/login";
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
@@ -366,7 +366,7 @@ export default {
 		sendMsg(){
       if(this.data.code==null || this.data.code ==""){
 				layer.msg("请输入图片验证码")
-				// return ;
+				return ;
 			}
 
 			this.Verification = false;      //点击button改变v-show的状态
@@ -412,11 +412,3 @@ export default {
 
 
 </script>
-
-<style scoped>
-/* .home{
-  width: 100%;
-  height: 100%; 
-  overflow: hidden;
-} */
-</style>

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-Header></v-Header>
-    <v-Sider></v-Sider>
+    <v-Sider :obj="carObj" :arr="carArr"></v-Sider>
     <div class="detail-main">
         <div class="wrap">
             <div class="detail-swiper fl">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="detail_des">{{data.subTitle}}</div>
                 <div class="detail-btns clearfix">
-                    <span id="checkids">立即预约</span>
+                    <span id="checkids" @click="onSubscribe()">立即预约</span>
                     <span id="checkids" @click="onShopping()">购物车</span>
                     <a id="collection" class="iconfont detail_xin_font"  :class="{'icon-xin': iscollection,'icon-xin1': !iscollection}"  @click="collection()"></a>
                 </div>
@@ -129,7 +129,10 @@ export default {
       		dataList:{},
       		tabValue:'function',
       		iscollection:false,
-      		currentMember:{},
+            currentMember:{},
+            // 父传子
+            carObj:{},
+            carArr:[]
     	}
   	},
 	components: {
@@ -162,8 +165,22 @@ export default {
 				console.log(this.dataList);
 		    }).catch(error =>{});
         },
+        // 添加购物车
         onShopping(){
-
+            if(this.currentMember.id ==null || this.currentMember.id ==""){
+				layer.msg("请先登陆");
+				return;
+            }
+            this.carArr=this.dataList
+            this.carObj=this.data
+            // console.log(this.carArr,this.carObj)
+        },
+        // 立即预约
+        onSubscribe(){
+            if(this.currentMember.id ==null || this.currentMember.id ==""){
+				layer.msg("请先登陆");
+				return;
+			}
         },
 		//检查收藏情况
 		checkCollection(){
