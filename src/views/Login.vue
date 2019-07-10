@@ -26,7 +26,7 @@
 	                      	<label for="save">&nbsp;</label>
 	                      	<a href="javascript:;" class="login-change fr" @click="changeLoginType(2)"><span>手机动态密码登录</span></a>
 	                  	</div>
-	                  	<div  class="login-btn" @click="login()">登  录</div>
+	                  	<div  class="login-btn" @click="login()" style="cursor:pointer">登  录</div>
 	                  	<div class="login-out clearfix">
 	                      	<router-link :to="{name:'register'}"><a href="javascript:;" >免费注册</a></router-link>
 	                  	</div>
@@ -47,11 +47,12 @@
 	
 	                  	<div class="login-input clearfix">
 	                      	<input type="text" v-model="data.smsCode" placeholder="短信动态码" class="login-code fl" >
-	                      	<div class="login-code-pic fr co" id="send_scode" @click="sendMsg()">发送短信</div>
+	                      	<div class="login-code-pic fr co" id="send_scode" @click="sendMsg()" v-show="Verification">发送短信</div>
+													<div class="login-code-pic fr co" id="send_scode" v-show="!Verification"><span>{{timer}}</span>秒后重新获取</div>
 	                  	</div>
-	                  	<p class="tips" id="tips"><img src="static/images/error.png"><span></span></p>
+	                  	<p class="tips" id="tips"><img src="../assets/images/error.png"><span></span></p>
 	                  	
-	                  	<div  class="login-btn" @click="loginForPhone()">登  录</div>
+	                  	<div class="login-btn" @click="loginForPhone()" style="cursor:pointer">登  录</div>
 	                  	
 	                  	<div class="clearfix">
 	                     	<a class="back-login" href="javascript:;"  @click="changeLoginType(1)"> < 返回账号登录</a>
@@ -83,7 +84,9 @@ export default {
       		passWord:'123456',
       		code:'',
       		smsCode:'',
-      	},
+				},
+				Verification:true,
+				timer:60,
       	loginType:1,
       	rules: {
 					mobile: [
@@ -119,11 +122,21 @@ export default {
 		},
 		//发送短信
 		sendMsg(){
-		
 			if(this.data.code==null || this.data.code ==""){
 				layer.msg("请输入图片验证码")
-				return ;
+				// return ;
 			}
+
+			this.Verification = false;      //点击button改变v-show的状态
+			let auth_timer = setInterval(()=>{  //定时器设置每秒递减
+				this.timer--;        //递减时间
+				if(this.timer<=0){  
+					this.Verification = true;    //60s时间结束还原v-show状态并清除定时器
+					clearInterval(auth_timer)
+					this.timer=60
+				}
+			},1000)
+
 			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","LOGIN",this.data.mobile,this.data.code).then(result=>{
             	if(result.retCode==0){
             		layer.msg("手机验证码已发送，请注意查收");

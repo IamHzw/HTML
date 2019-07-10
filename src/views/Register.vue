@@ -24,7 +24,8 @@
 
                     <div class="login-input clearfix">
                         <input  type="text" v-model.trim="data.smsCode"  placeholder="短信动态码" class="login-code fl licit" data-show="tips">
-                        <div class="login-code-pic fr co" @click="sendMsg()" >发送短信</div>
+                        <div class="login-code-pic fr co" @click="sendMsg()" v-show="Verification">发送短信</div>
+                        <div class="login-code-pic fr co" id="send_scode" v-show="!Verification"><span>{{timer}}</span>秒后重新获取</div>
                     </div>
 
                     <div class="login-input">
@@ -339,6 +340,8 @@ export default {
         code:'',
         smsCode:'',
       },
+      Verification:true,
+			timer:60,
       isMobile:false,
       isPassWord:false,
       isCode:false,
@@ -361,7 +364,21 @@ export default {
 		},
 		//发送短信
 		sendMsg(){
-      	
+      if(this.data.code==null || this.data.code ==""){
+				layer.msg("请输入图片验证码")
+				// return ;
+			}
+
+			this.Verification = false;      //点击button改变v-show的状态
+			let auth_timer = setInterval(()=>{  //定时器设置每秒递减
+				this.timer--;        //递减时间
+				if(this.timer<=0){  
+					this.Verification = true;    //60s时间结束还原v-show状态并清除定时器
+					clearInterval(auth_timer)
+					this.timer=60
+				}
+			},1000)
+
 			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","REGISTER",this.data.mobile,this.data.code).then(result=>{
             	if(result.retCode==0){
             		layer.msg("手机验证码已发送，请注意查收");

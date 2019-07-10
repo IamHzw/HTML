@@ -118,6 +118,10 @@ export default {
         this.num=--this.num
     },
     onCart(){
+        if(sessionStorage.currentMember==null){
+            layer.msg("请先登陆");
+            return false
+        }
         this.current=!this.current
     },
     onGoTop(){
@@ -128,12 +132,6 @@ export default {
 </script>
 
 <style scoped>
-.fl{
-    float: left;
-}
-.fr{
-    float: right;
-}
 .changeColor{
 	display: block !important;
 }

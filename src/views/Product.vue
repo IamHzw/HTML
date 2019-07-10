@@ -29,7 +29,7 @@
                 <div class="detail_des">{{data.subTitle}}</div>
                 <div class="detail-btns clearfix">
                     <span id="checkids">立即预约</span>
-                    <span id="checkids">购物车</span>
+                    <span id="checkids" @click="onShopping()">购物车</span>
                     <a id="collection" class="iconfont detail_xin_font"  :class="{'icon-xin': iscollection,'icon-xin1': !iscollection}"  @click="collection()"></a>
                 </div>
             </div>
@@ -161,7 +161,10 @@ export default {
 				this.dataList = result.data;
 				console.log(this.dataList);
 		    }).catch(error =>{});
-		},
+        },
+        onShopping(){
+
+        },
 		//检查收藏情况
 		checkCollection(){
 			webRpc.invoke("collectWebRpc.findByProductIdAndMemberId",this.data.id,this.currentMember.id).then(result=>{
@@ -173,10 +176,9 @@ export default {
 				}
 				
 		    }).catch(error =>{});
-		},
+        },
 		//收藏或取消
     	collection(){
-			
 			if(this.currentMember.id ==null || this.currentMember.id ==""){
 				layer.msg("请先登陆");
 				return;
