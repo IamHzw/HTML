@@ -24,7 +24,7 @@
                     <span><span>{{data.goodRate}}%</span>满意率</span>
                 </div>
                 <div class="detail-choose clearfix">
-                    <span  v-for="(item,index) in dataList">{{item.title}}</span>
+                    <span  v-for="(item,index) in dataList" @click="addCar(data,item)">{{item.title}}</span>
                 </div>
                 <div class="detail_des">{{data.subTitle}}</div>
                 <div class="detail-btns clearfix">
@@ -133,7 +133,8 @@ export default {
             currentMember:{},
             // 父传子
             carObj:{},
-            carArr:[]
+            carArr:[],
+      		car:[]
     	}
   	},
 	components: {
@@ -151,6 +152,10 @@ export default {
 	
 			this.checkCollection();
  		}
+        
+        if(sessionStorage.car!=null){
+			this.car = JSON.parse(sessionStorage.getItem('car'))
+        }
         
   	},
   	methods: {
@@ -228,7 +233,46 @@ export default {
    	 	//切换Tab
    	 	changeTab(val){
    	 		this.tabValue = val;
+   	 	},
+   	 	addCar(key,item){
+   	 	
+   	 		//是否全新 商品+属性
+   	 		var flag = true;
+   	 		//循环购物车上
+   	 		for(var i = 0;i<this.car.length;i++){
+	  			//判断商品是否存在购物车上(不同属生的商品都算是同一个)
+	  			if(this.car[i].key.id==key.id){
+	  				//设置购物车存在该商品
+	  				flag = false;
+	  				//判断这个商品的该属性是否已存在
+	  				if(this.car[i].val.indexOf(item)!=-1){
+	  					//如果已存在，则不做操作
+   	 					return;
+   	 				}
+   	 				//不存在，则加入属性数组
+	  				this.car[i].val.push(item);
+	  				//退出
+	  				break;
+	  			}
+   	 		}
+   	 		
+   	 		//判断是否全新，全新的则新增一项
+  			if(flag){
+  				var itemArr = [];
+  				itemArr.push(item);
+  				var caritem ={
+   	 				key:key,	//以商品为KEY
+   	 				val:itemArr		//值为对应选中的属性（数组）
+   	 			}
+   	 			this.car.push(caritem);
+  			}
+  	
+  			//更瓣sessionStorage
+  			sessionStorage.setItem('car',JSON.stringify(this.car));
+  			console.log(this.car);
+  			return;
    	 	}
+   	 	
 
   	}
 }
