@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-Header></v-Header>
-    <v-Sider :obj="carObj" :arr="carArr"></v-Sider>
+    <v-Sider :obj="carObj"></v-Sider>
     <div class="detail-main">
         <div class="wrap">
             <div class="detail-swiper fl">
@@ -24,7 +24,7 @@
                     <span><span>{{data.goodRate}}%</span>满意率</span>
                 </div>
                 <div class="detail-choose clearfix">
-                    <span  v-for="(item,index) in dataList" @click="addCar(data,item)">{{item.title}}</span>
+                    <span  v-for="(item,index) in dataList" @click="addCar(data,item,index)" :class="{clColor:index===current}">{{item.title}}</span>
                 </div>
                 <div class="detail_des">{{data.subTitle}}</div>
                 <div class="detail-btns clearfix">
@@ -134,7 +134,11 @@ export default {
             // 父传子
             carObj:{},
             carArr:[],
-      		car:[]
+            car:[],
+            //   色彩
+            current:-1,
+            // 商品型号
+            caritem:{}
     	}
   	},
 	components: {
@@ -163,12 +167,12 @@ export default {
   		initData() {
 			webRpc.invoke("productWebRpc.findById",this.data.id).then(result=>{
 				this.data = result.data;
-				console.log(this.data);
+				// console.log(this.data);
 		    }).catch(error =>{});
 		    	
 		    webRpc.invoke("productWebRpc.findSkuArr",this.data.id).then(result=>{
 				this.dataList = result.data;
-				console.log(this.dataList);
+				// console.log(this.dataList);
 		    }).catch(error =>{});
         },
         // 添加购物车
@@ -177,8 +181,8 @@ export default {
 				layer.msg("请先登陆");
 				return;
             }
-            this.carArr=this.dataList
-            this.carObj=this.data
+            // this.carArr=this.dataList
+            this.carObj=this.caritem
             // console.log(this.carArr,this.carObj)
         },
         // 立即预约
@@ -191,7 +195,7 @@ export default {
 		//检查收藏情况
 		checkCollection(){
 			webRpc.invoke("collectWebRpc.findByProductIdAndMemberId",this.data.id,this.currentMember.id).then(result=>{
-				console.log(result);
+				// console.log(result);
 				if(result.retCode==0){
                 	this.iscollection = result.data;
 				}else{
@@ -209,7 +213,7 @@ export default {
 			if(this.iscollection){
 				//已收藏
 				webRpc.invoke("collectWebRpc.delete",this.data.id,this.currentMember.id).then(result=>{
-					console.log(result);
+					// console.log(result);
 					if(result.retCode==0){
 	                	this.iscollection = false;
 					}else{
@@ -220,7 +224,7 @@ export default {
 			}else{
 				//未收藏
 				webRpc.invoke("collectWebRpc.save",this.data.id).then(result=>{
-					console.log(result);
+					// console.log(result);
 					if(result.retCode==0){
 	                	this.iscollection = true;
 					}else{
@@ -234,42 +238,50 @@ export default {
    	 	changeTab(val){
    	 		this.tabValue = val;
    	 	},
-   	 	addCar(key,item){
-   	 	
+   	 	addCar(key,item,index){
+            this.current=index
+            let itemArr = [];
+            itemArr.push(item);
+            this.caritem ={
+                key:key,	//以商品为KEY
+                val:itemArr		//值为对应选中的属性（数组）
+            }
+
+            // console.log(this.caritem)
    	 		//是否全新 商品+属性
-   	 		var flag = true;
+   	 		// var flag = true;
    	 		//循环购物车上
-   	 		for(var i = 0;i<this.car.length;i++){
-	  			//判断商品是否存在购物车上(不同属生的商品都算是同一个)
-	  			if(this.car[i].key.id==key.id){
-	  				//设置购物车存在该商品
-	  				flag = false;
-	  				//判断这个商品的该属性是否已存在
-	  				if(this.car[i].val.indexOf(item)!=-1){
-	  					//如果已存在，则不做操作
-   	 					return;
-   	 				}
-   	 				//不存在，则加入属性数组
-	  				this.car[i].val.push(item);
-	  				//退出
-	  				break;
-	  			}
-   	 		}
+   	 		// for(var i = 0;i<this.car.length;i++){
+	  		// 	//判断商品是否存在购物车上(不同属生的商品都算是同一个)
+	  		// 	if(this.car[i].key.id==key.id){
+	  		// 		//设置购物车存在该商品
+	  		// 		flag = false;
+	  		// 		//判断这个商品的该属性是否已存在
+	  		// 		if(this.car[i].val.indexOf(item)!=-1){
+	  		// 			//如果已存在，则不做操作
+   	 		// 			return;
+   	 		// 		}
+   	 		// 		//不存在，则加入属性数组
+	  		// 		this.car[i].val.push(item);
+	  		// 		//退出
+	  		// 		break;
+	  		// 	}
+   	 		// }
    	 		
-   	 		//判断是否全新，全新的则新增一项
-  			if(flag){
-  				var itemArr = [];
-  				itemArr.push(item);
-  				var caritem ={
-   	 				key:key,	//以商品为KEY
-   	 				val:itemArr		//值为对应选中的属性（数组）
-   	 			}
-   	 			this.car.push(caritem);
-  			}
+   	 		// //判断是否全新，全新的则新增一项
+  			// if(flag){
+  			// 	var itemArr = [];
+  			// 	itemArr.push(item);
+  			// 	var caritem ={
+   	 		// 		key:key,	//以商品为KEY
+   	 		// 		val:itemArr		//值为对应选中的属性（数组）
+   	 		// 	}
+   	 		// 	this.car.push(caritem);
+  			// }
   	
-  			//更瓣sessionStorage
-  			sessionStorage.setItem('car',JSON.stringify(this.car));
-  			console.log(this.car);
+  			// //更瓣sessionStorage
+  			// sessionStorage.setItem('car',JSON.stringify(this.car));
+  			// console.log(this.car);
   			return;
    	 	}
    	 	
@@ -279,6 +291,9 @@ export default {
 </script>
 
 <style scoped>
-
+.clColor{
+    background: #01707A;
+    color:#fff;
+}
 </style>
 

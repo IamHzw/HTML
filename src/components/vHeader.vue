@@ -93,7 +93,7 @@ export default {
 
 		if(sessionStorage.currentMember!=null){
 			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
-            console.log(this.currentMember);
+            // console.log(this.currentMember);
         }
         //从sessionStorage获取城市
         var city = sessionStorage.city;
@@ -105,7 +105,7 @@ export default {
         
         }else{
         	this.currentCity = city;
-        	console.log("不用执行获取城市");
+        	// console.log("不用执行获取城市");
         }
         
     },

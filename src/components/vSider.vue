@@ -28,9 +28,9 @@
                         <i><img src="../assets/images/timg.png" style="heigth:200%;"></i>
                         <p>购物车</p>
                     </div>
-                    <div v-if="!listData==[]">
+                    <div v-if="!listData.length==0">
                         <div class="mslide" v-bind:class="{changeColor:current}">
-                            <div class="plugin-bd" style="height:625px">
+                            <div class="plugin-bd" style="height:400px">
                                 <div class="tm-mcListBox">
                                     <div class="tm-mcTop">
                                         <!-- <span>查看全部</span> -->
@@ -43,25 +43,25 @@
                                         <li v-for="(item, index) in listData" :key="index" class="clearfix" style="margin-bottom:10px">
                                             <div class="commName">
                                                 <div class="fl">
-                                                    <input type="checkbox" class="tm-mcElectCart"  v-model="checkModel" :value="item.dataObj.id">
+                                                    <input type="checkbox" class="tm-mcElectCart"  v-model="checkModel" :value="item.key.id">
                                                 </div>
-                                                <label for="tmcElectCart">{{item.dataObj.title}}</label>
+                                                <label for="tmcElectCart">{{item.key.title}}</label>
                                             </div>
                                             <div class="commNum clearfix">
                                                 <!-- <div class="fl tm-check">
                                                     <input type="checkbox" checked="" class="tm-mcElectCart" style="width:25px;">
                                                 </div> -->
                                                 <div class="fl tm-img">
-                                                    <img :src="item.dataObj.imagesArr">
+                                                    <img :src="item.key.imagesArr">
                                                 </div>
                                                 <div class="fl tm-txt" >
                                                     <!-- 黑色衣服 -->
-                                                    <span v-for="(list, i) in item.dataArr" :key="i">{{list.title}}</span>
+                                                    <span v-for="(list, i) in item.val" :key="i">{{list.title}}</span>
                                                 </div>
 
                                                 <div class="fl tm-pri">
                                                     <div class="comm-add" @click="onAdd(index)">+</div>
-                                                    <div class="cNum fl">{{item.dataObj.buyNum+1}}</div>
+                                                    <div class="cNum fl">{{item.key.buyNum+1}}</div>
                                                     <div class="comm-sub" @click="onSub(index)">-</div>
                                                 </div>
 
@@ -102,7 +102,7 @@
 
 <script>
 export default {
-  props: ['obj','arr'],
+  props: ['obj'],
   data () {
     return {
       current:false,
@@ -110,7 +110,7 @@ export default {
       pri:14,
       listData:[],
       objs:{},
-      arrs:[],
+    //   arrs:[],
       checked:false, //是否全选
       checkModel:[] //双向数据绑定的数组，我是用的id
     }
@@ -134,12 +134,12 @@ export default {
 //   },
   watch:{
       obj(val){
-          this.objs=val
+          this.objs=val;
           deep:true
       },
-      arr(val){
-          this.arrs=val
-      },
+    //   arr(val){
+    //       this.arrs=val
+    //   },
       checkModel(val){
         //   console.log(val);
           if(this.checkModel.length==this.listData.length){
@@ -169,31 +169,27 @@ export default {
   },
   methods: {
     onAdd(index){
-        this.listData[index].dataObj.buyNum=this.listData[index].dataObj.buyNum+1
+        this.listData[index].key.buyNum=this.listData[index].key.buyNum+1
     },
     onSub(index){
-        if(this.listData[index].dataObj.buyNum===0){
+        if(this.listData[index].key.buyNum===0){
             return false;
         }
-        this.listData[index].dataObj.buyNum=this.listData[index].dataObj.buyNum-1
+        this.listData[index].key.buyNum=this.listData[index].key.buyNum-1
     },
     onCart(){
         if(sessionStorage.currentMember==null){
             layer.msg("请先登陆");
             return false
         }
-        
-        if(this.listData.length==0&&this.arr.length==0){
+
+        if(this.listData.length===0&&!this.objs.hasOwnProperty('key')){
             layer.msg("购物车空");
             return false
         }else{
-            if(!this.arrs.length==0){
-                this.listData.push({
-                    dataObj:this.objs,
-                    dataArr:this.arrs
-                })
+            if(!this.current&&this.objs.hasOwnProperty('key')){
+                this.listData.push(this.objs)  
                 this.objs={}
-                this.arrs=[]
             }
         }
         this.current=!this.current
@@ -203,12 +199,11 @@ export default {
 　　　　　　this.checkModel=[];
 　　　　}else{
 　　　　　　this.listData.forEach((item)=>{
-    　　　　　　if(this.checkModel.indexOf(item.dataObj.id)==-1){
-    　　　　　　　　this.checkModel.push(item.dataObj.id)
+    　　　　　　if(this.checkModel.indexOf(item.key.id)==-1){
+    　　　　　　　　this.checkModel.push(item.key.id)
+                  console.log(this.checkModel)
     　　　　　　}
 　　　　　　})
-            // console.log(this.checkModel);
-            
 　　　　}
 　　},
     onGoTop(){
