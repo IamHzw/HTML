@@ -985,7 +985,7 @@ input[type="file"] {display: none;}
  font-size: 14px;
  letter-spacing: 1px;
 }
-.detail-choose span.ac{color: #0A757E;border-color: #0A757E;}
+.detail-choose span.ac{color: #3a3a3a; border-color: #6c6c6c; background-color: #c4c4c4;}
 .detail-wrap .detail_des{
  display: inline-block;
  margin:10px 0 15px 0px;
@@ -1275,7 +1275,7 @@ em{font-style: normal;}
 #mslide li i{display: block;padding-top:17px;height: 28px;}
 #mslide li i img{display: block;height: 100%;width: auto;margin: 0 auto;}
 #mslide li p{line-height: 34px;color: #fff;font-size: 12px;text-align: center;}
-#mslide .mslide{position: absolute;right: 83px;padding: 12px;border: 1px solid #e1e1e1;top:50%;transform: translateY(-50%);background: #fff;}
+#mslide .mslide{position: absolute;right: 83px;border: 1px solid #bdbdbd;top:50%;transform: translateY(-50%);background: #fff;}
 #mslide li .mslide{
     display: none
 }

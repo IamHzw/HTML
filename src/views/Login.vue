@@ -171,6 +171,8 @@ export default {
 			webRpc.invokeCross("memberWebRpc.currentMember").then(result=>{
             	console.log(result);
                 sessionStorage.setItem('currentMember',JSON.stringify(result.data));
+                //清空购物车
+                sessionStorage.removeItem('car');
                 console.log(result.data);
                 this.$router.push('/index');
 		   	}).catch(error =>{});

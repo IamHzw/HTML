@@ -33,41 +33,25 @@
                             <div class="plugin-bd" style="height:400px">
                                 <div class="tm-mcListBox">
                                     <div class="tm-mcTop">
-                                        <!-- <span>查看全部</span> -->
-                                        <div class="fl">
-                                            <input type="checkbox" class="tm-mcElectCart" @click="checkAll"  v-model="checked">
-                                        </div>
-                                        <label for="tmcElectCart">全选</label>
+                                        <span>购物车</span>
                                     </div>
-                                    <ul class="tm-list">
-                                        <li v-for="(item, index) in listData" :key="index" class="clearfix" style="margin-bottom:10px">
+                                    <ul class="tm-list carContent" >
+                                        <li v-for="(item, index) in listData" :key="index" class="clearfix caritem" style="margin-bottom:10px">
                                             <div class="commName">
-                                                <div class="fl">
-                                                    <input type="checkbox" class="tm-mcElectCart"  v-model="checkModel" :value="item.key.id">
-                                                </div>
                                                 <label for="tmcElectCart">{{item.key.title}}</label>
                                             </div>
-                                            <div class="commNum clearfix">
-                                                <!-- <div class="fl tm-check">
-                                                    <input type="checkbox" checked="" class="tm-mcElectCart" style="width:25px;">
-                                                </div> -->
+                                            <div class="commNum clearfix" v-for="(subItem, i) in item.val">
                                                 <div class="fl tm-img">
-                                                    <img :src="item.key.imagesArr">
+                                                    <img :src="HOST+item.key.imagesArr">
                                                 </div>
                                                 <div class="fl tm-txt" >
-                                                    <!-- 黑色衣服 -->
-                                                    <span v-for="(list, i) in item.val" :key="i">{{list.title}}</span>
+                                                    <span >{{subItem.title}}</span>
                                                 </div>
 
                                                 <div class="fl tm-pri">
-                                                    <div class="comm-add" @click="onAdd(index)">+</div>
-                                                    <div class="cNum fl">{{item.key.buyNum+1}}</div>
-                                                    <div class="comm-sub" @click="onSub(index)">-</div>
+                                                	<span v-if="subItem.calAble==1">￥{{subItem.price}}</span>
+                                                	<span v-if="subItem.calAble!=1">面议</span>
                                                 </div>
-
-                                                <!-- <div class="fl tm-mon">
-                                                    ￥{{pri}}
-                                                </div> -->
                                             </div>
                                         </li>
                                     </ul>
@@ -75,16 +59,11 @@
                                 <div class="tm-btn">
                                     <div class="tm-mcTotal clearfix">
                                         <h3>
-                                            <span class="tm-e1">购物车</span>
-                                            <span class="tm-e2">已选</span>
-                                            <strong class="tm-mcCartNumTotal">{{checkModel.length}}</strong>
-                                            <span class="tm-e2">件</span>
+                                            <span class="tm-e1">合计(元)：</span>
+                                            <strong class="tm-mcCartNumTotal">{{totalPrice}}</strong>
                                         </h3>
-                                        <!-- <span class="tm-mcTotalFeeWrap fr">
-                                            <strong class="tm-mcTotalFee">{{num}}</strong>
-                                        </span> -->
                                     </div>
-                                    <div class="tm-mcCashier" data-tmc="go">
+                                    <div class="tm-mcCashier" data-tmc="go" @click="tobuy()">
                                         <div class="tm-mcGo">结 算<s></s>
                                         </div>
                                     </div>
@@ -101,65 +80,25 @@
 </template>
 
 <script>
+import { HOST } from '../config';
+
 export default {
   props: ['obj'],
   data () {
     return {
+      HOST:HOST,
       current:false,
-    //   num:0,
-      pri:14,
+      totalPrice:'面',
       listData:[],
       objs:{},
-    //   arrs:[],
-      checked:false, //是否全选
-      checkModel:[] //双向数据绑定的数组，我是用的id
     }
   },
-//   computed: {
-//     num:function(){
-//         let n=0;
-//         for (let k = 0; k < this.listData.length; k++) {
-//             for (let j = 0; j < this.checkModel.length; j++) {
-//                 if(this.listData[k].dataObj.id===this.checkModel[j]){
-//                     // console.log(1)
-//                     n=n+this.listData[k].dataObj.buyNum
-//                 }
-//             }
-            
-//         }
-//         console.log(n);
-        
-//         return n;
-//     }  
-//   },
   watch:{
       obj(val){
+      	  this.listData = val;
           this.objs=val;
           deep:true
       },
-    //   arr(val){
-    //       this.arrs=val
-    //   },
-      checkModel(val){
-        //   console.log(val);
-          if(this.checkModel.length==this.listData.length){
-　　　　　　 this.checked=true;
-　　　　   }else{
-　　　　　　 this.checked=false;
-　　　　   }
-　　　　  
-//         for (let j = 0; j< this.listData.length; j++) {
-//             if(this.listData[j].dataObj.id===val){
-//                 this.num=this.num+this.listData[j].dataObj.buyNum
-//             }
-//           if(this.checkModel.length==this.listData.length){
-// 　　　　　　 this.checked=true;
-// 　　　　   }else{
-// 　　　　　　 this.checked=false;
-// 　　　　   }
-           
-//         }
-　　  }
   },
   created () {
       if(JSON.parse(sessionStorage.getItem("car"))==null){
@@ -168,44 +107,53 @@ export default {
       this.listData=JSON.parse(sessionStorage.getItem("car"))   
   },
   methods: {
-    onAdd(index){
-        this.listData[index].key.buyNum=this.listData[index].key.buyNum+1
-    },
-    onSub(index){
-        if(this.listData[index].key.buyNum===0){
-            return false;
-        }
-        this.listData[index].key.buyNum=this.listData[index].key.buyNum-1
-    },
+ 
     onCart(){
         if(sessionStorage.currentMember==null){
             layer.msg("请先登陆");
             return false
         }
-
-        if(this.listData.length===0&&!this.objs.hasOwnProperty('key')){
+		console.log(this.listData);
+		console.log(this.objs);
+        if(this.listData.length===0 && !this.objs.hasOwnProperty('key')){
             layer.msg("购物车空");
             return false
         }else{
-            if(!this.current&&this.objs.hasOwnProperty('key')){
+            if(!this.current && this.objs.hasOwnProperty('key')){
                 this.listData.push(this.objs)  
                 this.objs={}
             }
         }
         this.current=!this.current
+        
+        //计算总价
+        var supPrice = 0;
+        for(var i = 0;i<this.listData.length;i++){
+	  		
+	  		var curItems = this.listData[i].val;
+	  		
+	  		for(var j=0; j<curItems.length;j++){
+	  			console.log(curItems[j]);
+	  			if(curItems[j].calAble==1){
+	  				supPrice+=curItems[j].price;
+	  				console.log(">>>>>>>"+supPrice);
+	  			}else{
+	  				this.totalPrice ='面议';
+	  				return;
+	  			}
+	  		}
+   	 	}
+   	 	
+   	 	this.totalPrice = supPrice;
+   	 		
     },
-    checkAll(){
-　　　　if(this.checked){
-　　　　　　this.checkModel=[];
-　　　　}else{
-　　　　　　this.listData.forEach((item)=>{
-    　　　　　　if(this.checkModel.indexOf(item.key.id)==-1){
-    　　　　　　　　this.checkModel.push(item.key.id)
-                  console.log(this.checkModel)
-    　　　　　　}
-　　　　　　})
-　　　　}
-　　},
+    tobuy(){
+    	 if(this.listData.length===0 && !this.objs.hasOwnProperty('key')){
+            layer.msg("购物车空");
+            return false
+        }
+    	this.$router.push('/order');
+    },
     onGoTop(){
         document.getElementById("app").scrollIntoView();
     }
@@ -227,16 +175,38 @@ export default {
 }
 .tm-mcTop{
     height: 28px;
+    border-bottom: 1px solid #9f9f9f;
+    background-color: #e52e2f;
+    color: #ffffff;
+    line-height: 28px;
+    text-align: center;
 }
 .tm-mcTop a{
     height:100% !important;
 }
 
+.carContent{
+	overflow: auto;
+    height: 300px;
+    padding: 0 3px;
+}
+
 .commName{
     margin-bottom: 5px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
 }
 .commNum{
-    margin-left: 13px;
+    margin-left: 5px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #eee;
+    background-color: #edecec;
+}
+.caritem{
+	margin-bottom: 10px;
+    border: 1px solid #d4d1d1;
+    padding-bottom: 5px;
 }
 .tm-check{
     padding-top: 20px;
@@ -246,20 +216,24 @@ export default {
     height: 60px;
 }
 .tm-img img{
-    width: 100%;
-    height: 100%;
+	width: 50px;
+    height: 50px;
+    border: 1px solid #cbcbcbee;
 }
 .tm-txt{
     margin-left: 10px;
     padding-top: 20px;
-    width: 80px;
+    width: 120px;
+    font-size: 12px;
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
 }
 .tm-pri{
-    margin-left: 10px;
+    margin-left: 2px;
     padding-top: 20px;
+    font-size: 12px;
+    color: #1e1e1e;
 }
 .cNum{
     margin-right: 10px;
@@ -280,15 +254,17 @@ export default {
     text-align: center;
 }
 .tm-btn {
-    position: relative;
-    padding: 0 16px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 0;
     background-color: #e6e6e6;
     z-index: 3;
     color: #333;
 }
 
 .tm-mcTotal {
-    width: 248px;
+	padding-left: 3px;
     height: 30px;
     line-height: 30px;
     background-color: #e6e6e6;
@@ -301,16 +277,18 @@ export default {
 /* .clearfix{
     clear: both;
 } */
-
+.tm-mcListBox{
+	padding:0px;
+}
 .tm-mcTotal h3 {
-    float: left;
-    width: 100px;
     height: 30px;
+    margin-right: 20px;
     color: #000;
+    text-align: right;
     font-weight: 400;
+    font-size: 14px;
 }
 .tm-mcCashier {
-    width: 248px;
     height: 40px;
     line-height: 40px;
     background-color: #ff0036;
@@ -325,7 +303,7 @@ export default {
     margin: 0 auto;
     height: 40px;
     line-height: 40px;
-    text-align: left;
+    text-align: center;
     font-family: STHeiti,"microsoft yahei" simsun arial;
     color: #fff;
     font-size: 14px;

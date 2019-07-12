@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-Header></v-Header>
-    <v-Sider :obj="carObj"></v-Sider>
+    <v-Sider :obj="car"></v-Sider>
     <div class="detail-main">
         <div class="wrap">
             <div class="detail-swiper fl">
@@ -24,12 +24,12 @@
                     <span><span>{{data.goodRate}}%</span>满意率</span>
                 </div>
                 <div class="detail-choose clearfix">
-                    <span  v-for="(item,index) in dataList" @click="addCar(data,item,index)" :class="{clColor:index===current}">{{item.title}}</span>
+                    <span  v-for="(item,index) in dataList" @click="selectProduct(item)" :class="{ 'clColor': item.ischeck == true}" >{{item.title}}</span>
                 </div>
                 <div class="detail_des">{{data.subTitle}}</div>
                 <div class="detail-btns clearfix">
                     <span id="checkids" @click="onSubscribe()">立即预约</span>
-                    <span id="checkids" @click="onShopping()">购物车</span>
+                    <span id="checkids" @click="addCar()">购物车</span>
                     <a id="collection" class="iconfont detail_xin_font"  :class="{'icon-xin': iscollection,'icon-xin1': !iscollection}"  @click="collection()"></a>
                 </div>
             </div>
@@ -132,13 +132,7 @@ export default {
       		iscollection:false,
             currentMember:{},
             // 父传子
-            carObj:{},
-            carArr:[],
             car:[],
-            //   色彩
-            current:-1,
-            // 商品型号
-            caritem:{}
     	}
   	},
 	components: {
@@ -153,7 +147,6 @@ export default {
 		//看看用户是否已登陆,已登陆，则初始化是否收藏
 		if(sessionStorage.currentMember!=null){
 			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
-	
 			this.checkCollection();
  		}
         
@@ -167,41 +160,20 @@ export default {
   		initData() {
 			webRpc.invoke("productWebRpc.findById",this.data.id).then(result=>{
 				this.data = result.data;
-				// console.log(this.data);
 		    }).catch(error =>{});
 		    	
 		    webRpc.invoke("productWebRpc.findSkuArr",this.data.id).then(result=>{
 				this.dataList = result.data;
-				// console.log(this.dataList);
 		    }).catch(error =>{});
-        },
-        // 添加购物车
-        onShopping(){
-            if(this.currentMember.id ==null || this.currentMember.id ==""){
-				layer.msg("请先登陆");
-				return;
-            }
-            // this.carArr=this.dataList
-            this.carObj=this.caritem
-            // console.log(this.carArr,this.carObj)
-        },
-        // 立即预约
-        onSubscribe(){
-            if(this.currentMember.id ==null || this.currentMember.id ==""){
-				layer.msg("请先登陆");
-				return;
-			}
         },
 		//检查收藏情况
 		checkCollection(){
 			webRpc.invoke("collectWebRpc.findByProductIdAndMemberId",this.data.id,this.currentMember.id).then(result=>{
-				// console.log(result);
 				if(result.retCode==0){
                 	this.iscollection = result.data;
 				}else{
 					alert(result.message);
 				}
-				
 		    }).catch(error =>{});
         },
 		//收藏或取消
@@ -213,24 +185,20 @@ export default {
 			if(this.iscollection){
 				//已收藏
 				webRpc.invoke("collectWebRpc.delete",this.data.id,this.currentMember.id).then(result=>{
-					// console.log(result);
 					if(result.retCode==0){
 	                	this.iscollection = false;
 					}else{
 						alert(result.message);
 					}
-					
 			    }).catch(error =>{});
 			}else{
 				//未收藏
 				webRpc.invoke("collectWebRpc.save",this.data.id).then(result=>{
-					// console.log(result);
 					if(result.retCode==0){
 	                	this.iscollection = true;
 					}else{
 						alert(result.message);
 					}
-				
 			    }).catch(error =>{});
 			}
    	 	},
@@ -238,50 +206,107 @@ export default {
    	 	changeTab(val){
    	 		this.tabValue = val;
    	 	},
-   	 	addCar(key,item,index){
-            this.current=index
-            let itemArr = [];
-            itemArr.push(item);
-            this.caritem ={
-                key:key,	//以商品为KEY
-                val:itemArr		//值为对应选中的属性（数组）
-            }
-
-            // console.log(this.caritem)
-   	 		//是否全新 商品+属性
-   	 		// var flag = true;
-   	 		//循环购物车上
-   	 		// for(var i = 0;i<this.car.length;i++){
-	  		// 	//判断商品是否存在购物车上(不同属生的商品都算是同一个)
-	  		// 	if(this.car[i].key.id==key.id){
-	  		// 		//设置购物车存在该商品
-	  		// 		flag = false;
-	  		// 		//判断这个商品的该属性是否已存在
-	  		// 		if(this.car[i].val.indexOf(item)!=-1){
-	  		// 			//如果已存在，则不做操作
-   	 		// 			return;
-   	 		// 		}
-   	 		// 		//不存在，则加入属性数组
-	  		// 		this.car[i].val.push(item);
-	  		// 		//退出
-	  		// 		break;
-	  		// 	}
-   	 		// }
+   	 	selectProduct(item){
    	 		
-   	 		// //判断是否全新，全新的则新增一项
-  			// if(flag){
-  			// 	var itemArr = [];
-  			// 	itemArr.push(item);
-  			// 	var caritem ={
-   	 		// 		key:key,	//以商品为KEY
-   	 		// 		val:itemArr		//值为对应选中的属性（数组）
-   	 		// 	}
-   	 		// 	this.car.push(caritem);
-  			// }
+   	 		if(item.ischeck!=null && item.ischeck == true){
+   	 			this.$set(item, 'ischeck', false);
+   	 		}else{
+   	 			this.$set(item, 'ischeck', true);
+   	 		}
+   	 		
+   	 		
+   	 	},
+   	 	// 立即预约
+        onSubscribe(){
+            if(this.currentMember.id ==null || this.currentMember.id ==""){
+				layer.msg("请先登陆");
+				return;
+			}
+			
+			var buyFlag = false;
+			//先清空
+			this.car = [];
+			sessionStorage.removeItem('car');
+			
+			//再加入
+			this.dataList.forEach((n)=>{
+	    		if(n.ischeck!=null && n.ischeck == true){
+	   	 			//console.log(n.title);
+	   	 			this.addCarData(n);
+	   	 			buyFlag = true;
+	   	 		}else{
+	   	 			//console.log(n);
+	   	 		}
+　　　　　　		})
+			//跳转
+			if(buyFlag){
+				this.$router.push('/order');
+			}else{
+				layer.msg("请选择测试项目");
+			}
+			
+        },
+   	 	addCar(){
+   	 		if(this.currentMember.id ==null || this.currentMember.id ==""){
+				layer.msg("请先登陆");
+				return;
+			}
+			var buyFlag = false;
+			this.dataList.forEach((n)=>{
+	    		if(n.ischeck!=null && n.ischeck == true){
+	   	 			//console.log(n.title);
+	   	 			buyFlag = true;
+	   	 			this.addCarData(n);
+	   	 		}else{
+	   	 			//console.log(n);
+	   	 		}
+　　　　　　		})
+
+
+			if(buyFlag){
+				layer.msg("已加入购物车,请点击右边购物车进行查看");
+			}else{
+				layer.msg("请选择测试项目");
+			}
+			
+			
+   	 	},
+   	 	addCarData(item){
+       		var key = this.data;
+   	 		//是否全新 商品+属性
+   	 		var flag = true;
+   	 		//循环购物车上
+   	 		for(var i = 0;i<this.car.length;i++){
+	  			//判断商品是否存在购物车上(不同属生的商品都算是同一个)
+	  			if(this.car[i].key.id==key.id){
+	  		 		//设置购物车存在该商品
+	  		 		flag = false;
+	  		 		//判断这个商品的该属性是否已存在
+	  		 		if(this.car[i].val.indexOf(item)!=-1){
+	  					//如果已存在，则不做操作
+   	 		 			return;
+   	 		 		}
+   	 		 		//不存在，则加入属性数组
+	  		 		this.car[i].val.push(item);
+	  		 		//退出
+	  		 		break;
+	  		 	}
+   	 		}
+   	 		
+   	 		 //判断是否全新，全新的则新增一项
+  			 if(flag){
+  			 	var itemArr = [];
+  			 	itemArr.push(item);
+  			 	var caritem ={
+   	 		 		key:key,	//以商品为KEY
+   	 		 		val:itemArr		//值为对应选中的属性（数组）
+   	 		 	}
+   	 		 	this.car.push(caritem);
+  			}
   	
-  			// //更瓣sessionStorage
-  			// sessionStorage.setItem('car',JSON.stringify(this.car));
-  			// console.log(this.car);
+  			//更瓣sessionStorage
+  			sessionStorage.setItem('car',JSON.stringify(this.car));
+  			console.log(this.car);
   			return;
    	 	}
    	 	
