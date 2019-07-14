@@ -7,9 +7,15 @@
             <div class="detail-swiper fl">
                 <div class="swiper-container detail-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" style="width: 400px!important;height:400px !important;">
-                        	<div style="width: 400px;height: 400px; margin: 0 auto; background-image: url('http://pic.ceshigo.com/20190318/2019031813145493666788.png');background-repeat: no-repeat;background-size: contain;overflow: hidden"></div>
-                        </div>                
+                        <div class="swiper-slide" style="width: 400px!important;height:400px !important;text-align:center" v-for="(i, j) in data.imagesArr" :key="j">
+														<img :src="HOST+i" alt="" style="width: 400px;height: 400px; margin: 0 auto">
+                        </div>      
+												<!-- <div class="swiper-slide" style="width: 400px!important;height:400px !important;text-align:center">
+														<img src="http://pic.ceshigo.com/olddata/2017080321431380898.png" alt="" style="width: 400px;height: 400px; margin: 0 auto">
+                        </div>
+												<div class="swiper-slide" style="width: 400px!important;height:400px !important;text-align:center">
+														<img src="http://pic.ceshigo.com/olddata/2017080321491326899.png" alt="" style="width: 400px;height: 400px; margin: 0 auto">
+                        </div>            -->
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -114,13 +120,14 @@
 </template>
 
 <script>
-import $ from "jquery";
+// import $ from "jquery";
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
 import { webRpc } from '../rpc/index';
 import { HOST } from '../config';
-
+import Swiper from 'swiper'; 
+import 'swiper/dist/css/swiper.min.css';
 
 export default {
 	data () {
@@ -130,16 +137,16 @@ export default {
       		dataList:{},
       		tabValue:'attention',
       		iscollection:false,
-            currentMember:{},
+          currentMember:{},
             // 父传子
-            car:[],
+          car:[],
     	}
   	},
-	components: {
-      	vHeader,
-      	vSider,
-      	vFootersimper
-  	},
+		components: {
+					vHeader,
+					vSider,
+					vFootersimper
+			},
   	created () {
   		this.data.id = this.$route.query.id;
 		this.initData();
@@ -154,7 +161,26 @@ export default {
 			this.car = JSON.parse(sessionStorage.getItem('car'))
         }
         
-  	},
+		},
+		mounted(){
+			var mySwiper = new Swiper('.detail-container', {
+					// autoplay:true,
+					loop:true,
+					pagination:{
+						el:".swiper-pagination",
+						clickable:true
+					},
+					paginationClickable: true,
+					navigation:{
+						prevEl: '.detail-prev',
+						nextEl: '.detail-next',
+					},
+					autoplay: {
+							delay: 5000,
+							disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
+					},
+			});
+		},
   	methods: {
   		
   		initData() {

@@ -878,8 +878,8 @@ input[type="file"] {display: none;}
 #coopform button{display: block;margin: 60px auto 0;width: 206px;height: 46px;line-height: 46px;font-size: 14px;text-align: center;color: #fff;background: #ed4d01;border-radius: 5px;cursor: pointer;}
 #content.edit-content{background: #fff;}
 #edit-wrap{margin-right: 360px;}
-#edit-wrap #slide-main{background: #fafafa;padding: 15px 55px 0 40px;}
-.edit-top{padding-left: 38px;background: #f1f6fa url("../assets/images/tip.png") no-repeat 10px center;font-size: 12px;color: #4e4e4e;line-height: 31px;margin-bottom: 20px;}
+#edit-wrap #slide-main{background: #fafafa;}
+.edit-top{padding-left: 38px;background: #f1f6fa url("../assets/images/tip.png") no-repeat 10px center;font-size: 12px;color: #4e4e4e;line-height: 31px;}
 #slide-main-title{width: 25px;text-align: center;height: 100%;position: absolute;left: 0;top:0;background: #f2f2f2;font-size: 14px;color: #959595;line-height: 18px;box-sizing: border-box;padding-top: 350px;}
 #edit-wrap .appoint-edit{padding-top: 0;}
 .appoint-select{width: 163px;height: 39px;border: 1px solid #d8d8d8;background: #fff;text-align: center;line-height: 39px;font-size: 16px;color: #555555;position: relative;cursor: pointer;}

@@ -115,13 +115,27 @@ export default new Router({
       component: resolve => require(["./views/Scisupport.vue"], resolve),
       meta: { title: 'SCI论文', warn:false}
     },
-    // 订单页
+    // 订单
+    // {
+    //   path: "/orderCopy",
+    //   name: "OrderCopy",
+    //   component: resolve => require(["./views/OrderCopy.vue"], resolve),
+    //   meta: { title: '订单详情', warn:false}
+    // },
+    // 预约
     {
       path: "/order",
       name: "Order",
       component: resolve => require(["./views/Order.vue"], resolve),
-      meta: { title: '订单页', warn:false}
+      meta: { title: '订单详情', warn:false}
     },
+    // 订单页
+    // {
+    //   path: "/itemlistOrder",
+    //   name: "ItemlistOrder",
+    //   component: resolve => require(["./views/ItemlistOrder.vue"], resolve),
+    //   meta: { title: '订单详情', warn:false}
+    // },
     // 用户中心
     {
       path: "/home",

@@ -52,6 +52,11 @@
                                                 	<span v-if="subItem.calAble==1">￥{{subItem.price}}</span>
                                                 	<span v-if="subItem.calAble!=1">面议</span>
                                                 </div>
+
+                                                <div class="fr tm-del" @click="onToDel(item.id,subItem.id)">
+                                                    x
+                                                </div>
+                                            
                                             </div>
                                         </li>
                                     </ul>
@@ -146,6 +151,24 @@ export default {
    	 	
    	 	this.totalPrice = supPrice;
    	 		
+    },
+    // 删除购物车
+    onToDel(keyId,valId){
+        let arr=[...this.listData]
+        for (let i = 0; i < arr.length; i++) {
+
+            for (let j = 0; j < arr[i].val.length; j++) {
+
+                if(arr[i].val[j].id===valId){
+                    if(arr[i].val.length===1){
+                        this.listData.splice(i,1)
+                    }else{
+                        this.listData[i].val.splice(j,1)
+                    }
+                }
+                
+            }
+        }
     },
     tobuy(){
     	 if(this.listData.length===0 && !this.objs.hasOwnProperty('key')){
@@ -273,10 +296,18 @@ export default {
     overflow: hidden;
 
 }
-
-/* .clearfix{
-    clear: both;
-} */
+.tm-del{
+    margin-top: 20px;
+    margin-right: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1;
+    vertical-align: top;
+    border: 1px solid #ccc;
+}
 .tm-mcListBox{
 	padding:0px;
 }
