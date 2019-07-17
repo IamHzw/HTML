@@ -179,6 +179,8 @@ export default {
 							delay: 5000,
 							disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
 					},
+					observer:true,
+          observeParents:true
 			});
 		},
   	methods: {

@@ -6,6 +6,7 @@ import 'animate.css'
 import "./style/reset.css";
 import "./fonts/font_/iconfont.css"
 import "./style/style.css";
+// import "./style/layui.css";
 import $ from 'jquery';
 import layer from "layui-layer";
 
