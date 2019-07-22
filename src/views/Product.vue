@@ -161,7 +161,7 @@ export default {
 			this.car = JSON.parse(sessionStorage.getItem('car'))
         }
         
-		},
+	},
 		mounted(){
 			var mySwiper = new Swiper('.detail-container', {
 					// autoplay:true,

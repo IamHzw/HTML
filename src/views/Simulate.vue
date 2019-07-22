@@ -87,7 +87,7 @@
                       1.下载需求模板
                   </div>
                   <div class="col2 fl">
-                    <a class="downfile fl downloadMould" href="javascript:;">
+                    <a class="downfile fl downloadMould"  @click="toDonwload()">
                         <img class="down-img" src="https://statics.shiyanjia.com/c/2018/images/biology/download.png" />
                         <p class="down-cont font14" style="">下载</p>
                     </a>
@@ -105,15 +105,19 @@
                       <input type="hidden" id="attache1" name="attache1" value=""  />
                       <a class="input-file fl">
                           <img class="add-img" src="https://statics.shiyanjia.com/c/2018/images/biology/upload.png" />
-                          <p>上传</p>	                   
+                          <p>上传</p>	         
+                                    
+                                    
                           <input class="sel-file" type="file" name="file" onchange="getFileName(this, 'rar,zip,png,jpg,gif,doc,docx,xls,xlsx,ppt,pptx');"   />
                       </a>
+                      <input type="file" style="display:block" @change="upload($event.target.files)">
                       <div class='file-list fl'>
                       </div>
                   </div>
               </div>
+              
               <div class="row row4 fl">
-                  <a href="javascript:;" class="sub-btn btn-disabled fl" id="btnSubmit">提交需求</a>
+                  <a href="javascript:;" class="sub-btn fl" :class="{'btn-disabled': !isLogin}" id="btnSubmit" @click="save()">提交需求</a>
               </div>
           </div>
       </div>
@@ -126,9 +130,17 @@
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
+import { webRpc,upload } from '../rpc/index';
+import { HOST } from '../config';
+
+
 export default {
   data () {
     return {
+    	HOST:HOST,
+    	orderType:'模拟计算',
+    	requestFile:'',
+    	isLogin:false
       
     }
   },
@@ -137,6 +149,14 @@ export default {
       vSider,
       vFootersimper
   },
+	created () {
+	
+		//看看用户是否已登陆,已登陆，则初始化是否收藏
+		if(sessionStorage.currentMember!=null){
+			this.isLogin = true;
+ 		}
+        
+	},
 	methods: {
    		//锚点
 	   returnCom(id) {
@@ -145,7 +165,47 @@ export default {
 	    	if (!!returnEle) {
 	      		returnEle.scrollIntoView(true);
 	    	}
-	  	}
+	  	},
+	  	toDonwload(){
+	  		window.location.href=this.HOST+'download/template/huitu.doc';
+	  	},
+	  	save(){
+	  		
+	  		if(!this.isLogin){
+	  			layer.msg("请先登陆");
+	  			return;
+	  		}
+	  		//条件判断
+	  		if(this.requestFile==''){
+	  			layer.msg("请上传文件");
+	  			return;
+	  		}
+	  		
+	  		var city = sessionStorage.city;
+	  		
+	  		webRpc.invoke("orderWebRpc.saveOtherOrder",this.orderType,this.requestFile ,city).then(result=>{
+				if(result.retCode==0){
+                	layer.msg("提交成功");
+                	this.requestFile=="";
+				}else{
+					layer.msg(result.message);
+				}
+		    }).catch(error =>{});
+	  	},
+	  	upload(files) {
+	        if(!files.length) {
+	          return ;
+	        }
+
+        	let [file] = files;
+
+        	upload.uploadFile(file, 'recycle').then(path => {
+        		this.requestFile = path;
+          	}).catch(err => {
+            	layer.msg(err);
+           	 	console.error(err);
+          	});
+      	},
    	
    	}
    
@@ -453,7 +513,7 @@ export default {
     line-height:36px;
     font-size:18px;
     color:#fff;
-    background:#ccc;
+    background:#2f6275;
     font-weight:bold;
     text-align:center;
     border-radius:5px;

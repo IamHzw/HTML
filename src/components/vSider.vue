@@ -64,7 +64,7 @@
                                 <div class="tm-btn">
                                     <div class="tm-mcTotal clearfix">
                                         <h3>
-                                            <span class="tm-e1">合计(元)：</span>
+                                            <span class="tm-e1">预估费用(元)：</span>
                                             <strong class="tm-mcCartNumTotal">{{totalPrice}}</strong>
                                         </h3>
                                     </div>
@@ -106,11 +106,13 @@ export default {
       },
   },
   created () {
+  		
       if(JSON.parse(sessionStorage.getItem("car"))==null){
           return false
       }
       this.listData=JSON.parse(sessionStorage.getItem("car"))   
   },
+  
   methods: {
  
     onCart(){
@@ -118,8 +120,11 @@ export default {
             layer.msg("请先登陆");
             return false
         }
-		console.log(this.listData);
-		console.log(this.objs);
+        
+       
+        this.listData=JSON.parse(sessionStorage.getItem("car"));
+        
+
         if(this.listData.length===0 && !this.objs.hasOwnProperty('key')){
             layer.msg("购物车空");
             return false
@@ -154,6 +159,9 @@ export default {
     },
     // 删除购物车
     onToDel(keyId,valId){
+    
+    	console.log(keyId);
+    	console.log(valId);
         let arr=[...this.listData]
         for (let i = 0; i < arr.length; i++) {
 
@@ -169,6 +177,8 @@ export default {
                 
             }
         }
+        
+        sessionStorage.setItem("car",JSON.stringify(this.listData))
     },
     tobuy(){
     	 if(this.listData.length===0 && !this.objs.hasOwnProperty('key')){

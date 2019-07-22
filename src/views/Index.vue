@@ -7,16 +7,17 @@
       <div class="swiper-container index-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="http://pic.ceshigo.com//20181217/2018121710411596276406.jpg" alt="">
+            <img src="../assets/images/side1.jpg"/>
           </div>
           <div class="swiper-slide">
-            <img src="http://pic.ceshigo.com//20190513/2019051314222468335301.jpg" alt="">
+            <img src="../assets/images/side2.jpg"/>
           </div>
           <div class="swiper-slide">
-            <img src="http://pic.ceshigo.com//20190513/2019051314135655256288.jpg" alt="">
+            <img src="../assets/images/side3.jpg"/>
           </div>
+          
           <div class="swiper-slide">
-            <img src="http://pic.ceshigo.com//20181111/2018111115000750339563.jpg" alt="">
+            <img src="../assets/images/side4.jpg"/>
           </div>
         </div>
         <div class="swiper-pagination"></div>
