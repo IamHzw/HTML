@@ -105,12 +105,10 @@
                       <input type="hidden" id="attache1" name="attache1" value=""  />
                       <a class="input-file fl">
                           <img class="add-img" src="https://statics.shiyanjia.com/c/2018/images/biology/upload.png" />
-                          <p>上传</p>	         
-                                    
-                                    
-                          <input class="sel-file" type="file" name="file" onchange="getFileName(this, 'rar,zip,png,jpg,gif,doc,docx,xls,xlsx,ppt,pptx');"   />
+                          <p>上传</p>
+                          <input class="sel-file" type="file" name="file" @change="upload($event.target.files)"   />
                       </a>
-                      <input type="file" style="display:block" @change="upload($event.target.files)">
+                      <!-- <input type="file" style="display:block" @change="upload($event.target.files)"> -->
                       <div class='file-list fl'>
                       </div>
                   </div>
@@ -196,6 +194,16 @@ export default {
 	        if(!files.length) {
 	          return ;
 	        }
+            
+            let text= files[0].name.split(".")[1].toUpperCase();
+            let html = "";
+            html += "<a href='javascript:;' style='display:block;width:80px;height:80px;line-height:80px;background:#fff;border:1px solid #ccc;text-align:center;font-size:24px;color:#7b7d88;font-weight:bold;position:relative'>";
+            html += text;
+            html += "<p style='width:225px;padding:1px 5px;font-size:14px;border:1px solid #e8e8e8;box-shadow:2px 2px 0px rgba(0,0,0,0.2);background:#fff;position:absolute;top:0px;left:88px'>";
+            html += files[0].name.split(".")[0];
+            html += "</p>";
+            html += "</a>";
+            $('.file-list').prepend(html);
 
         	let [file] = files;
 
@@ -205,8 +213,7 @@ export default {
             	layer.msg(err);
            	 	console.error(err);
           	});
-      	},
-   	
+      	}
    	}
    
 }
@@ -525,5 +532,6 @@ export default {
 .btn-undisabled {
     background:#32d693!important;
 }
+.add-btn input[type="file"] {display: block;}
 </style>
 
