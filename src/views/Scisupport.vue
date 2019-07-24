@@ -93,87 +93,64 @@
         </div>
     </div>
     <div  class="form class-wrap">
-        <p class="tips">下单过程中，有任何需求可咨询客服经理：刘健铭（15321381380），收到文稿后我们会在1个工作日与您联系</p>
+        <p class="tips">下单过程中，有任何需求可咨询客服经理：刘**（15*********），收到文稿后我们会在1个工作日与您联系</p>
         <form id="form1" class="layui-form">
-            <input type="hidden" id="buffetid" name="buffetid" value="191" />
-            <input type="hidden" id="_token" name="_token" value="slt5r0l6CBmRyU7uSdbwHD17mVjMQmKPlhqzJEoU" />
             <div class="layui-form-item">
                 <label for="" class="layui-form-label" askuuid="0a5a21a09edb4cb39b342156c3e07cf3">选择服务：</label>
                 <div class="layui-input-block">
-                    <div class="service-sel fl form_elem" data-value="0" style="width:auto;padding:0 20px">SCI论文投稿支持</div>
+                    <div class="service-sel fl form_elem"  style="width:auto;padding:0 20px">SCI论文投稿支持</div>
                 </div>
-                <input id="ask0a5a21a09edb4cb39b342156c3e07cf3" name="ask0a5a21a09edb4cb39b342156c3e07cf3" type="hidden" value="" />
             </div>
             <div class="layui-form-item">
                 <label for="" class="layui-form-label">研究领域：</label>
                 <div class="layui-input-block">
-                    <input id="askb06906391ba74d589001dfdbf37d1d5c" name="askb06906391ba74d589001dfdbf37d1d5c" type="hidden" value='' />
                     <div class="area-search clearfix">
-                        <input id="serviceArea" class="form-input fl form_elem" type="text" placeholder="请输入中/英文学科名称关键词" />
-                        <div class="area-desc fl form_elem">找不到您的学科领域吗？</div>
-                        <ul class="serviceAreaList">
-                            
-                        </ul>
-                    </div>
-                    <div class="select-box clearfix">
-                        <select id="serviceArea1" class="select2" name="" data-chinese="第一学科领域">
-                            <option value="">请选择第一学科领域</option>
-                        </select>
-                        <select id="serviceArea2" class="select2" name="" data-chinese="第二学科领域">
-                            <option value="">请选择第二学科领域</option>
-                        </select>
-                        <select id="serviceArea3" class="select2" name="" data-chinese="第三学科领域">
-                            <option value="">请选择第三学科领域</option>
-                        </select>
+                        <input v-model="data.domain" class="form-input fl form_elem" type="text" placeholder="请输入中/英文学科名称关键词" />
                     </div>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label for="" class="layui-form-label" askuuid="bdda997d969e48a9916abe272b4fcb60">时间要求：</label>
+                <label for="" class="layui-form-label" >时间要求：</label>
                 <div class="layui-input-block">
-                    <div class="time-demand fl form_elem" askuuid="bdda997d969e48a9916abe272b4fcb60" askitemuuid="5efd410e84104e52a63f37c28afcfffd" data-value="5efd410e84104e52a63f37c28afcfffd">正常</div>
-                    <div class="time-demand fl form_elem" askuuid="bdda997d969e48a9916abe272b4fcb60" askitemuuid="13efd5ebd86244a4af2cca3706b7a4e2" data-value="13efd5ebd86244a4af2cca3706b7a4e2">加急</div>
+                    <div class="time-demand form_elem fl"  @click="selectExpress('正常')">正常</div>
+                    <div class="time-demand form_elem fl"  @click="selectExpress('加急')">加急</div>
                     <div class="time-desc">正常速度是1000字/天，加急额外收费</div>
                 </div>
-                <input id="askbdda997d969e48a9916abe272b4fcb60" name="askbdda997d969e48a9916abe272b4fcb60" type="hidden" value=""  />
             </div>
             <div class="layui-form-item">
-                <label for="" class="layui-form-label" askuuid="a71241116a4249fb8907fe0822bf5856">期刊名称：</label>
+                <label for="" class="layui-form-label" >期刊名称：</label>
                 <div class="layui-input-block">
-                    <input type="text" class="form-input form_elem" id="aska71241116a4249fb8907fe0822bf5856" name="aska71241116a4249fb8907fe0822bf5856" askuuid="a71241116a4249fb8907fe0822bf5856" />
+                    <input  v-model="data.periodicalName" type="text" class="form-input form_elem"   />
                 </div>
             </div>
             <div class="layui-form-item">
-                <label for="" class="layui-form-label" askuuid="72532018e3684f3881e78aafe3ed0f89" >投稿连接：</label>
+                <label for="" class="layui-form-label"  >投稿连接：</label>
                 <div class="layui-input-block">
-                    <input type="text" class="form-input form_elem" id="ask72532018e3684f3881e78aafe3ed0f89" name="ask72532018e3684f3881e78aafe3ed0f89" askuuid="72532018e3684f3881e78aafe3ed0f89" />
+                    <input v-model="data.periodicalUrl" type="text" class="form-input form_elem" />
                 </div>
             </div>
             <div class="layui-form-item">
-                <label for="" class="layui-form-label" askuuid="b760607d96ff48ecb3b9b2b614f2a9de" >英文风格：</label>
+                <label for="" class="layui-form-label" >英文风格：</label>
                 <div class="layui-input-block">
-                    <div class="en-style fl form_elem" askuuid="b760607d96ff48ecb3b9b2b614f2a9de" askitemuuid="581d59a6805f46e5bcdb965376a32e43" data-value="581d59a6805f46e5bcdb965376a32e43">美式英语</div>
-                    <div class="en-style fl form_elem" askuuid="b760607d96ff48ecb3b9b2b614f2a9de" askitemuuid="2acdc774f203464081f6dec700df4bfd" data-value="2acdc774f203464081f6dec700df4bfd">英式英语</div>
+                    <div class="en-style form_elem fl" @click="selectTranslationStyle('美式英语')">美式英语</div>
+                    <div class="en-style form_elem fl" @click="selectTranslationStyle('英式英语')">英式英语</div>
                 </div>
-                <input id="askb760607d96ff48ecb3b9b2b614f2a9de" name="askb760607d96ff48ecb3b9b2b614f2a9de" type="hidden" value="" />
             </div>
             <div class="layui-form-item">
-                <label for="" class="layui-form-label" askuuid="55cabc09139e423b8a87d3f744a1aeee">待编辑文件：</label>
+                <label for="" class="layui-form-label" >待编辑文件：</label>
                 <div class="layui-input-block">
-                    <input id="ask55cabc09139e423b8a87d3f744a1aeee" name="ask55cabc09139e423b8a87d3f744a1aeee" type="hidden" value="" />
                     <div class="file-box fl">
-                        <input type="file" class="form_elem" name="name" onchange="getFileName(this, 'rar,zip,png,jpg,gif,doc,docx,xls,xlsx,ppt,pptx')" />
+                        <input type="file" style="display:block" @change="upload($event.target.files,'requestFile')">
                     </div>
                     <div class="file-list fl"></div>
                     <div class="file-desc fl">为便于美籍专家准确理解文章原意，请尽可能将所有图表插入到文章中，可去除<br />参考文献列表和作者信息，最终提交一个待编辑的Word文档</div>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label for="" class="layui-form-label" askuuid="09413ca1086f4046b639f0c4777f807a">参考文件：</label>
+                <label for="" class="layui-form-label" >参考文件：</label>
                 <div class="layui-input-block">
-                    <input id="ask09413ca1086f4046b639f0c4777f807a" name="ask09413ca1086f4046b639f0c4777f807a" type="hidden" />
                     <div class="upload-file fl">
-                        <input type="file" class="form_elem" name="name" style="position:absolute;top:0;left:0;z-index:2;width:100px;height:32px;opacity:0;filter:alpha(opacity:0);cursor: pointer" onchange="getFileName(this, 'rar,zip,png,jpg,gif,doc,docx,xls,xlsx,ppt,pptx')" />
+                        <input type="file"  class="form_elem"  style=" display: block;position:absolute;top:0;width:100px;height:33px;opacity:0;filter:alpha(opacity:0);cursor:pointer;"  @change="upload($event.target.files,'referenceFile')">
                         点击上传
                     </div>
                     <div class="file-list fl"></div>
@@ -181,15 +158,15 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <label for="" class="layui-form-label" askuuid="48256fe173fa4d51bcaa1296fb153739">需求描述：</label>
+                <label for="" class="layui-form-label" >需求描述：</label>
                 <div class="layui-input-block">
-                    <textarea class="form_elem" name="ask48256fe173fa4d51bcaa1296fb153739" id="ask48256fe173fa4d51bcaa1296fb153739"></textarea>
+                    <textarea class="form_elem" v-model="data.requestMsg"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label for="" class="layui-form-label">联系邮箱：</label>
                 <div class="layui-input-block">
-                    <input id="ask80a9f9fd7df8489bb91da6d5402c3609" name="ask80a9f9fd7df8489bb91da6d5402c3609" class="email form_elem" type="text" value="" />
+                    <input  class="email form_elem" type="text"  v-model="data.receiverEmail"/>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -202,7 +179,7 @@
             <div class="layui-form-item">
                 <label for="" class="layui-form-label"></label>
                 <div class="layui-input-block">
-                    <input class="submit-btn" type="button" id="btnSubmit" value="提交文稿" />
+                    <input class="submit-btn" type="button" @click="save()" value="提交文稿" />
                 </div>
             </div>
         </form>
@@ -215,10 +192,19 @@
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
+import { webRpc,upload } from '../rpc/index';
+import { HOST } from '../config';
+
 export default {
   data () {
     return {
-      
+      	HOST:HOST,
+      	data:{
+      		orderType:'SCI论文投稿支持',
+      		type:'SCI论文投稿支持',
+    		requestFile:'',
+      	},
+    	isLogin:false
     }
   },
   components: {
@@ -226,6 +212,13 @@ export default {
       vSider,
       vFootersimper
   },
+  	created () {
+		//看看用户是否已登陆,已登陆，则初始化是否收藏
+		if(sessionStorage.currentMember!=null){
+			this.isLogin = true;
+ 		}
+ 		this.data.area = sessionStorage.city;
+  	},
      methods: {
    		//锚点
 	   returnCom(id) {
@@ -234,7 +227,45 @@ export default {
 	    	if (!!returnEle) {
 	      		returnEle.scrollIntoView(true);
 	    	}
-	  	}
+	  	},
+	  	selectType(type){
+	  		this.data.type=type;
+	  	},
+	  	selectExpress(express){
+	  		this.data.express=express;
+	  	},
+	  	selectTranslationStyle(st){
+	  		this.data.translationStyle = st;
+	  	},
+	  	save(){
+	  		if(!this.isLogin){
+	  			layer.msg("请先登陆");
+	  			return;
+	  		}
+	  		
+	  		webRpc.invoke("orderWebRpc.saveSimpleOrder",this.data).then(result=>{
+				if(result.retCode==0){
+                	layer.msg("提交成功");
+                	this.$router.push('/ordersucess');
+				}else{
+					layer.msg(result.message);
+				}
+		    }).catch(error =>{});
+	  	},
+	  	upload(files,arg) {
+	        if(!files.length) {
+	          return ;
+	        }
+        	let [file] = files;
+        	upload.uploadFile(file, 'order').then(path => {
+        		//this.data.requestFile = path;
+        		this.data[arg] = path
+        		console.log(this.data);
+          	}).catch(err => {
+            	layer.msg(err);
+           	 	console.error(err);
+          	});
+      	},
    	
    	}
 }

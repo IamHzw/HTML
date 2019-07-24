@@ -136,8 +136,10 @@ export default {
   data () {
     return {
     	HOST:HOST,
-    	orderType:'模拟计算',
-    	requestFile:'',
+    	data:{
+    		orderType:'模拟计算',
+    		requestFile:'',
+    	},
     	isLogin:false
       
     }
@@ -153,7 +155,8 @@ export default {
 		if(sessionStorage.currentMember!=null){
 			this.isLogin = true;
  		}
-        
+        this.data.area = sessionStorage.city;
+        console.log(this.data);
 	},
 	methods: {
    		//锚点
@@ -174,41 +177,43 @@ export default {
 	  			return;
 	  		}
 	  		//条件判断
-	  		if(this.requestFile==''){
+	  		if(this.dara.requestFile==''){
 	  			layer.msg("请上传文件");
 	  			return;
 	  		}
 	  		
-	  		var city = sessionStorage.city;
-	  		
-	  		webRpc.invoke("orderWebRpc.saveOtherOrder",this.orderType,this.requestFile ,city).then(result=>{
+	  		webRpc.invoke("orderWebRpc.saveSimpleOrder",this.data).then(result=>{
 				if(result.retCode==0){
                 	layer.msg("提交成功");
-                	this.requestFile=="";
+                	//this.data={};
+                	this.$router.push('/ordersucess');
 				}else{
 					layer.msg(result.message);
 				}
 		    }).catch(error =>{});
 	  	},
 	  	upload(files) {
+	  	
+
+	  		
 	        if(!files.length) {
 	          return ;
 	        }
             
             let text= files[0].name.split(".")[1].toUpperCase();
             let html = "";
-            html += "<a href='javascript:;' style='display:block;width:80px;height:80px;line-height:80px;background:#fff;border:1px solid #ccc;text-align:center;font-size:24px;color:#7b7d88;font-weight:bold;position:relative'>";
+            html += "<a href='javascript:;' style='display:block;width:180px;height:80px;line-height:30px;background:#fff;border:1px solid #ccc;text-align:center;font-size:18px;color:#7b7d88;font-weight:bold;position:relative'>";
             html += text;
-            html += "<p style='width:225px;padding:1px 5px;font-size:14px;border:1px solid #e8e8e8;box-shadow:2px 2px 0px rgba(0,0,0,0.2);background:#fff;position:absolute;top:0px;left:88px'>";
+            html += "<br/>";
             html += files[0].name.split(".")[0];
-            html += "</p>";
+            html += "";
             html += "</a>";
             $('.file-list').prepend(html);
 
         	let [file] = files;
 
-        	upload.uploadFile(file, 'recycle').then(path => {
-        		this.requestFile = path;
+        	upload.uploadFile(file, 'order').then(path => {
+        		this.data.requestFile = path;
           	}).catch(err => {
             	layer.msg(err);
            	 	console.error(err);

@@ -218,8 +218,10 @@ export default {
   data () {
     return {
       	HOST:HOST,
-    	orderType:'科研作图',
-    	requestFile:'',
+      	data:{
+      		orderType:'科研作图',
+    		requestFile:'',
+      	},
     	isLogin:false
     }
   },
@@ -234,6 +236,7 @@ export default {
 		if(sessionStorage.currentMember!=null){
 			this.isLogin = true;
  		}
+ 		this.data.area = sessionStorage.city;
         
 	},
 	methods: {
@@ -248,17 +251,15 @@ export default {
 	  			return;
 	  		}
 	  		//条件判断
-	  		if(this.requestFile==''){
+	  		if(this.data.requestFile==''){
 	  			layer.msg("请上传文件");
 	  			return;
 	  		}
 	  		
-	  		var city = sessionStorage.city;
-	  		
-	  		webRpc.invoke("orderWebRpc.saveOtherOrder",this.orderType,this.requestFile ,city).then(result=>{
+	  		webRpc.invoke("orderWebRpc.saveSimpleOrder",this.data).then(result=>{
 				if(result.retCode==0){
-                	layer.msg("提交成功");
-                	this.requestFile=="";
+                	layer.msg("订单提交成功");
+                	this.$router.push('/ordersucess');
 				}else{
 					layer.msg(result.message);
 				}
@@ -282,7 +283,7 @@ export default {
         	let [file] = files;
 
         	upload.uploadFile(file, 'recycle').then(path => {
-        		this.requestFile = path;
+        		this.data.requestFile = path;
           	}).catch(err => {
             	layer.msg(err);
            	 	console.error(err);

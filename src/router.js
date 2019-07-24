@@ -127,7 +127,13 @@ export default new Router({
       path: "/order",
       name: "Order",
       component: resolve => require(["./views/Order.vue"], resolve),
-      meta: { title: '订单详情', warn:false}
+      meta: { title: '订单详情', warn:true}
+    },
+    {
+        path: "/ordersucess",
+        name: "OrderSucess",
+        component: resolve => require(["./views/OrderSucess.vue"], resolve),
+        meta: { title: '订单提示', warn:false}
     },
     // 订单页
     // {

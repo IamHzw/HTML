@@ -3,11 +3,7 @@
     <v-Header></v-Header>
     <v-Sider></v-Sider>
     <div class="banner">
-        <!-- <div class="banner-cont">
-            <h1><span>科学指南针</span>·论文润色</h1>
-            <h1>助力您的科研成果登上国际舞台</h1>
-            <p>让您不在还害怕因为英文差而被拒稿，业界顶尖专家、专业母语编辑给您最好的服务质量保障</p>
-        </div> -->
+
     </div>
 
     <div class="navbar class-wrap">
@@ -216,10 +212,13 @@ import $ from "jquery";
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
+import { webRpc,upload } from '../rpc/index';
+import { HOST } from '../config';
+
 export default {
   data () {
     return {
-      
+      	
     }
   },
   components: {
@@ -228,50 +227,10 @@ export default {
       vFootersimper
   },
   created () {
-    this.$nextTick(()=>{
-      this.init()
-    })
+		
   },
   methods: {
-    QSItemClick(){
-      $(".qs").on("click", function(){
-            var _this = $(this);
-            var obj = _this.siblings();
-            var srcAdd = 'https://statics.shiyanjia.com/c/v3/images/paper/add.png';
-            var srcMinus = 'https://statics.shiyanjia.com/c/v3/images/paper/minus.png';
-            var height = obj.find("p").height() + 30;
-            if(_this.attr('data-isfold') == 'true') {
-                $(".as").css({height: 0});
-                $(".qs").find('img').attr({src: srcAdd});
-                $(".qs").attr({'data-isfold': 'true'}).css({borderColor: '#E8E8E8'});
-                _this.find("img").attr({src: srcMinus});
-                obj.css({height: height});
-                _this.attr({'data-isfold': 'false'}).css({borderColor: 'transparent'});
-            }else {
-                obj.css({height: 0});
-                _this.attr({src: srcAdd});
-                _this.find("img").attr({src: srcAdd});
-                _this.attr({'data-isfold': 'true'}).css({borderColor: '#E8E8E8'});
-            }
-        });
-    },
-    QSClassifyClick(){
-        $(".qs-classify").find("li").on("click", function(){
-            var index = $(this).index();
-            var id = $(this).attr("data-id");
-            top1 = 10 + 60 * index + 30 - 20;
-            $(".qs-classify").find("li").removeClass("active");
-            $(".qs-list .qs-item").hide();
-            $("#" + id).show();
-            $(this).addClass("active");
-            $(".caret").css({top: top1});
-        });
-    },
-    init(){
-        this.QSItemClick();
-        this.QSClassifyClick();
-        $("#h_scipolish").addClass("header-item-active");
-    }
+    	
   }
 }
 </script>
