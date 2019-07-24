@@ -270,15 +270,15 @@ export default {
 	          return ;
 	        }
 
-					let text= files[0].name.split(".")[1].toUpperCase();
-					let html = "";
-					html += "<a href='javascript:;' style='display:block;width:80px;height:80px;line-height:80px;background:#fff;border:1px solid #ccc;text-align:center;font-size:24px;color:#7b7d88;font-weight:bold;position:relative'>";
-					html += text;
-					html += "<p style='width:225px;padding:1px 5px;font-size:14px;border:1px solid #e8e8e8;box-shadow:2px 2px 0px rgba(0,0,0,0.2);background:#fff;position:absolute;top:0px;left:88px'>";
-					html += files[0].name.split(".")[0];
-					html += "</p>";
-					html += "</a>";
-					$('.file-list').prepend(html);
+	       	let text= files[0].name.split(".")[1].toUpperCase();
+            let html = "";
+            html += "<a href='javascript:;' style=' -o-text-overflow: ellipsis; text-overflow: ellipsis; overflow: hidden;white-space: nowrap;display:block;width:180px;height:70px;padding-top: 10px;line-height:30px;background:#fff;border:1px solid #ccc;text-align:center;font-size:14px;color:#7b7d88;font-weight:bold;position:relative'>";
+            html += text;
+            html += "<br/>";
+            html += files[0].name.split(".")[0];
+            html += "";
+            html += "</a>";
+            $('.file-list').html(html);
 
         	let [file] = files;
 

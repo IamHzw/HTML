@@ -202,13 +202,13 @@ export default {
             
             let text= files[0].name.split(".")[1].toUpperCase();
             let html = "";
-            html += "<a href='javascript:;' style='display:block;width:180px;height:80px;line-height:30px;background:#fff;border:1px solid #ccc;text-align:center;font-size:18px;color:#7b7d88;font-weight:bold;position:relative'>";
+            html += "<a href='javascript:;' style=' -o-text-overflow: ellipsis; text-overflow: ellipsis; overflow: hidden;white-space: nowrap;display:block;width:180px;height:70px;padding-top: 10px;line-height:30px;background:#fff;border:1px solid #ccc;text-align:center;font-size:14px;color:#7b7d88;font-weight:bold;position:relative'>";
             html += text;
             html += "<br/>";
             html += files[0].name.split(".")[0];
             html += "";
             html += "</a>";
-            $('.file-list').prepend(html);
+            $('.file-list').html(html);
 
         	let [file] = files;
 

@@ -142,7 +142,7 @@
                     <div class="file-box fl">
                         <input type="file" style="display:block" @change="upload($event.target.files,'requestFile')">
                     </div>
-                    <div class="file-list fl"></div>
+                    <div class="file-list fl requestFile"></div>
                     <div class="file-desc fl">为便于美籍专家准确理解文章原意，请尽可能将所有图表插入到文章中，可去除<br />参考文献列表和作者信息，最终提交一个待编辑的Word文档</div>
                 </div>
             </div>
@@ -153,7 +153,7 @@
                         <input type="file"  class="form_elem"  style=" display: block;position:absolute;top:0;width:100px;height:33px;opacity:0;filter:alpha(opacity:0);cursor:pointer;"  @change="upload($event.target.files,'referenceFile')">
                         点击上传
                     </div>
-                    <div class="file-list fl"></div>
+                    <div class="file-list fl referenceFile"></div>
                     <div class="upload-file-desc fl">如果有期刊的回复意见，请在这里上传。如有多个文件上传，请压缩打包成一个文件上传</div>
                 </div>
             </div>
@@ -256,6 +256,17 @@ export default {
 	        if(!files.length) {
 	          return ;
 	        }
+	        
+	        let text= files[0].name.split(".")[1].toUpperCase();
+            let html = "";
+            html += "<a href='javascript:;' style=' -o-text-overflow: ellipsis; text-overflow: ellipsis; overflow: hidden;white-space: nowrap;margin-left: 10px;display:block;width:180px;height:45px;padding-top: 10px;line-height:20px;background:#fff;border:1px solid #ccc;text-align:center;font-size:14px;color:#7b7d88;font-weight:bold;position:relative'>";
+            html += text;
+            html += "<br/>";
+            html += files[0].name.split(".")[0];
+            html += "";
+            html += "</a>";
+            $('.'+arg).html(html);
+            
         	let [file] = files;
         	upload.uploadFile(file, 'order').then(path => {
         		//this.data.requestFile = path;
