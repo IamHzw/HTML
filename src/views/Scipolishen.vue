@@ -22,27 +22,27 @@
                 <p>标准论文润色服务适合需要对稿件进行彻底检查且关注质量的作者</p>
                 <ul>
                     <li class="odd">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         语言和语法检查
                     </li>
                     <li class="even">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         文风一致性修改
                     </li>
                     <li class="odd">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         术语准确性和文稿格式调整
                     </li>
                     <li class="even">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         无限重修服务
                     </li>
                     <li class="disable_odd">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/none.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_2.png" alt="">
                         关注论文的逻辑性、结构和表达
                     </li>
                     <li class="disable_even">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/none.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_2.png" alt="">
                         拒稿无忧服务
                     </li>
                 </ul>
@@ -56,27 +56,27 @@
                 <p>高级论文润色服务尤其适合重视质量且希望对论文的逻辑和结构进行分析的作者</p>
                 <ul>
                     <li class="odd">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         语言和语法检查
                     </li>
                     <li class="even">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         文风一致性修改
                     </li>
                     <li class="odd">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         术语准确性和文稿格式调整
                     </li>
                     <li class="even">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         无限重修服务
                     </li>
                     <li class="odd">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         关注论文的逻辑性、结构和表达
                     </li>
                     <li class="disable_even">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/none.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_2.png" alt="">
                         拒稿无忧服务
                     </li>
                 </ul>
@@ -90,27 +90,27 @@
                 <p>适合对润色和服务质量要求极高，对可能的返修及修改说明都希望提供服务的作者</p>
                 <ul>
                     <li class="odd">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         语言和语法检查
                     </li>
                     <li class="even">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         文风一致性修改
                     </li>
                     <li class="odd">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         术语准确性和文稿格式调整
                     </li>
                     <li class="even">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         无限重修服务
                     </li>
                     <li class="odd">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         关注论文的逻辑性、结构和表达
                     </li>
                     <li class="even">
-                        <img src="https://statics.shiyanjia.com/c/v3/images/paper/check.png" alt="">
+                        <img src="../assets/images/Scipolishen_icon_1.png" alt="">
                         拒稿无忧服务
                     </li>
                 </ul>
@@ -124,15 +124,15 @@
             <h1 class="layui-col-xs2">适合稿件类型</h1>
             <div class="layui-col-xs10">
                 <div class="layui-col-xs4 navbar-item">
-                    <img class="fl" src="https://statics.shiyanjia.com/c/v3/images/paper/en.png" alt="" />
+                    <img class="fl" src="../assets/images/Scipolishen_icon_3.png" alt="" />
                     <p class="fl">本业务适合直接<br />用英语写作的英文学术论文</p>
                 </div>
                 <div class="layui-col-xs4 navbar-item">
-                    <img class="fl" src="https://statics.shiyanjia.com/c/v3/images/paper/before.png" alt="" />
+                    <img class="fl" src="../assets/images/Scipolishen_icon_4.png" alt="" />
                     <p class="fl">在投稿后语言需要改进，<br />需要进行英语母语编辑润色的稿件</p>
                 </div>
                 <div class="layui-col-xs4 navbar-item">
-                    <img class="fl" src="https://statics.shiyanjia.com/c/v3/images/paper/after.png" alt="" />
+                    <img class="fl" src="../assets/images/Scipolishen_icon_5.png" alt="" />
                     <p class="fl">在投稿前需要<br />对英文写作进行母语润色的稿件</p>
                 </div>
             </div>
@@ -163,32 +163,32 @@
     <div id="progress" class="progress">
         <div class="progress-cont">
             <div class="progress-item">
-                <img class="style-img" src="https://statics.shiyanjia.com/c/v3/images/paper/no_1.png" alt="" />
+                <img class="style-img" src="../assets/images/Scipolishen_icon_6.png" alt="" />
                 查看内容服务
-                <img class="arrow" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_1.png" alt="" />
+                <img class="arrow" src="../assets/images/Scipolishen_icon_7.png" alt="" />
             </div>
             <div class="progress-item">
-                <img class="style-img" src="https://statics.shiyanjia.com/c/v3/images/paper/no_2.png" alt="" />
+                <img class="style-img" src="../assets/images/Scipolishen_icon_8.png" alt="" />
                 官网在线提交订单
-                <img class="arrow" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_2.png" alt="" />
+                <img class="arrow" src="../assets/images/Scipolishen_icon_7.png" alt="" />
             </div>
             <div class="progress-item">
-                <img class="style-img" src="https://statics.shiyanjia.com/c/v3/images/paper/no_3.png" alt="" />
+                <img class="style-img" src="../assets/images/Scipolishen_icon_9.png" alt="" />
                 上传文章并<br />完善相关信息
-                <img class="arrow" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_3.png" alt="" />
+                <img class="arrow" src="../assets/images/Scipolishen_icon_7.png" alt="" />
             </div>
             <div class="progress-item">
-                <img class="style-img" src="https://statics.shiyanjia.com/c/v3/images/paper/no_4.png" alt="" />
+                <img class="style-img" src="../assets/images/Scipolishen_icon_10.png" alt="" />
                 确认费用与<br />交件时间
-                <img class="arrow" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_4.png" alt="" />
+                <img class="arrow" src="../assets/images/Scipolishen_icon_7.png" alt="" />
             </div>
             <div class="progress-item">
-                <img class="style-img" src="https://statics.shiyanjia.com/c/v3/images/paper/no_5.png" alt="" />
+                <img class="style-img" src="../assets/images/Scipolishen_icon_11.png" alt="" />
                 母语资深编辑<br />润色修改
-                <img class="arrow" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_5.png" alt="" />
+                <img class="arrow" src="../assets/images/Scipolishen_icon_7.png" alt="" />
             </div>
             <div class="progress-item">
-                <img class="style-img" src="https://statics.shiyanjia.com/c/v3/images/paper/no_6.png" alt="" />
+                <img class="style-img" src="../assets/images/Scipolishen_icon_12.png" alt="" />
                 官网下载或<br />邮箱接收结果
             </div>
         </div>
@@ -850,7 +850,7 @@ export default {
 }
 .select2-search__field {
     border: 1px solid #DEDEDE!important;
-    background: url('https://statics.shiyanjia.com/c/2018/images/search_1.png') no-repeat 98% center;
+    background: url('../assets/images/Scipolishen_icon_13.png') no-repeat 98% center;
     background-size: 16px 16px;
 }
 .select2-results__option--highlighted {

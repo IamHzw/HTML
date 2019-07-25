@@ -7,7 +7,7 @@
             <h1>中美学术翻译</h1>
             <p>针对欲投稿高影响因子期刊的科研作者设计。每份稿件均由专业领域的学科专家翻译，双语校对、英文母语编辑润色修改，翻译后的文稿达到国际接收标准。四轮反复的质量把关，帮助研究人员跨越语言障碍，准确表达您的研究成果，实现稿件在高影响因子期刊的顺利发表。</p>
             <a  @click="returnCom('progress')">立即下单</a>
-            <img src="https://statics.shiyanjia.com/c/v3/images/paper/translate.png" alt="" />
+            <img src="../assets/images/Translate_icon_1.png" alt="" />
         </div>
     </div>
     <div class="tr-list">
@@ -31,7 +31,7 @@
                         <p>
 								<span>
 									翻译
-									<img src="https://statics.shiyanjia.com/c/v3/images/paper/dropdown.png" alt="">
+									<img src="../assets/images/Translate_icon_2.png" alt="">
 								</span>
                         </p>
                     </div>
@@ -45,7 +45,7 @@
                         <p>
 								<span>
 									校对
-									<img src="https://statics.shiyanjia.com/c/v3/images/paper/dropdown.png" alt="">
+									<img src="../assets/images/Translate_icon_2.png" alt="">
 								</span>
                         </p>
                     </div>
@@ -59,7 +59,7 @@
                         <p>
 								<span>
 									编辑格式
-									<img src="https://statics.shiyanjia.com/c/v3/images/paper/dropdown.png" alt="">
+									<img src="../assets/images/Translate_icon_2.png" alt="">
 								</span>
                         </p>
                     </div>
@@ -73,7 +73,7 @@
                         <p>
 								<span>
 									质量监控
-									<img src="https://statics.shiyanjia.com/c/v3/images/paper/dropdown.png" alt="">
+									<img src="../assets/images/Translate_icon_2.png" alt="">
 								</span>
                         </p>
                     </div>
@@ -90,28 +90,28 @@
     <div class="progress" id="progress">
         <div class="progress-box clearfix">
             <div class="progress-item">
-                <img class="progress-item_1" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_1.png" alt="">
+                <img class="progress-item_1" src="../assets/images/Scipolishen_icon_7.png" alt="">
                 <div>
                     <h1>1.在线提交订单</h1>
                     <p>介绍服务需求并提交订单</p>
                 </div>
             </div>
             <div class="progress-item">
-                <img class="progress-item_1" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_2.png" alt="">
+                <img class="progress-item_1" src="../assets/images/Scipolishen_icon_7.png" alt="">
                 <div>
                     <h1>2·沟通细节</h1>
                     <p>与老师对接，沟通需求细节<br />确认报价、时间等信息</p>
                 </div>
             </div>
             <div class="progress-item">
-                <img class="progress-item_1" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_3.png" alt="">
+                <img class="progress-item_1" src="../assets/images/Scipolishen_icon_7.png" alt="">
                 <div>
                     <h1>3·付款确认</h1>
                     <p>登录个人中心-我的预约确定<br />订单报价并付款</p>
                 </div>
             </div>
             <div class="progress-item">
-                <img class="progress-item_1" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_4.png" alt="">
+                <img class="progress-item_1" src="../assets/images/Scipolishen_icon_7.png" alt="">
                 <div>
                     <h1>4·投稿服务</h1>
                     <p>协助投稿过程，与您保持紧<br />密交流</p>
@@ -736,7 +736,7 @@ export default {
 }
 .select2-search__field {
     border: 1px solid #DEDEDE!important;
-    background: url('https://statics.shiyanjia.com/c/2018/images/search_1.png') no-repeat 98% center;
+    background: url('../assets/images/Scipolishen_icon_13.png') no-repeat 98% center;
     background-size: 16px 16px;
 }
 .select2-results__option--highlighted {
@@ -764,7 +764,7 @@ export default {
 }
 .select2-search__field {
     border: 1px solid #DEDEDE!important;
-    background: url('https://statics.shiyanjia.com/c/2018/images/search_1.png') no-repeat 98% center;
+    background: url('../assets/images/Scipolishen_icon_13.png') no-repeat 98% center;
     background-size: 16px 16px;
 }
 .select2-results__option--highlighted {

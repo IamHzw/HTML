@@ -432,49 +432,49 @@
                 <div class="swiper-wrapper">
                     <div class="paper-slide swiper-slide">
                         <div class="paper-box">
-                            <div class="paper-pic"><a><img src="http://pic.ceshigo.com//20190308/2019030817241994476517.jpg"></a>
+                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_1.jpg"></a>
                             </div>
                         </div>
                     </div>
                     <div class="paper-slide swiper-slide">
                         <div class="paper-box">
-                            <div class="paper-pic"><a><img src="http://pic.ceshigo.com//20190308/2019030817231717036855.jpg"></a>
+                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_2.jpg"></a>
                             </div>
                         </div>
                     </div>
                     <div class="paper-slide swiper-slide">
                         <div class="paper-box">
-                            <div class="paper-pic"><a><img src="http://pic.ceshigo.com//20190308/2019030817223131021372.jpg"></a>
+                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_3.jpg"></a>
                             </div>
                         </div>
                     </div>
                     <div class="paper-slide swiper-slide">
                         <div class="paper-box">
-                            <div class="paper-pic"><a><img src="http://pic.ceshigo.com//20190308/2019030817215437219406.jpg"></a>
+                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_4.jpg"></a>
                             </div>
                         </div>
                     </div>
                     <div class="paper-slide swiper-slide">
                         <div class="paper-box">
-                            <div class="paper-pic"><a><img src="http://pic.ceshigo.com//20181113/2018111318023490649335.jpg"></a>
+                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_5.jpg"></a>
                             </div>
                         </div>
                     </div>
                     <div class="paper-slide swiper-slide">
                         <div class="paper-box">
-                            <div class="paper-pic"><a><img src="http://pic.ceshigo.com//20181112/2018111214015812088310.jpg"></a>
+                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_6.jpg"></a>
                             </div>
                         </div>
                     </div>
                     <div class="paper-slide swiper-slide">
                         <div class="paper-box">
-                            <div class="paper-pic"><a><img src="http://pic.ceshigo.com//20181112/2018111211480721878590.jpg"></a>
+                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_7.jpg"></a>
                             </div>
                         </div>
                     </div>
                     <div class="paper-slide swiper-slide">
                         <div class="paper-box">
-                            <div class="paper-pic"><a><img src="http://pic.ceshigo.com//20181112/2018111214085947087001.jpg"></a>
+                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_8.jpg"></a>
                             </div>
                         </div>
                     </div>            
@@ -556,7 +556,7 @@
         <h3>Cooperation agency</h3>
         <h4>测试狗与众多知名单位合作，持续优化和提升服务质量，只为给您提供快速而准确的数据</h4>
 
-        <div style="background: url('http://pic.ceshigo.com/20181111/2018111109542423826062.png') no-repeat;height: 540px;padding-bottom: 20px;overflow: inherit;position: relative;width: 1200px;
+        <div style="background: url('../assets/images/Index_icon_8.png') no-repeat;height: 540px;padding-bottom: 20px;overflow: inherit;position: relative;width: 1200px;
         margin: 0 auto;">
         </div>
     </div>
@@ -575,8 +575,8 @@ import  vFooter from "../components/vFooter.vue";
 export default {
   data () {
     return {
-      imgArr:["http://pic.ceshigo.com//20181217/2018121710411596276406.jpg","http://pic.ceshigo.com//20190513/2019051314222468335301.jpg","http://pic.ceshigo.com//20190513/2019051314135655256288.jpg","http://pic.ceshigo.com//20181111/2018111115000750339563.jpg"],
-      paperArr:["http://pic.ceshigo.com//20190308/2019030817241994476517.jpg","http://pic.ceshigo.com//20190308/2019030817231717036855.jpg","http://pic.ceshigo.com//20190308/2019030817223131021372.jpg","http://pic.ceshigo.com//20190308/2019030817215437219406.jpg","http://pic.ceshigo.com//20181113/2018111318023490649335.jpg","http://pic.ceshigo.com//20181112/2018111214015812088310.jpg","http://pic.ceshigo.com//20181112/2018111211480721878590.jpg","http://pic.ceshigo.com//20181112/2018111214085947087001.jpg"]
+    //   imgArr:["http://pic.ceshigo.com//20181217/2018121710411596276406.jpg","http://pic.ceshigo.com//20190513/2019051314222468335301.jpg","http://pic.ceshigo.com//20190513/2019051314135655256288.jpg","http://pic.ceshigo.com//20181111/2018111115000750339563.jpg"],
+    //   paperArr:["http://pic.ceshigo.com//20190308/2019030817241994476517.jpg","http://pic.ceshigo.com//20190308/2019030817231717036855.jpg","http://pic.ceshigo.com//20190308/2019030817223131021372.jpg","http://pic.ceshigo.com//20190308/2019030817215437219406.jpg","http://pic.ceshigo.com//20181113/2018111318023490649335.jpg","http://pic.ceshigo.com//20181112/2018111214015812088310.jpg","http://pic.ceshigo.com//20181112/2018111211480721878590.jpg","http://pic.ceshigo.com//20181112/2018111214085947087001.jpg"]
     }
   },
     components: {

@@ -63,7 +63,7 @@
         </h2>
         <div class="aboutresult-wrap" style="margin:0px;padding:80px 0px 0px;">
           <div class="aboutresult-item" style="margin:0px;padding:35px 24px 0px;background:#01707B;">
-            <i><img title="reason1.png" style="height:62px;" alt="reason1.png" src="http://pic.ceshigo.com/20190222/2019022216475093565049.png" /></i> 
+            <i><img title="reason1.png" style="height:62px;" alt="reason1.png" src="../assets/images/about_icon_1.png" /></i> 
             <h3 style="font-weight:normal;font-size:16px;color:#FFFFFF;text-align:center;">
               质量有保证
             </h3>
@@ -72,7 +72,7 @@
             </p>
           </div>
           <div class="aboutresult-item" style="margin:0px;padding:35px 24px 0px;background:#01707B;">
-            <i><img title="reason2.png" style="height:62px;" alt="reason2.png" src="http://pic.ceshigo.com/20190222/2019022216480462093124.png" /></i> 
+            <i><img title="reason2.png" style="height:62px;" alt="reason2.png" src="../assets/images/about_icon_2.png" /></i> 
             <h3 style="font-weight:normal;font-size:16px;color:#FFFFFF;text-align:center;">
               测试周期短
             </h3>
@@ -81,7 +81,7 @@
             </p>
           </div>
           <div class="aboutresult-item" style="margin:0px;padding:35px 24px 0px;background:#01707B;">
-            <i><img title="reason3.png" style="height:62px;" alt="reason3.png" src="http://pic.ceshigo.com/20190222/2019022216482120165576.png" /></i> 
+            <i><img title="reason3.png" style="height:62px;" alt="reason3.png" src="../assets/images/about_icon_3.png" /></i> 
             <h3 style="font-weight:normal;font-size:16px;color:#FFFFFF;text-align:center;">
               测试项目全
             </h3>
@@ -90,7 +90,7 @@
             </p>
           </div>
           <div class="aboutresult-item" style="margin:0px;padding:35px 24px 0px;background:#01707B;">
-            <i><img title="reason4.png" style="height:62px;" alt="reason4.png" src="http://pic.ceshigo.com/20190222/2019022216483380358811.png" /></i> 
+            <i><img title="reason4.png" style="height:62px;" alt="reason4.png" src="../assets/images/about_icon_4.png" /></i> 
             <h3 style="font-weight:normal;font-size:16px;color:#FFFFFF;text-align:center;">
               价格优惠
             </h3>

@@ -11,7 +11,7 @@
             基于量子力学或牛顿力学的第一性原理、密度泛函理论（DFT）、分子动力学等方法，可以对物理、化学、材料、生物研究体系进行建模计算，从而得到其最优的几何构型、电子结构、热力学动力学等相关性质。此类计算已经越来越多地被应用到晶体结构、催化界面、电化学效应、材料设计与合成、生物对接等热门领域。<br />
             在得到实验结果后，通过理论计算模拟对实验结果进行支撑，可以增加实验结论的可靠性，提升文章的档次和IF。这也成为了目前科研界众所周知的“捷径”。
           </div>
-          <img class="sim-bg" src="https://statics.shiyanjia.com/c/2018/images/simulate/bg.png">
+          <img class="sim-bg" src="../assets/images/Simulate_icon_1.png">
           <a class="sim-btn sim-btn-active" @click="returnCom('makeAppointment')" >立即预约</a>
         </div>
       </div>
@@ -33,35 +33,35 @@
           <ul class="sim-project clearfix">
             <li class="sim-project-item">
               <h2>几何构型</h2>
-              <img src="https://statics.shiyanjia.com/c/2018/images/simulate/item1.png">
+              <img src="../assets/images/Simulate_icon_2.png">
               <div class="project-desc">
                 键长，键角，晶格参数，稳定构型，表面重构，缺陷，空位，活性位等
               </div>
             </li>
             <li class="sim-project-item">
               <h2>电子相关性质</h2>
-              <img src="https://statics.shiyanjia.com/c/2018/images/simulate/item2.png">
+              <img src="../assets/images/Simulate_icon_3.png">
               <div class="project-desc">
                 HOMO/LUMO能级，能带结构，导带、价带位置，DOS，电子云密度，载流子迁移率，费米能级，功函数等
               </div>
             </li>
             <li class="sim-project-item">
               <h2>动力/热力学相关性质</h2>
-              <img src="https://statics.shiyanjia.com/c/2018/images/simulate/item3.png">
+              <img src="../assets/images/Simulate_icon_4.png">
               <div class="project-desc">
                 吸附能，掺杂能，结合能，分解能，热力学吉布斯自由能等
               </div>
             </li>
             <li class="sim-project-item">
               <h2>生物相关模拟</h2>
-              <img src="https://statics.shiyanjia.com/c/2018/images/simulate/item4.png">
+              <img src="../assets/images/Simulate_icon_5.png">
               <div class="project-desc">
                 多糖分子对接，分子表面计算，生物酶催化计算，蛋白相互作用分析，跨膜输运机制计算等
               </div>
             </li>
             <li class="sim-project-item">
               <h2>有限元模拟comsol</h2>
-              <img src="https://statics.shiyanjia.com/c/2018/images/simulate/item5.png">
+              <img src="../assets/images/Simulate_icon_6.png">
               <div class="project-desc">
                 多物理场模拟仿真
               </div>
@@ -88,7 +88,7 @@
                   </div>
                   <div class="col2 fl">
                     <a class="downfile fl downloadMould"  @click="toDonwload()">
-                        <img class="down-img" src="https://statics.shiyanjia.com/c/2018/images/biology/download.png" />
+                        <img class="down-img" src="../assets/images/BiologysProt_icon_5.png" />
                         <p class="down-cont font14" style="">下载</p>
                     </a>
                     <div class="upload-file-desc">
@@ -104,7 +104,7 @@
                   <div class="add-btn fl">
                       <input type="hidden" id="attache1" name="attache1" value=""  />
                       <a class="input-file fl">
-                          <img class="add-img" src="https://statics.shiyanjia.com/c/2018/images/biology/upload.png" />
+                          <img class="add-img" src="../assets/images/BiologysProt_icon_6.png" />
                           <p>上传</p>
                           <input class="sel-file" type="file" name="file" @change="upload($event.target.files)"   />
                       </a>

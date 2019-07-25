@@ -5,7 +5,7 @@
     <div id="index-banner" class="coop-banner">
         <div class="wrap">
             <!--<img src="/static/images/coopbanner.jpg" class="banner-bg">-->
-            <img src="http://pic.ceshigo.com//20181017/2018101713582859173784.jpg" class="banner-bg">
+            <img src="../assets/images/Partnership_icon_1.jpg" class="banner-bg">
         </div>
     </div>
     <div id="coopreason">
@@ -26,7 +26,7 @@
             <div class="coopreason-wrap">
               <div class="coopreason-item">
                 <div class="coopreason-pic">
-                  <img src="http://pic.ceshigo.com/20190222/2019022216460294205601.jpg" title="coop1.jpg" alt="coop1.jpg" /> 
+                  <img src="../assets/images/Partnership_icon_2.jpg" title="coop1.jpg" alt="coop1.jpg" /> 
                 </div>
                 <h4>
                   业务支持
@@ -37,7 +37,7 @@
               </div>
               <div class="coopreason-item">
                 <div class="coopreason-pic">
-                  <img src="http://pic.ceshigo.com/20190222/2019022216461701625590.jpg" title="coop2.jpg" alt="coop2.jpg" /> 
+                  <img src="../assets/images/Partnership_icon_3.jpg" title="coop2.jpg" alt="coop2.jpg" /> 
                 </div>
                 <h4>
                   市场与营销支持
@@ -48,7 +48,7 @@
               </div>
               <div class="coopreason-item">
                 <div class="coopreason-pic">
-                  <img src="http://pic.ceshigo.com/20190222/2019022216462623171969.jpg" title="coop3.jpg" alt="coop3.jpg" /> 
+                  <img src="../assets/images/Partnership_icon_4.jpg" title="coop3.jpg" alt="coop3.jpg" /> 
                 </div>
                 <h4>
                   培训赋能支持
@@ -59,7 +59,7 @@
               </div>
               <div class="coopreason-item">
                 <div class="coopreason-pic">
-                  <img src="http://pic.ceshigo.com/20190222/2019022216463505618882.jpg" title="coop4.jpg" alt="coop4.jpg" /> 
+                  <img src="../assets/images/Partnership_icon_5.jpg" title="coop4.jpg" alt="coop4.jpg" /> 
                 </div>
                 <h4>
                   专业技术支持

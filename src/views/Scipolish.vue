@@ -12,13 +12,13 @@
               <div class="nav-tr">
                   <div class="navbar-origin clearfix">
                       <div class="img-box fl">
-                          <img src="https://statics.shiyanjia.com/c/v3/images/paper/professor.png" alt="">
+                          <img src="../assets/images/Scipolish_icon_1.png" alt="">
                       </div>
                       <p class="fl">专业编辑</p>
                   </div>
                   <div class="navbar-active clearfix">
                       <div class="img-box fl">
-                          <img src="https://statics.shiyanjia.com/c/v3/images/paper/professor-active.png" alt="" />
+                          <img src="../assets/images/Scipolish_icon_2.png" alt="" />
                       </div>
                       <h3 class="">100%母语编辑具有丰富编辑经验和多年专业背景</h3>
                   </div>
@@ -29,13 +29,13 @@
               <div class="nav-tr ">
                   <div class="navbar-origin clearfix">
                       <div class="img-box fl">
-                          <img src="https://statics.shiyanjia.com/c/v3/images/paper/secret.png" alt="">
+                          <img src="../assets/images/Scipolish_icon_3.png" alt="">
                       </div>
                       <p class="fl">严格保密</p>
                   </div>
                   <div class="navbar-active clearfix">
                       <div class="img-box fl">
-                          <img src="https://statics.shiyanjia.com/c/v3/images/paper/secret-active.png" alt="" />
+                          <img src="../assets/images/Scipolish_icon_4.png" alt="" />
                       </div>
                       <h3 class="">100%每个稿件均与客户签订保密协议，严格保障稿件安全</h3>
                   </div>
@@ -46,13 +46,13 @@
               <div class="nav-tr">
                   <div class="navbar-origin clearfix">
                       <div class="img-box fl">
-                          <img src="https://statics.shiyanjia.com/c/v3/images/paper/service.png" alt="">
+                          <img src="../assets/images/Scipolish_icon_5.png" alt="">
                       </div>
                       <p class="fl">完善客服</p>
                   </div>
                   <div class="navbar-active clearfix">
                       <div class="img-box fl">
-                          <img src="https://statics.shiyanjia.com/c/v3/images/paper/service-active.png" alt="" />
+                          <img src="../assets/images/Scipolish_icon_6.png" alt="" />
                       </div>
                       <h3 class="">为客户提供响应快速、态度很好的客服服务</h3>
                   </div>
@@ -63,13 +63,13 @@
               <div class="nav-tr">
                   <div class="navbar-origin clearfix">
                       <div class="img-box fl">
-                          <img src="https://statics.shiyanjia.com/c/v3/images/paper/money.png" alt="">
+                          <img src="../assets/images/Scipolish_icon_7.png" alt="">
                       </div>
                       <p class="fl">价格优惠</p>
                   </div>
                   <div class="navbar-active clearfix">
                       <div class="img-box fl">
-                          <img src="https://statics.shiyanjia.com/c/v3/images/paper/money-active.png" alt="" />
+                          <img src="../assets/images/Scipolish_icon_8.png" alt="" />
                       </div>
                       <h3 class="">秉承科学指南针一贯特点，为您提供质优价廉的服务</h3>
                   </div>
@@ -133,7 +133,7 @@
                         <div class="qs-list-item">
                             <div class="qs" data-isfold="true">
                                 1.稿件中的图片、表格、参考文献是否需要保留？
-                                <img class="qs-img" src="https://statics.shiyanjia.com/c/v3/images/paper/add.png" alt="" />
+                                <img class="qs-img" src="../assets/images/Scipolish_icon_9.png" alt="" />
                             </div>
                             <div class="as transition">
                                 <p>答：参考文献可以临时删除，图片、表格可以保留，我们最多为您编辑10张图片。</p>
@@ -142,7 +142,7 @@
                         <div class="qs-list-item">
                             <div class="qs" data-isfold="true">
                                 2.请问有编辑过的文件可供我参考吗?
-                                <img class="qs-img" src="https://statics.shiyanjia.com/c/v3/images/paper/add.png" alt="" />
+                                <img class="qs-img" src="../assets/images/Scipolish_icon_9.png" alt="" />
                             </div>
                             <div class="as transition">
                                 <p>答：当然可以，您可以点击XXX看各学科领域的编辑范例。（范例需要在链接中展示）</p>
@@ -151,7 +151,7 @@
                         <div class="qs-list-item">
                             <div class="qs" data-isfold="true">
                                 3.我不确定哪项服务最适合我的稿件，可以给我建议吗？
-                                <img class="qs-img" src="https://statics.shiyanjia.com/c/v3/images/paper/add.png" alt="" />
+                                <img class="qs-img" src="../assets/images/Scipolish_icon_9.png" alt="" />
                             </div>
                             <div class="as transition">
                                 <p>答：可以的。我们的编辑服务涵盖各种选项以确保照顾到所有稿件需求，您可以将您的稿件寄至essaypolishing@sciclubs.cn，我们将协助您选择最合适的服务。</p>
@@ -160,7 +160,7 @@
                         <div class="qs-list-item">
                             <div class="qs" data-isfold="true">
                                 4.我能收到有追踪修订的返稿吗？
-                                <img class="qs-img" src="https://statics.shiyanjia.com/c/v3/images/paper/add.png" alt="" />
+                                <img class="qs-img" src="../assets/images/Scipolish_icon_9.png" alt="" />
                             </div>
                             <div class="as transition">
                                 <p>答：可以的，我们提供的最终版稿件皆是有追踪修订的，若希望收到不显示修订的返稿，也可以跟我们要求。您可以在提交订单的备注栏注明这类需求。</p>
@@ -171,7 +171,7 @@
                         <div class="qs-list-item">
                             <div class="qs" data-isfold="true">
                                 1.我有一篇中文的论文，已自己／请其他人帮我翻译成英文，应选择论文润色服务还是学术翻译服务呢？
-                                <img class="qs-img" src="https://statics.shiyanjia.com/c/v3/images/paper/add.png" alt="" />
+                                <img class="qs-img" src="../assets/images/Scipolish_icon_9.png" alt="" />
                             </div>
                             <div class="as transition">
                                 <p>答：这主要取决于译稿质量，建议请外国朋友读读。如果读得通、只是文句修饰的问题，可直接选择论文润色服务。若要投稿期刊建议选择高级论文润色。若是读不通，可能是所谓的中式英文，建议直接选择学术翻译服务。</p>
@@ -180,7 +180,7 @@
                         <div class="qs-list-item">
                             <div class="qs" data-isfold="true">
                                 2.我的系所／学校／公司有比较多的润色与翻译需求，能否与科学指南针进行长期深入合作？
-                                <img class="qs-img" src="https://statics.shiyanjia.com/c/v3/images/paper/add.png" alt="" />
+                                <img class="qs-img" src="../assets/images/Scipolish_icon_9.png" alt="" />
                             </div>
                             <div class="as transition">
                                 <p>答：当然可以，可以通过电话、微信或邮件告知我们。我们的业务负责人会与您联系，为您的单位定制专属的合作方案。</p>
@@ -189,7 +189,7 @@
                         <div class="qs-list-item">
                             <div class="qs" data-isfold="true">
                                 3.请问有翻译过的文件可供我参考吗?
-                                <img class="qs-img" src="https://statics.shiyanjia.com/c/v3/images/paper/add.png" alt="" />
+                                <img class="qs-img" src="../assets/images/Scipolish_icon_9.png" alt="" />
                             </div>
                             <div class="as transition">
                                 <p>答：请点击XXX链接看各学科领域的翻译范例，或联系我们essaypolishing@sciclubs.cn询问进一步资讯。（范例需要在链接中展示）</p>

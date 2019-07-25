@@ -13,18 +13,18 @@
                       </div>
                       <input id="requiretype" type="hidden" name="requiretype" value="0">
                       <label class="requiretype" data-value="0" style="float:left;height:40px;margin-right:15px;padding-left:20px;position:relative;cursor:pointer;position:relative">
-                          <img class="require-on" src="https://statics.shiyanjia.com/c/2018/images/pushtask/selected.png" style="position:absolute;left:0;top:14px;">
-                          <img class="require-off" src="https://statics.shiyanjia.com/c/2018/images/pushtask/select.png" style="display:none;position:absolute;left:0;top:14px">
+                          <img class="require-on" src="../assets/images/Newdemand_icon_1.png" style="position:absolute;left:0;top:14px;">
+                          <img class="require-off" src="../assets/images/Newdemand_icon_2.png" style="display:none;position:absolute;left:0;top:14px">
                           <span style="display:block;line-height:40px;font-size:14px;color:#666">实验测试</span>
                       </label>
                       <label class="requiretype" data-value="1" style="float:left;height:40px;margin-right:15px;padding-left:20px;position:relative;cursor:pointer;position:relative">
-                          <img class="require-on" src="https://statics.shiyanjia.com/c/2018/images/pushtask/selected.png" style="display:none;position:absolute;left:0;top:14px">
-                          <img class="require-off" src="https://statics.shiyanjia.com/c/2018/images/pushtask/select.png" style="position:absolute;left:0px;top:14px">
+                          <img class="require-on" src="../assets/images/Newdemand_icon_1.png" style="display:none;position:absolute;left:0;top:14px">
+                          <img class="require-off" src="../assets/images/Newdemand_icon_2.png" style="position:absolute;left:0px;top:14px">
                           <span style="display:block;line-height:40px;font-size:14px;color:#666">科研绘图</span>
                       </label>
                       <label class="requiretype" data-value="2" style="float:left;height:40px;margin-right:15px;padding-left:20px;position:relative;cursor:pointer;position:relative">
-                          <img class="require-on" src="https://statics.shiyanjia.com/c/2018/images/pushtask/selected.png" style="display:none;position:absolute;left:0px;top:14px">
-                          <img class="require-off" src="https://statics.shiyanjia.com/c/2018/images/pushtask/select.png" style="position:absolute;left:0px;top:14px">
+                          <img class="require-on" src="../assets/images/Newdemand_icon_1.png" style="display:none;position:absolute;left:0px;top:14px">
+                          <img class="require-off" src="../assets/images/Newdemand_icon_2.png" style="position:absolute;left:0px;top:14px">
                           <span style="display:block;line-height:40px;font-size:14px;color:#666">数据分析</span>
                       </label>
                   </li>
@@ -61,7 +61,7 @@
                   <li>
                       <div class="txt">添加附件</div>
                       <div style="width:50px;height:50px;border:1px dashed #ccc;position:relative;float:left;cursor:pointer">
-                          <img src="https://statics.shiyanjia.com/c/2018/images/buffet/uploadfile.png" style="width:20px;height:20px;position:absolute;top:15px;left:15px;">
+                          <img src="../assets/images/Newdemand_icon_3.png" style="width:20px;height:20px;position:absolute;top:15px;left:15px;">
                           <input id="uploadify" type="file" name="uploadify" style="width:50px;height:50px;opacity:0;position:relative;z-index:100;cursor:pointer" onchange="upfileoss(this);" />
                       </div>
                       <div class='file-list' style="float:left">
@@ -102,10 +102,10 @@
                       客户满意度&nbsp;<span style="color:#fc916d">98.8%</span><br />
                       每天处理样品数&nbsp;<span style="color:#fc916d">2000+</span><br />
                   </div>
-                  <img src="https://statics.shiyanjia.com/c/images/xuqiu_ok.png" style="margin-top:20px;" />
+                  <img src="../assets/images/Newdemand_icon_4.png" style="margin-top:20px;" />
                   <br />
                   <div style="line-height:40px;padding-top:30px;">
-                      <img src="https://statics.shiyanjia.com/c/images/xuqiu_tel.png" />
+                      <img src="../assets/images/Newdemand_icon_5.png" />
                       <div style="font-size:16px;font-weight:bold;line-height:26px;color:#fc916d">400-831-0631</div>
                       <div style="line-height:32px;font-weight:bold;color:#666">
                           周一到周五&nbsp;&nbsp;&nbsp;&nbsp;09:00-21:00

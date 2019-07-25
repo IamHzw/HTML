@@ -6,7 +6,7 @@
       <div class="top_title">生物测试</div>
       <div class="bo-left clearfix fl" style="position: fixed; top: 160px;">
         <div class="bo-avatar fl">
-          <img class="bo-avatar-img" src="https://statics.shiyanjia.com/c/2018/images/biology/avatar.png">
+          <img class="bo-avatar-img" src="../assets/images/BiologysProt_icon_1.png">
           <p class="contacter font16">联系人</p>
           <p class="contactername font14 color666">周老师</p>
           <p class="contacterphone font14 color666"></p>
@@ -52,7 +52,7 @@
             <span>结果展示</span>
           </div>
           <div class="cont">
-            <p><img src="http://admin.shiyanjia.com/ueditor/php/upload/image/20180929/1538209786870377.png" title="1538209786870377.png" alt="图片1.png"/></p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 14px;"> &nbsp;(a)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (b)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (c)</span></p><p><span style="font-size: 14px;">(a)和(b)是真菌的菌丝和分生孢子图，(c)是材料表面大肠杆菌的附着图。</span></p>
+            <p><img src="../assets/images/BiologysProt_icon_2.png" title="1538209786870377.png" alt="图片1.png"/></p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 14px;"> &nbsp;(a)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (b)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (c)</span></p><p><span style="font-size: 14px;">(a)和(b)是真菌的菌丝和分生孢子图，(c)是材料表面大肠杆菌的附着图。</span></p>
           </div>
           <div class="bo-serv font14 color42" id="boxservicedesc">
             <p class="bo-dot"></p>
@@ -67,21 +67,21 @@
           <div class="item fl">
             <p class="font-bold">1·提交需求</p>
             <div>在下方下载并填写测试单，描述越清楚，沟通越高效。</div>
-            <img class="right-arrow" src="https://statics.shiyanjia.com/c/2018/images/biology/right-arrow.png">
+            <img class="right-arrow" src="../assets/images/BiologysProt_icon_4.png">
           </div>
           <div class="item fl marginLeft">
             <p class="font-bold">2·沟通细节</p>
             <div>
               我们的项目经理会与您沟通确认方案，包括报价、周期和注意事项等。
             </div>
-            <img class="right-arrow" src="https://statics.shiyanjia.com/c/2018/images/biology/right-arrow.png">
+            <img class="right-arrow" src="../assets/images/BiologysProt_icon_4.png">
           </div>
           <div class="item fl marginLeft">
             <p class="font-bold">3·付款确认</p>
             <div>
               请登录个人中心-->我的预约确认订单报价并付款。
             </div>
-            <img class="right-arrow" src="https://statics.shiyanjia.com/c/2018/images/biology/right-arrow.png">
+            <img class="right-arrow" src="../assets/images/BiologysProt_icon_4.png">
           </div>
           <div class="item fl marginLeft">
             <p class="font-bold">4·下载结果</p>
@@ -100,7 +100,7 @@
             </div>
             <div class="col2 fl">
               <a class="downfile fl downloadMould" href="javascript:;">
-                <img class="down-img" src="https://statics.shiyanjia.com/c/2018/images/biology/download.png" />
+                <img class="down-img" src="../assets/images/BiologysProt_icon_5.png" />
                 <p class="down-cont font14" style="">下载</p>
               </a>
               <div class="upload-file-desc">
@@ -116,7 +116,7 @@
             <div class="add-btn fl">
               <input type="hidden" id="attache1" name="attache1" value=""  />
               <a class="input-file fl">
-                <img class="add-img" src="https://statics.shiyanjia.com/c/2018/images/biology/upload.png" />
+                <img class="add-img" src="../assets/images/BiologysProt_icon_6.png" />
                 <p>上传</p>
                 <input class="sel-file" type="file" name="file" onchange="getFileName(this, 'rar,zip,png,jpg,gif,doc,docx,xls,xlsx,ppt,pptx');"   />
               </a>
@@ -125,7 +125,7 @@
             </div>
           </div>
           <label id="protocol" class="fl font14 color666">
-            <img src="https://statics.shiyanjia.com/c/2018/images/biology/select.png">
+            <img src="../assets/images/BiologysProt_icon_7.png">
             我已阅读并同意<a href="biprotocol.html" target="_blank">《生物实验服务协议》</a>
           </label>
           <br /><br /><br /><br />

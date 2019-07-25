@@ -13,42 +13,42 @@
         <h1>服务内容</h1>
         <div class="service-list clearfix">
             <div class="service-item service-item_1 fl marginRight50 transition">
-                <img class="transition" src="https://statics.shiyanjia.com/c/v3/images/paper/service_1.png" alt="" />
+                <img class="transition" src="../assets/images/Scisupport_icon_1.png" alt="" />
                 <div class="top topBg_1">论文润色</div>
                 <div class="bottom">享受全套论文润色</div>
             </div>
             <div class="service-item service-item_2 fl marginRight50 transition">
-                <img class="transition" src="https://statics.shiyanjia.com/c/v3/images/paper/service_2.png" alt="" />
+                <img class="transition" src="../assets/images/Scisupport_icon_2.png" alt="" />
                 <div class="top topBg_2">投稿前稿件评估</div>
                 <div class="bottom">专业编辑免费审稿提出优化建议</div>
             </div>
             <div class="service-item service-item_3 fl marginRight50 transition">
-                <img class="transition" src="https://statics.shiyanjia.com/c/v3/images/paper/service_3.png" alt="" />
+                <img class="transition" src="../assets/images/Scisupport_icon_3.png" alt="" />
                 <div class="top topBg_3">推荐投稿期刊</div>
                 <div class="bottom">根据论文内容及专业程度推荐合适的投稿期刊</div>
             </div>
             <div class="service-item service-item_4 fl transition">
-                <img class="transition" src="https://statics.shiyanjia.com/c/v3/images/paper/service_4.png" alt="" />
+                <img class="transition" src="../assets/images/Scisupport_icon_4.png" alt="" />
                 <div class="top topBg_4">论文查重服务</div>
                 <div class="bottom">避免可能出现的重复率高的尴尬</div>
             </div>
             <div class="service-item service-item_5 fl marginRight50 transition">
-                <img class="transition" src="https://statics.shiyanjia.com/c/v3/images/paper/service_5.png" alt="" />
+                <img class="transition" src="../assets/images/Scisupport_icon_5.png" alt="" />
                 <div class="top topBg_5">推荐论文审稿人</div>
                 <div class="bottom">推荐合适的审稿人</div>
             </div>
             <div class="service-item service-item_6 fl marginRight50 transition">
-                <img class="transition" src="https://statics.shiyanjia.com/c/v3/images/paper/service_6.png" alt="" />
+                <img class="transition" src="../assets/images/Scisupport_icon_6.png" alt="" />
                 <div class="top topBg_6">投稿协助</div>
                 <div class="bottom">根据期刊格式要求进行论文排版并撰写Cover Letter等补充材料</div>
             </div>
             <div class="service-item service-item_7 fl marginRight50 transition">
-                <img class="transition" src="https://statics.shiyanjia.com/c/v3/images/paper/service_7.png" alt="" />
+                <img class="transition" src="../assets/images/Scisupport_icon_7.png" alt="" />
                 <div class="top topBg_7">实时跟踪投稿进程</div>
                 <div class="bottom">完成投稿后跟踪审核进度</div>
             </div>
             <div class="service-item service-item_8 fl transition">
-                <img class="transition" src="https://statics.shiyanjia.com/c/v3/images/paper/service_8.png" alt="" />
+                <img class="transition" src="../assets/images/Scisupport_icon_8.png" alt="" />
                 <div class="top topBg_8">返退稿协助</div>
                 <div class="bottom">协助作者进行论文返修</div>
             </div>
@@ -57,28 +57,28 @@
     <div class="progress class-wrap" id="progress">
         <div class="progress-box clearfix">
             <div class="progress-item">
-                <img class="progress-item_1" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_1.png" alt="">
+                <img class="progress-item_1" src="../assets/images/Scipolishen_icon_7.png" alt="">
                 <div>
                     <h1>1.在线提交订单</h1>
                     <p>介绍服务需求并提交订单</p>
                 </div>
             </div>
             <div class="progress-item">
-                <img class="progress-item_1" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_2.png" alt="">
+                <img class="progress-item_1" src="../assets/images/Scipolishen_icon_7.png" alt="">
                 <div>
                     <h1>2·沟通细节</h1>
                     <p>与老师对接，沟通需求细节<br />确认报价、时间等信息</p>
                 </div>
             </div>
             <div class="progress-item">
-                <img class="progress-item_1" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_3.png" alt="">
+                <img class="progress-item_1" src="../assets/images/Scipolishen_icon_7.png" alt="">
                 <div>
                     <h1>3·付款确认</h1>
                     <p>登录个人中心-我的预约确定<br />订单报价并付款</p>
                 </div>
             </div>
             <div class="progress-item">
-                <img class="progress-item_1" src="https://statics.shiyanjia.com/c/v3/images/paper/arrow_4.png" alt="">
+                <img class="progress-item_1" src="../assets/images/Scipolishen_icon_7.png" alt="">
                 <div>
                     <h1>4·投稿服务</h1>
                     <p>协助投稿过程，与您保持紧<br />密交流</p>
@@ -621,7 +621,7 @@ export default {
 }
 .select2-search__field {
     border: 1px solid #DEDEDE!important;
-    background: url('https://statics.shiyanjia.com/c/2018/images/search_1.png') no-repeat 98% center;
+    background: url('../assets/images/Scipolishen_icon_13.png') no-repeat 98% center;
     background-size: 16px 16px;
 }
 .select2-results__option--highlighted {

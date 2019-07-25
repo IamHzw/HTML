@@ -8,23 +8,23 @@
 
         <div class="make-price-box clearfix">
             <p class="make-price drafting-title">科研绘图报价单</p>
-            <img class="logo1" src="https://statics.shiyanjia.com/c/images/drafting/money.png" />
+            <img class="logo1" src="../assets/images/Drafting_icon_1.png" />
             <div class="item fl">
-                <img src="https://statics.shiyanjia.com/c/images/drafting/item1.png" />
+                <img src="../assets/images/Drafting_icon_2.png" />
                 <div class="item-title">
                     <span class="item-name fl">SCI期刊封面</span>
                     <span class="item-money fl">2000元起</span>
                 </div>
             </div>
             <div class="item fl marginLeft">
-                <img src="https://statics.shiyanjia.com/c/images/drafting/item2.png" />
+                <img src="../assets/images/Drafting_icon_3.png" />
                 <div class="item-title">
                     <span class="item-name fl">论文摘要图</span>
                     <span class="item-money fl">1200元起</span>
                 </div>
             </div>
             <div class="item fl marginLeft">
-                <img src="https://statics.shiyanjia.com/c/images/drafting/item3.png" />
+                <img src="../assets/images/Drafting_icon_4.png" />
                 <div class="item-title">
                     <span class="item-name fl">论文插图</span>
                     <span class="item-money fl">600元起</span>
@@ -46,13 +46,13 @@
 
         <div class="process-box clearfix">
             <p class="process drafting-title">科研绘图服务步骤</p>
-            <img class="logo1" src="https://statics.shiyanjia.com/c/images/drafting/process.png" />
+            <img class="logo1" src="../assets/images/Drafting_icon_5.png" />
             <div class="item fl">
                 <p>1·提交需求</p>
                 <div>
                     填写需求并提交，建议准备好详细介绍文字、草图、参考图等，可加快沟通进展
                 </div>
-                <img class="right-arrow" src="https://statics.shiyanjia.com/c/images/drafting/right-arrow.png">
+                <img class="right-arrow" src="../assets/images/BiologysProt_icon_4.png">
             </div>
             <div class="item fl marginLeft">
                 <p>2·沟通细节</p>
@@ -61,7 +61,7 @@
                     联系人：陈老师
                     <span>13625714087（同微信）</span>
                 </div>
-                <img class="right-arrow" src="https://statics.shiyanjia.com/c/images/drafting/right-arrow.png">
+                <img class="right-arrow" src="../assets/images/BiologysProt_icon_4.png">
             </div>
             <div class="item fl marginLeft">
                 <p>3·付款确认</p>
@@ -69,14 +69,14 @@
                     请登录个人中心--我的预约
                     确认订单报价并付款
                 </div>
-                <img class="right-arrow" src="https://statics.shiyanjia.com/c/images/drafting/right-arrow.png">
+                <img class="right-arrow" src="../assets/images/BiologysProt_icon_4.png">
             </div>
             <div class="item fl marginLeft">
                 <p>4·初稿确认</p>
                 <div>
                     付款后3-7个工作日给出初稿，经确认无误后正式作图
                 </div>
-                <img class="right-arrow" src="https://statics.shiyanjia.com/c/images/drafting/right-arrow.png">
+                <img class="right-arrow" src="../assets/images/BiologysProt_icon_4.png">
             </div>
             <div class="item fl marginLeft">
                 <p>5·定稿交付</p>
@@ -87,19 +87,19 @@
         </div>
 
         <div style="position:relative" id="boxproduct">
-            <img class="bg1" src="https://statics.shiyanjia.com/c/images/drafting/bg1.png" />
+            <img class="bg1" src="../assets/images/Drafting_icon_6.png" />
             <div class="commend-box clearfix">
                 <input type="hidden" id="selectedbuffetid" name="selectedbuffetid" value="125" />
                 <input type="hidden" id="selectedproductid" name="selectedproductid" value="5841" />
                 <p class="commend drafting-title">提交需求</p>
-                <img class="logo1" src="https://statics.shiyanjia.com/c/images/drafting/write.png" />
+                <img class="logo1" src="../assets/images/Drafting_icon_7.png" />
                 <div class="info-box clearfix">
                     <div class="row clearfix">
                         <div class="col1 fl">1.下载需求模板</div>
                         <div class="col2 fl">
                             <!-- //statics.shiyanjia.com/c/2018/file/sciDraftingMould.doc -->
                             <a class="file-box fl downloadMould" href="javascript:;" @click="toDonwload()">
-                                <img src="https://statics.shiyanjia.com/c/images/drafting/download.png" alt="" />
+                                <img src="../assets/images/BiologysProt_icon_5.png" alt="" />
                                 <p>下载</p>
                             </a>
                             <div class="file-desc">
@@ -112,7 +112,7 @@
                         <div class="col2 fl">
                             <input type="hidden" id="attache1" name="attache1" value=""  />
                             <a class="file-box fl" href="javascript:;">
-                                <img class="add-img" src="https://statics.shiyanjia.com/c/images/drafting/upload.png" />
+                                <img class="add-img" src="../assets/images/BiologysProt_icon_6.png" />
                                 <p>上传</p>
                            		<input type="file" name="file" @change="upload($event.target.files)">
                             </a>
@@ -133,7 +133,7 @@
         <div class="cover-show-box">
             <div style="width:1200px;margin:0 auto;position:relative">
                 <p class="cover-show">封面作品展示</p>
-                <img class="logo1" src="https://statics.shiyanjia.com/c/images/drafting/cover.png" />
+                <img class="logo1" src="../assets/images/Drafting_icon_8.png" />
                 <div class="cover clearfix">
                   <div class='cover-item fl' style='margin-bottom:60px'>
                     <img class='cover-img' src='../assets/images/cover_1.png'>
