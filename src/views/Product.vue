@@ -310,10 +310,13 @@ export default {
 	  		 		//设置购物车存在该商品
 	  		 		flag = false;
 	  		 		//判断这个商品的该属性是否已存在
-	  		 		if(this.car[i].val.indexOf(item)!=-1){
-	  					//如果已存在，则不做操作
-   	 		 			return;
-   	 		 		}
+	  		 		for(var j = 0;j<this.car[i].val.length;j++){
+	  		 			if(this.car[i].val[j].id ==item.id){
+	  						//如果已存在，则不做操作
+   	 		 				return;
+   	 		 			}
+	  		 		}
+	  		 		
    	 		 		//不存在，则加入属性数组
 	  		 		this.car[i].val.push(item);
 	  		 		//退出

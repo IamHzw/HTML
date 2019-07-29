@@ -2,7 +2,7 @@
   <header class="login-header">
   		<router-link  :to="{path:'/index'}" >
 	        <a href="javascript:;" id="logo" class="fl" style="box-sizing: border-box;">
-	            <img src="../assets/images/logo.png">
+	            <img src="../assets/images/logo2.png">
 	        </a>
         </router-link>
         <div class="header-right-box clearfix" style="box-sizing: border-box;">
@@ -119,7 +119,7 @@ export default {
             map.centerAndZoom(point,12);
             var geolocation = new BMap.Geolocation();
 
-            geolocation.getCurrentPosition(function(r){console.log(r.point)
+            geolocation.getCurrentPosition(function(r){
 		
                 if(this.getStatus() == BMAP_STATUS_SUCCESS){
                     var mk = new BMap.Marker(r.point);
@@ -129,8 +129,6 @@ export default {
                     var point = new BMap.Point(r.point.lng,r.point.lat);//用所定位的经纬度查找所在地省市街道等信息
                     var gc = new BMap.Geocoder();
                     gc.getLocation(point, function(rs){
-                   	 	console.log("----------");
-                    	console.log(that);
                         that.currentCity = rs.addressComponents.city;
 						sessionStorage.setItem('city',rs.addressComponents.city);
 						console.log(rs.addressComponents.city);
@@ -144,7 +142,6 @@ export default {
         },
         loginOut(){
         	 webRpc.invokeCross("memberWebRpc.logout").then(result=>{
-        	  console.log(result);
 				if(result.retCode==0){
                 	token.clear();
                 	sessionStorage.removeItem('currentMember');

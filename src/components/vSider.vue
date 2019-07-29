@@ -42,7 +42,7 @@
                                             </div>
                                             <div class="commNum clearfix" v-for="(subItem, i) in item.val">
                                                 <div class="fl tm-img">
-                                                    <img :src="HOST+item.key.imagesArr">
+                                                    <img :src="HOST+item.key.imagesArr[0]">
                                                 </div>
                                                 <div class="fl tm-txt" >
                                                     <span >{{subItem.title}}</span>
@@ -110,6 +110,7 @@ export default {
       if(JSON.parse(sessionStorage.getItem("car"))==null){
           return false
       }
+      
       this.listData=JSON.parse(sessionStorage.getItem("car"))   
   },
   
@@ -121,11 +122,11 @@ export default {
             return false
         }
         
-       
+
         this.listData=JSON.parse(sessionStorage.getItem("car"));
         
-
-        if(this.listData.length===0 && !this.objs.hasOwnProperty('key')){
+		
+        if(this.listData==null || (this.listData.length===0 && !this.objs.hasOwnProperty('key'))){
             layer.msg("购物车空");
             return false
         }else{
@@ -192,7 +193,7 @@ export default {
     }
   },
   beforeDestroy () {
-      sessionStorage.setItem("car",JSON.stringify(this.listData))
+      //sessionStorage.setItem("car",JSON.stringify(this.listData))
   } 
 }
 </script>

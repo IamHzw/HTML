@@ -630,11 +630,11 @@ width: 15%;
 input[type="file"] {display: none;}
 .appoint-edit{padding-top: 40px;}
 .appoint-edit dt{width: 77px;float: left;line-height: 38px;color: #5d5d5d;}
-.appoint-edit dd{margin-left: 80px;margin-bottom: 20px;min-height: 38px;}
-.appoint-edit input[type="text"]{width: auto;height: 40px;border: 1px solid #dcdcdc;box-sizing: border-box;line-height: 38px;padding: 0 5px;font-size: 14px;}
-.appoint-edit .edit-pick{display: block;float: left;width: 193px;height: 38px;line-height: 38px;text-align: center;font-size: 14px;color: #000000;background: #e8e8e8;cursor: pointer;position: relative;}
+.appoint-edit dd{margin-left: 80px;margin-bottom: 10px;min-height: 38px;}
+.appoint-edit input[type="text"]{width: auto;height: 33px;border: 1px solid #dcdcdc;box-sizing: border-box;line-height: 33px;padding: 0 5px;font-size: 14px;}
+.appoint-edit .edit-pick{display: block;float: left;width: 193px;height: 38px;line-height: 38px;text-align: center;font-size: 14px;color: #000000;background: #e8e8e8;cursor: pointer;position: relative;margin-right: 10px}
 .appoint-edit .edit-pick.ac{background: #01707b;color: #fff;}
-.appoint-edit .edit-aim{border: 1px solid #dcdcdc;height: 130px;box-sizing: border-box;padding: 0 20px;font-size: 14px;line-height: 38px;width: 582px;}
+.appoint-edit .edit-aim{border: 1px solid #dcdcdc;height: 110px;box-sizing: border-box;padding: 0 20px;font-size: 14px;line-height: 38px;width: 582px;}
 .appoint-edit .edit-tip{font-size: 12px;color: #ff0000;line-height: 30px;margin-top: 10px;}
 #mceu_11{width: 580px!important;}
 #mceu_30{display: none;}
@@ -877,21 +877,21 @@ input[type="file"] {display: none;}
 .coopwrap textarea{width: 100%;box-sizing: border-box;border: 1px solid #d2d2d2;background: #fff;padding: 0 20px;line-height: 49px;font-size: 14px;height: 320px;}
 #coopform button{display: block;margin: 60px auto 0;width: 206px;height: 46px;line-height: 46px;font-size: 14px;text-align: center;color: #fff;background: #ed4d01;border-radius: 5px;cursor: pointer;}
 #content.edit-content{background: #fff;}
-#edit-wrap{margin-right: 360px;}
+#edit-wrap{margin-right: 420px;}
 #edit-wrap #slide-main{background: #fafafa;}
 .edit-top{padding-left: 38px;background: #f1f6fa url("../assets/images/tip.png") no-repeat 10px center;font-size: 12px;color: #4e4e4e;line-height: 31px;}
 #slide-main-title{width: 25px;text-align: center;height: 100%;position: absolute;left: 0;top:0;background: #f2f2f2;font-size: 14px;color: #959595;line-height: 18px;box-sizing: border-box;padding-top: 350px;}
 #edit-wrap .appoint-edit{padding-top: 0;}
-.appoint-select{width: 163px;height: 39px;border: 1px solid #d8d8d8;background: #fff;text-align: center;line-height: 39px;font-size: 16px;color: #555555;position: relative;cursor: pointer;}
+.appoint-select{width: 163px;height: 35px;border: 1px solid #d8d8d8;background: #fff;text-align: center;line-height: 35px;font-size: 16px;color: #555555;position: relative;cursor: pointer;}
 .appoint-option{position: absolute;top:39px;left: -1px;width: 268px;z-index: 10002;}
 .appoint-option a{display: block;line-height: 41px;font-size: 18px;color: #000000;padding: 0 20px;background: #e8e8e8;text-align: left;}
 .appoint-option a span{float: right;color: #888888;font-size: 16px;}
-.edit-item{height: 43px;overflow: hidden;margin-bottom: 13px;}
-.edit-name{line-height: 41px;font-size: 18px;color: #000000;padding: 0 20px;background: #e8e8e8;float: left;margin-right: 10px;box-sizing: border-box;width: 300px; border: 1px solid #a7a7a7;}
+.edit-item{height: 43px;overflow: hidden;margin-bottom: 8px;}
+.edit-name{line-height: 33px;font-size: 18px;color: #000000;padding: 0 20px;background: #e8e8e8;float: left;margin-right: 10px;box-sizing: border-box;width: 300px; border: 1px solid #a7a7a7;}
 .edit-name span{float: right;color: #888888;font-size: 16px;}
 .edit-num{float: left;position: relative;background: #e8e8e8;width: 193px;}
 #slide-main .itxt {position: absolute;left: 54px;top: 0;width: 87px!important;height: 38px;line-height: 28px;text-align: center;margin: 0;font-size: 14px;color: #333;-webkit-appearance: none;border: none!important;}
-.appoint-option{display: none;}
+.appoint-option{}
 .appoint-edit label{line-height: 36px;font-size: 14px;color: #0f0f0f;}
 .appoint-edit label span{color: #ff6728;}
 .appoint-edit label input{width: 17px;height: 17px;margin-right: 10px;}
@@ -905,11 +905,11 @@ input[type="file"] {display: none;}
 .file-item .delete{position: absolute;left: 0;top:0;padding: 0 10px;background: red;line-height: 30px;color: #fff;}
 .file-item .info{width: 105px;height: 36px;line-height: 36px;text-align: center;border: 1px solid #dcdcdc;background: #fff;margin-top: 9px;font-size: 12px;color: #040404;overflow: hidden;white-space: nowrap;}
 .file-item .error{position: absolute;top:0;left: 0;width: 100%;text-align: center;color: #ff0000;background: rgba(0,0,0,.4);font-size: 12px;line-height: 30px;}
-#filePicker{background: url("../assets/images/add.jpg");width: 107px;height: 107px;cursor: pointer;float: left;position: relative;}
+#filePicker{background: url("../assets/images/add.jpg");width: 87px;height: 87px;cursor: pointer;float: left;position: relative;}
 #picker,#ctlBtn{width: 111px;height: 37px;border-radius: 3px;background: #ff6020;text-align: center;line-height: 37px;color: #fff;cursor: pointer;font-size: 14px;margin-right: 10px;float: left;position: relative;}
 #thelist .item{float: left;margin-right: 10px;font-size: 14px;line-height: 37px;color: #000000;}
 #uploader-p{font-size: 14px;color: #404040;line-height: 36px;}
-#edit-slide{width: 325px;float: right;background: #fafafa;padding: 0 20px 45px;box-sizing: border-box;z-index: 100;}
+#edit-slide{width: 405px;float: right;background: #fafafa;padding: 0 5px 45px;box-sizing: border-box;z-index: 100;}
 #edit-slide h2{font-size: 16px;color: #000000;line-height: 57px;margin-bottom: 10px;}
 #edit-slide dl{font-size: 14px;line-height: 30px;}
 #edit-slide dt{text-align: right;color: #969696;float: left;}
@@ -1118,8 +1118,8 @@ em{font-style: normal;}
 }
 @media only screen and (max-width: 1380px) {
     .login-header #logo{margin-left: 20px;width: 250px;}
-    .login-header #logo img{width: 100%;}
-    .login-header .l-phone{padding-right: 20px;}
+    .login-header #logo img{width: 100%;    height: 45px;}
+    .login-header .l-phone{padding-right: 20px;    width: 330px;}
     .help-slide h2{padding-left: 70px;}
     .help-nav{padding-left: 40px;}
     .help-slide{width: 240px;}

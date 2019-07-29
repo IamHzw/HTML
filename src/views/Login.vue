@@ -169,11 +169,11 @@ export default {
 		//获取当前用户
 		getCurrentMemeber(){
 			webRpc.invokeCross("memberWebRpc.currentMember").then(result=>{
-            	console.log(result);
+            	console.log("-----------------------"+result);
                 sessionStorage.setItem('currentMember',JSON.stringify(result.data));
                 //清空购物车
-                sessionStorage.removeItem('car');
-                console.log(result.data);
+                sessionStorage.removeItem("car");
+                console.log("清空car");
                 this.$router.push('/index');
 		   	}).catch(error =>{});
 		}
