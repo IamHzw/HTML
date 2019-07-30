@@ -42,7 +42,12 @@
                     	￥ <strong>{{commonData.preAmountTotal}}</strong>
                     	<span v-if="commonData.calAble==2">(面议)</span>
                     </h4>
-                    <p><label><input type="checkbox" id="templateInput">创建预约模板，添加至“一键预约”</label></p>
+                    <p>
+                    	<label>
+                    		<input type="checkbox" v-model="commonData.oneClick" value="1" id="templateInput">
+                    		创建预约模板，添加至“一键预约”
+                    	</label>
+                    </p>
                     <button type="button" @click="save()" >确认并预约</button>
                 </div>
             </div>
@@ -122,12 +127,15 @@
                                                     <dd class="clearfix">
                                                         <div id="uploader" class="wu-example clearfix">
                                                             <div id="thelist" class="uploader-list fl">
+                                                            	<span v-for="sfile in data.orderSample.referenceFileArr" style="width:50px;border: 1px solid #d70a0a;">
+                                                            		{{sfile.type}}
+                                                            	</span>
                                                             </div>
                                                             <div class="btns">
                                                                 <div id="picker" class="webuploader-container">
                                                                 	<div class="webuploader-pick" style="position: absolute; top: 0px; left: 0px; width: 111px; height: 37px; overflow: hidden; bottom: auto; right: auto;">
-                                                                		<input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept=""  @change="upload($event.target.files,'requestFile')">
-                                                                		<label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);">恭恭敬敬</label>
+                                                                		开始上传
+                                                                		<input type="file" class="uploadFile webuploader-element-invisible" name="file"  multiple="multiple" accept="image/*" @change="upload($event.target.files,'referenceFileArr',data.orderSample,'referenceFile')">
                                                                 	</div>
                                                                 </div>
                                                                 
@@ -151,15 +159,16 @@
                                                     <dt>样品照片：</dt>
                                                     <dd class="clearfix">
                                                         <div id="uploader-demo" class="clearfix">
-                                                            <!--用来存放item-->
-                                                            <div id="fileList" class="uploader-list fl">
-                                                                <!--                 -->
+                                                            <!--用来存放item,这里要增加删除-->
+                                                            <div id="fileList" class="uploader-list fl requestFile">
+                                                            	<span v-for="simg in data.orderSample.sampleImgArr">
+                                                            		 <img :src.sync="simg.path"  style="height:87px;width:87px;    margin-right: 5px;" >
+                                                            	</span>
                                                             </div>
                                                             <div id="filePicker" class="webuploader-container">
 	                                                            <div class="webuploader-pick"></div>
 	                                                            <div style="position: absolute; top: 0px; left: 0px; width: 87px; height: 87px; overflow: hidden;">
-	                                                            	<input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/*">
-	                                                            	<label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+	                                                            	<input type="file" class="uploadFile webuploader-element-invisible" name="file"  multiple="multiple" accept="image/*" @change="upload($event.target.files,'sampleImgArr',data.orderSample,'sampleImg')">
 	                                                            </div>
                                                             </div>
                                                         </div>
@@ -253,7 +262,7 @@
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
-import { webRpc,token } from '../rpc/index';
+import { webRpc,token,upload } from '../rpc/index';
 import { HOST } from '../config';
 
 export default {
@@ -271,6 +280,7 @@ export default {
 			recovery : '否',
 			deliverWay : '邮寄到付',
 			preAmountTotal:0,
+			oneClick:1,
 			calAble:1	//计算
       },
       list:['开票转账','预付卡支付','现金支付'],
@@ -308,6 +318,8 @@ export default {
 	  				sampleNum :1,
 	  				sampleImg :"",
 	  				sampleDescribe :"",
+	  				sampleImgArr :[],
+	  				referenceFileArr :[],
 	      		},
 	      		orderDetails:[]
 	  		};
@@ -377,7 +389,6 @@ export default {
     		}else{
     			subItem.sampleNum = subItem.sampleNum-1;
     		}
-    		
     	}
     },
     selectType(i,type){
@@ -400,6 +411,8 @@ export default {
    	 	}
    	},
    	save(){
+   		console.log(this.commonData);
+   		return;
    		console.log(this.datalist);
    		webRpc.invoke("orderWebRpc.saveOrder",this.datalist,this.commonData).then(result=>{
    			console.log(result);
@@ -408,8 +421,7 @@ export default {
 	        	//跳转至成功页
 	        	
 			}else{
-				
-	  					
+	  			layer.msg(result.message);	
 			}
 		}).catch(error =>{});
    	},
@@ -432,7 +444,6 @@ export default {
 				return;
 			}
    	 	}
-   	 	
    	 	var detail = {
 			productSkuId:data.id,
 	  		productSkuName:data.title,
@@ -445,30 +456,33 @@ export default {
 	  	details.push(detail);
 	  	this.sumTotal();
    	},
-   		upload(files,arg) {
+   		upload(files,arg,detail,arg2) {
 	        if(!files.length) {
 	          return ;
 	        }
 	        
-	        let text= files[0].name.split(".")[1].toUpperCase();
-            let html = "";
-            html += "<a href='javascript:;' style=' -o-text-overflow: ellipsis; text-overflow: ellipsis; overflow: hidden;white-space: nowrap;margin-left: 10px;display:block;width:180px;height:45px;padding-top: 10px;line-height:20px;background:#fff;border:1px solid #ccc;text-align:center;font-size:14px;color:#7b7d88;font-weight:bold;position:relative'>";
-            html += text;
-            html += "<br/>";
-            html += files[0].name.split(".")[0];
-            html += "";
-            html += "</a>";
-            $('.'+arg).html(html);
             
         	let [file] = files;
         	upload.uploadFile(file, 'order').then(path => {
         		//this.data.requestFile = path;
-        		this.data[arg] = path
-        		console.log(this.data);
+        		var fileItem = {
+            		path:this.HOST+path,
+            		fileName : file.name.split(".")[0],
+            		type : file.name.split(".")[1].toUpperCase(),
+            	}
+        		
+        		detail[arg].push(fileItem);
+        		console.log(detail[arg]);
+        		
+        		detail[arg2] = detail[arg2]+path+";";
+        		
           	}).catch(err => {
             	layer.msg(err);
            	 	console.error(err);
           	});
+		
+			console.log(this.datalist);
+		
       	},
    	
    	
@@ -549,6 +563,20 @@ export default {
 
 .subTitle{
 loat: left;overflow: hidden;width: 250px;text-overflow:ellipsis; white-space:nowrap;
+}
+
+.uploadFile{
+	opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    padding: 0px;
+    margin: 0px;
+    display: block;
 }
 </style>
 
