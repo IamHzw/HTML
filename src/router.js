@@ -164,6 +164,13 @@ export default new Router({
           component: resolve => require(["./views/home/OrderManagement.vue"], resolve),
           meta: { title: '用户中心', warn:true}
         },
+        //订单详情
+        {
+          name: "OrderDetail",
+          path: "orderDetail",
+          component: resolve => require(["./views/home/OrderDetail.vue"], resolve),
+          meta: { title: '订单详情', warn:true}
+        },
         //消息中心
         {
           name: "MessageCenter",

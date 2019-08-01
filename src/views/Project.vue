@@ -55,9 +55,9 @@ export default {
         },
         categoryList:{},
         page:{
-           	page:0,
-			size:8
-		},
+          page:0,
+          size:8
+        },
     }
   },
   components: {

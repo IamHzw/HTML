@@ -58,17 +58,16 @@
                   
                             <div class="commNum clearfix" >
                                 <div class="clearfix" style="border-bottom: 1px solid #e3dfdf;">
-                                    <div style="width:40%;" class="fl">
-                                    <div class="fl tm-img">
-                                        <img :src="HOST+data.orderInfo.imagesStr">
-                                    </div>
-                                    <div class="fl tm-txt">
-                                            <div style="line-height:60px;">
-                                            	{{data.orderInfo.title}}
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
+                                    <div class="fl">
+																			<div class="fl tm-img">
+																					<img :src="HOST+data.orderInfo.imagesStr">
+																			</div>
+																			<div class="fl tm-txt">
+																							<div style="line-height:60px;">
+																								{{data.orderInfo.title}}
+																							</div>
+																			</div>
+                                  	</div>
                                 </div>
 
                                 <div class="edit-top">
@@ -304,7 +303,7 @@ export default {
 	  		//定义
 	  		var item ={
 	  			orderInfo:{
-	  				area :city,
+	  			area :city,
 					orderType : '测试分析',	  		
 					imagesStr : this.carData[i].key.imagesStr,
 					title : this.carData[i].key.title,
@@ -411,9 +410,9 @@ export default {
    	 	}
    	},
    	save(){
-   		console.log(this.commonData);
-   		return;
-   		console.log(this.datalist);
+   		// console.log(this.commonData);
+   		// return;
+   		// console.log(this.datalist);
    		webRpc.invoke("orderWebRpc.saveOrder",this.datalist,this.commonData).then(result=>{
    			console.log(result);
 			if(result.retCode==0){
@@ -466,22 +465,22 @@ export default {
         	upload.uploadFile(file, 'order').then(path => {
         		//this.data.requestFile = path;
         		var fileItem = {
-            		path:this.HOST+path,
-            		fileName : file.name.split(".")[0],
-            		type : file.name.split(".")[1].toUpperCase(),
-            	}
+							path:this.HOST+path,
+							fileName : file.name.split(".")[0],
+							type : file.name.split(".")[1].toUpperCase(),
+						}
         		
         		detail[arg].push(fileItem);
         		console.log(detail[arg]);
         		
         		detail[arg2] = detail[arg2]+path+";";
         		
-          	}).catch(err => {
-            	layer.msg(err);
-           	 	console.error(err);
-          	});
+					}).catch(err => {
+						layer.msg(err);
+						console.error(err);
+					});
 		
-			console.log(this.datalist);
+			    console.log(this.datalist);
 		
       	},
    	
@@ -518,7 +517,7 @@ export default {
   width: 100%;
 
 }
- .tm-img{
+.tm-img{
     width: 60px;
     height: 60px;
 }
