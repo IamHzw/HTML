@@ -32,8 +32,8 @@
                 <a href="">百度</a>
             </div>
             <div class="footer-copyright">
-                <span>@2018 测试狗  All Rights Reserved  成都世纪美扬科技有限公司</span>
-                <span><img src="../assets/images/wj.png"> 蜀公网安备11010802021135号  蜀ICP备150033号<img src="../assets/images/footer.jpg"></span>
+                <span>@2019 星尘实验室 All Rights Reserved  星尘实验室 科技有限公司</span>
+                <span><img src="../assets/images/wj.png"> 广州网安备11010802021135号 粤ICP备14058936号<img src="../assets/images/footer.jpg"></span>
             </div>
         </div>
     </div>
