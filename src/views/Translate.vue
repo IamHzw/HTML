@@ -234,6 +234,7 @@ export default {
       	HOST:HOST,
       	data:{
       		orderType:'中英学术翻译',
+      		supType:4,
       		type:'简体中文到英文（论文投稿即翻译）',
     		requestFile:'',
       	},

@@ -138,6 +138,7 @@ export default {
     	HOST:HOST,
     	data:{
     		orderType:'模拟计算',
+    		supType:2,
     		requestFile:'',
     	},
     	isLogin:false
