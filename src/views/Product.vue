@@ -149,7 +149,7 @@ export default {
 			},
   	created () {
   		this.data.id = this.$route.query.id;
-		this.initData();
+			this.initData();
 	
 		//看看用户是否已登陆,已登陆，则初始化是否收藏
 		if(sessionStorage.currentMember!=null){

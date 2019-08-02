@@ -404,7 +404,7 @@ width: 15%;
 .setting-form dd label{margin-right: 30px;}
 .distpicker select{width: 194px;box-sizing: border-box;height: 49px;border-radius: 5px;border: 1px solid #d2d2d2;padding: 0 30px;font-size: 14px;margin-right: 25px;}
 #company-form{display: none;}
-.appoint-filter{padding: 25px 0;background: #f7f7f7;margin-bottom: 45px;position: relative}
+.appoint-filter{padding-top: 25px;background: #f7f7f7;margin-bottom: 25px;position: relative}
 .appoint-filter dl{font-size: 16px;line-height: 36px;}
 .appoint-filter dt,.phone-wrap dt{width: 120px;text-align: right;color: #282828;float: left;}
 .appoint-filter dd{margin-left:0;}
@@ -1282,7 +1282,7 @@ em{font-style: normal;}
 /* #mslide li:last-child .mslide{
     display: block
 } */
-#mslide .mslide h4{line-height: 26px;font-size: 18px;color: #ed4d01;white-space: nowrap;}
+#mslide .mslide h4{padding: 5px;line-height: 26px;font-size: 18px;color: #ed4d01;white-space: nowrap;}
 #mslide .mslide:after{content: '';width: 7px;height: 14px;position: absolute;background: url("../assets/images/slideborder.png");right: -6px;top:50%;margin-top: -7px;}
 #mslide li a:hover .mslide{display: block;}
 #mslide li:last-child a:hover .mslide{display: none}

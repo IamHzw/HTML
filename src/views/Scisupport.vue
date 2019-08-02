@@ -201,6 +201,7 @@ export default {
       	HOST:HOST,
       	data:{
       		orderType:'SCI论文投稿支持',
+      		supType:4,
       		type:'SCI论文投稿支持',
     		requestFile:'',
       	},

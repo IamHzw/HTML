@@ -36,23 +36,64 @@
         		</div>
     		</div>
     
-				<div class="order-wrap" v-if="a">
-						<div class="order-item" align="center" style="height: 60px;line-height: 60px">暂无数据!</div>        
+				<div class="order-wrap" v-if="isNo">
+					<div class="car-title">
+						<span style="width:50%">商品信息</span>
+						<span style="width:10%">数量</span>
+						<span style="width:10%">单价</span>
+						<span style="width:15%">送样方式</span>
+						<span style="width:15%">支付方式</span>
+					</div>
+					<div class="order-item" align="center" style="height: 60px;line-height: 60px">暂无数据!</div>        
 				</div>
 				<div v-else>
-					<div class="clearfix" style="border-bottom: 1px solid #e3dfdf;">
-							<div style="width:40%;" class="fl">
-								<div class="fl tm-img">
-										<img :src="HOST+data.orderInfo.imagesStr">
-								</div>
-								<div class="fl tm-txt">
-									<div style="line-height:60px;">
-										{{data.orderInfo.title}}
+					<div class="car-title">
+						<span style="width:50%">商品信息</span>
+						<span style="width:10%">数量</span>
+						<span style="width:10%">单价</span>
+						<span style="width:15%">送样方式</span>
+						<span style="width:15%">支付方式</span>
+					</div>
+					<div v-for="(data, index) in dataList" :key="index">
+						<div class="clearfix mglist" @click="toDetail(data.id)">
+								<div class="fl" style="width:50%">
+									<div class="fl tm-img" style="width:15%">
+											<img :src="HOST+data.detail.productImg">
+									</div>
+									<div class="fl tm-text" style="width:65%">
+										{{data.detail.productName}}
 									</div>			
 								</div>
-							</div>
+								<div class="fl tm-txt" style="width:10%">
+									<div style="line-height:60px;">
+										{{data.detail.num}}
+									</div>			
+								</div>
+								<div class="fl tm-txt" style="width:10%" v-if="data.detail.price===null">
+									<div style="line-height:60px;">
+										待定
+									</div>			
+								</div>
+								<div class="fl tm-txt" style="width:10%" v-else>
+									<div style="line-height:60px;">
+										{{data.detail.price}}
+									</div>			
+								</div>
+								<div class="fl tm-txt" style="width:15%">
+									<div style="line-height:60px;">
+										{{data.deliverWay}}
+									</div>			
+								</div>
+								<div class="fl tm-txt" style="width:15%">
+									<div style="line-height:60px;">
+										{{data.payWay}}
+									</div>			
+								</div>
 						</div>
-					<v-Page :total.sync="totalElements" :current-page.sync='page.page+1' :display.sync = 'page.size' @pagechange="pagechange"></v-Page>
+					</div>
+					<div id="index-class">
+						<v-Page :total.sync="totalElements" :current-page.sync='page.page+1' :display.sync = 'page.size' @pagechange="pagechange"></v-Page>
+					</div>
 				</div>
       </div>
 		</div>
@@ -73,26 +114,43 @@ export default {
 				size:8
 			},
 			query:{
-				status:''
+				
 			},
-			a:true,
-			current:0
+			isNo:false,
+			current:0,
+			dataList:[]
 		}
 	},
 	created () {
 		this.initCar()
 	},
+	components: {
+    vPage
+  },
 	methods: {
 		initCar(){
 			webRpc.invoke('orderWebRpc.findPage',this.query,this.page).then(res=>{
+				if(res.retCode==0){
+					if(res.data.content.length==0){
+						this.isNo=true;
+					}else{
+						this.isNo=false;
+						this.dataList=res.data.content;
+						this.totalElements=res.data.totalElements;
+					}
+				}
 				console.log(res)
 			}).catch(err=>{
 				console.log(err)
 			})
 		},
 		onClick(data,num){
+			if(data===''){
+				delete this.query.status
+			}else{
+				this.query.status=data;
+			}
 			this.current=num;
-			this.query.status=data;
 			this.initCar()
 		},
 		getData() {
@@ -105,7 +163,11 @@ export default {
 			console.log(val);
 			this.page.page = val-1;
 			this.getData();
-		}
+		},
+		//去详情页
+		toDetail(id){
+			this.$router.push('/home/orderDetail?id='+id);
+		},
 	}
 }
 </script>
@@ -131,19 +193,20 @@ export default {
   width: 100%;
 
 }
-.tm-img{
-    width: 60px;
-    height: 60px;
-}
+
 .tm-img img{
 	  width: 100%;
     height: 100%;
     border: 1px solid #cbcbcbee;
 }
+.tm-text{
+	padding-left: 20px;
+	line-height:60px;
+	overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
 .tm-txt{
-    margin-left: 10px;
-    /* padding-top: 20px; */
-    /* width: 120px; */
     font-size: 14px;
     overflow: hidden;
     text-overflow:ellipsis;
@@ -151,7 +214,6 @@ export default {
 }
 .tm-pri{
     margin-left: 2px;
-    /* padding-top: 20px; */
     font-size: 14px;
     color: #1e1e1e;
 }
@@ -165,9 +227,23 @@ export default {
     text-align: center;
     font-size: 12px;
     line-height: 1;
-    /* vertical-align: top; */
     border: 1px solid #ccc;
 }
-
+.mglist{
+	margin-bottom:10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e3dfdf;
+	cursor: pointer;
+}
+.car-title{
+	width: 100%;
+	padding: 20px 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+.car-title span{
+	display: inline-block;
+}
 </style>
 

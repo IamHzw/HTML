@@ -86,10 +86,10 @@ export default {
       	},
       	//获取分页
 		getData() {
-            webRpc.invoke("productWebRpc.findPage",this.query,this.page).then(result=>{
-				this.datalist = result.data.content;
-				this.totalElements = result.data.totalElements;
-		    }).catch(error =>{});
+          webRpc.invoke("productWebRpc.findPage",this.query,this.page).then(result=>{
+            this.datalist = result.data.content;
+            this.totalElements = result.data.totalElements;
+          }).catch(error =>{});
 		},
 		//切换类型
 		changeCategory(id){

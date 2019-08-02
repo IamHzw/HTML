@@ -310,6 +310,7 @@ export default {
       	HOST:HOST,
       	data:{
       		orderType:'英文论文润色',
+      		supType:4,
     		requestFile:'',
       	},
     	isLogin:false

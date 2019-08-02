@@ -24,18 +24,49 @@
           </div>
         </div>
         <div class="detail-status">
-          <div class="clearfix" style="border-bottom: 1px solid #e3dfdf;">
-							<div style="width:40%;" class="fl">
-								<div class="fl tm-img">
-									  <!-- <img :src="HOST+data.orderInfo.imagesStr"> -->
-								</div>
-								<div class="fl tm-txt">
-									<div style="line-height:60px;">
-										<!-- {{data.orderInfo.title}} -->
-									</div>			
-								</div>
-							</div>
+          <div class="car-title">
+						<span style="width:50%">商品信息</span>
+						<span style="width:10%">数量</span>
+						<span style="width:10%">单价</span>
+						<span style="width:15%">送样方式</span>
+						<span style="width:15%">支付方式</span>
 					</div>
+
+          <div class="clearfix mglist" v-if="a">
+              <div class="fl" style="width:50%">
+                <div class="fl tm-img" style="width:15%">
+                    <img :src="HOST+data.detail.productImg">
+                </div>
+                <div class="fl tm-text" style="width:65%">
+                  {{data.detail.productName}}
+                </div>			
+              </div>
+              <div class="fl tm-txt" style="width:10%">
+                <div style="line-height:60px;">
+                  {{data.detail.num}}
+                </div>			
+              </div>
+              <div class="fl tm-txt" style="width:10%" v-if="data.detail.price===null">
+                <div style="line-height:60px;">
+                  待定
+                </div>			
+              </div>
+              <div class="fl tm-txt" style="width:10%" v-else>
+                <div style="line-height:60px;">
+                  {{data.detail.price}}
+                </div>			
+              </div>
+              <div class="fl tm-txt" style="width:15%">
+                <div style="line-height:60px;">
+                  {{data.deliverWay}}
+                </div>			
+              </div>
+              <div class="fl tm-txt" style="width:15%">
+                <div style="line-height:60px;">
+                  {{data.payWay}}
+                </div>			
+              </div>
+          </div>
         </div>
         <!-- <div class="detail-jifen">
           <div class="detail"></div>
@@ -51,7 +82,22 @@ export default {
   data () {
     return {
       HOST:HOST,
-      data:[]
+      data:{},
+      a:false
+    }
+  },
+  created () {
+    this.data.id=this.data.id = this.$route.query.id;
+    this.initData();
+  },
+  methods: {
+    initData(){
+      webRpc.invoke('orderWebRpc.findById',this.data.id).then(res=>{
+        console.log(res)
+        if(res.retCode===0){
+          this.data=res.data
+        }
+      }).catch(err=>{})
     }
   }
 }
@@ -103,24 +149,19 @@ export default {
     border-bottom: 1px solid #eee;
     background-color: #edecec;
 }
-.tm-list{
-  margin-top: 20px;
-  width: 100%;
-
-}
-.tm-img{
-    width: 60px;
-    height: 60px;
-}
 .tm-img img{
 	  width: 100%;
     height: 100%;
     border: 1px solid #cbcbcbee;
 }
+.tm-text{
+	padding-left: 20px;
+	line-height:60px;
+	overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
 .tm-txt{
-    margin-left: 10px;
-    /* padding-top: 20px; */
-    /* width: 120px; */
     font-size: 14px;
     overflow: hidden;
     text-overflow:ellipsis;
@@ -128,7 +169,6 @@ export default {
 }
 .tm-pri{
     margin-left: 2px;
-    /* padding-top: 20px; */
     font-size: 14px;
     color: #1e1e1e;
 }
@@ -142,8 +182,23 @@ export default {
     text-align: center;
     font-size: 12px;
     line-height: 1;
-    /* vertical-align: top; */
     border: 1px solid #ccc;
+}
+.mglist{
+	margin-bottom:10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e3dfdf;
+	cursor: pointer;
+}
+.car-title{
+	width: 100%;
+	padding: 20px 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+.car-title span{
+	display: inline-block;
 }
 </style>
 

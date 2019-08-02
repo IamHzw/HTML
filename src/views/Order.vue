@@ -103,7 +103,7 @@
                                                         <div class="appoint-select">
                                                             <p @click="findSkuArr(data.orderInfo.productId)">+ 增加其他子项</p>
                                                             <div v-if="data.orderInfo.productId == currentProductId && isShow" class="appoint-option" style="width: 400px;">
-                                                                <a v-for="puk in moreProductList" @click="selectProduct(puk,data.orderDetails)">
+                                                                <a v-for="puk in moreProductList" @click="selectProduct(puk,data.orderDetails,data.orderInfo)">
                                                                 	<em>{{puk.title}}</em>
                                                                 	<span v-if="puk.calAble==1">{{puk.price}}</span>
                                                                 	<span v-else>面议</span>
@@ -272,15 +272,15 @@ export default {
       carData:[],
       moreProductList:[],
       commonData:{
-      		receiverName :'',
-			receiverAddress :'',
-			receiverPhone : '',
-			payWay:'现金支付',
-			recovery : '否',
-			deliverWay : '邮寄到付',
-			preAmountTotal:0,
-			oneClick:1,
-			calAble:1	//计算
+      	receiverName :'',
+				receiverAddress :'',
+				receiverPhone : '',
+				payWay:'现金支付',
+				recovery : '否',
+				deliverWay : '邮寄到付',
+				preAmountTotal:0,
+				oneClick:false,
+				calAble:1	//计算
       },
       list:['开票转账','预付卡支付','现金支付'],
       sendArr:['上门取样','邮寄到付'],
@@ -295,7 +295,9 @@ export default {
     vFootersimper
   },
   created () {
-    this.carData=JSON.parse(sessionStorage.getItem('car'))
+    this.carData=JSON.parse(sessionStorage.getItem('car'));
+    
+    console.log(this.carData);
     var city = sessionStorage.city;
     
 	//循环购物车数据
@@ -303,11 +305,12 @@ export default {
 	  		//定义
 	  		var item ={
 	  			orderInfo:{
-	  			area :city,
-					orderType : '测试分析',	  		
+	  				area :city,
+					orderType : this.carData[i].key.categoryName,	  		
 					imagesStr : this.carData[i].key.imagesStr,
 					title : this.carData[i].key.title,
 					productId:this.carData[i].key.id,
+					supType :this.carData[i].key.supType,
 	  			},
 	      		orderSample:{
 	      			share :'NO',
@@ -328,8 +331,10 @@ export default {
 	  			var detail = {
 	  				productSkuId:curItems[j].id,
 	  				productSkuName:curItems[j].title,
+	  				productName:this.carData[i].key.title+'-'+curItems[j].title,
 	  				price:curItems[j].price,
 	  				num:1,
+	  				productImg:this.carData[i].key.imagesStr,
 	  				subTotal:curItems[j].price,
 	  				calAble:curItems[j].calAble,
 	  			};
@@ -346,7 +351,8 @@ export default {
 	  		this.datalist.push(item);
    	 	}
    	 	
-   	 	console.log(this.data);
+   	 	console.log(this.datalist);
+   	 	
   },
   
   methods: {
@@ -410,15 +416,21 @@ export default {
    	 	}
    	},
    	save(){
-   		// console.log(this.commonData);
-   		// return;
-   		// console.log(this.datalist);
+   		console.log(this.commonData);
+   		console.log(this.datalist);
+   		
    		webRpc.invoke("orderWebRpc.saveOrder",this.datalist,this.commonData).then(result=>{
    			console.log(result);
 			if(result.retCode==0){
 	        	//清购物车
 	        	//跳转至成功页
-	        	
+	        	layer.msg("提交成功");
+	        	//清空购物车
+                sessionStorage.removeItem("car");
+                console.log("清空car");
+                
+                this.$router.push('/ordersucess');
+                	
 			}else{
 	  			layer.msg(result.message);	
 			}
@@ -434,7 +446,8 @@ export default {
 		}).catch(error =>{});
    		
    	},
-   	selectProduct(data,details){
+   	selectProduct(data,details,orderInfo){
+   	
    		this.isShow = false;
    		
    		for(var i = 0;i<details.length;i++){
@@ -446,7 +459,9 @@ export default {
    	 	var detail = {
 			productSkuId:data.id,
 	  		productSkuName:data.title,
+	  		productName:orderInfo.title+'-'+data.title,
 	  		price:data.price,
+	  		productImg:this.orderInfo.imagesStr,
 	  		num:1,
 	  		subTotal:data.price,
 	  		calAble:data.calAble,
@@ -561,7 +576,11 @@ export default {
 }
 
 .subTitle{
-loat: left;overflow: hidden;width: 250px;text-overflow:ellipsis; white-space:nowrap;
+	float: left;
+	overflow: hidden;
+	width: 250px;
+	text-overflow:ellipsis; 
+	white-space:nowrap;
 }
 
 .uploadFile{

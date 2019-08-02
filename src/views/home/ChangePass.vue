@@ -21,7 +21,9 @@
                         <dd>
                             <div class="phone-change-box">
                                 <input type="text" v-model="smsCode"  class="code-input licit" />
-                                <button type="button" @click="sendMsg()" class="send-code" >获取验证码</button>
+                                <!-- <button type="button" @click="sendMsg()" class="send-code">获取验证码</button> -->
+                                <div class="login-code-pic fr co" id="send_scode" @click="sendMsg()" v-show="Verification">发送短信</div>
+								<div class="login-code-pic fr co" id="send_scode" v-show="!Verification"><span>{{timer}}</span>秒后重新获取</div>
                             </div>
                         </dd>
                     </dl>
@@ -66,7 +68,9 @@ export default {
             codeSrc:'',
             passWord:'',
             code:'',
-            smsCode:''
+            smsCode:'',
+            Verification:true,
+		    timer:60,
         }
     },
     created () {
@@ -89,7 +93,16 @@ export default {
 				layer.msg("请输入图片验证码");
 				this.showCode();
 				return ;
-			}
+            }
+            this.Verification = false;
+            let auth_timer = setInterval(()=>{  //定时器设置每秒递减
+				this.timer--;        //递减时间
+				if(this.timer<=0){  
+					this.Verification = true;    //60s时间结束还原v-show状态并清除定时器
+					clearInterval(auth_timer)
+					this.timer=60
+				}
+			},1000)
 			webRpc.invokeCross("shortMessageWebRpc.sendVerCode","PASSWORD",this.currentMember.mobile,this.code).then(result=>{
             	if(result.retCode==0){
             		layer.msg("手机验证码已发送，请注意查收");
@@ -98,7 +111,6 @@ export default {
       			}
 		   	}).catch(error =>{});
 		},
-		
 		//发送短信
 		changePassWord(){
 		

@@ -220,6 +220,7 @@ export default {
       	HOST:HOST,
       	data:{
       		orderType:'科研作图',
+      		supType:3,
     		requestFile:'',
       	},
     	isLogin:false
