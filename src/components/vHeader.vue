@@ -60,7 +60,7 @@
                         <router-link :to="{name:'scipolish'}"><a href="avascript:;">翻译润色</a></router-link>
                     </div>
                     <div class="clearfix">
-                        <a href="avascript:;">一键预约</a>
+                        <router-link :to="{name:'orderAppointment'}"><a href="avascript:;">一键预约</a></router-link>
                     </div>
                     <div id="header-search" class="clearfix">
                         <form action="" method="post">

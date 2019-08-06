@@ -115,14 +115,14 @@ export default new Router({
       component: resolve => require(["./views/Scisupport.vue"], resolve),
       meta: { title: 'SCI论文', warn:false}
     },
-    // 订单
-    // {
-    //   path: "/orderCopy",
-    //   name: "OrderCopy",
-    //   component: resolve => require(["./views/OrderCopy.vue"], resolve),
-    //   meta: { title: '订单详情', warn:false}
-    // },
-    // 预约
+    // 一键预约
+    {
+      path: "/orderAppointment",
+      name: "orderAppointment",
+      component: resolve => require(["./views/OrderAppointment.vue"], resolve),
+      meta: { title: '一键预约', warn:false}
+    },
+    // 订单详情
     {
       path: "/order",
       name: "Order",

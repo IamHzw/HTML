@@ -155,24 +155,16 @@
                                                     </dd>
                                                 </dl>
                                                 <dl>
-                                                    <dt>样品照片：</dt>
-                                                    <dd class="clearfix">
-                                                        <div id="uploader-demo" class="clearfix">
-                                                            <!--用来存放item,这里要增加删除-->
-                                                            <div id="fileList" class="uploader-list fl requestFile">
-                                                            	<span v-for="simg in data.orderSample.sampleImgArr">
-                                                            		 <img :src.sync="simg.path"  style="height:87px;width:87px;    margin-right: 5px;" >
-                                                            	</span>
-                                                            </div>
-                                                            <div id="filePicker" class="webuploader-container">
-	                                                            <div class="webuploader-pick"></div>
-	                                                            <div style="position: absolute; top: 0px; left: 0px; width: 87px; height: 87px; overflow: hidden;">
-	                                                            	<input type="file" class="uploadFile webuploader-element-invisible" name="file"  multiple="multiple" accept="image/*" @change="upload($event.target.files,'sampleImgArr',data.orderSample,'sampleImg')">
-	                                                            </div>
-                                                            </div>
-                                                        </div>
-                                                    </dd>
-                                                </dl>
+																										<dt>样品照片：</dt>
+																										<dd class="clearfix">
+																												<div id="uploader-demo" class="clearfix">
+																														<div id="fileList" class="uploader-list fl">
+																																<!--                 -->
+																														</div>
+																														<div id="filePicker" class="webuploader-container"><div class="webuploader-pick"></div><div id="rt_rt_1df40cnnd1kfu1k8uoua1vvr5ud4" style="position: absolute; top: 0px; left: 0px; width: 107px; height: 107px; overflow: hidden;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/*"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div></div>
+																												</div>
+																										</dd>
+																								</dl>
                                                 <dl class="add_pos">
                                                     <dt>样品性质：</dt>
                                                
