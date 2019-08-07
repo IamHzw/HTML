@@ -878,7 +878,8 @@ input[type="file"] {display: none;}
 #coopform button{display: block;margin: 60px auto 0;width: 206px;height: 46px;line-height: 46px;font-size: 14px;text-align: center;color: #fff;background: #ed4d01;border-radius: 5px;cursor: pointer;}
 #content.edit-content{background: #fff;}
 #edit-wrap{margin-right: 420px;}
-#edit-wrap #slide-main{background: #fafafa;}
+/* #edit-wrap #slide-main{background: #fafafa;} */
+#edit-wrap #slide-main{background: #fff;}
 #edit-wrap #slide-main.slide-main-bg{background: #fff;}
 .edit-top{padding-left: 38px;background: #f1f6fa url("../assets/images/tip.png") no-repeat 10px center;font-size: 12px;color: #4e4e4e;line-height: 31px;}
 #slide-main-title{width: 25px;text-align: center;height: 100%;position: absolute;left: 0;top:0;background: #f2f2f2;font-size: 14px;color: #959595;line-height: 18px;box-sizing: border-box;padding-top: 350px;}
@@ -910,7 +911,7 @@ input[type="file"] {display: none;}
 #picker,#ctlBtn{width: 111px;height: 37px;border-radius: 3px;background: #ff6020;text-align: center;line-height: 37px;color: #fff;cursor: pointer;font-size: 14px;margin-right: 10px;float: left;position: relative;}
 #thelist .item{float: left;margin-right: 10px;font-size: 14px;line-height: 37px;color: #000000;}
 #uploader-p{font-size: 14px;color: #404040;line-height: 36px;}
-#edit-slide{width: 405px;float: right;background: #fafafa;padding: 0 5px 45px;box-sizing: border-box;z-index: 100;}
+#edit-slide{width: 405px;float: right;background: #FFF;padding: 0 5px 45px;box-sizing: border-box;z-index: 100;}
 #edit-slide h2{font-size: 16px;color: #000000;line-height: 57px;margin-bottom: 10px;}
 #edit-slide dl{font-size: 14px;line-height: 30px;}
 #edit-slide dt{text-align: right;color: #969696;float: left;}

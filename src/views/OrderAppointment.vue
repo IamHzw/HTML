@@ -94,7 +94,7 @@
 											<div id="filePicker" class="webuploader-container">
                                                 <div class="webuploader-pick"></div>
                                                 <div id="rt_rt_1df40cnnd1kfu1k8uoua1vvr5ud4" style="position: absolute; top: 0px; left: 0px; width: 107px; height: 107px; overflow: hidden;">
-                                                    <input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/*">
+                                                    <input type="file" class="uploadFile webuploader-element-invisible" name="file"  multiple="multiple" accept="image/*" @change="upload($event.target.files)">
                                                     <label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
                                                 </div>
                                             </div>
