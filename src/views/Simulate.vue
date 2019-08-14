@@ -178,7 +178,7 @@ export default {
 	  			return;
 	  		}
 	  		//条件判断
-	  		if(this.dara.requestFile==''){
+	  		if(this.data.requestFile==''){
 	  			layer.msg("请上传文件");
 	  			return;
 	  		}

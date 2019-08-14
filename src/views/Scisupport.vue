@@ -112,8 +112,8 @@
             <div class="layui-form-item">
                 <label for="" class="layui-form-label" >时间要求：</label>
                 <div class="layui-input-block">
-                    <div class="time-demand form_elem fl"  @click="selectExpress('正常')">正常</div>
-                    <div class="time-demand form_elem fl"  @click="selectExpress('加急')">加急</div>
+                    <div class="time-demand form_elem fl" :class="{'layui-form-checked': data.express=='正常'}"  @click="selectExpress('正常')">正常</div>
+                    <div class="time-demand form_elem fl" :class="{'layui-form-checked': data.express=='加急'}"  @click="selectExpress('加急')">加急</div>
                     <div class="time-desc">正常速度是1000字/天，加急额外收费</div>
                 </div>
             </div>
@@ -132,8 +132,8 @@
             <div class="layui-form-item">
                 <label for="" class="layui-form-label" >英文风格：</label>
                 <div class="layui-input-block">
-                    <div class="en-style form_elem fl" @click="selectTranslationStyle('美式英语')">美式英语</div>
-                    <div class="en-style form_elem fl" @click="selectTranslationStyle('英式英语')">英式英语</div>
+                    <div class="en-style form_elem fl" :class="{'layui-form-checked': data.translationStyle=='美式英语'}" @click="selectTranslationStyle('美式英语')">美式英语</div>
+                    <div class="en-style form_elem fl" :class="{'layui-form-checked': data.translationStyle=='英式英语'}" @click="selectTranslationStyle('英式英语')">英式英语</div>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -173,7 +173,7 @@
                 <label for="" class="layui-form-label"></label>
                 <div class="layui-input-block marginTop40">
                     <input type="checkbox" id="chkagree" name="chkagree" value="1"  title="" /> 
-                    <a class="secret" href="scisecrecyagree.html" target="_blank">阅读并同意《科学指南针保密协议》</a>
+                   <!-- <a class="secret" href="scisecrecyagree.html" target="_blank">阅读并同意《科学指南针保密协议》</a> -->
                 </div>
             </div>
             <div class="layui-form-item">
@@ -204,6 +204,8 @@ export default {
       		supType:4,
       		type:'SCI论文投稿支持',
     		requestFile:'',
+    		express:'正常',
+    		translationStyle:'美式英语'
       	},
     	isLogin:false
     }
@@ -233,6 +235,8 @@ export default {
 	  		this.data.type=type;
 	  	},
 	  	selectExpress(express){
+	  		console.log(1);
+	  		console.log(express);
 	  		this.data.express=express;
 	  	},
 	  	selectTranslationStyle(st){
@@ -575,10 +579,8 @@ export default {
 .form form .secret:hover {
     color: #32D693;
 }
-.form form .layui-form-checkbox {
-    margin-top: -4px!important;
-}
-.form form .layui-form-checked i {
+
+.layui-form-checked{
     background: #32D693;
     border-color: #32D693;
 }

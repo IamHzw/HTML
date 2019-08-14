@@ -58,16 +58,17 @@
                   
                             <div class="commNum clearfix" >
                                 <div class="clearfix" style="border-bottom: 1px solid #e3dfdf;">
-                                    <div class="fl">
-																			<div class="fl tm-img">
-																					<img :src="HOST+data.orderInfo.imagesStr">
-																			</div>
-																			<div class="fl tm-txt">
-																							<div style="line-height:60px;">
-																								{{data.orderInfo.title}}
-																							</div>
-																			</div>
-                                  	</div>
+                                    <div style="width:40%;" class="fl">
+                                    <div class="fl tm-img">
+                                        <img :src="HOST+data.orderInfo.imagesStr">
+                                    </div>
+                                    <div class="fl tm-txt">
+                                            <div style="line-height:60px;">
+                                            	{{data.orderInfo.title}}
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="edit-top">
@@ -155,16 +156,24 @@
                                                     </dd>
                                                 </dl>
                                                 <dl>
-																										<dt>样品照片：</dt>
-																										<dd class="clearfix">
-																												<div id="uploader-demo" class="clearfix">
-																														<div id="fileList" class="uploader-list fl">
-																																<!--                 -->
-																														</div>
-																														<div id="filePicker" class="webuploader-container"><div class="webuploader-pick"></div><div id="rt_rt_1df40cnnd1kfu1k8uoua1vvr5ud4" style="position: absolute; top: 0px; left: 0px; width: 107px; height: 107px; overflow: hidden;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/*"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div></div>
-																												</div>
-																										</dd>
-																								</dl>
+                                                    <dt>样品照片：</dt>
+                                                    <dd class="clearfix">
+                                                        <div id="uploader-demo" class="clearfix">
+                                                            <!--用来存放item,这里要增加删除-->
+                                                            <div id="fileList" class="uploader-list fl requestFile">
+                                                            	<span v-if="data.orderSample.sampleImg">
+                                                            		 <img :src.sync="HOST+data.orderSample.sampleImg"  style="height:87px;width:87px;    margin-right: 5px;" >
+                                                            	</span>
+                                                            </div>
+                                                            <div id="filePicker" class="webuploader-container">
+	                                                            <div class="webuploader-pick"></div>
+	                                                            <div style="position: absolute; top: 0px; left: 0px; width: 87px; height: 87px; overflow: hidden;">
+	                                                            	<input type="file" class="uploadFile webuploader-element-invisible" name="file"  multiple="multiple" accept="image/*" @change="uploadSample($event.target.files,'sampleImgArr',data.orderSample,'sampleImg')">
+	                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </dd>
+                                                </dl>
                                                 <dl class="add_pos">
                                                     <dt>样品性质：</dt>
                                                
@@ -264,15 +273,15 @@ export default {
       carData:[],
       moreProductList:[],
       commonData:{
-      	receiverName :'',
-				receiverAddress :'',
-				receiverPhone : '',
-				payWay:'现金支付',
-				recovery : '否',
-				deliverWay : '邮寄到付',
-				preAmountTotal:0,
-				oneClick:false,
-				calAble:1	//计算
+      		receiverName :'',
+			receiverAddress :'',
+			receiverPhone : '',
+			payWay:'现金支付',
+			recovery : '否',
+			deliverWay : '邮寄到付',
+			preAmountTotal:0,
+			oneClick:false,
+			calAble:1	//计算
       },
       list:['开票转账','预付卡支付','现金支付'],
       sendArr:['上门取样','邮寄到付'],
@@ -439,7 +448,7 @@ export default {
    		
    	},
    	selectProduct(data,details,orderInfo){
-   	
+   		console.log(orderInfo);
    		this.isShow = false;
    		
    		for(var i = 0;i<details.length;i++){
@@ -453,7 +462,7 @@ export default {
 	  		productSkuName:data.title,
 	  		productName:orderInfo.title+'-'+data.title,
 	  		price:data.price,
-	  		productImg:this.orderInfo.imagesStr,
+	  		productImg:orderInfo.imagesStr,
 	  		num:1,
 	  		subTotal:data.price,
 	  		calAble:data.calAble,
@@ -462,7 +471,7 @@ export default {
 	  	details.push(detail);
 	  	this.sumTotal();
    	},
-   		upload(files,arg,detail,arg2) {
+   	upload(files,arg,detail,arg2) {
 	        if(!files.length) {
 	          return ;
 	        }
@@ -472,22 +481,47 @@ export default {
         	upload.uploadFile(file, 'order').then(path => {
         		//this.data.requestFile = path;
         		var fileItem = {
-							path:this.HOST+path,
-							fileName : file.name.split(".")[0],
-							type : file.name.split(".")[1].toUpperCase(),
-						}
+            		path:this.HOST+path,
+            		fileName : file.name.split(".")[0],
+            		type : file.name.split(".")[1].toUpperCase(),
+            	}
         		
         		detail[arg].push(fileItem);
         		console.log(detail[arg]);
         		
         		detail[arg2] = detail[arg2]+path+";";
         		
-					}).catch(err => {
-						layer.msg(err);
-						console.error(err);
-					});
+          	}).catch(err => {
+            	layer.msg(err);
+           	 	console.error(err);
+          	});
 		
-			    console.log(this.datalist);
+			console.log(this.datalist);
+		
+      	},
+      	
+       uploadSample(files,arg,detail,arg2) {
+	        if(!files.length) {
+	          return ;
+	        }
+	        
+            
+        	let [file] = files;
+        	upload.uploadFile(file, 'order').then(path => {
+        		//this.data.requestFile = path;
+        		var fileItem = {
+            		path:this.HOST+path,
+            		fileName : file.name.split(".")[0],
+            		type : file.name.split(".")[1].toUpperCase(),
+            	}
+        		
+        		detail[arg2] =path;
+          	}).catch(err => {
+            	layer.msg(err);
+           	 	console.error(err);
+          	});
+		
+			console.log(this.datalist);
 		
       	},
    	
@@ -524,7 +558,7 @@ export default {
   width: 100%;
 
 }
-.tm-img{
+ .tm-img{
     width: 60px;
     height: 60px;
 }
@@ -568,11 +602,7 @@ export default {
 }
 
 .subTitle{
-	float: left;
-	overflow: hidden;
-	width: 250px;
-	text-overflow:ellipsis; 
-	white-space:nowrap;
+loat: left;overflow: hidden;width: 250px;text-overflow:ellipsis; white-space:nowrap;
 }
 
 .uploadFile{

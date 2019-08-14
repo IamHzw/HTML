@@ -51,7 +51,8 @@ export default {
         datalist: [],
         totalElements:0,
         query:{
-        	categoryId:''
+        	categoryId:'',
+        	saleable:1
         },
         categoryList:{},
         page:{

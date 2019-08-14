@@ -7,7 +7,7 @@
             <ul class="list_hot">
                 <li v-for="(data,index) in datalist" @click="toDetail(data.id)">
 					<div class="inner">
-						<div  style="cursor:pointer;" title="生物扫描电镜（SEM）">
+						<div  style="cursor:pointer;" :title="data.title">
 							<img :src="HOST+data.imagesArr[0]" style="width:180px;height:180px;;">
                         	
                             <div class="hotitle" :title="data.title">{{data.title}}</div>
@@ -46,6 +46,7 @@ export default {
         totalElements:1,
         query:{ 
         	categoryCode:'wnjg',
+        	saleable:1
         },
         page:{
            	page:0,

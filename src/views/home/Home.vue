@@ -4,7 +4,7 @@
     <v-Sider></v-Sider>
     <div id="content">
 			<div class="wrap">
-				<div id="slide">
+				<div id="slide" style="    margin-top: 20px;">
 					<router-link to="/home/personal">
 						<div class="slide-item" :class="{chickColor:0==current}" @click="addClass(0)">
 							<h2>
