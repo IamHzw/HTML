@@ -1,205 +1,234 @@
 <template>
-  <div class="home">
-     <div id="slide-main">
-        <div class="order my-order">
-        	<h2>订单详情</h2>
-        </div>
-        <div class="detail clearfix">
-          <div class="detail-left fl">
-            <div class="detail-left-title">订单信息</div>
-            <div class="detail-left-text">
-              <p>收货地址：</p>
-              <p>买家留言：</p>
-              <p>订单编号：</p>
-              <p>商家：</p>
-            </div>
-          </div>
-          <div class="detail-right fl">
-            <div class="detail-right-text fl">
-              <p>订单状态: 商家已发货，等待买家确认</p>
-              <p>您还有9天10小时35分50秒;来确认收货,超时订单自动确认收货</p>
-              <p>物流：邮政快递包裹运单号:9895939160662</p>
-              <p>您可以<span class="detail-right-txt">确认收货</span><span class="detail-right-txt">申请退款</span><span class="detail-right-txt">延长收货时间</span><span class="detail-right-txt">备忘</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="detail-status">
-          <div class="car-title">
-						<span style="width:50%">商品信息</span>
-						<span style="width:10%">数量</span>
-						<span style="width:10%">单价</span>
-						<span style="width:15%">送样方式</span>
-						<span style="width:15%">支付方式</span>
-					</div>
+	<div class="home">
+		<div id="slide-main" class="slide-main">
+        	<div class="order my-order">
+        		<h2>订单详情</h2>
+        	</div>
 
-          <div class="clearfix mglist" v-if="a">
-              <div class="fl" style="width:50%">
-                <div class="fl tm-img" style="width:15%">
-                    <img :src="HOST+data.detail.productImg">
+			<div class="order_detail_title" style="margin-top:0px;">
+            	<span v-if="data.supType!=1">{{data.orderType}}</span>
+            	<span v-else>a</span>
+        	</div>
+        
+			<div class="order_schedule">
+				<div class="l_box fl">
+                	<p>订单号：{{data.orderNo}}</p>
+                   	<p>下单时间：{{data.dateCreated}}</p>
+            	</div>
+            	
+            	<div class="r_box fl">
+                	<ul class="order_cur_schedule">
+                		<li :class="{'cur': data.status == -1}">
+                        	<img src="../../assets/images/icon-submit-active.png" alt="" />
+                        	<p>作废</p>
+	                        <div class="dashed_dot">
+	                            <div v-for="index of 5" class="dashed_dot_item"></div>
+	                        </div>
+                    	</li>
+                    	<li :class="{'cur': data.status == 1}">
+                        	<img src="../../assets/images/icon-submit-active.png" alt="" />
+                        	<p>提交订单</p>
+	                        <div class="dashed_dot">
+	                            <div v-for="index of 5" class="dashed_dot_item"></div>
+	                        </div>
+                    	</li>
+                        <li :class="{'cur': data.status == 2}">
+                        	<img src="../../assets/images/icon-pay.png" alt="" />
+                            <p>平台确认</p>
+	                        <div class="dashed_dot">
+	                            <div v-for="index of 5" class="dashed_dot_item"></div>
+	                        </div>
+	                    </li>
+	                    <li :class="{'cur': data.status == 3}">
+                       		<img src="../../assets/images/icon-exping.png" alt="" />
+                            <p>实验中</p>
+	                        <div class="dashed_dot">
+	                            <div v-for="index of 5" class="dashed_dot_item"></div>
+	                        </div>
+	                    </li>
+	                    <li :class="{'cur': data.status == 4}">
+                        	<img src="../../assets/images/icon-exped.png" alt="" />
+                            <p>实验完成</p>
+                        </li>
+               		</ul>
+				</div>
+        	</div>
+        
+        
+			<div class="order_info ">
+            	<div class="l_box fl">
+                	<h1>寄样方式：{{data.deliverWay}}</h1>
+                    <p>送样地址：{{data.receiverAddress}}</p>
+                    <p>联系人：{{data.receiverName}}</p>
+                    <p>联系电话：{{data.receiverPhone}}</p>
                 </div>
-                <div class="fl tm-text" style="width:65%">
-                  {{data.detail.productName}}
-                </div>			
-              </div>
-              <div class="fl tm-txt" style="width:10%">
-                <div style="line-height:60px;">
-                  {{data.detail.num}}
-                </div>			
-              </div>
-              <div class="fl tm-txt" style="width:10%" v-if="data.detail.price===null">
-                <div style="line-height:60px;">
-                  待定
-                </div>			
-              </div>
-              <div class="fl tm-txt" style="width:10%" v-else>
-                <div style="line-height:60px;">
-                  {{data.detail.price}}
-                </div>			
-              </div>
-              <div class="fl tm-txt" style="width:15%">
-                <div style="line-height:60px;">
-                  {{data.deliverWay}}
-                </div>			
-              </div>
-              <div class="fl tm-txt" style="width:15%">
-                <div style="line-height:60px;">
-                  {{data.payWay}}
-                </div>			
-              </div>
-          </div>
-        </div>
-        <!-- <div class="detail-jifen">
-          <div class="detail"></div>
-        </div> -->
-     </div>
-  </div>
+                
+                <div class="r_box fl" style="width:46%">
+                	<ul class="fr">
+                    	<li class="clearfloat">
+                        	<label class="fl" for="">支付方式:</label>
+                        	<div class="fl">{{data.payWay}}</div>
+                    	</li>
+                    	<li class="clearfloat">
+                        	<label class="fl" for="">支付状态:</label>
+                        	<div class="fl">{{data.payState | yesOrNo}}</div>
+                    	</li>
+                    	<li class="clearfloat">
+                        	<label class="fl" for="">订单金额:</label>
+                        	<div class="fl">
+                            	￥{{data.amountTotal}}
+                        	</div>
+                    	</li>
+                    	<li class="clearfloat">
+                        	<label class="fl" for="">样品回收费:</label>
+                        	<div class="fl">￥{{data.recycFee}}</div>
+                    	</li>
+                    	
+					</ul>
+                	<div class="total fr">
+                    	实付款：<span>￥{{data.amountTotal}}</span>
+                	</div>
+            	</div>
+            	
+            </div>    
+            
+            
+			<div class="sample_info clearfloat">
+            	<h1 class="box_title">样品信息</h1>
+            	<div class="sample_info_body" v-for="(sample,index) in sampleList">
+					<table>
+                    	<tr>
+                        	<td class="col1">样品性质</td>
+                            <td class="col2">{{sample.sampleDescribe}}</td>
+                       	</tr>
+                        <tr>
+                        	<td class="col1">数量</td>
+                            <td class="col2">{{sample.sampleNum}}</td>
+                        </tr>
+                        <tr>
+                        	<td class="col1">测试要求</td>
+                            <td class="col2">{{sample.requestMsg}}</td>
+                        </tr>
+                        <tr>
+                        	<td class="col1">参考文件</td>
+                            <td class="col2">
+								<ul  style="font-size: 12px;">
+						      		<li v-for="(rf,index) in sample.referenceFileArrs">
+						      			附件{{index+1}}: <a target="_blank" :href="HOST+rf">{{rf}} <i class="el-icon-download"></i> </a>
+						      		</li>
+						      	</ul>
+							</td>
+                        </tr>
+					</table>
+				</div>
+        	</div>
+        
+           
+           <div class="order_record">
+            	<h1 class="box_title" style="border-bottom: 1px solid #e0e3e2;">实验结果</h1>
+            	<ul class="order_record_list">
+			    	<li v-for="(item,index) in arracList">
+			    		附件{{index+1}}: <a target="_blank" :href="HOST+item.fileUrl">{{item.fileName}}<i class="el-icon-download"></i> </a>
+			    	</li>
+                </ul>
+            	<br />
+           </div>
+                                   
+                                                
+		</div>
+	</div>
 </template>
 
 <script>
 import { webRpc } from '../../rpc/index';
 import { HOST } from '../../config';
 export default {
-  data () {
-    return {
-      HOST:HOST,
-      data:{},
-      a:false
-    }
-  },
-  created () {
-    this.data.id=this.data.id = this.$route.query.id;
-    this.initData();
-  },
-  methods: {
-    initData(){
-      webRpc.invoke('orderWebRpc.findById',this.data.id).then(res=>{
-        console.log(res)
-        if(res.retCode===0){
-          this.data=res.data
-        }
-      }).catch(err=>{})
-    }
-  }
+
+	data () {
+    	return {
+      		HOST:HOST,
+      		data:{},
+      		arracList:{},
+      		sampleList:{},
+      		detailList:{}
+    	}
+  	},
+	created () {
+    	this.data.id=this.data.id = this.$route.query.id;
+    	this.initData();
+  	},
+  	filters: {
+			yesOrNo: function (value) {
+				if (value === 'YES') {
+			    	value = '是'
+			    } else if (value === 'NO') {
+			        value = '否'
+			    }
+			    return value
+			}
+  		},
+  	methods: {
+    	initData(){
+      		webRpc.invoke('orderWebRpc.findById',this.data.id).then(res=>{
+        		console.log(res)
+        		if(res.retCode===0){
+          			this.data=res.data
+          			
+          			webRpc.invoke("orderWebRpc.findSampleListByOrderNo",this.data.orderNo).then(result=>{
+            			this.sampleList = result.data;
+            		}).catch(error =>{});
+            	
+          			webRpc.invoke("orderWebRpc.findAttachmentListByOrderNo",this.data.orderNo).then(result=>{
+            			this.arracList = result.data;
+            		}).catch(error =>{});
+            		
+            		webRpc.invoke("orderWebRpc.findDetailListByOrderNo",this.data.orderNo).then(result=>{
+	            		this.detailList = result.data;
+	            	}).catch(error =>{});
+            	
+        		}
+      		}).catch(err=>{})
+    	}
+  	}
 }
+
 </script>
 
 <style scoped>
-.detail{
-  border: 1px solid #999;
-}
-.detail-left{
-    width: 266px;
-    color: #666;
-    background-color: #fbfbfb;
-    padding-bottom: 20px;
-}
-.detail-left-title{
-    padding-left: 20px;
-    height: 29px;
-    width: 246px;
-    border-bottom: 1px solid #DDD;
-    background-color: #F3F3F3;
-    line-height: 29px;
-    color: #333;
-    font-size: 12px;
-    font-weight: 700;
-}
-.detail-left-text p{
-  margin: 10px 8px 0 20px;
-}
-.detail-right{
-  margin-top: 10px;
-  /* text-align: center; */
-}
-.detail-right-text{
-  margin-left: 50px;
-  text-align: left;
-}
-.detail-right-text p{
-  margin-bottom: 20px;    
-}
-.detail-right-txt{
-  cursor: pointer;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.commNum{
-    margin-left: 5px;
-    margin-bottom: 3px;
-    border-bottom: 1px solid #eee;
-    background-color: #edecec;
-}
-.tm-img img{
-	  width: 100%;
-    height: 100%;
-    border: 1px solid #cbcbcbee;
-}
-.tm-text{
-	padding-left: 20px;
-	line-height:60px;
-	overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-}
-.tm-txt{
-    font-size: 14px;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
-}
-.tm-pri{
-    margin-left: 2px;
-    font-size: 14px;
-    color: #1e1e1e;
-}
 
-.tm-del{
-    margin-top: 10px;
-    margin-right: 5px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 12px;
-    line-height: 1;
-    border: 1px solid #ccc;
-}
-.mglist{
-	margin-bottom:10px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #e3dfdf;
-	cursor: pointer;
-}
-.car-title{
-	width: 100%;
-	padding: 20px 0;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 20px;
-}
-.car-title span{
-	display: inline-block;
-}
+.cur{color:red}
+.clearfloat{clear:both}
+.order_detail_title{height:72px;line-height:76px;background:#e0f6ed;margin-top:20px;padding:0 30px;font-size:16px;color:rgba(0,0,0,.65);font-weight:700}
+.order_schedule{width:100%;height:162px;background:#fff;padding:4px 0}
+.order_schedule .l_box{width:372px;padding-top:26px;border-right:1px solid #e8e8e8;line-height:30px;font-size:16px}
+.order_schedule .l_box p{line-height:22px;margin-bottom:20px;font-size:16px;color:rgba(0,0,0,.65);font-weight:700;padding-left:30px}
+.fl{float:left}
+.order_schedule .r_box{width:550px;height:100%}
+.fl{float:left}
+.order_cur_schedule{width:100%;height:100%}
+.order_cur_schedule li{position:relative;float:left;width:18.66%;padding-top:26px}
+.order_cur_schedule li img{display:block;margin:0 auto}
+.order_cur_schedule li p{line-height:22px;margin-top:20px;font-size:16px;color:rgba(0,0,0,.45);font-weight:500;text-align:center}
+.order_cur_schedule .dashed_dot{position:absolute;top:58px;right:-30px}
+.order_cur_schedule .dashed_dot .dashed_dot_item{float:left;width:2px;height:2px;background:#8c8c8c;margin-right:5px}
+.order_info{background:#fff;padding:30px;margin-top:20px;height:200px}
+.order_info>div{width:50%;min-height:100px}
+.order_info .l_box h1{line-height:22px;margin-bottom:20px;font-size:16px;color:rgba(0,0,0,.65);font-weight:700}
+.order_info .l_box p{line-height:30px;font-size:14px;color:rgba(0,0,0,.65)}
+.order_info .r_box ul{width:240px;padding-top:70px;border-bottom:1px solid #e8e8e8}
+.order_info .r_box ul li{width:100%;line-height:30px}
+.order_info .r_box ul li label{display:block;width:50%;line-height:30px;font-size:14px;color:rgba(0,0,0,.45);font-weight:500;text-align:right}
+.order_info .r_box ul li div{width:50%;line-height:30px;font-size:14px;color:rgba(0,0,0,.75);font-weight:500;text-align:right}
+.order_info .r_box .total{width:100%;line-height:45px;font-size:14px;color:rgba(0,0,0,.45);font-weight:500;text-align:right}
+.order_info .r_box .total span{margin-left:28px;font-size:18px;color:#32d693}
+.sample_info{background:#fff;margin-top:20px}
+.sample_info_body table{width:100%;margin:0 0 36px 0}
+.sample_info_body table .col1{width:180px}
+.sample_info_body table td{line-height:22px;padding:10px 20px;font-size:14px;color:#424242;border:1px solid #e8e8e8}
+.box_title{line-height:65px;padding-left:30px;font-size:16px;color:rgba(0,0,0,.75);font-weight:700}
+.order_record{width:100%;background:#fff;margin-top:20px}
+.order_record_list{padding:25px 0 0 30px}
+
 </style>
 
 

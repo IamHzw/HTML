@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <v-Header></v-Header>
+    <!--<v-Header></v-Header> -->
     <v-Sider></v-Sider>
     <div id="content">
 			<div class="wrap">
@@ -108,5 +108,11 @@ export default {
 <style scoped>
 .chickColor{
 	background: #c8c8c8;
+}
+.slide-wrap{
+	background: #f2f5f4;
+}
+#content{
+	background: #f2f5f4;
 }
 </style>
