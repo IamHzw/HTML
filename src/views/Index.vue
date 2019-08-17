@@ -839,8 +839,237 @@
         <h3>Cooperation agency</h3>
         <h4>测试狗与众多知名单位合作，持续优化和提升服务质量，只为给您提供快速而准确的数据</h4>
 
-        <div style="background: url('../assets/images/Index_icon_8.png') no-repeat;height: 540px;padding-bottom: 20px;overflow: inherit;position: relative;width: 1200px;
-        margin: 0 auto;">
+        <div class="img-box-hide">
+              <div id="img-box" class="img-box" style="height: 408px;">
+                 <!-- <img class="bottomImg1" src="https://statics.shiyanjia.com/c/2018/images/produce/scroll.png"> -->
+                 <div class="thanks-list-box">
+                
+                    <table class="thanks-list">
+                        <tbody>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                            <tr class="imgstr">
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                                <td class="col5">
+                                    <img src="../assets/images/hezhefang_1.png" alt="">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>                
         </div>
     </div>
     <v-Footer></v-Footer>
@@ -993,6 +1222,9 @@ export default {
 .thanks-list tr {
     border-bottom: 1px solid rgba(187, 151, 79, 0.5);
 }
+.thanks-list .imgstr {
+    border-bottom: 0;
+}
 .thanks-list th {
     height: 80px;
     font-size: 16px;
@@ -1015,6 +1247,10 @@ export default {
 .thanks-list .col4 {
     width: 358px;
     padding: 20px 12px 20px 0;
+}
+.thanks-list .col5 {
+    width: 250px;
+    padding: 20px 12px 20px 0px;
 }
 .thanks-list td {
     min-height: 100px;
