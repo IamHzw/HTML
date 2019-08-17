@@ -551,6 +551,289 @@
             </div>
         </div>
      </div>
+
+     <div class="sci-user section">
+        <h2>部分用户致谢论文</h2>
+        <h3>（合计共145条）</h3>
+        <h4>科研，我要发CNS；测试，我选指南针。 论文致谢科学指南针，最高奖励5000元红包。</h4>   
+        <div class="img-box-hide">
+              <div id="img-box" class="img-box" style="height: 408px;">
+                 <!-- <img class="bottomImg1" src="https://statics.shiyanjia.com/c/2018/images/produce/scroll.png"> -->
+                 <div class="thanks-list-box">
+                
+                    <table class="thanks-list">
+                        <thead>
+                            <tr>
+                                <th class="col1">编号/测试项目</th>
+                                <th class="col2">致谢人/单位</th>
+                                <th class="col3">致谢内容</th>
+                                <th class="col4">发表文章</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1">
+                                    <h1>01</h1>
+                                    科研绘图
+                                </td>
+                                <td class="col2">
+                                    邹**<br>
+                                    Nanjing  Tech University
+                                </td>
+                                <td class="col3">
+                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                </td>
+                                <td class="col4">
+                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              <!-- </div> -->
+            </div>                
+        </div>
+     </div>
     <div class="section" id="agency">
         <h2>合作机构</h2>
         <h3>Cooperation agency</h3>
@@ -584,17 +867,42 @@ export default {
         vSider,
         vFooter
     },
-  mounted () {
-      var wow = new WOW({
-            boxClass: 'wow',
-            animateClass: 'animated',
-            offset: 0,
-            mobile: true
-      })
-      wow.init();
-      // this._initSwiper();
+  methods: {
+      init(){
+          $(window).scroll(function(e){
+                e.stopPropagation();
+                var scrollTop = $(window).scrollTop();
+                if(scrollTop > 2000){
+                    var innerWindowHeight = $(window).height();                     // 浏览器视口的高度
+                    var scrollHeight = 4401-innerWindowHeight+200                  // 图片滚动的距离
+                    $(".sci-user").css({height:innerWindowHeight});
+                    $(".img-box").css({height:innerWindowHeight-200});
+                    $(".img-box").animate({scrollTop: scrollHeight}, 80000, 'linear'); 
+                    $(".img-box").mouseenter(function(){
+                        $(this).stop(true);
+                    }).mouseleave(function(){
+                        var top = parseInt($(".img-box").scrollTop());                              // 鼠标移出时scrollTop
+                        var time = parseInt( (scrollHeight - top) / (scrollHeight / 80000) );       // 重新计算运动时间
+                        $(".img-box").animate({scrollTop: scrollHeight}, time, 'linear');
+                    });
+                }
+            });
+            document.getElementById('img-box').onmousewheel = function(e){                
+                this.scrollTop = this.scrollTop - (event.wheelDelta ? event.wheelDelta : -event.detail * 10);//直接设置滚动条高度
+                return false;//取消滚动条的默认行为，就是不让他执行默认的滚动
+                
+            };
+      }
   },
   mounted(){
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: true
+    })
+    wow.init();
+    this.init();
     var mySwiper = new Swiper('.index-container', {
         // autoplay:true,
         loop:true,
@@ -620,6 +928,17 @@ export default {
           },
           slidesPerView: 3,
     });
+    // var swiper = new Swiper('.img-box-hide', {
+    //     scrollbar: '.swiper-scrollbar',
+    //     direction: 'vertical',
+    //     slidesPerView: 'auto',
+    //     mousewheelControl: true,
+    //     freeMode: true,
+    //     autoplay: {
+    //         delay: 10,
+    //         //disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
+    //     },
+    // });
   },
   destroyed(){
       //mySwiper,
@@ -636,4 +955,74 @@ export default {
     width: 100%;
     height: 100%;
   }
+
+  .section .img-box-hide{
+  	/* width:750px; */
+  	overflow:hidden;
+  	margin:0 auto;
+   }
+  .section .img-box{
+        /* width:767px; */
+        /* margin:51px auto 0; */
+        overflow-y:auto;
+        position:relative;
+        text-align:center;
+        -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none; 
+    }
+    .section .img-box:after{
+        content:"";
+        display:block;
+        clear:both
+    }
+    
+
+.thanks-list-box {
+    width: 1200px;
+    margin: 24px auto 0;
+    height: auto;
+    padding: 0 30px;
+    background: #FFF;
+    box-shadow: 0px 0px 30px 4px #D6E2DD;
+    
+}
+.section .img-box::-webkit-scrollbar { width: 0 !important }
+.thanks-list {
+    width: 100%;
+}
+.thanks-list tr {
+    border-bottom: 1px solid rgba(187, 151, 79, 0.5);
+}
+.thanks-list th {
+    height: 80px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, .85);
+    font-weight: bold;
+    text-align: left;
+}
+.thanks-list .col1 {
+    width: 230px;
+}
+.thanks-list .col2 {
+    width: 220px;
+    padding-right: 15px;
+    line-height: 22px;
+}
+.thanks-list .col3 {
+    width: 332px;
+    padding: 5px 30px 5px 0;
+}
+.thanks-list .col4 {
+    width: 358px;
+    padding: 20px 12px 20px 0;
+}
+.thanks-list td {
+    min-height: 100px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .65);
+}
+
+.sci-thanks-container {
+    padding: 0 0 60px 0;
+}
 </style>

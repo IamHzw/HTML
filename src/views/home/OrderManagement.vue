@@ -48,7 +48,7 @@
 									<img :src="HOST+data.detail.productImg">
 								</div>
 								<div class="fl tm-img" style="width:15%" v-if="data.supType!=1">
-									<img src="../../assets/images/subtype2.png">
+									<!-- <img src="../../assets/images/subtype2.png"> -->
 								</div>
 								
 								<div class="fl tm-text" style="width:65%" v-if="data.supType==1">
