@@ -75,7 +75,7 @@
                 <div class="service-after"></div>
                 <div class="service-before"></div>
             </div>
-            <div class="service-item wow fadeInUp ac" data-wow-delay="3s">
+            <div class="service-item wow fadeInUp ac" data-wow-delay="1s">
                 <div class="service-wrap">
                     <div class="service-main">
                         <i><img src="../assets/images/ser3.png"></i>
@@ -554,8 +554,7 @@
 
      <div class="sci-user section">
         <h2>部分用户致谢论文</h2>
-        <h3>（合计共145条）</h3>
-        <h4>科研，我要发CNS；测试，我选指南针。 论文致谢科学指南针，最高奖励5000元红包。</h4>   
+        <h4>科研，我要发CNS</h4>   
         <div class="img-box-hide">
               <div id="img-box" class="img-box" style="height: 408px;">
                  <!-- <img class="bottomImg1" src="https://statics.shiyanjia.com/c/2018/images/produce/scroll.png"> -->
@@ -571,260 +570,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr v-for="(item,index) in articlelist">
                                 <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
+                                    <h1>{{index+1}}</h1>
+									{{item.title}}
                                 </td>
                                 <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
+									{{item.createUser}}<br>
+                                    {{item.createUnit}}
                                 </td>
                                 <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
+                                   <img :src="HOST+item.imgUrl" alt="" style="max-width: 332px;">
                                 </td>
                                 <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col1">
-                                    <h1>01</h1>
-                                    科研绘图
-                                </td>
-                                <td class="col2">
-                                    邹**<br>
-                                    Nanjing  Tech University
-                                </td>
-                                <td class="col3">
-                                    We also thank Mr. Wang Liangliang from Shiyanjia Lab (www.shiyanjia.com) for his drawing schematic illustration.
-                                </td>
-                                <td class="col4">
-                                    Zou, D., Xu, J., Chen, X., Drioli, E., Qiu, M., &amp; Fan, Y. (2019). A novel thermal spraying technique to fabricate fly ash/alumina composite membranes for oily emulsion and spent tin wastewater treatment. Separation and Purification Technology, 219, 127–136. 
+                                    <p v-html = 'item.content'></p>
                                 </td>
                             </tr>
                         </tbody>
@@ -837,237 +596,17 @@
     <div class="section" id="agency">
         <h2>合作机构</h2>
         <h3>Cooperation agency</h3>
-        <h4>测试狗与众多知名单位合作，持续优化和提升服务质量，只为给您提供快速而准确的数据</h4>
+        <h4>与众多知名单位合作，持续优化和提升服务质量，只为给您提供快速而准确的数据</h4>
 
         <div class="img-box-hide">
               <div id="img-box" class="img-box" style="height: 408px;">
                  <!-- <img class="bottomImg1" src="https://statics.shiyanjia.com/c/2018/images/produce/scroll.png"> -->
                  <div class="thanks-list-box">
-                
-                    <table class="thanks-list">
-                        <tbody>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                            <tr class="imgstr">
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                                <td class="col5">
-                                    <img src="../assets/images/hezhefang_1.png" alt="">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                	<ul>
+                		<li v-for="item in linklist">
+                			 <img :src="HOST+item[0]" alt="" >
+                		</li>
+                	</ul>
                 </div>
             </div>                
         </div>
@@ -1084,11 +623,19 @@ import 'swiper/dist/css/swiper.min.css';
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFooter from "../components/vFooter.vue";
+import { webRpc } from '../rpc/index';
+import { HOST } from '../config';
+
 export default {
   data () {
     return {
-    //   imgArr:["http://pic.ceshigo.com//20181217/2018121710411596276406.jpg","http://pic.ceshigo.com//20190513/2019051314222468335301.jpg","http://pic.ceshigo.com//20190513/2019051314135655256288.jpg","http://pic.ceshigo.com//20181111/2018111115000750339563.jpg"],
-    //   paperArr:["http://pic.ceshigo.com//20190308/2019030817241994476517.jpg","http://pic.ceshigo.com//20190308/2019030817231717036855.jpg","http://pic.ceshigo.com//20190308/2019030817223131021372.jpg","http://pic.ceshigo.com//20190308/2019030817215437219406.jpg","http://pic.ceshigo.com//20181113/2018111318023490649335.jpg","http://pic.ceshigo.com//20181112/2018111214015812088310.jpg","http://pic.ceshigo.com//20181112/2018111211480721878590.jpg","http://pic.ceshigo.com//20181112/2018111214085947087001.jpg"]
+    	HOST:HOST,
+    	linklist: {},
+    	articlelist:{},
+        query:{
+        	categoryCode:'thesis'
+        },
+        top:35,
     }
   },
     components: {
@@ -1096,7 +643,22 @@ export default {
         vSider,
         vFooter
     },
+	created () {
+		this.getData();
+	},
   methods: {
+  		getData() {
+          webRpc.invoke("linkWebRpc.findTopList",this.query,this.top).then(result=>{
+            this.linklist = result.data;
+            console.log(result);
+          }).catch(error =>{});
+          
+          webRpc.invoke("articleWebRpc.findTopFullList",this.query,this.top).then(result=>{
+            this.articlelist = result.data;
+            console.log(result);
+          }).catch(error =>{});
+          
+		},
       init(){
           $(window).scroll(function(e){
                 e.stopPropagation();
@@ -1104,12 +666,15 @@ export default {
                 if(scrollTop > 2000){
                     var innerWindowHeight = $(window).height();                     // 浏览器视口的高度
                     var scrollHeight = 4401-innerWindowHeight+200                  // 图片滚动的距离
+                   
                     $(".sci-user").css({height:innerWindowHeight});
                     $(".img-box").css({height:innerWindowHeight-200});
                     $(".img-box").animate({scrollTop: scrollHeight}, 80000, 'linear'); 
                     $(".img-box").mouseenter(function(){
+                    
                         $(this).stop(true);
                     }).mouseleave(function(){
+                   
                         var top = parseInt($(".img-box").scrollTop());                              // 鼠标移出时scrollTop
                         var time = parseInt( (scrollHeight - top) / (scrollHeight / 80000) );       // 重新计算运动时间
                         $(".img-box").animate({scrollTop: scrollHeight}, time, 'linear');
@@ -1118,6 +683,7 @@ export default {
             });
             document.getElementById('img-box').onmousewheel = function(e){                
                 this.scrollTop = this.scrollTop - (event.wheelDelta ? event.wheelDelta : -event.detail * 10);//直接设置滚动条高度
+   
                 return false;//取消滚动条的默认行为，就是不让他执行默认的滚动
                 
             };
@@ -1225,7 +791,7 @@ export default {
 .thanks-list .imgstr {
     border-bottom: 0;
 }
-.thanks-list th {
+.thanks-list td {
     height: 80px;
     font-size: 16px;
     color: rgba(0, 0, 0, .85);
@@ -1248,17 +814,21 @@ export default {
     width: 358px;
     padding: 20px 12px 20px 0;
 }
-.thanks-list .col5 {
-    width: 250px;
-    padding: 20px 12px 20px 0px;
-}
+
 .thanks-list td {
     min-height: 100px;
     font-size: 14px;
     color: rgba(0, 0, 0, .65);
 }
 
-.sci-thanks-container {
-    padding: 0 0 60px 0;
+.thanks-list-box ul {
+	list-style-type:none;
 }
+
+.thanks-list-box li {
+	float:left;
+	    width: 14%;
+}
+
+
 </style>
