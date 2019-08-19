@@ -12,10 +12,10 @@
         <div id="coopreason">
           <div class="wrap">
             <h2>
-              了解测试狗
+              了解星尘实验室
             </h2>
             <h3>
-              测试狗致力于构建市场化运营的“互联网+科研”综合服务平台，聚集国内外著名高校、科研院所、
+              星尘实验室致力于构建市场化运营的“互联网+科研”综合服务平台，聚集国内外著名高校、科研院所、
             </h3>
             <h3>
               第三方检测机构及科技服务企业等顶尖科研机构的科研资源 （包括：科学仪器、实验服务、专家学者、科技成果等），
@@ -65,7 +65,7 @@
                   专业技术支持
                 </h4>
                 <p>
-                  专项技术领域获得测试狗专业团队的技术支持，在垂直市场获得领先优势。
+                  专项技术领域获得星尘实验室专业团队的技术支持，在垂直市场获得领先优势。
                 </p>
               </div>
             </div>
@@ -74,7 +74,7 @@
     </div>
     <div id="coopform">
         <div class="wrap">
-            <h2>立即申请成为测试狗合作伙伴</h2>
+            <h2>立即申请成为星尘实验室合作伙伴</h2>
             <form id="coop" method="post" class="form">
                 <div class="coopwrap">
                     <input type="text" value="" name="join_cmpname" class="licit" data-rules="['单位名称',1,120]" data-show="tips" placeholder="单位名称：" >

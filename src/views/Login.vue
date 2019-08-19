@@ -5,7 +5,7 @@
 
     	<div id="login-content" class="login_back">
       		<div class="login loginCAdd" style="margin: 0 auto">
-          		<h2>测试狗账号登录</h2>
+          		<h2>星尘实验室账号登录</h2>
           		<div>
 	            	<!-- 密码登录 -->
 	              	<form class="login-name licitform" ref="data" :model="data" :rules="rules"  v-if="loginType==1" @submit.native.prevent>

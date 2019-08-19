@@ -9,7 +9,7 @@
     <div id="aboutcsg" style="margin:0px;padding:70px 0px 140px;background:#F7F7F7;font-family:微软雅黑;font-size:14px;">
       <div class="wrap" style="margin:0px auto;padding:0px;">
         <h2 style="font-weight:normal;font-size:30px;color:#494949;text-align:center;">
-          了解测试狗
+          了解星尘实验室
         </h2>
         <div class="aboutcsg-wrap" style="margin:0px;padding:70px 0px 45px;">
           <div class="aboutcsg-item" style="margin:0px;padding:0px;border:none;">
@@ -46,7 +46,7 @@
           </div>
         </div>
         <p style="font-size:16px;color:#4F4F4F;">
-          测试狗隶属于成都世纪美扬科技有限公司，致力于构建市场化运营的“互联网+科研”综合服务平台，聚集国内外著名高校、科研院所、第三方检测机构及科技服务企业等顶尖科研机构的科研资源 （包括：科学仪器、实验服务、专家学者、科技成果等），为广大企事业单位科研团队及工作人员提供仪器共享、实验外包、分析测试、计算模拟、 科研众包以及定制化研发解决方案。
+          星尘实验室隶属于科技有限公司，致力于构建市场化运营的“互联网+科研”综合服务平台，聚集国内外著名高校、科研院所、第三方检测机构及科技服务企业等顶尖科研机构的科研资源 （包括：科学仪器、实验服务、专家学者、科技成果等），为广大企事业单位科研团队及工作人员提供仪器共享、实验外包、分析测试、计算模拟、 科研众包以及定制化研发解决方案。
         </p>
         <p style="font-size:16px;color:#4F4F4F;">
           目前，已经与430余家国内外顶级实验室建立合作关系，拥有180人以上的专家服务团队，已经为清华、北大、浙大、川大、中科院、应用材料（中国）、贵州云烟等高校和企业客户解决97500多次分析测试，超过9100客户遍布分布在北京、上海、广州、南京、杭州、武汉、新疆、哈尔滨、苏州、贵州等全国各省市。
@@ -59,7 +59,7 @@
     <div id="aboutreason" style="margin:0px;padding:70px 0px 140px;background:#FFFFFF;font-family:微软雅黑;font-size:14px;">
       <div class="wrap" style="margin:0px auto;padding:0px;">
         <h2 style="font-weight:normal;font-size:30px;color:#494949;text-align:center;">
-          选择测试狗的N个理由
+          选择星尘实验室的N个理由
         </h2>
         <div class="aboutresult-wrap" style="margin:0px;padding:80px 0px 0px;">
           <div class="aboutresult-item" style="margin:0px;padding:35px 24px 0px;background:#01707B;">

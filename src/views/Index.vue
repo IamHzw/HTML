@@ -15,7 +15,6 @@
           <div class="swiper-slide">
             <img src="../assets/images/side3.jpg"/>
           </div>
-          
           <div class="swiper-slide">
             <img src="../assets/images/side4.jpg"/>
           </div>
@@ -27,7 +26,7 @@
      <div class="section" id="service">
         <h2>我们的服务</h2>
         <h3>Our service</h3>
-        <h4>为满足个性而全面的科研需求，测试狗持续拓展和前进，期待为您提供完善的解决方案</h4>
+        <h4>为满足个性而全面的科研需求，星尘实验室持续拓展和前进，期待为您提供完善的解决方案</h4>
         <div class="wrap clearfix">
             <div class="service-item wow fadeInUp ac">
                 <div class="service-wrap">
@@ -207,7 +206,7 @@
      <!-- <div class="section" id="reservations" style="display: none">
         <h2>预约动态</h2>
         <h3>Reservations in progress</h3>
-        <h4>测试狗专业而便捷的服务，正成为众多科研人员的第一选择</h4>
+        <h4>星尘实验室专业而便捷的服务，正成为众多科研人员的第一选择</h4>
         <div class="wrap clearfix">
             <div class="reservations-table fl wow fadeInUp">
                 <h5>最新预约</h5>
@@ -335,7 +334,7 @@
                                           style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
                                           四川大学                                   </td>
                             <td>132****2779</td>
-                            <td>2019-06-05</td>
+                            <td>2019-08-19</td>
                         </tr><tr>
                             <td title="X射线衍射仪（XRD）"
                                 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=137.html" style="color: #1f1f1f">X射线衍射仪（XRD）</a>
@@ -344,7 +343,7 @@
                                           style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
                                           四川大学望江校区                                   </td>
                             <td>184****5794</td>
-                            <td>2019-06-05</td>
+                            <td>2019-08-19</td>
                         </tr><tr>
                             <td title="粉末/液体 透射电镜（TEM）"
                                 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=143.html" style="color: #1f1f1f">粉末/液体 透射电镜（TEM）</a>
@@ -353,7 +352,7 @@
                                           style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
                                           四川大学望江校区                                   </td>
                             <td>184****5794</td>
-                            <td>2019-06-05</td>
+                            <td>2019-08-19</td>
                         </tr><tr>
                             <td title="XRD"
                                 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;.html" style="color: #1f1f1f">XRD</a>
@@ -362,7 +361,7 @@
                                           style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
                                           中科院成都有机所                                   </td>
                             <td>182****4692</td>
-                            <td>2019-06-05</td>
+                            <td>2019-08-19</td>
                         </tr><tr>
                             <td title="生物样本透射电镜（TEM）"
                                 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=146.html" style="color: #1f1f1f">生物样本透射电镜（TEM）</a>
@@ -371,7 +370,7 @@
                                           style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
                                           西南交通大学                                   </td>
                             <td>158****3363</td>
-                            <td>2019-06-05</td>
+                            <td>2019-08-19</td>
                         </tr><tr>
                             <td title="粉末/液体 透射电镜（TEM）"
                                 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=143.html" style="color: #1f1f1f">粉末/液体 透射电镜（TEM）</a>
@@ -380,7 +379,7 @@
                                           style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
                                           四川大学                                   </td>
                             <td>132****2779</td>
-                            <td>2019-06-05</td>
+                            <td>2019-08-19</td>
                         </tr><tr>
                             <td title="场发射扫描电镜（SEM）"
                                 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=141.html" style="color: #1f1f1f">场发射扫描电镜（SEM）</a>
@@ -389,7 +388,7 @@
                                           style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
                                           西南交通大学                                   </td>
                             <td>152****9490</td>
-                            <td>2019-06-05</td>
+                            <td>2019-08-19</td>
                         </tr><tr>
                             <td title="粉末/液体 透射电镜（TEM）"
                                 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=143.html" style="color: #1f1f1f">粉末/液体 透射电镜（TEM）</a>
@@ -398,7 +397,7 @@
                                           style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
                                           四川大学                                   </td>
                             <td>132****2779</td>
-                            <td>2019-06-05</td>
+                            <td>2019-08-19</td>
                         </tr><tr>
                             <td title="X射线荧光光谱（XRF）"
                                 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=142.html" style="color: #1f1f1f">X射线荧光光谱（XRF）</a>
@@ -407,17 +406,9 @@
                                           style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
                                           中国科学院                                   </td>
                             <td>135****0152</td>
-                            <td>2019-06-05</td>
-                        </tr><tr>
-                            <td title="同步热分析仪(DSC/DTA-TG)"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=152.html" style="color: #1f1f1f">同步热分析仪(DSC/DTA-TG)</a>
-                            </td>
-                                      <td title=""
-                                          style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                          西南交通大学                                   </td>
-                            <td>152****9490</td>
-                            <td>2019-06-05</td>
-                        </tr>                </tbody>
+                            <td>2019-08-19</td>
+                        </tr>              
+                        </tbody>
                 </table>
             </div>
         </div>
@@ -426,58 +417,16 @@
      <div class="section" id="paper">
         <h2>论文案例</h2>
         <h3>Paper case</h3>
-        <h4>测试狗是发表论文的催化剂，与大家共同著就经典</h4>
+        <h4>星尘实验室是发表论文的催化剂，与大家共同著就经典</h4>
         <div class="wrap">
             <div class="paper-container swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="paper-slide swiper-slide">
+                    <div class="paper-slide swiper-slide" v-for="item in anlist">
                         <div class="paper-box">
-                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_1.jpg"></a>
+                            <div class="paper-pic"><a><img :src="HOST+item.imgUrl"></a>
                             </div>
                         </div>
                     </div>
-                    <div class="paper-slide swiper-slide">
-                        <div class="paper-box">
-                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_2.jpg"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paper-slide swiper-slide">
-                        <div class="paper-box">
-                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_3.jpg"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paper-slide swiper-slide">
-                        <div class="paper-box">
-                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_4.jpg"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paper-slide swiper-slide">
-                        <div class="paper-box">
-                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_5.jpg"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paper-slide swiper-slide">
-                        <div class="paper-box">
-                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_6.jpg"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paper-slide swiper-slide">
-                        <div class="paper-box">
-                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_7.jpg"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="paper-slide swiper-slide">
-                        <div class="paper-box">
-                            <div class="paper-pic"><a><img src="../assets/images/Index_icon_8.jpg"></a>
-                            </div>
-                        </div>
-                    </div>            
                   </div>
             </div>
             <div class="swiper-button-prev"></div>
@@ -488,7 +437,7 @@
      <div class="section" id="choose">
         <h2>为什么选择我们</h2>
         <h3>Choose reason</h3>
-        <h4>专业的技术服务团队，市场化的运营管理，让测试狗的服务专业而便捷</h4>
+        <h4>专业的技术服务团队，市场化的运营管理，让星尘实验室的服务专业而便捷</h4>
         <div class="wrap">
             <div class="choose-item">
                 <div class="choose-top">
@@ -552,7 +501,8 @@
         </div>
      </div>
 
-     <div class="sci-user section">
+	
+     <div class="sci-user section" v-if="false">
         <h2>部分用户致谢论文</h2>
         <h4>科研，我要发CNS</h4>   
         <div class="img-box-hide">
@@ -593,6 +543,8 @@
             </div>                
         </div>
      </div>
+   
+     
     <div class="section" id="agency">
         <h2>合作机构</h2>
         <h3>Cooperation agency</h3>
@@ -632,6 +584,8 @@ export default {
     	HOST:HOST,
     	linklist: {},
     	articlelist:{},
+    	anlist:{},
+    	productlist:{},
         query:{
         	categoryCode:'thesis'
         },
@@ -648,15 +602,40 @@ export default {
 	},
   methods: {
   		getData() {
+  		 //友情链接
           webRpc.invoke("linkWebRpc.findTopList",this.query,this.top).then(result=>{
             this.linklist = result.data;
             console.log(result);
           }).catch(error =>{});
           
-          webRpc.invoke("articleWebRpc.findTopFullList",this.query,this.top).then(result=>{
-            this.articlelist = result.data;
+          //案例
+          var anquery ={
+          	categoryCode:'anli'
+          }
+          webRpc.invoke("articleWebRpc.findTopFullList",anquery,10).then(result=>{
+            this.anlist = result.data;
+              console.log("案例");
             console.log(result);
           }).catch(error =>{});
+          
+          
+          //特色
+          var productQuery ={
+          	disabled:false,
+          	saleable:1,
+          	favorite:1,
+          }
+          webRpc.invoke("productWebRpc.findTop",productQuery,10).then(result=>{
+            this.productlist = result.data;
+             console.log("特色");
+            console.log(result);
+          }).catch(error =>{});
+          
+          
+          //webRpc.invoke("articleWebRpc.findTopFullList",this.query,this.top).then(result=>{
+          //  this.articlelist = result.data;
+          //  console.log(result);
+          //}).catch(error =>{});
           
 		},
       init(){
