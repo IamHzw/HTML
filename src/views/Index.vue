@@ -420,7 +420,7 @@
         <h3>&nbsp;</h3>
         <h4>&nbsp;</h4>
         <div class="wrap">
-            <div class="product-container swiper-container">
+            <div class="product-feature swiper-container">
                 <div class="swiper-wrapper">
                     <div class="product-slide swiper-slide" v-for="item in productlist" @click="toproduct(item.id)">
                         <div class="product-box">
@@ -630,6 +630,7 @@ export default {
   			 this.$router.push('/product?id='+id);
   		},
   		getData() {
+           let that = this;   
   		 //友情链接
           webRpc.invoke("linkWebRpc.findTopList",this.query,this.top).then(result=>{
             this.linklist = result.data;
@@ -644,7 +645,12 @@ export default {
             this.anlist = result.data;
               console.log("案例");
             console.log(result);
+             that.$nextTick(function () {
+                that.carousel();
+            })
           }).catch(error =>{});
+
+         
           
           
           //特色
@@ -657,6 +663,9 @@ export default {
             this.productlist = result.data;
              console.log("特色");
             console.log(result);
+            that.$nextTick(function () {
+                that.feature();
+            })
           }).catch(error =>{});
           
           
@@ -666,14 +675,14 @@ export default {
           //}).catch(error =>{});
           
 		},
-      init(){
-          $(window).scroll(function(e){
+        init(){
+            $(window).scroll(function(e){
                 e.stopPropagation();
                 var scrollTop = $(window).scrollTop();
                 if(scrollTop > 2000){
                     var innerWindowHeight = $(window).height();                     // 浏览器视口的高度
                     var scrollHeight = 4401-innerWindowHeight+200                  // 图片滚动的距离
-                   
+                    
                     $(".sci-user").css({height:innerWindowHeight});
                     $(".img-box").css({height:innerWindowHeight-200});
                     $(".img-box").animate({scrollTop: scrollHeight}, 80000, 'linear'); 
@@ -681,7 +690,7 @@ export default {
                     
                         $(this).stop(true);
                     }).mouseleave(function(){
-                   
+                    
                         var top = parseInt($(".img-box").scrollTop());                              // 鼠标移出时scrollTop
                         var time = parseInt( (scrollHeight - top) / (scrollHeight / 80000) );       // 重新计算运动时间
                         $(".img-box").animate({scrollTop: scrollHeight}, time, 'linear');
@@ -690,11 +699,65 @@ export default {
             });
             document.getElementById('img-box').onmousewheel = function(e){                
                 this.scrollTop = this.scrollTop - (event.wheelDelta ? event.wheelDelta : -event.detail * 10);//直接设置滚动条高度
-   
+
                 return false;//取消滚动条的默认行为，就是不让他执行默认的滚动
                 
             };
-      }
+        },
+        carousel () {
+            let bswiper = new Swiper('.paper-container', {
+                
+                // direction: 'horizontal', 
+                loop: true, // 循环模式选项
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
+                },
+            　	navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                //  allowTouchMove: false, // 不允许鼠标拖动
+                //     preventClicks: false,//默认true
+                //     autoplayDisableOnInteraction: false, 
+                slidesPerView: 3,              
+            });
+            //鼠标覆盖停止自动切换
+            bswiper.el.onmouseover = function () {
+                bswiper.autoplay.stop();
+            };
+            //鼠标移开开始自动切换
+            bswiper.el.onmouseout = function () {
+                bswiper.autoplay.start();
+            };
+        },
+        feature(){
+            let productswiper = new Swiper('.product-feature', {
+                
+                // direction: 'horizontal', 
+                loop: true, // 循环模式选项
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
+                },
+            　	navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                //  allowTouchMove: false, // 不允许鼠标拖动
+                //     preventClicks: false,//默认true
+                //     autoplayDisableOnInteraction: false, 
+                slidesPerView: 4,              
+            });
+            //鼠标覆盖停止自动切换
+            productswiper.el.onmouseover = function () {
+                productswiper.autoplay.stop();
+            };
+            //鼠标移开开始自动切换
+            productswiper.el.onmouseout = function () {
+                productswiper.autoplay.start();
+            };
+        }
   },
   mounted(){
     var wow = new WOW({
@@ -704,7 +767,7 @@ export default {
         mobile: true
     })
     wow.init();
-    this.init();
+    // this.init();
     var mySwiper = new Swiper('.index-container', {
         // autoplay:true,
         loop:true,
@@ -717,33 +780,42 @@ export default {
             disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
         },
     });
-    var bswiper = new Swiper('.paper-container', {
-          direction: 'horizontal', 
-          loop: true, // 循环模式选项
-          autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
-          },
-        　navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-          slidesPerView: 3,
-    });
+    this.$nextTick(function () {
+        this.getData();
+        this.carousel();
+        this.feature();
+    })
+//     var bswiper = new Swiper('.paper-container', {
+//         loop: true, //循环切换
+
+// 　　　　autoplay: true,//可选选项，自动滑动
+// 　　　　// 如果需要分页器
+// 　　　　pagination: {
+// 　　　　　　el: '.swiper-pagination',
+// 　　　　},
+// 　　　　// 如果需要前进后退按钮
+// 　　　　navigation: {
+// 　　　　　　nextEl: '.swiper-button-next',
+// 　　　　　　prevEl: '.swiper-button-prev',
+// 　　　　},
+// 　　　　observer:true,//修改swiper自己或子元素时，自动初始化swiper
+// 　　　　observeParents:true,//修改swiper的父元素时，自动初始化swiper
+//           slidesPerView: 3,
+//     });
     
-	var productswiper = new Swiper('.product-container', {
-          direction: 'horizontal', 
-          loop: true, // 循环模式选项
-          autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
-          },
-        　	navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-          slidesPerView: 2,
-    });
+	// var productswiper = new Swiper('.product-container', {
+    //       direction: 'horizontal', 
+    //       loop: true, // 循环模式选项
+    //       autoplay: {
+    //         delay: 5000,
+    //         disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
+    //       },
+    //     　	navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //       },
+    //       slidesPerView: 2,
+    // });
   
     
     // var swiper = new Swiper('.img-box-hide', {
