@@ -414,6 +414,31 @@
         </div>
      </div> -->
 
+
+     <div class="section" id="product">
+        <h2>特色项目</h2>
+        <h3>&nbsp;</h3>
+        <h4>&nbsp;</h4>
+        <div class="wrap">
+            <div class="product-container swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="product-slide swiper-slide" v-for="item in productlist" @click="toproduct(item.id)">
+                        <div class="product-box">
+                            <div class="product-pic"><a><img :src="HOST+item.imagesStr"></a>
+                            </div>
+                        </div>
+                        <div class="product-title">
+                        	{{item.title}}
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+     </div>
+     
+     
      <div class="section" id="paper">
         <h2>论文案例</h2>
         <h3>Paper case</h3>
@@ -601,6 +626,9 @@ export default {
 		this.getData();
 	},
   methods: {
+  		toproduct(id){
+  			 this.$router.push('/product?id='+id);
+  		},
   		getData() {
   		 //友情链接
           webRpc.invoke("linkWebRpc.findTopList",this.query,this.top).then(result=>{
@@ -702,6 +730,22 @@ export default {
           },
           slidesPerView: 3,
     });
+    
+	var productswiper = new Swiper('.product-container', {
+          direction: 'horizontal', 
+          loop: true, // 循环模式选项
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
+          },
+        　	navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          slidesPerView: 2,
+    });
+  
+    
     // var swiper = new Swiper('.img-box-hide', {
     //     scrollbar: '.swiper-scrollbar',
     //     direction: 'vertical',
@@ -809,5 +853,37 @@ export default {
 	    width: 14%;
 }
 
+.product-box{
+	    padding: 8px;
+    	background: #007079;
+}
 
+.product-pic{
+	height: 200px;
+	width:100%;
+    overflow: hidden;
+}
+
+.product-slide {
+    width: 300px !important;
+    float: left;
+    margin-bottom: 55px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 55px;
+}
+
+.product-pic img, .product-spic img {
+    width: 100%;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+    height: 100%;
+}
+
+.product-title{
+	text-align: center;
+	margin-top: 10px;
+}
 </style>
