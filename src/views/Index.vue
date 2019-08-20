@@ -419,10 +419,10 @@
         <h2>特色项目</h2>
         <h3>&nbsp;</h3>
         <h4>&nbsp;</h4>
-        <div class="wrap">
-            <div class="product-feature swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="product-slide swiper-slide" v-for="item in productlist" @click="toproduct(item.id)">
+
+        <div class="wrap" style="padding-left:50px;padding-right:50px">
+	        <swiper2 :options="swiperFeature" ref="myFeature" v-if="productlist.length>1">
+                    <swiper-slide v-for="item in productlist" @click="toproduct(item.id)">
                         <div class="product-box">
                             <div class="product-pic"><a><img :src="HOST+item.imagesStr"></a>
                             </div>
@@ -430,32 +430,28 @@
                         <div class="product-title">
                         	{{item.title}}
                         </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+                    </swiper-slide>
+            </swiper2>
+            <div class="prev swiper-button-black" slot="button-prev"><img src="../assets/images/right.png" alt=""></div>
+            <div class="next swiper-button-black" slot="button-next"><img src="../assets/images/left.png" alt=""></div>
         </div>
      </div>
-     
-     
+
      <div class="section" id="paper">
         <h2>论文案例</h2>
         <h3>Paper case</h3>
         <h4>星尘实验室是发表论文的催化剂，与大家共同著就经典</h4>
-        <div class="wrap">
-            <div class="paper-container swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="paper-slide swiper-slide" v-for="item in anlist">
+        <div class="wrap" style="padding-left:50px;padding-right:50px">
+	        <swiper1 :options="swiperOption" ref="mySwiper" v-if="anlist.length>1">
+                    <swiper-slide v-for="item in anlist">
                         <div class="paper-box">
                             <div class="paper-pic"><a><img :src="HOST+item.imgUrl"></a>
                             </div>
                         </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+                    </swiper-slide>
+            </swiper1>
+            <div class="swiper-button-prev" slot="button-prev"></div>
+            <div class="swiper-button-next" slot="button-next"></div>
         </div>
      </div>
 
@@ -532,7 +528,6 @@
         <h4>科研，我要发CNS</h4>   
         <div class="img-box-hide">
               <div id="img-box" class="img-box" style="height: 408px;">
-                 <!-- <img class="bottomImg1" src="https://statics.shiyanjia.com/c/2018/images/produce/scroll.png"> -->
                  <div class="thanks-list-box">
                 
                     <table class="thanks-list">
@@ -564,7 +559,6 @@
                         </tbody>
                     </table>
                 </div>
-              <!-- </div> -->
             </div>                
         </div>
      </div>
@@ -577,7 +571,6 @@
 
         <div class="img-box-hide">
               <div id="img-box" class="img-box" style="height: 408px;">
-                 <!-- <img class="bottomImg1" src="https://statics.shiyanjia.com/c/2018/images/produce/scroll.png"> -->
                  <div class="thanks-list-box">
                 	<ul>
                 		<li v-for="item in linklist">
@@ -602,6 +595,8 @@ import  vSider from "../components/vSider.vue";
 import  vFooter from "../components/vFooter.vue";
 import { webRpc } from '../rpc/index';
 import { HOST } from '../config';
+import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide }  from 'vue-awesome-swiper'
 
 export default {
   data () {
@@ -615,22 +610,89 @@ export default {
         	categoryCode:'thesis'
         },
         top:35,
+
+        swiperOption: {
+            //设定初始化时slide的索引
+            initialSlide: 0,
+            //Slides的滑动方向，可设置水平(horizontal)或垂直(vertical)
+            direction: 'horizontal',
+            autoplay: {
+                delay: 2500, //1秒切换一次
+                disableOnInteraction: false,
+            },
+            //环状轮播
+            loop: true,
+            slidesPerView: 'auto',
+            loopedSlides: 3,
+            loopAdditionalSlides: 0,
+            //一个屏幕展示的数量
+            slidesPerView: 3,
+            //间距
+            spaceBetween: 150,
+            //修改swiper自己或子元素时，自动初始化swiper
+            observer: true,  
+            //修改swiper的父元素时，自动初始化swiper 	
+            observeParents: true,
+            //左右点击
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        },
+        swiperFeature:{
+             //设定初始化时slide的索引
+            initialSlide: 0,
+            //Slides的滑动方向，可设置水平(horizontal)或垂直(vertical)
+            direction: 'horizontal',
+            autoplay: {
+                delay: 2500, //1秒切换一次
+                disableOnInteraction: false,
+            },
+            //环状轮播
+            loop: true,
+            slidesPerView: 'auto',
+            loopedSlides: 3,
+            loopAdditionalSlides: 0,
+            //一个屏幕展示的数量
+            slidesPerView: 4,
+            //间距
+            spaceBetween: 120,
+            //修改swiper自己或子元素时，自动初始化swiper
+            observer: true,  
+            //修改swiper的父元素时，自动初始化swiper 	
+            observeParents: true,
+            //左右点击
+            navigation: {
+                nextEl: '.next',
+                prevEl: '.prev',
+            },
+        }
     }
   },
     components: {
         vHeader,
         vSider,
-        vFooter
+        vFooter,
+        swiper1:swiper, 
+        swiper2:swiper,
+        swiperSlide
     },
 	created () {
 		this.getData();
-	},
+    },
+    computed: {
+			swiper() {
+				return this.$refs.mySwiper.swiper
+            },
+            swiper() {
+				return this.$refs.myFeature.swiper
+			}
+		},
   methods: {
   		toproduct(id){
   			 this.$router.push('/product?id='+id);
   		},
-  		getData() {
-           let that = this;   
+  		getData() { 
   		 //友情链接
           webRpc.invoke("linkWebRpc.findTopList",this.query,this.top).then(result=>{
             this.linklist = result.data;
@@ -645,14 +707,9 @@ export default {
             this.anlist = result.data;
               console.log("案例");
             console.log(result);
-             that.$nextTick(function () {
-                that.carousel();
-            })
           }).catch(error =>{});
 
          
-          
-          
           //特色
           var productQuery ={
           	disabled:false,
@@ -663,9 +720,6 @@ export default {
             this.productlist = result.data;
              console.log("特色");
             console.log(result);
-            that.$nextTick(function () {
-                that.feature();
-            })
           }).catch(error =>{});
           
           
@@ -704,60 +758,6 @@ export default {
                 
             };
         },
-        carousel () {
-            let bswiper = new Swiper('.paper-container', {
-                
-                // direction: 'horizontal', 
-                loop: true, // 循环模式选项
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
-                },
-            　	navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                //  allowTouchMove: false, // 不允许鼠标拖动
-                //     preventClicks: false,//默认true
-                //     autoplayDisableOnInteraction: false, 
-                slidesPerView: 3,              
-            });
-            //鼠标覆盖停止自动切换
-            bswiper.el.onmouseover = function () {
-                bswiper.autoplay.stop();
-            };
-            //鼠标移开开始自动切换
-            bswiper.el.onmouseout = function () {
-                bswiper.autoplay.start();
-            };
-        },
-        feature(){
-            let productswiper = new Swiper('.product-feature', {
-                
-                // direction: 'horizontal', 
-                loop: true, // 循环模式选项
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
-                },
-            　	navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                //  allowTouchMove: false, // 不允许鼠标拖动
-                //     preventClicks: false,//默认true
-                //     autoplayDisableOnInteraction: false, 
-                slidesPerView: 4,              
-            });
-            //鼠标覆盖停止自动切换
-            productswiper.el.onmouseover = function () {
-                productswiper.autoplay.stop();
-            };
-            //鼠标移开开始自动切换
-            productswiper.el.onmouseout = function () {
-                productswiper.autoplay.start();
-            };
-        }
   },
   mounted(){
     var wow = new WOW({
@@ -780,44 +780,7 @@ export default {
             disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
         },
     });
-    this.$nextTick(function () {
-        this.getData();
-        this.carousel();
-        this.feature();
-    })
-//     var bswiper = new Swiper('.paper-container', {
-//         loop: true, //循环切换
-
-// 　　　　autoplay: true,//可选选项，自动滑动
-// 　　　　// 如果需要分页器
-// 　　　　pagination: {
-// 　　　　　　el: '.swiper-pagination',
-// 　　　　},
-// 　　　　// 如果需要前进后退按钮
-// 　　　　navigation: {
-// 　　　　　　nextEl: '.swiper-button-next',
-// 　　　　　　prevEl: '.swiper-button-prev',
-// 　　　　},
-// 　　　　observer:true,//修改swiper自己或子元素时，自动初始化swiper
-// 　　　　observeParents:true,//修改swiper的父元素时，自动初始化swiper
-//           slidesPerView: 3,
-//     });
-    
-	// var productswiper = new Swiper('.product-container', {
-    //       direction: 'horizontal', 
-    //       loop: true, // 循环模式选项
-    //       autoplay: {
-    //         delay: 5000,
-    //         disableOnInteraction: false,    // 用户操作swiper之后，是否禁止autoplay
-    //       },
-    //     　	navigation: {
-    //         nextEl: '.swiper-button-next',
-    //         prevEl: '.swiper-button-prev',
-    //       },
-    //       slidesPerView: 2,
-    // });
   
-    
     // var swiper = new Swiper('.img-box-hide', {
     //     scrollbar: '.swiper-scrollbar',
     //     direction: 'vertical',
@@ -838,6 +801,16 @@ export default {
 </script>
 
 <style>
+  .swiper-button-black{
+    position: absolute;
+    top: 30%;
+  }
+  .prev{
+      right: 0px;
+  }
+  .next{
+      left:0px;
+  }
   .index-container{
     height: 663px;
   }

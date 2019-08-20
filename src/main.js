@@ -11,6 +11,7 @@ import $ from 'jquery';
 import layer from "layui-layer";
 
 
+
 layer.config({
   time: 2000, //设置两秒后默认关闭
 });
