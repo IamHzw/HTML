@@ -666,7 +666,8 @@ export default {
                 nextEl: '.next',
                 prevEl: '.prev',
             },
-        }
+        },
+        
     }
   },
     components: {
@@ -760,6 +761,7 @@ export default {
         },
   },
   mounted(){
+      
     var wow = new WOW({
         boxClass: 'wow',
         animateClass: 'animated',

@@ -59,8 +59,24 @@
                     <div class="clearfix">
                         <router-link :to="{name:'scipolish'}"><a href="avascript:;">翻译润色</a></router-link>
                     </div>
-                    <div class="clearfix">
-                        <router-link :to="{name:'orderAppointment'}"><a href="avascript:;">一键预约</a></router-link>
+                    <div>
+                        <!-- <router-link :to="{name:'orderAppointment'}"><a href="avascript:;">一键预约</a></router-link> -->
+                        <a href="avascript:;" id="yjyy" @click="onYjyy">一键预约</a>
+                        <!-- <div id="login-nav-list2">
+                            <router-link :to="{name:'orderAppointment'}">
+                                <a href='avascript:;'>
+                                    <p style='font-size: 16px;'>还未有预约模板哦，快去提交订单吧？</p>
+                                </a>
+                            </router-link>
+                        </div> -->
+                        <!-- <div id="login-nav-list2" class="clearfix" v-else>
+                            <router-link :to="{name:'orderAppointment'}">
+                                <a href='avascript:;' style='padding-left: 0;margin:0 auto;float:none;'>
+                                    <p style='font-size: 16px;'></p>
+                                </a>
+                                <p style='color:#01707b; '>查看更多>></p>
+                            </router-link>
+                        </div> -->
                     </div>
                     <div id="header-search" class="clearfix">
                         <form action="" method="post">
@@ -78,14 +94,15 @@
 </style>
 
 <script>
-import $ from 'jquery';
+// import $ from 'jquery';
 import { webRpc,token } from '../rpc/index';
-
 export default {
     data () {
         return {
             currentMember:{},
-            currentCity:''
+            currentCity:'',
+            dataArr:[],
+            result:false,
         }
     },
     created () {
@@ -150,6 +167,19 @@ export default {
 					alert(result.message);
 				}
 		    }).catch(error =>{});
+        },
+        onYjyy(){
+            
+
+            webRpc.invokeCross("").then(res=>{
+                if(res.retCode==0){
+                    this.dataArr=res.data
+                    layer.msg("<a href='avascript:;' @click='onRes()'><p style='font-size: 16px;'>查看更多！！！",100000);
+                }else{
+                    layer.msg("<a href='avascript:;' @click='onRes()'><p style='font-size: 16px;'>还未有预约模板哦，快去提交订单吧？</p></a>",100000);
+                }
+            }).catch(error=>{})
+            this.$router.push({name:'orderAppointment'})
         }
     }
 }
