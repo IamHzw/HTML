@@ -5,7 +5,7 @@
 	            <img src="../assets/images/logo2.png">
 	        </a>
         </router-link>
-        <div class="header-right-box clearfix" style="box-sizing: border-box;">
+        <div class="header-right-box" style="box-sizing: border-box;">
             <div class="header-top fr">
                 <div id="place" class="fl">
                     <span id="place-add">{{currentCity}}</span>
@@ -37,8 +37,16 @@
             </div>
             <div class="header-bottom fr">
                 <div class="login-nav fl">
-                    <div>
-                        <router-link :to="{name:'project'}"><a href="javascript:;">测试分析</a></router-link>
+                    <div class="login-la">
+                            <a href="javascript:;">测试分析</a>
+                        <div id="login-nav-list">
+                            <router-link :to="{name:'project'}">微观形状</router-link>
+                            <router-link :to="{name:'project'}">材料性能</router-link>
+                            <router-link :to="{name:'project'}">成分结构</router-link>
+                            <router-link :to="{name:'project'}">模拟仿真</router-link>
+                            <router-link :to="{name:'project'}">原位测试</router-link>
+                            <router-link :to="{name:'project'}">地质医学</router-link>
+                        </div>
                     </div>
                     <div>
                         <router-link :to="{name:'biologys'}"><a href="javascript:;">微纳加工</a></router-link>
@@ -50,35 +58,36 @@
                             <input type="hidden" id="pid" name="pid"/>
                         </form>
                     </div>
-                    <div class="clearfix">
+                    <div>
                         <router-link :to="{name:'simulate'}"><a href="avascript:;">模拟计算</a></router-link>
                     </div>
-                    <div class="clearfix">
+                    <div>
                         <router-link :to="{name:'drafting'}"><a href="avascript:;">科研作图</a></router-link>
                     </div>
-                    <div class="clearfix">
+                    <div>
                         <router-link :to="{name:'scipolish'}"><a href="avascript:;">翻译润色</a></router-link>
                     </div>
                     <div>
-                        <!-- <router-link :to="{name:'orderAppointment'}"><a href="avascript:;">一键预约</a></router-link> -->
                         <a href="avascript:;" id="yjyy" @click="onYjyy">一键预约</a>
-                        <!-- <div id="login-nav-list2">
-                            <router-link :to="{name:'orderAppointment'}">
-                                <a href='avascript:;'>
-                                    <p style='font-size: 16px;'>还未有预约模板哦，快去提交订单吧？</p>
-                                </a>
-                            </router-link>
-                        </div> -->
-                        <!-- <div id="login-nav-list2" class="clearfix" v-else>
-                            <router-link :to="{name:'orderAppointment'}">
-                                <a href='avascript:;' style='padding-left: 0;margin:0 auto;float:none;'>
-                                    <p style='font-size: 16px;'></p>
-                                </a>
-                                <p style='color:#01707b; '>查看更多>></p>
-                            </router-link>
-                        </div> -->
+                        <div id="login-nav-list2" class="clearfix" v-if="result===0">
+                            <a href='avascript:;' class="YjyySkip">
+                                <p style='font-size: 16px;'>你还未登录，请点此登录!</p>
+                            </a>
+                        </div>
+                        <div id="login-nav-list2" class="clearfix" v-else-if="result===1">
+                            <a href='avascript:;' class="YjyySkip">
+                                <p style='font-size: 16px;'>还未有预约模板哦，快去提交订单吧？</p>
+                            </a>
+                        </div>
+                        <div id="login-nav-list2" class="clearfix" v-else-if="result===2">
+                            <a href='avascript:;' class="YjyySkip">
+                                <p style='font-size: 16px;'>查看更多>></p>
+                            </a>
+                        </div>
+                        <div id="login-nav-list2" class="clearfix" v-else>
+                        </div>
                     </div>
-                    <div id="header-search" class="clearfix">
+                    <div id="header-search">
                         <form action="" method="post">
                             <input type="text" name="keywords" value="" placeholder="扫描电子显微镜">
                             <button type="submit"></button>
@@ -102,7 +111,7 @@ export default {
             currentMember:{},
             currentCity:'',
             dataArr:[],
-            result:false,
+            result:3
         }
     },
     created () {
@@ -169,17 +178,17 @@ export default {
 		    }).catch(error =>{});
         },
         onYjyy(){
-            
+            if(sessionStorage.currentMember==null){
+                this.result=1
+            }else{
 
-            webRpc.invokeCross("").then(res=>{
-                if(res.retCode==0){
-                    this.dataArr=res.data
-                    layer.msg("<a href='avascript:;' @click='onRes()'><p style='font-size: 16px;'>查看更多！！！",100000);
-                }else{
-                    layer.msg("<a href='avascript:;' @click='onRes()'><p style='font-size: 16px;'>还未有预约模板哦，快去提交订单吧？</p></a>",100000);
-                }
-            }).catch(error=>{})
-            this.$router.push({name:'orderAppointment'})
+            }
+            // webRpc.invokeCross("").then(res=>{
+            //     if(res.retCode==0){
+            //         this.dataArr=res.data
+            //     }
+            // }).catch(error=>{})
+            // this.$router.push({name:'orderAppointment'})
         }
     }
 }

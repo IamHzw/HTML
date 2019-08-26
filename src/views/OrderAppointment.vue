@@ -89,7 +89,6 @@
 									<dd class="clearfix">
 									    <div id="uploader-demo" class="clearfix">
 									        <div id="fileList" class="uploader-list fl">
-										<!--                 -->
 											</div>
 											<div id="filePicker" class="webuploader-container">
                                                 <div class="webuploader-pick"></div>
@@ -220,7 +219,6 @@ export default {
     	}
     },
     selectType(i,type){
-    	console.log(i);
     	this.commonData[type] = i;
     },
  
@@ -228,8 +226,6 @@ export default {
         if(!files.length) {
             return ;
         }
-        
-        
         let [file] = files;
         upload.uploadFile(file, 'order').then(path => {
             var fileItem = {
@@ -242,16 +238,10 @@ export default {
             
             detail[arg2] = detail[arg2]+path+";";
             
-                }).catch(err => {
-                    layer.msg(err);
-                    console.error(err);
-                });
-    
-            console.log(this.datalist);
-    
-    },
-   	
-   	
+        }).catch(err => {
+            layer.msg(err);
+        });
+    }
   }
 }
 </script>
