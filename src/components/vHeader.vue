@@ -38,14 +38,12 @@
             <div class="header-bottom fr">
                 <div class="login-nav fl">
                     <div class="login-la">
-                            <a href="javascript:;">测试分析</a>
+                    	<a href="#/project">测试分析</a>
                         <div id="login-nav-list">
-                            <router-link :to="{name:'project'}">微观形状</router-link>
-                            <router-link :to="{name:'project'}">材料性能</router-link>
-                            <router-link :to="{name:'project'}">成分结构</router-link>
-                            <router-link :to="{name:'project'}">模拟仿真</router-link>
-                            <router-link :to="{name:'project'}">原位测试</router-link>
-                            <router-link :to="{name:'project'}">地质医学</router-link>
+                            <router-link :to="{path:'/project',query:{type:'wgxm'}}">微观形貌</router-link>
+                            <router-link :to="{path:'/project',query:{type:'clxn'}}">材料性能</router-link>
+                            <router-link :to="{path:'/project',query:{type:'cfjg'}}">成分结构</router-link>
+                            <router-link :to="{path:'/project',query:{type:'sxfx'}}">失效分析</router-link>
                         </div>
                     </div>
                     <div>
@@ -69,29 +67,21 @@
                     </div>
                     <div>
                         <a href="avascript:;" id="yjyy" @click="onYjyy">一键预约</a>
-                        <div id="login-nav-list2" class="clearfix" v-if="result===0">
+                        <div id="login-nav-list2" class="clearfix" v-if="result===0 && isOpen">
                             <a href='avascript:;' class="YjyySkip">
                                 <p style='font-size: 16px;'>你还未登录，请点此登录!</p>
                             </a>
                         </div>
-                        <div id="login-nav-list2" class="clearfix" v-else-if="result===1">
-                            <a href='avascript:;' class="YjyySkip">
-                                <p style='font-size: 16px;'>还未有预约模板哦，快去提交订单吧？</p>
+                        <div id="login-nav-list2" class="clearfix" v-else-if="result===1 && isOpen">
+                            <a href='avascript:;' @click="totempOrder(temp)" class="YjyySkip" v-for="(temp,index) in dataList">
+                                <p style='font-size: 16px;'>{{temp[0].key.title}}</p>
                             </a>
                         </div>
-                        <div id="login-nav-list2" class="clearfix" v-else-if="result===2">
-                            <a href='avascript:;' class="YjyySkip">
-                                <p style='font-size: 16px;'>查看更多>></p>
-                            </a>
-                        </div>
-                        <div id="login-nav-list2" class="clearfix" v-else>
-                        </div>
+                        
                     </div>
                     <div id="header-search">
-                        <form action="" method="post">
-                            <input type="text" name="keywords" value="" placeholder="扫描电子显微镜">
-                            <button type="submit"></button>
-                        </form>
+                        <input type="text" name="keywords" v-model="keyword" placeholder="原子力显微镜">
+                        <button type="button" @click="search()"></button>
                     </div>
                 </div>
             </div>
@@ -110,16 +100,18 @@ export default {
         return {
             currentMember:{},
             currentCity:'',
+            keyword:'',
             dataArr:[],
-            result:3
+            result:3,
+            dataList : [],
+			ids : [],
+			isOpen:false
         }
     },
     created () {
        
-
 		if(sessionStorage.currentMember!=null){
 			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
-            // console.log(this.currentMember);
         }
         //从sessionStorage获取城市
         var city = sessionStorage.city;
@@ -131,7 +123,7 @@ export default {
         
         }else{
         	this.currentCity = city;
-        	// console.log("不用执行获取城市");
+        	//这里不需要执行
         }
         
     },
@@ -166,6 +158,9 @@ export default {
 
             },{enableHighAccuracy: true})
         },
+        search(){
+        	this.$router.push('/search?keyword='+this.keyword);
+        },
         loginOut(){
         	 webRpc.invokeCross("memberWebRpc.logout").then(result=>{
 				if(result.retCode==0){
@@ -178,19 +173,42 @@ export default {
 		    }).catch(error =>{});
         },
         onYjyy(){
-            if(sessionStorage.currentMember==null){
-                this.result=1
-            }else{
+        	this.isOpen = !this.isOpen;
+        	if(this.currentMember.id==null){
+        		this.result=0
+        	}else{
+        		this.result=1
+        		
+        		var query = {
+					memberId:this.currentMember.id
+				};
+				
+				webRpc.invoke('orderTemplateWebRpc.findTop',query,4).then(res=>{
+					if(res.retCode==0){
+						this.dataList = [];
+						this.ids = [];
+						res.data.forEach((c)=>{
+							  var obj = JSON.parse(c.templateStr);
+							  this.dataList.push(obj);
+							  this.ids.push(c.id);
+						})
+					}
+				}).catch(err=>{
+					console.log(err)
+				})
 
-            }
-            // webRpc.invokeCross("").then(res=>{
-            //     if(res.retCode==0){
-            //         this.dataArr=res.data
-            //     }
-            // }).catch(error=>{})
-            // this.$router.push({name:'orderAppointment'})
-        }
+        	}
+
+        },
+        totempOrder(carStr){
+			//清空
+           	sessionStorage.removeItem("cartemp");
+            sessionStorage.setItem('cartemp',JSON.stringify(carStr));
+           	this.$router.push('/order?temp=y');
+		},
+		
     }
 }
 
 </script> 
+

@@ -93,7 +93,7 @@ export default {
     return {
       HOST:HOST,
       current:false,
-      totalPrice:'面',
+      totalPrice:'面议',
       listData:[],
       objs:{},
     }
@@ -144,10 +144,8 @@ export default {
 	  		var curItems = this.listData[i].val;
 	  		
 	  		for(var j=0; j<curItems.length;j++){
-	  			console.log(curItems[j]);
 	  			if(curItems[j].calAble==1){
 	  				supPrice+=curItems[j].price;
-	  				console.log(">>>>>>>"+supPrice);
 	  			}else{
 	  				this.totalPrice ='面议';
 	  				return;
@@ -161,8 +159,6 @@ export default {
     // 删除购物车
     onToDel(keyId,valId){
     
-    	console.log(keyId);
-    	console.log(valId);
         let arr=[...this.listData]
         for (let i = 0; i < arr.length; i++) {
 
