@@ -19,6 +19,12 @@ export default new Router({
       meta: { title: '测试服务列表', warn:false  }
     },
     {
+        path: "/search",
+        name: "Search",
+        component: resolve => require(["./views/Search.vue"], resolve),
+        meta: { title: '搜索结果', warn:false  }
+    },
+    {
         path: "/product",
         name: "product",
         component: resolve => require(["./views/Product.vue"], resolve),
