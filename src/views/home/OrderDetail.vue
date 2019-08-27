@@ -19,35 +19,35 @@
             	<div class="r_box fl">
                 	<ul class="order_cur_schedule">
                 		<li :class="{'cur': data.status == -1}">
-                        	<!-- <img src="../../assets/images/icon-submit-active.png" alt="" /> -->
+                        	<img src="../../assets/images/icon-submit-active.png" alt="" />
                         	<p>作废</p>
 	                        <div class="dashed_dot">
 	                            <div v-for="index of 5" class="dashed_dot_item"></div>
 	                        </div>
                     	</li>
                     	<li :class="{'cur': data.status == 1}">
-                        	<!-- <img src="../../assets/images/icon-submit-active.png" alt="" /> -->
+                        	<img src="../../assets/images/icon-submit-active.png" alt="" />
                         	<p>提交订单</p>
 	                        <div class="dashed_dot">
 	                            <div v-for="index of 5" class="dashed_dot_item"></div>
 	                        </div>
                     	</li>
                         <li :class="{'cur': data.status == 2}">
-                        	<!-- <img src="../../assets/images/icon-pay.png" alt="" /> -->
+                        	<img src="../../assets/images/icon-pay.png" alt="" /> 
                             <p>平台确认</p>
 	                        <div class="dashed_dot">
 	                            <div v-for="index of 5" class="dashed_dot_item"></div>
 	                        </div>
 	                    </li>
 	                    <li :class="{'cur': data.status == 3}">
-                       		<!-- <img src="../../assets/images/icon-exping.png" alt="" /> -->
+                       		<img src="../../assets/images/icon-exping.png" alt="" />
                             <p>实验中</p>
 	                        <div class="dashed_dot">
 	                            <div v-for="index of 5" class="dashed_dot_item"></div>
 	                        </div>
 	                    </li>
 	                    <li :class="{'cur': data.status == 4}">
-                        	<!-- <img src="../../assets/images/icon-exped.png" alt="" /> -->
+                        	<img src="../../assets/images/icon-exped.png" alt="" /> 
                             <p>实验完成</p>
                         </li>
                		</ul>
@@ -170,10 +170,8 @@ export default {
   	methods: {
     	initData(){
       		webRpc.invoke('orderWebRpc.findById',this.data.id).then(res=>{
-        		console.log(res)
         		if(res.retCode===0){
           			this.data=res.data
-          			
           			webRpc.invoke("orderWebRpc.findSampleListByOrderNo",this.data.orderNo).then(result=>{
             			this.sampleList = result.data;
             		}).catch(error =>{});

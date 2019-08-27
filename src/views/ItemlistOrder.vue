@@ -146,7 +146,6 @@ export default {
   },
   created () {
     this.carData=JSON.parse(sessionStorage.getItem('car'))
-    console.log(this.carData)
   },
   components: {
       vHeader,

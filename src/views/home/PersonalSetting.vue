@@ -108,15 +108,12 @@ export default {
     created () {
 		if(sessionStorage.currentMember!=null){
 			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
-            console.log(this.currentMember);
         }
     },
     methods: {
 		//普通登陆
 		save(){
 			webRpc.invoke("memberWebRpc.saveOrUpdate",this.currentMember).then(result=>{
-				console.log("-------------");
-				console.log(result);
 				if(result.retCode==0){
                 	this.getCurrentMemeber();
 				}else{

@@ -48,7 +48,7 @@
 									<img :src="HOST+data.detail.productImg">
 								</div>
 								<div class="fl tm-img" style="width:15%" v-if="data.supType!=1">
-									<!-- <img src="../../assets/images/subtype2.png"> -->
+									<img src="../../assets/images/subtype2.png">
 								</div>
 								
 								<div class="fl tm-text" style="width:65%" v-if="data.supType==1">
@@ -112,8 +112,9 @@ export default {
 		if(sessionStorage.currentMember!=null){
 			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
             this.query.memberId = this.currentMember.id;
+            this.getData()
         }
-		this.getData()
+		
 	},
 	
 	components: {
@@ -131,7 +132,6 @@ export default {
 					this.dataList=res.data.content;
 					this.totalElements=res.data.totalElements;
 				}
-				console.log(res)
 			}).catch(err=>{
 				console.log(err)
 			})
@@ -147,7 +147,6 @@ export default {
 			this.getData()
 		},
 		pagechange(val){
-			console.log(val);
 			this.page.page = val-1;
 			this.getData();
 		},

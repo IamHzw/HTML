@@ -263,6 +263,7 @@ export default {
       HOST:HOST,
       datalist:[ ],
       carData:[],
+      carStr:'',
       moreProductList:[],
       commonData:{
       	receiverName :'',
@@ -288,7 +289,18 @@ export default {
     vFootersimper
   },
   created () {
-    this.carData=JSON.parse(sessionStorage.getItem('car'));
+  
+  	var temp = this.$route.query.temp;
+  	
+  	if(temp =="" || temp==undefined){
+  		this.carStr = sessionStorage.getItem('car');
+    	this.carData=JSON.parse(this.carStr);
+    
+  	}else{
+  		this.carStr = sessionStorage.getItem('cartemp');
+  		this.carData=JSON.parse(this.carStr);
+  	}
+  	
     var city = sessionStorage.city;
 		//循环购物车数据
     for(var i = 0;i<this.carData.length;i++){
@@ -334,7 +346,6 @@ export default {
 	  			}else{
 	  				this.commonData.calAble=2;
 	  			}
-	  			
 	  		}
 	  		this.datalist.push(item);
    	 	}
@@ -398,16 +409,14 @@ export default {
    	 	}
    	},
    	save(){
-   		webRpc.invoke("orderWebRpc.saveOrder",this.datalist,this.commonData).then(result=>{
+   		webRpc.invoke("orderWebRpc.saveOrder",this.datalist,this.commonData,this.carStr).then(result=>{
 				if(result.retCode==0){
 							//清购物车
 							//跳转至成功页
 							layer.msg("提交成功");
 							//清空购物车
-									sessionStorage.removeItem("car");
-									console.log("清空car");
-									
-									this.$router.push('/ordersucess');
+							sessionStorage.removeItem("car");
+							this.$router.push('/ordersucess');
 										
 				}else{
 						layer.msg(result.message);	

@@ -105,7 +105,6 @@ export default {
     created () {
 		if(sessionStorage.currentMember!=null){
 			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
-            console.log(this.currentMember);
         }
     },
     methods: {

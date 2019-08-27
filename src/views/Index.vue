@@ -35,11 +35,9 @@
                         <h5>测试分析</h5>
                         <h6>Micromorphology</h6>
                         <div class="service-cont">
-                            <p><a href="javascript:void(0)">聚焦离子束（FIB）</a></p>
-
-                            <p><a href="javascript:void(0)">粉末/液体 透射电镜（TEM）</a></p>
-
-                            <p><a href="javascript:void(0)">场发射扫描电镜（SEM）</a></p>              
+                        
+                            <p v-for="s in serverlist.wgxm"><a href="javascript:void(0)">{{s[1]}}</a></p>
+                                    
                             <a href="#/project">更多</a>
                             <div class="line1"></div>
                             <div class="line2"></div>
@@ -59,9 +57,8 @@
                         <h5>微纳加工</h5>
                         <h6>Material properties</h6>
                         <div class="service-cont">
-                                <p><a href="javascript:void(0)">智能重量分析仪（IGA）</a></p>
-                                <p><a href="javascript:void(0)">全自动物理吸附仪（BET）</a></p>
-                                <p><a href="javascript:void(0)">全自动压汞仪（MIP）</a></p>               
+                        	<p v-for="s in serverlist.wnjg"><a href="javascript:void(0)">{{s[1]}}</a></p>
+                                         
                                 <a href="#/biologys">更多</a>
                             <div class="line1"></div>
                             <div class="line2"></div>
@@ -185,9 +182,7 @@
                         <h5>失效分析</h5>
                         <h6>Biogeology&Geological</h6>
                         <div class="service-cont">
-                            <p><a href="javascript:void(0)">磁悬浮高压等温吸附仪（重量法）</a></p>
-                            <p><a href="javascript:void(0)">X射线全岩定量分析</a></p>
-                            <p><a href="javascript:void(0)">地质薄片</a></p>                        
+                        	<p v-for="s in serverlist.sxfx"><a href="javascript:void(0)">{{s[1]}}</a></p>
                             <a href="javascript:void(0)">更多</a>
                             <div class="line1"></div>
                             <div class="line2"></div>
@@ -203,216 +198,6 @@
         </div>
      </div>
 
-     <!-- <div class="section" id="reservations" style="display: none">
-        <h2>预约动态</h2>
-        <h3>Reservations in progress</h3>
-        <h4>星尘实验室专业而便捷的服务，正成为众多科研人员的第一选择</h4>
-        <div class="wrap clearfix">
-            <div class="reservations-table fl wow fadeInUp">
-                <h5>最新预约</h5>
-                <table style="table-layout:fixed;word-wrap:break-word">
-                    <thead>
-                    <tr>
-                        <th width="120">测试项目</th>
-                        <th width="140">所属单位</th>
-                        <th width="120">手机号</th>
-                        <th width="120">日期</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                                    <tr>
-                            <td title="X射线衍射仪（XRD）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=137.html" style="color: #1f1f1f">X射线衍射仪（XRD）</a>
-                            </td>
-                            <td title=""
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                中南民族大学                        </td>
-                            <td>176****5038</td>
-                            <td>2019-06-05</td>
-                        </tr><tr>
-                            <td title="粉末/液体 透射电镜（TEM）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=143.html" style="color: #1f1f1f">粉末/液体 透射电镜（TEM）</a>
-                            </td>
-                            <td title=""
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                四川大学                        </td>
-                            <td>132****9578</td>
-                            <td>2019-06-05</td>
-                        </tr><tr>
-                            <td title="粉末/液体 透射电镜（TEM）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=143.html" style="color: #1f1f1f">粉末/液体 透射电镜（TEM）</a>
-                            </td>
-                            <td title=""
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                四川大学                        </td>
-                            <td>132****9578</td>
-                            <td>2019-06-05</td>
-                        </tr><tr>
-                            <td title="傅里叶红外光谱仪（FTIR）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=155.html" style="color: #1f1f1f">傅里叶红外光谱仪（FTIR）</a>
-                            </td>
-                            <td title=""
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                电子科技大学                        </td>
-                            <td>187****3082</td>
-                            <td>2019-06-05</td>
-                        </tr><tr>
-                            <td title="液体核磁共振（NMR）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=180.html" style="color: #1f1f1f">液体核磁共振（NMR）</a>
-                            </td>
-                            <td title=""
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                西南石油大学                        </td>
-                            <td>182****9990</td>
-                            <td>2019-06-05</td>
-                        </tr><tr>
-                            <td title="X射线光电子能谱（XPS）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=166.html" style="color: #1f1f1f">X射线光电子能谱（XPS）</a>
-                            </td>
-                            <td title=""
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                成都市金牛区西南交通大学(九里校区)                        </td>
-                            <td>152****2494</td>
-                            <td>2019-06-05</td>
-                        </tr><tr>
-                            <td title="X射线光电子能谱（XPS）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=166.html" style="color: #1f1f1f">X射线光电子能谱（XPS）</a>
-                            </td>
-                            <td title=""
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                成都市金牛区西南交通大学(九里校区)                        </td>
-                            <td>152****2494</td>
-                            <td>2019-06-05</td>
-                        </tr><tr>
-                            <td title="粉末/液体 透射电镜（TEM）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=143.html" style="color: #1f1f1f">粉末/液体 透射电镜（TEM）</a>
-                            </td>
-                            <td title=""
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                四川大学                        </td>
-                            <td>132****9578</td>
-                            <td>2019-06-05</td>
-                        </tr><tr>
-                            <td title="傅里叶红外光谱仪（FTIR）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=155.html" style="color: #1f1f1f">傅里叶红外光谱仪（FTIR）</a>
-                            </td>
-                            <td title=""
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                电子科技大学                        </td>
-                            <td>187****3082</td>
-                            <td>2019-06-05</td>
-                        </tr><tr>
-                            <td title="凝胶渗透色谱仪(GPC)"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=139.html" style="color: #1f1f1f">凝胶渗透色谱仪(GPC)</a>
-                            </td>
-                            <td title=""
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                西南石油大学                        </td>
-                            <td>182****9990</td>
-                            <td>2019-06-05</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="reservations-table fl wow fadeInUp" data-wow-delay=".2s">
-                <h5>最近完成</h5>
-                <table style="table-layout:fixed;word-wrap:break-word">
-                    <thead>
-                    <tr>
-                        <th width="120">测试项目</th>
-                        <th width="140">所属单位</th>
-                        <th width="120">手机号</th>
-                        <th width="120">日期</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                                    <tr>
-                            <td title="场发射扫描电镜（SEM）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=141.html" style="color: #1f1f1f">场发射扫描电镜（SEM）</a>
-                            </td>
-                                      <td title=""
-                                          style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                          四川大学                                   </td>
-                            <td>132****2779</td>
-                            <td>2019-08-19</td>
-                        </tr><tr>
-                            <td title="X射线衍射仪（XRD）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=137.html" style="color: #1f1f1f">X射线衍射仪（XRD）</a>
-                            </td>
-                                      <td title=""
-                                          style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                          四川大学望江校区                                   </td>
-                            <td>184****5794</td>
-                            <td>2019-08-19</td>
-                        </tr><tr>
-                            <td title="粉末/液体 透射电镜（TEM）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=143.html" style="color: #1f1f1f">粉末/液体 透射电镜（TEM）</a>
-                            </td>
-                                      <td title=""
-                                          style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                          四川大学望江校区                                   </td>
-                            <td>184****5794</td>
-                            <td>2019-08-19</td>
-                        </tr><tr>
-                            <td title="XRD"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;.html" style="color: #1f1f1f">XRD</a>
-                            </td>
-                                      <td title=""
-                                          style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                          中科院成都有机所                                   </td>
-                            <td>182****4692</td>
-                            <td>2019-08-19</td>
-                        </tr><tr>
-                            <td title="生物样本透射电镜（TEM）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=146.html" style="color: #1f1f1f">生物样本透射电镜（TEM）</a>
-                            </td>
-                                      <td title=""
-                                          style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                          西南交通大学                                   </td>
-                            <td>158****3363</td>
-                            <td>2019-08-19</td>
-                        </tr><tr>
-                            <td title="粉末/液体 透射电镜（TEM）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=143.html" style="color: #1f1f1f">粉末/液体 透射电镜（TEM）</a>
-                            </td>
-                                      <td title=""
-                                          style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                          四川大学                                   </td>
-                            <td>132****2779</td>
-                            <td>2019-08-19</td>
-                        </tr><tr>
-                            <td title="场发射扫描电镜（SEM）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=141.html" style="color: #1f1f1f">场发射扫描电镜（SEM）</a>
-                            </td>
-                                      <td title=""
-                                          style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                          西南交通大学                                   </td>
-                            <td>152****9490</td>
-                            <td>2019-08-19</td>
-                        </tr><tr>
-                            <td title="粉末/液体 透射电镜（TEM）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=143.html" style="color: #1f1f1f">粉末/液体 透射电镜（TEM）</a>
-                            </td>
-                                      <td title=""
-                                          style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                          四川大学                                   </td>
-                            <td>132****2779</td>
-                            <td>2019-08-19</td>
-                        </tr><tr>
-                            <td title="X射线荧光光谱（XRF）"
-                                style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis"><a href="index.php-m=&amp;c=Project&amp;a=detail&amp;pid=142.html" style="color: #1f1f1f">X射线荧光光谱（XRF）</a>
-                            </td>
-                                      <td title=""
-                                          style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
-                                          中国科学院                                   </td>
-                            <td>135****0152</td>
-                            <td>2019-08-19</td>
-                        </tr>              
-                        </tbody>
-                </table>
-            </div>
-        </div>
-     </div> -->
 
 
      <div class="section" id="product">
@@ -606,6 +391,7 @@ export default {
     	articlelist:{},
     	anlist:{},
     	productlist:{},
+    	serverlist:{},
         query:{
         	categoryCode:'thesis'
         },
@@ -628,7 +414,7 @@ export default {
             //一个屏幕展示的数量
             slidesPerView: 3,
             //间距
-            spaceBetween: 150,
+            spaceBetween: 20,
             //修改swiper自己或子元素时，自动初始化swiper
             observer: true,  
             //修改swiper的父元素时，自动初始化swiper 	
@@ -690,14 +476,23 @@ export default {
 			}
 		},
   methods: {
+  		//跳转
   		toproduct(id){
   			 this.$router.push('/product?id='+id);
   		},
   		getData() { 
+  		
+  		
+  		var categoryCodes =["wgxm","sxfx","wnjg"]
+  		//我们的服务
+          webRpc.invoke("productWebRpc.findTopByCategoryCodes",categoryCodes,3).then(result=>{
+            this.serverlist = result;
+          }).catch(error =>{});
+          
+  		
   		 //友情链接
           webRpc.invoke("linkWebRpc.findTopList",this.query,this.top).then(result=>{
             this.linklist = result.data;
-            console.log(result);
           }).catch(error =>{});
           
           //案例
@@ -706,8 +501,6 @@ export default {
           }
           webRpc.invoke("articleWebRpc.findTopFullList",anquery,10).then(result=>{
             this.anlist = result.data;
-              console.log("案例");
-            console.log(result);
           }).catch(error =>{});
 
          
@@ -719,14 +512,11 @@ export default {
           }
           webRpc.invoke("productWebRpc.findTop",productQuery,10).then(result=>{
             this.productlist = result.data;
-             console.log("特色");
-            console.log(result);
           }).catch(error =>{});
           
           
           //webRpc.invoke("articleWebRpc.findTopFullList",this.query,this.top).then(result=>{
           //  this.articlelist = result.data;
-          //  console.log(result);
           //}).catch(error =>{});
           
 		},
@@ -901,8 +691,7 @@ export default {
 }
 
 .product-box{
-	    padding: 8px;
-    	background: #007079;
+	border: 1px solid #4994bb;
 }
 
 .product-pic{

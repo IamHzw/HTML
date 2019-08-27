@@ -332,7 +332,6 @@ export default {
    		//锚点
 	   returnCom(id) {
 	   		const returnEle = document.querySelector("#"+id);
-	   		console.log(returnEle)
 	    	if (!!returnEle) {
 	      		returnEle.scrollIntoView(true);
 	    	}
@@ -383,10 +382,8 @@ export default {
         	upload.uploadFile(file, 'order').then(path => {
         		//this.data.requestFile = path;
         		this.data[arg] = path
-        		console.log(this.data);
           	}).catch(err => {
             	layer.msg(err);
-           	 	console.error(err);
           	});
       	},
       	

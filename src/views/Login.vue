@@ -80,8 +80,8 @@ export default {
       	HOST:HOST,
       	codeSrc:'',
       	data:{
-      		mobile:'15119276805',
-      		passWord:'123456',
+      		mobile:'',
+      		passWord:'',
       		code:'',
       		smsCode:'',
 				},
@@ -114,7 +114,6 @@ export default {
   		//显示图片验证码
 		showCode() {
 			this.codeSrc = this.HOST+'common/code?t='+Math.random()      
-			console.log(this.codeSrc);
 		},
 		//切换登陆
 		changeLoginType(type){
@@ -157,7 +156,6 @@ export default {
 		//手机登陆
 		loginForPhone(){
 			webRpc.invokeCross("memberWebRpc.loginForPhoneCode",this.data.mobile,this.data.smsCode).then(result=>{
-				console.log(result);
 				if(result.retCode==0){
                 token.setAuthToken(result.data);
                 this.getCurrentMemeber();
@@ -169,11 +167,9 @@ export default {
 		//获取当前用户
 		getCurrentMemeber(){
 			webRpc.invokeCross("memberWebRpc.currentMember").then(result=>{
-            	console.log("-----------------------"+result);
                 sessionStorage.setItem('currentMember',JSON.stringify(result.data));
                 //清空购物车
                 sessionStorage.removeItem("car");
-                console.log("清空car");
                 this.$router.push('/index');
 		   	}).catch(error =>{});
 		}

@@ -360,7 +360,6 @@ export default {
   		//显示图片验证码
 		showCode() {
 			this.codeSrc = this.HOST+'common/code?t='+Math.random()      
-			console.log(this.codeSrc);
 		},
 		//发送短信
 		sendMsg(){
@@ -403,7 +402,6 @@ export default {
 		getCurrentMemeber(){
 			webRpc.invoke("memberWebRpc.currentMember").then(result=>{
                 sessionStorage.setItem('currentMember',JSON.stringify(result.data));
-                console.log(result.data);
                 this.$router.push('/');
 		   	}).catch(error =>{});
     	},

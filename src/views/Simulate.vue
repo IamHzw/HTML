@@ -157,13 +157,11 @@ export default {
 			this.isLogin = true;
  		}
         this.data.area = sessionStorage.city;
-        console.log(this.data);
 	},
 	methods: {
    		//锚点
 	   returnCom(id) {
 	   		const returnEle = document.querySelector("#"+id);
-	   		console.log(returnEle)
 	    	if (!!returnEle) {
 	      		returnEle.scrollIntoView(true);
 	    	}

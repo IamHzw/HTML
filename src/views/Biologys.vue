@@ -11,21 +11,18 @@
 							<img :src="HOST+data.imagesArr[0]" style="width:180px;height:180px;;">
                         	
                             <div class="hotitle" :title="data.title">{{data.title}}</div>
-                            	<div class="hotprice">
-                                    <a  class="btnbook" style=""> 立即预约 </a>
-                                </div>
-                                <div style="text-align:center;padding:10px;font-size:12px;color:#999;line-height:16px">
-                                   	 已测试<span style="color:#fc916d;">{{data.buyNum}}</span>次&nbsp;
-                                   	 满意度<span style="color:#fc916d;">{{data.goodRate}}%</span>
-                                </div>
-                            </div>
+                           
                         </div>
-                    </li>
-                          
-                        </ul>
-        </div>
+                    </div>
+                </li>
+          	</ul>
+          	
+          	 </div>
      
     </div>
+    <div style="margin-bottom:20px;">
+    	<v-Page :total.sync="totalElements" :current-page.sync='page.page+1' :display.sync = 'page.size' @pagechange="pagechange"></v-Page>
+   	</div>
     <v-footersimper></v-footersimper>
   </div>
 </template>
@@ -34,6 +31,7 @@
 import  vHeader  from "../components/vHeader.vue";
 import  vSider from "../components/vSider.vue";
 import  vFootersimper from "../components/vFooterSimper.vue";
+import  vPage from "../components/vPage.vue";
 import { webRpc } from '../rpc/index';
 import { HOST } from '../config';
 
@@ -43,21 +41,22 @@ export default {
     return {
       	HOST:HOST,
         datalist: [],
-        totalElements:1,
+        totalElements:0,
         query:{ 
         	categoryCode:'wnjg',
         	saleable:1
         },
         page:{
            	page:0,
-			size:7
+			size:10
 		},
     }
   },
   components: {
       vHeader,
       vSider,
-      vFootersimper
+      vFootersimper,
+      vPage
   },
   created () {
 		this.getData();
@@ -67,12 +66,16 @@ export default {
 		getData() {
             webRpc.invoke("productWebRpc.findPage",this.query,this.page).then(result=>{
 				this.datalist = result.data.content;
-				
+				this.totalElements = result.data.totalElements;
 		    }).catch(error =>{});
 		},
 		//去详情页
 		toDetail(id){
 			this.$router.push('/product?id='+id);
+		},
+		pagechange(val){
+			this.page.page = val-1;
+			this.getData();
 		},
 	}
 }
@@ -84,7 +87,7 @@ export default {
 }
 .list_hot li{
     width: 250px;
-    height: 340px;
+    height: 280px;
     float: left;
     margin-bottom: 20px;
 }
@@ -92,7 +95,7 @@ export default {
 .list_hot li .inner { 
     background: #fff; 
     width: 234px; 
-    height: 310px; 
+    height: 240px; 
     padding: 15px 0px;
     text-align:center; 
     border: 1px solid #eee;

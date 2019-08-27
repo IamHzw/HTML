@@ -64,7 +64,6 @@ export default {
 		getDataList() {
             webRpc.invoke("articleWebRpc.findPage",this.query,this.page).then(result=>{
 				this.datalist = result.data.content;
-				console.log(this.datalist);
 		    }).catch(error =>{});
 		},
 		//去详情页

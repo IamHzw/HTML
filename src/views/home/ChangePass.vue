@@ -76,7 +76,6 @@ export default {
     created () {
 		if(sessionStorage.currentMember!=null){
 			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
-            console.log(this.currentMember);
         }
         this.showCode();
     },
@@ -84,7 +83,6 @@ export default {
 		//显示图片验证码
 		showCode() {
 			this.codeSrc = this.HOST+'common/code?t='+Math.random()      
-			console.log(this.codeSrc);
 		},
 		//发送短信
 		sendMsg(){

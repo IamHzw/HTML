@@ -57,7 +57,6 @@ export default {
 		//获取分页
 		getData() {
             webRpc.invoke("collectWebRpc.findPage",this.query,this.page).then(result=>{
-            	console.log(result);
 				this.datalist = result.data.content;
 				this.totalElements = result.data.totalElements;
 		    }).catch(error =>{});
@@ -68,7 +67,6 @@ export default {
 		},
 		unCollect(id){
 			webRpc.invoke("collectWebRpc.delete",id,this.currentMember.id).then(result=>{
-				console.log(result);
 				if(result.retCode==0){
 					layer.msg("成功取消收藏");
 	               	this.getData();

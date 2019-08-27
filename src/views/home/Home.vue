@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <!--<v-Header></v-Header> -->
+    <v-Header></v-Header>
     <v-Sider></v-Sider>
     <div id="content">
 			<div class="wrap">
@@ -96,8 +96,6 @@ export default {
 
 		init(){
 			$("#slide").on("click",".slide-item",function(){
-				// console.log($(this).addClass("chickColor").siblings());
-				
 				$(this).addClass("chickColor").siblings().removeClass("chickColor");
 			})
 		}

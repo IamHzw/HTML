@@ -4,16 +4,7 @@
     <v-Sider></v-Sider>
 
     <div class="class-filter">
-        <div class="appoint-filter wrap">
-            <dl>
-                <dd class="clearfix">
-                    <a href="javascript:void(0)"  v-for="category in categoryList" v-if="category.code !='wnjg'" @click="changeCategory(category.id)"  :class="{ 'ac': category.id == query.categoryId}" >
-                    	{{category.name}}
-                    </a>
-                </dd>
-            </dl>
-           
-        </div>
+       
     </div>
     <div id="index-class">
         <div class="class-wrap">
@@ -54,7 +45,6 @@ export default {
         	categoryId:'',
         	saleable:1
         },
-        categoryList:{},
         page:{
           page:0,
           size:8
@@ -68,32 +58,13 @@ export default {
       vPage
   }, 
 	created () {
-	
-		this.findByParentCode();
+		this.query.title = this.$route.query.keyword;
+     	this.getData();
 	},
+	activated() {
+     	
+    },
 	methods: {
-		//获取分类
-    	findByParentCode(){
-      		webRpc.invoke("categoryWebRpc.findByParentCode","product").then(result=>{
-		    	if(result.retCode==0){
-					this.categoryList = result.data;
-					
-					var qtype = this.$route.query.type;
-					if(qtype){
-						this.categoryList.forEach((c)=>{
-						 	if(c.code==qtype){
-						 		this.query.categoryId = c.id;
-						 	}
-						});	
-					}else{
-						this.query.categoryId = this.categoryList[0].id;
-					}
-				}else{
-					alert("类型加载失败:"+result.message);
-				}
-				this.getData();		
-		    }).catch(error =>{});
-      	},
       	//获取分页
 		getData() {
           webRpc.invoke("productWebRpc.findPage",this.query,this.page).then(result=>{

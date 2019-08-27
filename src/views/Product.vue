@@ -259,11 +259,9 @@ export default {
 			//再加入
 			this.dataList.forEach((n)=>{
 	    		if(n.ischeck!=null && n.ischeck == true){
-	   	 			//console.log(n.title);
 	   	 			this.addCarData(n);
 	   	 			buyFlag = true;
 	   	 		}else{
-	   	 			//console.log(n);
 	   	 		}
 　　　　　　		})
 			//跳转
@@ -282,11 +280,9 @@ export default {
 			var buyFlag = false;
 			this.dataList.forEach((n)=>{
 	    		if(n.ischeck!=null && n.ischeck == true){
-	   	 			//console.log(n.title);
 	   	 			buyFlag = true;
 	   	 			this.addCarData(n);
 	   	 		}else{
-	   	 			//console.log(n);
 	   	 		}
 　　　　　　		})
 
@@ -337,7 +333,6 @@ export default {
   	
   			//更瓣sessionStorage
   			sessionStorage.setItem('car',JSON.stringify(this.car));
-  			console.log(this.car);
   			return;
    	 	}
    	 	
