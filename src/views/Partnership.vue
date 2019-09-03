@@ -15,13 +15,8 @@
               了解星尘实验室
             </h2>
             <h3>
-              星尘实验室致力于构建市场化运营的“互联网+科研”综合服务平台，聚集国内外著名高校、科研院所、
-            </h3>
-            <h3>
-              第三方检测机构及科技服务企业等顶尖科研机构的科研资源 （包括：科学仪器、实验服务、专家学者、科技成果等），
-            </h3>
-            <h3>
-              为广大企事业单位科研团队及工作人员提供仪器共享、实验外包、分析测试、计算模拟、 科研众包以及定制化研发解决方案。
+           		星尘实验室通过整合仪器设备机时资源，甄选优质仪器，寻找优秀的专家学者，专注于为广大科研团队和科研人员提供测试
+           		分析、微纳加工、计算模拟、实验耗材供应以及定制化研发解决方案等高效、专业、高性价比的科研服务。
             </h3>
             <div class="coopreason-wrap">
               <div class="coopreason-item">
@@ -29,10 +24,10 @@
                   <img src="../assets/images/Partnership_icon_2.jpg" title="coop1.jpg" alt="coop1.jpg" /> 
                 </div>
                 <h4>
-                  业务支持
+                  专属伙伴支持
                 </h4>
                 <p>
-                  专属合作伙伴拓展经理提供业务支持和商务支持，帮助您在云计算领域取得成功。
+                  专属的业务经理提供技术服务和商务支持，助您在互联网+时代铸造辉煌业绩。
                 </p>
               </div>
               <div class="coopreason-item">
@@ -40,10 +35,10 @@
                   <img src="../assets/images/Partnership_icon_3.jpg" title="coop2.jpg" alt="coop2.jpg" /> 
                 </div>
                 <h4>
-                  市场与营销支持
+                  专属方案支持
                 </h4>
                 <p>
-                  客户沙龙、研讨会，行业展会等丰富的市场和营销机会
+                  专属的市场拓展计划方案，助您在市场捷足先登。
                 </p>
               </div>
               <div class="coopreason-item">
@@ -51,10 +46,10 @@
                   <img src="../assets/images/Partnership_icon_4.jpg" title="coop3.jpg" alt="coop3.jpg" /> 
                 </div>
                 <h4>
-                  培训赋能支持
+                  营销支持
                 </h4>
                 <p>
-                  大量的技术培训赋能机会，快速提升合作伙伴技术服务能力。
+                  技术研讨会、行业展会、客户沙龙等丰富多样的市场营销机会。
                 </p>
               </div>
               <div class="coopreason-item">
@@ -62,17 +57,17 @@
                   <img src="../assets/images/Partnership_icon_5.jpg" title="coop4.jpg" alt="coop4.jpg" /> 
                 </div>
                 <h4>
-                  专业技术支持
+                  技术培训支持
                 </h4>
                 <p>
-                  专项技术领域获得星尘实验室专业团队的技术支持，在垂直市场获得领先优势。
+                 大量的技术培训机会，快速提升您的技术能力。
                 </p>
               </div>
             </div>
           </div>
         </div>
     </div>
-    <div id="coopform">
+    <div id="coopform" v-if="false">
         <div class="wrap">
             <h2>立即申请成为星尘实验室合作伙伴</h2>
             <form id="coop" method="post" class="form">

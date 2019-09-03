@@ -325,13 +325,13 @@ width: 15%;
 .datepicker input{width: 100%;}
 .order-filter .btn{width: 71px;height: 29px;line-height: 29px;display: inline-block;vertical-align: middle;}
 #modal{position: fixed;top:0;left: 0;width: 100%;height: 100%;z-index: 1000000;background: #000;opacity: .44;display: none;}
-#feedback,#apply{position: fixed;z-index: 1000001;background: #fff;width: 920px;height: 495px;box-sizing: border-box;top:50%;left: 50%;margin-left: -460px;margin-top: -248px;padding: 45px;display: none;}
+#feedback,#apply{position: fixed;z-index: 1000001;background: #fff;width: 920px;height: 495px;box-sizing: border-box;top:50%;left: 50%;margin-left: -460px;margin-top: -248px;padding: 45px;}
 #feedback h2,#apply h2{font-size: 16px;line-height: 36px;color: #000;}
 #feedback p,#apply p{line-height: 30px;color: #000;}
 #feedback textarea,#apply textarea{box-sizing: border-box;border: 1px solid #dcdcdc;padding: 10px 15px;border-radius: 5px;width: 100%;height: 200px;line-height: 30px;margin-bottom: 45px;margin-top: 30px;}
 .feedback-btn{width: 113px;margin-left: 15px;}
 .close{width: 30px;height: 30px;background: url("../assets/images/close.png") no-repeat center;position: absolute;right: 20px;top:20px;}
-#read{position: fixed;z-index: 1000002;background: #fff;width: 920px;height: 550px;box-sizing: border-box;top:50%;left: 50%;margin-left: -460px;margin-top: -275px;padding: 0 35px;display: none;}
+#read{position: fixed;z-index: 1000002;background: #fff;width: 920px;height: 550px;box-sizing: border-box;top:50%;left: 50%;margin-left: -460px;margin-top: -275px;padding: 0 35px;}
 #read h2{font-size: 16px;line-height: 70px;color: #000;}
 #read h3{font-size: 14px;line-height: 94px;color: #ff0000;}
 #read .read-cont{height: 400px;overflow: auto;border-top:1px solid #e4e4e4;border-bottom: 1px solid #e4e4e4;}
@@ -795,7 +795,7 @@ input[type="file"] {display: none;}
 .notice-container .wrap,#index-banner .wrap{position: relative;height: 100%;}
 #index-notice{padding: 25px 0 50px;background: #fff;}
 .notice-pic{margin-left: 20px;width: 149px;height: 126px;overflow: hidden;}
-.notice-pic img{width: 100%;}
+.notice-pic img{width: 100%; height:100%;}
 .notice-head .notice-item{padding-bottom: 42px;border-bottom: 1px solid #e8e8e8;min-height: 126px;padding-top: 42px;}
 .notice-text{margin-left: 195px;}
 .notice-text h3{font-size: 16px;line-height: 40px;color: #4f4f4f;}

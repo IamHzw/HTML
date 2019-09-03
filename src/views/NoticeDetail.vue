@@ -15,7 +15,8 @@
                 </div>
                 <div class="article-btns">
                     <p>{{data.lastUpdated}}  来源：本站  </p>  
-                    <router-link :to="{name:'Notice'}"> <a class="article-return"> 返回列表》 </a> </router-link>
+              
+                    <router-link :to="{name:'notice'}"> <a class="article-return"> 返回列表》 </a> </router-link>
                 </div>
             </div>
             <div class="article-slide fr">

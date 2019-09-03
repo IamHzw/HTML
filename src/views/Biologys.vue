@@ -44,7 +44,8 @@ export default {
         totalElements:0,
         query:{ 
         	categoryCode:'wnjg',
-        	saleable:1
+        	saleable:1,
+        	disabled:false
         },
         page:{
            	page:0,

@@ -45,7 +45,9 @@ export default {
       	HOST:HOST,
         datalist: [],
         totalElements:1,
-        query:{},
+        query:{
+        	disabled:false
+        },
         page:{
            	page:0,
 			size:10

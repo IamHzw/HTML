@@ -29,7 +29,11 @@
                 <h3 style="font-size: 12px !important;padding-top: 6px">{{data.subTitle}}</h3>
             </div>
         </div>
-        <v-Page :total.sync="totalElements" :current-page.sync='page.page+1' :display.sync = 'page.size' @pagechange="pagechange"></v-Page>
+        
+         <div class="class-not" v-if="totalElements<=0">
+                	暂无数据
+        </div>
+        <v-Page v-if="totalElements>0" :total.sync="totalElements" :current-page.sync='page.page+1' :display.sync = 'page.size' @pagechange="pagechange"></v-Page>
     </div>
     <v-Footersimper></v-Footersimper>
   </div>
@@ -52,7 +56,8 @@ export default {
         totalElements:0,
         query:{
         	categoryId:'',
-        	saleable:1
+        	saleable:1,
+        	disabled:false
         },
         categoryList:{},
         page:{
@@ -121,5 +126,10 @@ export default {
 </script>
 
 <style scoped>
-  
+    .class-not{
+  	    clear: both;
+    text-align: center;
+    width: 1250px;
+    margin: 30px;
+  }
 </style>

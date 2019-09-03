@@ -17,16 +17,19 @@
                 <div class="fl" v-if="currentMember.id==null">
                 	<router-link :to="{name:'register'}"><a href="javascript:;" id="index-login">免费注册</a></router-link>
                 </div>
-                <div class="fl" v-if="currentMember.id!=null">
-                	<router-link to="home"><a href="javascript:;" id="index-login" style="margin-right: 0px;">个人中心</a>   </router-link>
+                 <div class="fl" v-if="currentMember.id!=null" >
+                	<a href="javascript:;" id="index-login" style="margin-right: 0px;width:150px;">欢迎您！{{currentMember.userName}}</a>
                 </div>
                 <div class="fl" v-if="currentMember.id!=null" @click="loginOut()">
                 	<a  id="index-login" style=" margin-right: 0;text-align: left;font-size: 14px; margin-top: 5px; color: blue;width: 50px;">
                 		退出
                 	</a>  
                 </div>
+                <div class="fl" v-if="currentMember.id!=null">
+                	<a href="javascript:;" @click="toHome()" id="index-login" style="margin-right: 0px;">个人中心2</a>  
+                </div>
                 <div class="fl">
-                    <a href="javascript:void(0)" id="index-login">联系客服</a>    
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=15568400&site=qq&menu=yes" id="index-login">联系客服</a>    
                 </div>
                 <!--<div class="fl">
                     <a href="javascript:void(0)" id="index-login">微信公众号</a>    
@@ -48,13 +51,6 @@
                     </div>
                     <div>
                         <router-link :to="{name:'biologys'}"><a href="javascript:;">微纳加工</a></router-link>
-                        <div id="login-nav-list2" class="clearfix">
-
-                        </div>
-                        <form id="tempedit" action="">
-                            <input type="hidden" id="tempid" name="tempid"/>
-                            <input type="hidden" id="pid" name="pid"/>
-                        </form>
                     </div>
                     <div>
                         <router-link :to="{name:'simulate'}"><a href="avascript:;">模拟计算</a></router-link>
@@ -77,7 +73,6 @@
                                 <p style='font-size: 16px;'>{{temp[0].key.title}}</p>
                             </a>
                         </div>
-                        
                     </div>
                     <div id="header-search">
                         <input type="text" name="keywords" v-model="keyword" placeholder="原子力显微镜">
@@ -112,6 +107,7 @@ export default {
        
 		if(sessionStorage.currentMember!=null){
 			this.currentMember = JSON.parse(sessionStorage.getItem('currentMember'))
+			console.log(this.currentMember);
         }
         //从sessionStorage获取城市
         var city = sessionStorage.city;
@@ -159,7 +155,7 @@ export default {
             },{enableHighAccuracy: true})
         },
         search(){
-        	this.$router.push('/search?keyword='+this.keyword);
+        	this.$router.push('/search?keyword='+this.keyword+"&spm="+Math.random());
         },
         loginOut(){
         	 webRpc.invokeCross("memberWebRpc.logout").then(result=>{
@@ -205,6 +201,9 @@ export default {
            	sessionStorage.removeItem("cartemp");
             sessionStorage.setItem('cartemp',JSON.stringify(carStr));
            	this.$router.push('/order?temp=y');
+		},
+		toHome(){
+			this.$router.push('/home/personal?spm='+Math.random());
 		},
 		
     }

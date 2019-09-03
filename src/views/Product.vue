@@ -72,21 +72,13 @@
                     <div id="latest" class="href"></div>
                     <div class="detail-text detail-table">
                         <div class="table_box">
-                            <div class="table_row clearfix">
-                                    <div>*音</div>
-                                    <div style=" width: 200px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" title="清华大学化工系">
-                                    	清华大学化工系
+                            <div class="table_row clearfix" v-for="item in orderList">
+                                    <div>{{item[0]}}</div>
+                                    <div style=" width: 200px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" >
+                                    	{{item[2]}}
                                     </div>
-                                    <div>182****5629</div>
-                                    <div>2019-06-03 14:41:53</div>
-                            </div>
-                            <div class="table_row clearfix">
-                                    <div>*弛</div>
-                                    <div style=" width: 200px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" title="吉林大学">
-                                    	吉林大学
-                                    </div>
-                                    <div>188****7695</div>
-                                    <div>2019-05-28 18:12:49</div>
+                                    <div>{{item[1]}}</div>
+                                    <div>{{item[5] | formatDate}}</div>
                             </div>
                       
                         </div>
@@ -97,17 +89,10 @@
                     <div class="detail-text weixin_box clearfix">
 
                         <div class="weixin_app">
-                            <img src="../assets/images/weixin.png">
+                          <!--  <img src="../assets/images/weixin.png"> -->
                         </div>
                         <div class="weixin_bus">
-                            <p>第一步，扫码关注测试GO微信公众号，</p>
-                            <p>第二步，在公众号内留言“<span></span>”即可获取相关资料</p>
-                            <p>若您觉得我们的经验资料分享有意思，或者发现有哪些资料不完善</p>
-                            <p>欢迎联系我们的客服微信（goxiaomei666）进行投稿，用您的知识和经验帮助其他人。</p>
-                            <p>若您的经验得到我们的采纳，即可获取<span>精美礼品以及京东购物</span>卡奖励。</p>
-                            <p>
-								邮箱投稿：<span class="detail_toEmail">kf01@ceshigo.com</span>，电话咨询：400-152-6858
-                            </p>
+                            
                         </div>
                     </div>
                 </div>
@@ -135,6 +120,7 @@ export default {
       		HOST:HOST,
       		data: {},
       		dataList:{},
+      		orderList:{},
       		tabValue:'attention',
       		iscollection:false,
           currentMember:{},
@@ -142,6 +128,23 @@ export default {
           car:[],
     	}
   	},
+  	filters: {
+      formatDate: function (value) {
+        let date = new Date(value);
+        let y = date.getFullYear();
+        let MM = date.getMonth() + 1;
+        MM = MM < 10 ? ('0' + MM) : MM;
+        let d = date.getDate();
+        d = d < 10 ? ('0' + d) : d;
+        let h = date.getHours();
+        h = h < 10 ? ('0' + h) : h;
+        let m = date.getMinutes();
+        m = m < 10 ? ('0' + m) : m;
+        let s = date.getSeconds();
+        s = s < 10 ? ('0' + s) : s;
+        return y + '-' + MM + '-' + d + ' ' + h + ':' + m + ':' + s;
+      }
+    },
 		components: {
 					vHeader,
 					vSider,
@@ -193,6 +196,13 @@ export default {
 		    webRpc.invoke("productWebRpc.findSkuArr",this.data.id).then(result=>{
 				this.dataList = result.data;
 		    }).catch(error =>{});
+		    
+		    webRpc.invoke("orderWebRpc.findTop",this.data.id,5).then(result=>{
+		    	console.log("预约");
+		    	console.log(result);
+				this.orderList = result.data;
+		    }).catch(error =>{});
+		    
         },
 		//检查收藏情况
 		checkCollection(){
