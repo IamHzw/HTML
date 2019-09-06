@@ -539,7 +539,7 @@ width: 15%;
 }
 #login-content .login_imgBack{
  width: 550px;
- height: 600px;
+ height: 500px;
  position: relative;
  background: url('../assets/images/register_pic.png') bottom right no-repeat;
 }
@@ -781,7 +781,7 @@ input[type="file"] {display: none;}
     margin-right: 20px;
 }
 .footer-nav{display: flex;}
-.footer-nav a{width: 20%;font-size: 14px;color: #fff;line-height: 45px;margin-bottom: 18px;text-align: center;}
+.footer-nav a{width: 24%;font-size: 14px;color: #fff;line-height: 45px;margin-bottom: 18px;text-align: center;}
 .footer-btn{font-size: 0;text-align: center; margin-bottom: 18px;}
 .footer-btn a{display: inline-block;width: 197px;text-align: center;line-height: 53px;border-radius: 5px;font-size: 18px;color: #101010;background: #c0c7ca;margin: 0 12px;}
 .footer-top h2{line-height: 54px;font-size: 30px;color: #00737d;text-align: center;margin-top: 30px;}
@@ -1275,7 +1275,7 @@ em{font-style: normal;}
 #entranceTime .datepicker{width: 274px;height: 49px;border: none;line-height: 49px;padding: 0;}
 #entranceTime .datepicker table{line-height: 1.4;}
 #mslide{position: fixed;z-index: 1000;right: 10px;top:50%;transform: translateY(-50%);}
-#mslide li a{width: 70px;height: 80px;display: block;background: #01707b;transition: all .3s;position: relative;margin-bottom: 1px;}
+#mslide li a{width: 70px;height: 80px;display: block;background: #4994bb;transition: all .3s;position: relative;margin-bottom: 1px;}
 #mslide li a:hover{background: #005b64;}
 #mslide li i{display: block;padding-top:17px;height: 28px;}
 #mslide li i img{display: block;height: 100%;width: auto;margin: 0 auto;}

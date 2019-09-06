@@ -3,8 +3,8 @@
         <ul>
             <li>
                 <!-- <script id="qd285215377156bd551e9b4e74592610182f67d9c06b" src="https://wp.qiye.qq.com/qidian/2852153771/56bd551e9b4e74592610182f67d9c06b" charset="utf-8" async defer></script> -->
-                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=15568400&site=qq&menu=yes">
-                  <i><img border="0" src="http://wpa.qq.com/pa?p=2:15568400:52" alt="点击这里给我发消息" title="点击这里给我发消息"/></i>
+                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=252730794&site=qq&menu=yes">
+                  <i><img border="0" src="http://wpa.qq.com/pa?p=2:252730794:52" alt="点击这里给我发消息" title="点击这里给我发消息"/></i>
                   <p>在线客服</p>
                 </a>
             </li>
@@ -191,11 +191,11 @@ export default {
 //   mounted () {
 //     BizQQWPA.addCustom({
 //         aty: '1', //指定工号类型,0-自动分流，1-指定工号，2-指定分组
-//         nameAccount: '15568400', //指定的聊天 QQ 号码
+//         nameAccount: '252730794', //指定的聊天 QQ 号码
 //         selector: 'contactQQ' //触发聊天的标签id
 //     });
 //    BizQQWPA.visitor({
-//         nameAccount: '15568400' //营销 QQ 号码
+//         nameAccount: '252730794' //营销 QQ 号码
 //     })
 //   },
   beforeDestroy () {

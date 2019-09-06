@@ -29,7 +29,7 @@
                 	<a href="javascript:;" @click="toHome()" id="index-login" style="margin-right: 0px;">个人中心2</a>  
                 </div>
                 <div class="fl">
-                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=15568400&site=qq&menu=yes" id="index-login">联系客服</a>    
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=252730794&site=qq&menu=yes" id="index-login">联系客服</a>    
                 </div>
                 <!--<div class="fl">
                     <a href="javascript:void(0)" id="index-login">微信公众号</a>    
@@ -64,7 +64,7 @@
                     <div>
                         <a href="avascript:;" id="yjyy" @click="onYjyy">一键预约</a>
                         <div id="login-nav-list2" class="clearfix" v-if="result===0 && isOpen">
-                            <a href='avascript:;' class="YjyySkip">
+                            <a href='#/login' class="YjyySkip">
                                 <p style='font-size: 16px;'>你还未登录，请点此登录!</p>
                             </a>
                         </div>

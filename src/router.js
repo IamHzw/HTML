@@ -52,7 +52,13 @@ export default new Router({
       path: "/partnership",
       name: "partnership",
       component: resolve => require(["./views/Partnership.vue"], resolve),
-      meta: { title: '合作加盟,不用', warn:false  }
+      meta: { title: '合作加盟', warn:false  }
+    },
+    {
+        path: "/agreement",
+        name: "agreement",
+        component: resolve => require(["./views/agreement.vue"], resolve),
+        meta: { title: '用户协议', warn:false  }
     },
     {
       path: "/notice",

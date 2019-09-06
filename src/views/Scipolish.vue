@@ -2,11 +2,16 @@
   <div class="home">
     <v-Header></v-Header>
     <v-Sider></v-Sider>
-    <div class="banner">
+    
+    <div   style="text-align:center; ">
+    	<div><img class="sim-bg" src="../assets/images/qidai.jpg" style="width:100%"></div>
+    </div>
+    
+    <div v-if="false" class="banner">
 
     </div>
 
-    <div class="navbar class-wrap">
+    <div v-if="false" class="navbar class-wrap">
       <div class="navbar-cont">
           <div class="navbar-item fl borderRight">
               <div class="nav-tr">
@@ -78,7 +83,7 @@
       </div>
     </div>
 
-    <div class="service clearfix">
+    <div v-if="false" class="service clearfix">
         <div class="class-wrap">
             <div class="service-item service-item_1 fl marginRight55 transition">
                 <div class="top">
@@ -120,7 +125,7 @@
         </div>
     </div>
 
-    <div class="question class-wrap">
+    <div v-if="false" class="question class-wrap">
         <div class="qs-cont">
             <h1>常见问题及回答</h1>
             <div class="qs-box clearfix">

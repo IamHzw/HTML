@@ -1,8 +1,16 @@
 <template>
   <div class="home">
-    <v-Header></v-Header>
+  	<v-Header></v-Header>
     <v-Sider></v-Sider>
-    <div>
+    
+    
+    <div   style="text-align:center; ">
+    	<div><img class="sim-bg" src="../assets/images/qidai.jpg" style="width:100%"></div>
+    </div>
+    
+    
+    
+    <div v-if="false">
       <div class="sim-inner sim-inner1 class-wrap">
         <div class="sim-floor sim-floor1 clearfix">
           <h1 class="sim-title borderLeft borderLeft-success">项目简介</h1>

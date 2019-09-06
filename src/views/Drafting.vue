@@ -2,8 +2,13 @@
   <div class="home">
     <v-Header></v-Header>
     <v-Sider></v-Sider>
-    <div class="d_banner"></div>
-    <div class="class-wrap">
+    
+    <div   style="text-align:center; ">
+    	<div><img class="sim-bg" src="../assets/images/qidai.jpg" style="width:100%"></div>
+    </div>
+    
+    <div v-if="false" class="d_banner"></div>
+    <div v-if="false" class="class-wrap">
       <div>
 
         <div class="make-price-box clearfix">

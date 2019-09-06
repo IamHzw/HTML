@@ -5,7 +5,7 @@
     <div id="index-banner" class="coop-banner">
         <div class="wrap">
             <!--<img src="/static/images/coopbanner.jpg" class="banner-bg">-->
-            <img src="../assets/images/Partnership_icon_1.jpg" class="banner-bg">
+            <img src="../assets/images/Partnership_icon_1.png" class="banner-bg">
         </div>
     </div>
     <div id="coopreason">
@@ -32,7 +32,7 @@
               </div>
               <div class="coopreason-item">
                 <div class="coopreason-pic">
-                  <img src="../assets/images/Partnership_icon_3.jpg" title="coop2.jpg" alt="coop2.jpg" /> 
+                  <img src="../assets/images/Partnership_icon_4.jpg" title="coop2.jpg" alt="coop2.jpg" /> 
                 </div>
                 <h4>
                   专属方案支持
@@ -43,7 +43,7 @@
               </div>
               <div class="coopreason-item">
                 <div class="coopreason-pic">
-                  <img src="../assets/images/Partnership_icon_4.jpg" title="coop3.jpg" alt="coop3.jpg" /> 
+                  <img src="../assets/images/Partnership_icon_5.jpg" title="coop3.jpg" alt="coop3.jpg" /> 
                 </div>
                 <h4>
                   营销支持
@@ -54,7 +54,7 @@
               </div>
               <div class="coopreason-item">
                 <div class="coopreason-pic">
-                  <img src="../assets/images/Partnership_icon_5.jpg" title="coop4.jpg" alt="coop4.jpg" /> 
+                  <img src="../assets/images/Partnership_icon_3.jpg" title="coop4.jpg" alt="coop4.jpg" /> 
                 </div>
                 <h4>
                   技术培训支持
